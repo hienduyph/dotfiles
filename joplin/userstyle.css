@@ -1,0 +1,10 @@
+/* For styling the rendered Markdown */
+body {
+  font-family: "Helvetica";
+  font-size: 12;
+}
+code,
+pre {
+  font-family: "IBM Plex Mono";
+}
+

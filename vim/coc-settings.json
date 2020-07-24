@@ -1,0 +1,73 @@
+{
+  "python.venvFolders": [".venv", "Library/Caches/pypoetry/virtualenvs"],
+  "languageserver": {
+    "cquery": {
+      "command": "cquery",
+      "args": ["--log-file=/tmp/cq.log"],
+      "filetypes": ["c", "cpp"],
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/cquery"
+      }
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform"],
+      "initializationOptions": {},
+      "rootPatterns": ["main.tf", ".git/"]
+    }
+  },
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.enablePreview": true,
+  "suggest.echodocSupport": true,
+  "suggest.noselect": false,
+  "suggest.snippetIndicator": "►",
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintUseMinimalCheckers": false,
+  "python.linting.pylintArgs": [
+    "--init-hook",
+    "import sys; sys.path.append(\".\")"
+  ],
+  "python.linting.mypyEnabled": false,
+  "python.linting.mypyArgs": [
+    "--ignore-missing-imports",
+    "--follow-imports=silent",
+    "--show-column-numbers",
+    "--strict"
+  ],
+  "python.poetryPath": "poetry",
+  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "typescript",
+    "typescriptreact",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "rust",
+    "php",
+    "json",
+    "terraform",
+    "yaml"
+  ],
+  "prettier.eslintIntegration": true,
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
+  "go.goplsPath": "gopls",
+  "go.disable": {
+    "workspaceFolders": false
+  }
+}
