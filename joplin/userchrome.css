@@ -1,0 +1,6 @@
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+body {
+  font-family: "Helvetica";
+  font-size: 12;
+}
+

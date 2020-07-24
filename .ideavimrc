@@ -1,0 +1,29 @@
+set clipboard+=unnamed
+
+" Press jj to escape insert mode
+inoremap jj <Esc>  """ jj key is <Esc> setting
+
+" save the current buffer
+nnoremap <Leader>w :w<cr>
+
+" save and close all
+nnoremap <Leader>wa :wqa<cr>
+
+" move lines around
+nnoremap <Leader>k :m-2<cr>==
+nnoremap <Leader>j :m+<cr>==
+xnoremap <Leader>k :m-2<cr>gv=gv
+xnoremap <Leader>j :m'>+<cr>gv=gv
+
+" delete without copy
+nnoremap <Leader>d "_d
+xnoremap <Leader>d "_d
+xnoremap <Leader>p "_dP
+
+" https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md
+set surround
+set commentary
+
+" ++ for commentary
+vmap ++ gcc
+nmap ++ gcc
