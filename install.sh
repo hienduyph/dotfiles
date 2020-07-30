@@ -16,8 +16,8 @@ mv .vimrc .vimrc.bak || true
 mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak || true
 
 echo "Install Neovim"
-mv ~/.vimrc ~/.vimrc.bak | true
-mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak | true
+mv ~/.vimrc ~/.vimrc.bak || true
+mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak || true
 ln -s ~/dotfiles/vim/init.vim ~/.vimrc
 ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
 
@@ -43,8 +43,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~
 sed -i 's/plugins=(/&zsh-autosuggestions /' ~/.zshrc
 mv ~/.p10k.zsh ~/.p10k.zsh.bak || true
 ln ~/dotfiles/.p10k.zsh ~/.p10k.zsh
-
-echo '' >> ~/.profile
 
 echo "Set alacritty"
 mv ~/.alacritty.yml ~/.alacritty.yml.bak || true
