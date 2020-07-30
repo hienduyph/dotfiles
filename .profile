@@ -4,6 +4,7 @@ export LC_ALL=en_US.UTF-8
 export NNN_USE_EDITOR=1
 
 export GOPATH="$HOME/go"
+export CLOUDSDK_PYTHON="python3.7"
 export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local/sbin:$HOME/google-cloud-sdk/bin"
 
 if [[ -f $HOME/.cargo/env ]]; then
@@ -68,3 +69,4 @@ fkill() {
 }
 
 export GPG_TTY=${TTY}
+
