@@ -32,7 +32,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
@@ -82,8 +81,8 @@ draw_bold_text_with_bright_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xeaeaea'
+    background: "0x000000"
+    foreground: "0xeaeaea"
 
     # Bright and dim foreground colors
     #
@@ -103,39 +102,39 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xd54e53'
-    green:   '0xb9ca4a'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
-    white:   '0xffffff'
+    black: "0x000000"
+    red: "0xd54e53"
+    green: "0xb9ca4a"
+    yellow: "0xe6c547"
+    blue: "0x7aa6da"
+    magenta: "0xc397d8"
+    cyan: "0x70c0ba"
+    white: "0xffffff"
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0xffffff'
+    black: "0x666666"
+    red: "0xff3334"
+    green: "0x9ec400"
+    yellow: "0xe7c547"
+    blue: "0x7aa6da"
+    magenta: "0xb77ee0"
+    cyan: "0x54ced6"
+    white: "0xffffff"
 
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
   dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+    black: "0x333333"
+    red: "0xf2777a"
+    green: "0x99cc99"
+    yellow: "0xffcc66"
+    blue: "0x6699cc"
+    magenta: "0xcc99cc"
+    cyan: "0x66cccc"
+    white: "0xdddddd"
 
   # Indexed Colors
   #
@@ -165,7 +164,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -235,27 +234,27 @@ cursor:
 live_config_reload: true
 
 key_bindings:
-  - { key: N,        mods: Command, action: SpawnNewInstance             }
+  - { key: N, mods: Command, action: SpawnNewInstance }
 
   # tmux key binding
-  - { key: D,     mods: Command,       chars: "\x0b\x76" }
-  - { key: D,     mods: Command|Shift, chars: "\x0b\x73" }
-  - { key: W,     mods: Command,       chars: "\x0b\x78" }
-  - { key: H,     mods: Command,       chars: "\x0b\x68" }
-  - { key: J,     mods: Command,       chars: "\x0b\x6a" }
-  - { key: K,     mods: Command,       chars: "\x0b\x6b" }
-  - { key: L,     mods: Command,       chars: "\x0b\x6c" }
-  - { key: T,     mods: Command,       chars: "\x0b\x63" }
-  - { key: Key1,  mods: Command,       chars: "\x0b\x31" }
-  - { key: Key2,  mods: Command,       chars: "\x0b\x32" }
-  - { key: Key3,  mods: Command,       chars: "\x0b\x33" }
-  - { key: Key4,  mods: Command,       chars: "\x0b\x34" }
-  - { key: Key5,  mods: Command,       chars: "\x0b\x35" }
-  - { key: Key6,  mods: Command,       chars: "\x0b\x36" }
-  - { key: Key7,  mods: Command,       chars: "\x0b\x37" }
-  - { key: Key8,  mods: Command,       chars: "\x0b\x38" }
-  - { key: Key9,  mods: Command,       chars: "\x0b\x39" }
-  - { key: Left,  mods: Command,       chars: "\x0b\x48" }
-  - { key: Down,  mods: Command,       chars: "\x0b\x4a" }
-  - { key: Up,    mods: Command,       chars: "\x0b\x4b" }
-  - { key: Right, mods: Command,       chars: "\x0b\x4c" }
+  - { key: D, mods: Command, chars: "\x0b\x76" }
+  - { key: D, mods: Command|Shift, chars: "\x0b\x73" }
+  - { key: W, mods: Command, chars: "\x0b\x78" }
+  - { key: H, mods: Command, chars: "\x0b\x68" }
+  - { key: J, mods: Command, chars: "\x0b\x6a" }
+  - { key: K, mods: Command, chars: "\x0b\x6b" }
+  - { key: L, mods: Command, chars: "\x0b\x6c" }
+  - { key: T, mods: Command, chars: "\x0b\x63" }
+  - { key: Key1, mods: Command, chars: "\x0b\x31" }
+  - { key: Key2, mods: Command, chars: "\x0b\x32" }
+  - { key: Key3, mods: Command, chars: "\x0b\x33" }
+  - { key: Key4, mods: Command, chars: "\x0b\x34" }
+  - { key: Key5, mods: Command, chars: "\x0b\x35" }
+  - { key: Key6, mods: Command, chars: "\x0b\x36" }
+  - { key: Key7, mods: Command, chars: "\x0b\x37" }
+  - { key: Key8, mods: Command, chars: "\x0b\x38" }
+  - { key: Key9, mods: Command, chars: "\x0b\x39" }
+  - { key: Left, mods: Command, chars: "\x0b\x48" }
+  - { key: Down, mods: Command, chars: "\x0b\x4a" }
+  - { key: Up, mods: Command, chars: "\x0b\x4b" }
+  - { key: Right, mods: Command, chars: "\x0b\x4c" }
