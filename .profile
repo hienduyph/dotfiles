@@ -11,7 +11,7 @@ if [[ -f $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
 fi
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules,vendor,.direnv}/*" 2> /dev/null'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,node_modules,vendor,.direnv}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
 
