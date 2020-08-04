@@ -20,7 +20,8 @@ xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
 " toggle nerdtree
-map <C-e> :NERDTreeToggle<CR>
+" map <C-e> :NERDTreeToggle<CR>
+map <C-e> :CHADopen<CR>
 
 " resize pane"
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
