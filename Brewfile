@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 
@@ -75,7 +74,6 @@ brew "mysql-client"
 brew "neovim"
 brew "node@12"
 brew "operator-sdk"
-brew "pipenv"
 brew "poppler"
 brew "procs"
 brew "protobuf"
@@ -89,6 +87,7 @@ brew "telnet"
 brew "terraform"
 brew "tldr"
 brew "tmux"
+# count lines of code
 brew "tokei"
 brew "tree"
 brew "unrar"
@@ -101,13 +100,19 @@ brew "zsh-completions"
 brew "git-delta"
 brew "diff-so-fancy"
 brew "direnv"
+brew "kubernetes-cli"
+brew "kustomize"
+brew "node"
+brew "kubectx"
+brew "stern"
+brew "python@3.7"
+
 
 brew "minio/stable/mc"
 
 cask "adoptopenjdk"
 cask "adoptopenjdk11"
-cask "adoptopenjdk12"
-cask "adoptopenjdk8"
+cask "adoptopenjdk/openjdk/adoptopenjdk8"
 cask "alacritty"
 cask "calibre"
 cask "docker"
@@ -117,14 +122,14 @@ cask "java8"
 cask "jdiskreport"
 cask "jetbrains-toolbox"
 cask "sequel-pro-nightly"
-cask "google-chrome"
-cask "skype"
 cask "tableplus"
 cask "telegram"
 cask "vscodium"
 cask "joplin"
-cask "font-blexmono-nerd-font"
 cask "spotify"
+cask "opera"
+
+cask "font-blexmono-nerd-font"
 cask "font-ibm-plex"
 
 mas "Be Focused", id: 973134470
@@ -134,4 +139,3 @@ mas "Keynote", id: 409183694
 mas "Pages", id: 409201541
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
-
