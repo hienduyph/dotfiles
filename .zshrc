@@ -20,6 +20,7 @@ plugins=(
   vi-mode
   colorize
   tmux
+  git-flow
 )
 
 source $ZSH/oh-my-zsh.sh

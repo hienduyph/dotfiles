@@ -1,125 +1,112 @@
+cask_args appdir: "/Applications"
+
+# core
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 
-cask_args appdir: "/Applications"
-
+# extras
 tap "adoptopenjdk/openjdk"
 tap "derailed/k9s"
-tap "minio/stable"
 
+# common libs
+brew "zlib"
 brew "gdbm"
 brew "openssl@1.1"
 brew "gettext"
 brew "readline"
-brew "python@3.8"
-brew "ansible"
-brew "snappy"
-brew "awscli"
-brew "bat"
 brew "libpng"
-brew "freetype"
-brew "fontconfig"
 brew "glib"
-brew "pixman"
+brew "libtiff"
+brew "jpeg"
+brew "libpq"
+brew "snappy"
+
 brew "ccache"
-brew "cfssl"
-brew "cloc"
 brew "cmake"
-brew "cocoapods"
 brew "coreutils"
-brew "cpanminus"
 brew "ctags"
 brew "curl"
+
+# core utils
 brew "editorconfig"
-brew "eigen"
-brew "exa"
-brew "fd"
-brew "icu4c"
-brew "jpeg"
-brew "libtiff"
-brew "python"
-brew "fswatch"
-brew "fzf"
-brew "git"
-brew "git-flow-avh"
-brew "gmp"
-brew "libksba"
-brew "gnupg"
-brew "go"
-brew "gradle"
-brew "graphviz"
-brew "helm"
-brew "htop"
-brew "hugo"
-brew "libimobiledevice", args: ["HEAD"]
-brew "ideviceinstaller"
-brew "openexr"
-brew "ios-deploy"
-brew "isl"
-brew "istioctl"
-brew "jq"
-brew "kafkacat"
-brew "kakoune"
-brew "libmemcached"
-brew "mpfr"
-brew "libmpc"
-brew "libpq"
-brew "libusbmuxd", args: ["HEAD"]
-brew "mas"
-brew "maven"
-brew "mysql-client"
-brew "neovim"
-brew "node@12"
-brew "operator-sdk"
-brew "poppler"
-brew "procs"
-brew "protobuf"
-brew "rclone"
-brew "reattach-to-user-namespace"
 brew "ripgrep"
-brew "rustup-init"
 brew "stormssh"
-brew "tbb"
 brew "telnet"
-brew "terraform"
-brew "tldr"
-brew "tmux"
-# count lines of code
-brew "tokei"
+brew "exa"
+brew "bat"
+brew "fd"
+brew "tokei" # count lines of code
 brew "tree"
 brew "unrar"
 brew "watch"
 brew "wget"
 brew "wrk"
-brew "zlib"
+brew "tldr"
+brew "jq"
+brew "htop"
+brew "fzf"
+brew "git"
+brew "git-flow-avh"
+
+brew "gnupg"
+brew "libksba" # required by gnupg
+brew "gmp" # required by gnupg
+
+# cloud tools
+brew "operator-sdk"
+brew "helm"
+brew "protobuf"
+brew "kubernetes-cli"
+brew "terraform"
+brew "kustomize"
+brew "kubectx"
+brew "stern"
+brew "istioctl"
+brew "awscli"
+brew "ansible"
+brew "derailed/k9s/k9s"
+
+# Blogs
+brew "hugo"
+
+# terminal
+brew "neovim"
+brew "tmux"
+cask "alacritty"
 brew "zsh"
 brew "zsh-completions"
 brew "git-delta"
 brew "diff-so-fancy"
 brew "direnv"
-brew "kubernetes-cli"
-brew "kustomize"
-brew "node"
-brew "kubectx"
-brew "stern"
+
+# langluage
+brew "python@3.8"
 brew "python@3.7"
+brew "python"
+brew "go"
 
-
-brew "minio/stable/mc"
-
+brew "gradle"
+brew "maven"
 cask "adoptopenjdk"
 cask "adoptopenjdk11"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
-cask "alacritty"
+
+brew "node@12"
+brew "node"
+brew "icu4c" # required by node
+
+brew "rustup-init"
+
+# apps
 cask "calibre"
 cask "docker"
 cask "drawio"
 cask "gimp"
-cask "java8"
 cask "jdiskreport"
+
 cask "jetbrains-toolbox"
 cask "sequel-pro-nightly"
 cask "tableplus"
@@ -134,8 +121,4 @@ cask "font-ibm-plex"
 
 mas "Be Focused", id: 973134470
 mas "Enpass", id: 732710998
-mas "iZip Unarchiver", id: 717545828
-mas "Keynote", id: 409183694
-mas "Pages", id: 409201541
-mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835

@@ -22,6 +22,7 @@ xnoremap <leader>p "_dP
 " toggle nerdtree
 " map <C-e> :NERDTreeToggle<CR>
 map <C-e> :CHADopen<CR>
+let g:chadtree_settings = {"keymap": {  "tertiary": ["<S-t>"] }}
 
 " resize pane"
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
