@@ -37,7 +37,8 @@ alias kdf="k diff -f"
 alias kdfs="kubectl diff -f -"
 alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
-alias man="tldr"
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 function bqq() {
