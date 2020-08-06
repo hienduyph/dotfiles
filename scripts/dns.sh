@@ -16,6 +16,11 @@ case $cmd in
     sudo networksetup -setdnsservers Wi-Fi 1.1.1.1
     ;;
 
+  "proxy")
+    sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 8.8.8.8 8.8.4.4
+    ;;
+
+
   *)
     echo "Specify your command: reset/google/cloudflare"
     exit 1

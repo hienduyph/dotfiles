@@ -64,7 +64,6 @@ brew "terraform"
 brew "kustomize"
 brew "kubectx"
 brew "stern"
-brew "istioctl"
 brew "awscli"
 brew "ansible"
 brew "derailed/k9s/k9s"
@@ -115,9 +114,13 @@ cask "vscodium"
 cask "joplin"
 cask "spotify"
 cask "opera"
+cask "sublime-text"
 
 cask "font-blexmono-nerd-font"
 cask "font-ibm-plex"
+
+# securityes
+brew "dnscrypt-proxy"
 
 mas "Be Focused", id: 973134470
 mas "Enpass", id: 732710998
