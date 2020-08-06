@@ -16,13 +16,15 @@ let g:fzf_buffers_jump = 1
 " Automatically displays all buffers when there's only one tab open.
 let g:airline_powerline_fonts = 1
 
+" enable extensions
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 2
-" Show clocks
-let g:airline_section_b = '%{strftime("%H:%M")} %{coc#status()}'
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#formatter = 'short_path'
+
+" Show clocks
+let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
 
 " Format json
 " com! FormatJSON %!python -m json.tool
