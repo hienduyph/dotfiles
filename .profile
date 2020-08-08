@@ -4,16 +4,30 @@ export LC_ALL=en_US.UTF-8
 export NNN_USE_EDITOR=1
 
 export GOPATH="$HOME/go"
-export CLOUDSDK_PYTHON="python3.7"
+
 export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local/sbin:$HOME/google-cloud-sdk/bin"
 
 if [[ -f $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
 fi
 
+if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,node_modules,vendor,.direnv}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
+
+case "$(uname -s)" in
+   Darwin)
+     ;;
+   Linux)
+    alias pbcopy='xclip -selection clipboard'
+     ;;
+   CYGWIN*|MINGW32*|MSYS*|MINGW*)
+     ;;
+esac
 
 # alias config
 alias plz="sudo"
@@ -57,13 +71,14 @@ function bqx() {
   bq extract --destination_format NEWLINE_DELIMITED_JSON $1 $2
 }
 
-export PATH="$HOME/.npm-packages/bin:$PATH"
-
 # source secrets files
-SECRETS_DIRS=$HOME/.secrets/profiles
-for filename in $SECRETS_DIRS/*.sh; do
-  source $filename
-done
+SECRETS_DIRS=$HOME/.profile_src
+
+if [[ -d $SECRETS_DIRS ]]; then
+  for filename in $SECRETS_DIRS/*.sh; do
+    source $filename
+  done
+fi
 
 fkill() {
   ps aux | grep  $1 | awk {'print $2'} | xargs kill -9

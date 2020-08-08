@@ -1,0 +1,84 @@
+
+# core
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# extras
+tap "adoptopenjdk/openjdk"
+tap "derailed/k9s"
+
+# core utils
+brew "ripgrep"
+brew "stormssh"
+brew "exa"
+brew "bat"
+brew "fd"
+brew "tokei" # count lines of code
+brew "tree"
+brew "unrar"
+brew "watch"
+brew "wget"
+brew "wrk"
+brew "tldr"
+brew "jq"
+brew "htop"
+brew "fzf"
+brew "git"
+brew "git-flow-avh"
+
+brew "gnupg"
+brew "libksba" # required by gnupg
+brew "gmp" # required by gnupg
+
+# cloud tools
+brew "operator-sdk"
+brew "helm"
+brew "protobuf"
+brew "kubernetes-cli"
+brew "kustomize"
+brew "kubectx"
+brew "stern"
+brew "ansible"
+brew "derailed/k9s/k9s"
+
+
+# terminal
+brew "neovim"
+brew "tmux"
+cask "alacritty"
+brew "zsh"
+brew "zsh-completions"
+brew "git-delta"
+brew "diff-so-fancy"
+brew "direnv"
+# langluage
+brew "python@3.8"
+brew "python@3.8"
+brew "go"
+
+brew "gradle"
+brew "maven"
+cask "adoptopenjdk11"
+cask "adoptopenjdk/openjdk/adoptopenjdk8"
+
+brew "node"
+
+brew "rustup-init"
+
+# apps
+cask "docker"
+
+
+cask "jetbrains-toolbox"
+cask "tableplus"
+cask "telegram"
+cask "vscodium"
+cask "joplin"
+cask "spotify"
+
+
+cask "font-blexmono-nerd-font"
+cask "font-ibm-plex"

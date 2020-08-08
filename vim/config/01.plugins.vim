@@ -25,8 +25,8 @@ Plug 'rafalbromirski/vim-aurora'
 Plug 'ryanoasis/vim-devicons'
 
 " Tree
-" Plug 'scrooloose/nerdtree'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+Plug 'scrooloose/nerdtree'
+" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
