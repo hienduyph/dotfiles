@@ -24,6 +24,10 @@ sudo add-apt-repository ppa:git-core/ppa -y
 echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
 wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo apt-key add -
 
+
+# ibus
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+
 # Numix Theme
 # echo 'Install Numix Theme'
 #sudo add-apt-repository ppa:numix/ppa -y
@@ -46,7 +50,9 @@ sudo apt-get install -y \
   dconf-tools\
   ttf-mscorefonts-installer\
   enpass \
-  albert
+  albert \
+  ibus-bamboo\
+  snapd
 
 
 # # copy style and desktop icon
