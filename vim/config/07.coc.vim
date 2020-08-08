@@ -18,6 +18,7 @@ let g:coc_global_extensions = [
   \ 'coc-java',
   \ 'coc-json',
   \ 'coc-yaml',
+  \ 'coc-flutter',
   \]
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience
