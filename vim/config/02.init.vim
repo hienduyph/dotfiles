@@ -8,6 +8,7 @@ filetype plugin on
 filetype indent plugin on
 set number relativenumber
 
+
 " custom function
 function! UseTabs()
   set tabstop=4     " Size of a hard tabstop (ts).
@@ -66,6 +67,12 @@ augroup END
 
 augroup php
   autocmd FileType php setlocal omnifunc=phpactor#Complete
+augroup END
+
+augroup Markdown
+  " hotfit for indent listing of vim-markdown plugin
+  au filetype markdown set formatoptions+=ro
+  au filetype markdown set comments=b:*,b:-,b:+,b:1.,n:>
 augroup END
 
 
