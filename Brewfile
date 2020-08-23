@@ -51,6 +51,8 @@ brew "fzf"
 brew "git"
 brew "git-flow-avh"
 
+brew "mysql-connector-c"
+
 brew "gnupg"
 brew "libksba" # required by gnupg
 brew "gmp" # required by gnupg
@@ -93,7 +95,7 @@ cask "adoptopenjdk"
 cask "adoptopenjdk11"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
 
-brew "node@12"
+brew "node@14"
 brew "node"
 brew "icu4c" # required by node
 
