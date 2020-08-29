@@ -1,20 +1,18 @@
 # Bootstrap Linux Machine
 
+## Steps
 ```bash
-# for Nvim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sudo bash ./basic.sh
+sudo bash ./ui.sh
+sudo bash ./dotfiles.sh
+sudo bash ./apps.sh
+
+# install linux brew
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew bundle
 ```
 
-## Install:
-- tmux
-- neovim
-
-## ZSH Plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-Themes:
+**Themes**
 ```bash
 # https://github.com/pixel-saver/pixel-saver
 $ cd ~/Applications/pixel-saver/pixel-saver@deadalnix.me/themes
