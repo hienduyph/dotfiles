@@ -1,12 +1,7 @@
-
 # core
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-
-# extras
 tap "adoptopenjdk/openjdk"
 tap "derailed/k9s"
 
@@ -44,41 +39,18 @@ brew "stern"
 brew "ansible"
 brew "derailed/k9s/k9s"
 
-
 # terminal
 brew "neovim"
-brew "tmux"
-cask "alacritty"
-brew "zsh"
 brew "zsh-completions"
 brew "git-delta"
 brew "diff-so-fancy"
-brew "direnv"
 # langluage
-brew "python@3.8"
 brew "python@3.8"
 brew "go"
 
 brew "gradle"
 brew "maven"
-cask "adoptopenjdk11"
-cask "adoptopenjdk/openjdk/adoptopenjdk8"
 
 brew "node"
 
 brew "rustup-init"
-
-# apps
-cask "docker"
-
-
-cask "jetbrains-toolbox"
-cask "tableplus"
-cask "telegram"
-cask "vscodium"
-cask "joplin"
-cask "spotify"
-
-
-cask "font-blexmono-nerd-font"
-cask "font-ibm-plex"
