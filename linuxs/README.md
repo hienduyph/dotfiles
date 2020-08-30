@@ -18,3 +18,11 @@ brew bundle
 $ cd ~/Applications/pixel-saver/pixel-saver@deadalnix.me/themes
 $ cp OSX-Arc-Darker ./default
 ```
+
+```css
+// ~/.local/share/themes/Mojave-dark
+#panel .panel-button {
+  -natural-hpadding: 2px;
+  -minimum-hpadding: 2px;
+  }
+```
