@@ -18,7 +18,29 @@ brew bundle
 $ cd ~/Applications/pixel-saver/pixel-saver@deadalnix.me/themes
 $ cp OSX-Arc-Darker ./default
 ```
+**Update left themes**
 
+```css
+// ./themes/default/style.css
+
+.button-box {
+	spacing: 2px;
+}
+
+/* The style for each individual window button */
+.window-button {
+	width: 16px;
+	height: 16px;
+	background-size: 10px;
+}
+
+/* The style for the window button when hovered over */
+.window-button:hover {
+}
+
+```
+
+**Update top bar icon size**
 ```css
 // ~/.local/share/themes/Mojave-dark
 #panel .panel-button {
