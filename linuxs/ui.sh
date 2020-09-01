@@ -7,27 +7,24 @@ install_fonts_fn() {
 }
 
 fonts() {
-	install_fonts "https://github.com/IBM/plex/releases/download/v5.1.0/TrueType.zip"
-	install_fonts "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Inconsolata.zip"
-	install_fonts "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip"
+	install_fonts_fn "https://github.com/IBM/plex/releases/download/v5.1.0/TrueType.zip"
+	install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Inconsolata.zip"
+	install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip"
 	sudo apt install -y fonts-roboto
 	fc-cache -f -v
 }
 
 theme_deps() {
-sudo apt install -y\
-  libcanberra-gtk-module libcanberra-gtk3-module\
-  gtk2-engines-murrine\
-  gtk2-engines-pixbuf\
-  sassc\
-  optipng\
-  inkscape
-
-sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
-sudo apt install libglib2.0-dev-bin -y
-
- 
-sudo apt remove gnome-shell-extension-ubuntu-dock -y
+  sudo apt install -y\
+    libcanberra-gtk-module libcanberra-gtk3-module\
+    gtk2-engines-murrine\
+    gtk2-engines-pixbuf\
+    sassc\
+    optipng\
+    inkscape\
+    gtk2-engines-murrine gtk2-engines-pixbuf\
+    libglib2.0-dev-bin
+  sudo apt remove gnome-shell-extension-ubuntu-dock -y
 }
 
 tar_url() {
@@ -43,15 +40,12 @@ tar_url() {
 download_themes() {
 	tar_url "/tmp/theme_src" "https://github.com/vinceliuice/Mojave-gtk-theme/archive/2020-03-24.tar.gz"
 	cd /tmp/theme_src/ && ./install.sh -d $HOME/.local/share/themes -c dark
-
-
 }
 
 download_icons() {
-
 	tar_url /tmp/icon_src https://github.com/vinceliuice/McMojave-circle/archive/master.tar.gz
 	cd /tmp/icon_src  && ./install.sh -d $HOME/.local/share/icons -a
 }
 
 
-download_icons()
+install_fonts_fn "https://github.com/ToxicFrog/Ligaturizer/releases/download/v4/LigaturizedFonts.zip"
