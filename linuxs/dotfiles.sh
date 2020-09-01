@@ -9,6 +9,7 @@ python3 -m virtualenv ~/.venv/neovim
 
 echo "Install Neovim"
 mv ~/.config/nvim/init.vim ~/.backups/ || true
+mkdir ~/.config/nvim
 ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
 
 # for nvim
@@ -34,7 +35,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # add to plugins
 mv ~/.p10k.zsh ~/.backups/ || true
 mv ~/.zshrc ~/.backups || true
-mv ~/.profiles ~/.backups || true
+mv ~/.profile ~/.backups || true
 ln ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.profile ~/.profile
