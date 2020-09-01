@@ -1,4 +1,5 @@
-sudo snap install protobuf
+sudo snap install protobuf --classic
+sudo snap install intellij-idea-community --classic
 
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 

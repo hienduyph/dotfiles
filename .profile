@@ -85,4 +85,3 @@ fkill() {
 }
 
 export GPG_TTY=${TTY}
-
