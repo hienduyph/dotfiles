@@ -21,7 +21,6 @@ brew "tldr"
 brew "jq"
 brew "htop"
 brew "fzf"
-brew "git"
 brew "git-flow-avh"
 
 brew "gnupg"
@@ -31,7 +30,6 @@ brew "gmp" # required by gnupg
 # cloud tools
 brew "operator-sdk"
 brew "helm"
-brew "protobuf"
 brew "kubernetes-cli"
 brew "kustomize"
 brew "kubectx"
@@ -39,18 +37,7 @@ brew "stern"
 brew "ansible"
 brew "derailed/k9s/k9s"
 
-# terminal
-brew "neovim"
-brew "zsh-completions"
-brew "git-delta"
 brew "diff-so-fancy"
 # langluage
 brew "python@3.8"
 brew "go"
-
-brew "gradle"
-brew "maven"
-
-brew "node"
-
-brew "rustup-init"
