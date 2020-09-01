@@ -13,4 +13,4 @@ sudo update-desktop-database
 
 echo "Set alacritty"
 mv ~/.alacritty.yml ~/.alacritty.yml.bak || true
-ln -s $HOME/dotfiles/alacritty.yml ~/.alacritty.yml
+ln -s $HOME/dotfiles/linuxs/alacritty.yml ~/.alacritty.yml
