@@ -1,17 +1,28 @@
-install_fonts_fn() {
+_install_fonts_fn() {
   rm -rf /tmp/fonts
   mkdir -p rf /tmp/fonts
   curl -Lo /tmp/font.zip $1
   unzip /tmp/font.zip -d /tmp/fonts
   find /tmp/fonts -name \*.ttf -exec sudo cp {} /usr/share/fonts/truetype \;
 }
+_tar_url() {
+  dest=$1
+  url=$2
+  rm -rf /tmp/download.tar.gz
+  curl -Lo /tmp/download.tar.gz $url
+  rm -rf $dest
+  mkdir -p $dest
+  tar -xf /tmp/download.tar.gz -C $dest --strip-components=1
+}
 
 fonts() {
-	install_fonts_fn "https://github.com/IBM/plex/releases/download/v5.1.0/TrueType.zip"
-	install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Inconsolata.zip"
-	install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip"
-	sudo apt install -y fonts-roboto
-	fc-cache -f -v
+  _install_fonts_fn "https://github.com/IBM/plex/releases/download/v5.1.0/TrueType.zip"
+  _install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Inconsolata.zip"
+  _install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip"
+  _install_fonts_fn "https://github.com/ToxicFrog/Ligaturizer/releases/download/v4/LigaturizedFonts.zip"
+  _install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip"
+  sudo apt install -y fonts-roboto
+  fc-cache -f -v
 }
 
 theme_deps() {
@@ -27,25 +38,19 @@ theme_deps() {
   sudo apt remove gnome-shell-extension-ubuntu-dock -y
 }
 
-tar_url() {
-  dest=$1
-  url=$2
-  rm -rf /tmp/download.tar.gz
-  curl -Lo /tmp/download.tar.gz $url
-  rm -rf $dest
-  mkdir -p $dest
-  tar -xf /tmp/download.tar.gz -C $dest --strip-components=1
-}
 
 download_themes() {
-	tar_url "/tmp/theme_src" "https://github.com/vinceliuice/Mojave-gtk-theme/archive/2020-03-24.tar.gz"
-	cd /tmp/theme_src/ && ./install.sh -d $HOME/.local/share/themes -c dark
+  _tar_url "/tmp/theme_src" "https://github.com/vinceliuice/Mojave-gtk-theme/archive/2020-03-24.tar.gz"
+  cd /tmp/theme_src/ && ./install.sh -d $HOME/.local/share/themes -c dark
 }
 
 download_icons() {
-	tar_url /tmp/icon_src https://github.com/vinceliuice/McMojave-circle/archive/master.tar.gz
-	cd /tmp/icon_src  && ./install.sh -d $HOME/.local/share/icons -a
+  _tar_url /tmp/icon_src https://github.com/vinceliuice/McMojave-circle/archive/master.tar.gz
+  cd /tmp/icon_src  && ./install.sh -d $HOME/.local/share/icons -a
 }
 
 
-install_fonts_fn "https://github.com/ToxicFrog/Ligaturizer/releases/download/v4/LigaturizedFonts.zip"
+fonts
+theme_deps
+download_themes
+download_icons
