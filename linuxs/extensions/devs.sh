@@ -10,7 +10,8 @@ sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt install -y \
   nodejs\
   golang-go\
-  gcc g++ make
+  gcc g++ make\
+  libmysqlclient-dev
 
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
