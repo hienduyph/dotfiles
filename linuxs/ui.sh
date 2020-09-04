@@ -21,6 +21,8 @@ fonts() {
   _install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip"
   _install_fonts_fn "https://github.com/ToxicFrog/Ligaturizer/releases/download/v4/LigaturizedFonts.zip"
   _install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip"
+  _install_fonts_fn "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.002/JetBrainsMono-2.002.zip"
+  _install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
   sudo apt install -y fonts-roboto
   fc-cache -f -v
 }
@@ -50,7 +52,11 @@ download_icons() {
 }
 
 
-fonts
-theme_deps
-download_themes
-download_icons
+main() {
+  fonts
+  theme_deps
+  download_themes
+  download_icons
+}
+
+_install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
