@@ -9,3 +9,4 @@ rm -rf $INSTALL_DIR $HOME/.local/bin/nvim && mkdir -p $INSTALL_DIR
 tar -xf $DOWNLOAD_FILE -C $INSTALL_DIR --strip-components=1
 rm -rf $DOWNLOAD_FILE
 ln -s $INSTALL_DIR/bin/nvim $HOME/.local/bin
+
