@@ -48,7 +48,8 @@ sudo apt-get install -y \
   htop\
   flameshot\
   zsh\
-  dnscrypt-proxy
+  dnscrypt-proxy\
+  pinentry-tty
 
 sudo usermod -aG docker $USER
 
@@ -62,3 +63,5 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl start dnscrypt-proxy
 sudo systemctl enable dnscrypt-proxy
+
+sudo update-alternatives --config pinentry
