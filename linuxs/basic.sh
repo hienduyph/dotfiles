@@ -49,6 +49,7 @@ sudo apt-get install -y \
   flameshot\
   zsh\
   dnscrypt-proxy\
+  resolvconf\
   pinentry-tty
 
 sudo usermod -aG docker $USER
@@ -61,7 +62,11 @@ ibus restart
 
 sudo systemctl start docker
 sudo systemctl enable docker
+
 sudo systemctl start dnscrypt-proxy
 sudo systemctl enable dnscrypt-proxy
+
+sudo systemctl enable resolvconf
+sudo systemctl start resolvconf
 
 sudo update-alternatives --config pinentry
