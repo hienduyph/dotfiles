@@ -43,7 +43,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 f_backups ~/.p10k.zsh
 f_backups ~/.zshrc
 f_backups ~/.profile
+f_backups ~/.gitconfig
 
 ln ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.profile ~/.profile
+ln -s ~/dotfiles/.gitconfig ~/
