@@ -39,7 +39,6 @@ sudo apt-get install -y \
   enpass \
   ibus-bamboo\
   snapd \
-  telegram-desktop\
   docker-ce\
   docker-ce-cli\
   containerd.io\
