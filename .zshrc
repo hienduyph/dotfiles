@@ -21,6 +21,7 @@ plugins=(
   colorize
   tmux
   git-flow
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh

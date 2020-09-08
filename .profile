@@ -39,7 +39,7 @@ alias vimd="vim -u None"
 alias cat="bat"
 alias ls="exa"
 alias tn="tmux new-session -A -s"
-alias qq="tmux new -A -s mr_q"
+alias lala="tmux new -A -s Lala"
 alias awm="aws --endpoint-url http://localhost:9000"
 alias kk="$GOPATH/bin/kaf"
 
@@ -51,6 +51,12 @@ alias kdf="k diff -f"
 alias kdfs="kubectl diff -f -"
 alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
+alias dk="docker"
+alias dkm="docker-compose"
+
+function docker_rm_badimg() {
+  docker rmi -f $(docker images -f "dangling=true" -q)
+}
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
