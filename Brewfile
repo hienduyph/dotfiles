@@ -58,11 +58,9 @@ brew "libksba" # required by gnupg
 brew "gmp" # required by gnupg
 
 # cloud tools
-brew "operator-sdk"
 brew "helm"
 brew "protobuf"
 brew "kubernetes-cli"
-brew "terraform"
 brew "kustomize"
 brew "kubectx"
 brew "stern"
@@ -103,7 +101,6 @@ brew "rustup-init"
 
 # apps
 cask "calibre"
-cask "docker"
 cask "drawio"
 cask "gimp"
 cask "jdiskreport"
@@ -126,4 +123,3 @@ brew "dnscrypt-proxy"
 
 mas "Be Focused", id: 973134470
 mas "Enpass", id: 732710998
-mas "Xcode", id: 497799835
