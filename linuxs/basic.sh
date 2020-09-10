@@ -48,7 +48,6 @@ sudo apt-get install -y \
   flameshot\
   zsh\
   dnscrypt-proxy\
-  resolvconf\
   pinentry-tty
 
 sudo usermod -aG docker $USER
