@@ -4,9 +4,16 @@ set -e
 
 echo "Setting Nameserver"
 
-sudo tee /etc/resolvconf/resolv.conf.d/head << END
-nameserver 127.0.0.1
+sudo tee /etc/systemd/resolved.conf << END
+[Resolve]
+DNS=127.0.0.1
+#FallbackDNS=
+#Domains=
+#LLMNR=no
+#MulticastDNS=no
+#DNSSEC=no
+#DNSOverTLS=no
+#Cache=yes
+#DNSStubListener=yes
+#ReadEtcHosts=yes
 END
-
-sudo rm -f /etc/resolv.conf
-sudo ln -s /run/resolvconf/resolv.conf /etc
