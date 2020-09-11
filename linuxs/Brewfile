@@ -22,6 +22,8 @@ brew "jq"
 brew "htop"
 brew "fzf"
 brew "git-flow-avh"
+brew "neovim"
+brew "kubectx"
 
 brew "gnupg"
 brew "libksba" # required by gnupg
