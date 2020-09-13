@@ -1,4 +1,3 @@
-sudo snap install protobuf --classic
 sudo snap install intellij-idea-community --classic
 sudo snap install code --classic
 
