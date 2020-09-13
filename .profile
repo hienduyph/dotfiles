@@ -98,7 +98,7 @@ tar_url() {
   url=$2
   rm -rf /tmp/download.tar.gz
   curl -Lo /tmp/download.tar.gz $url
-  rm -rf $dest
-  mkdir -p $dest
+  rm -rf $dest/*
+  mkdir -p $dest/
   tar -xf /tmp/download.tar.gz -C $dest --strip-components=1
 }
