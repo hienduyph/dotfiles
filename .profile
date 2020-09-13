@@ -79,10 +79,10 @@ function bqx() {
 }
 
 # source secrets files
-SECRETS_DIRS=$HOME/.profile_src
+export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 
-if [[ -d $SECRETS_DIRS ]]; then
-  for filename in $SECRETS_DIRS/*.sh; do
+if [[ -d $PROFILE_EXTRA_DIRS ]]; then
+  for filename in $PROFILE_EXTRA_DIRS/*.sh; do
     source $filename
   done
 fi

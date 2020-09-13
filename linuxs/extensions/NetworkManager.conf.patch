@@ -1,9 +1,0 @@
---- /etc/NetworkManager/NetworkManager.conf	2020-05-20 23:23:10.000000000 +0700
-+++ dns_patch.conf	2020-09-04 20:31:33.908690051 +0700
-@@ -1,5 +1,6 @@
- [main]
- plugins=ifupdown,keyfile
-+#dns=dnsmasq
- 
- [ifupdown]
- managed=false

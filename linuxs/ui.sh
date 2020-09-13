@@ -59,4 +59,4 @@ main() {
   download_icons
 }
 
-_install_fonts_fn "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
+main
