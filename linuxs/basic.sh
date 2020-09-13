@@ -47,6 +47,7 @@ sudo apt-get install -y \
   htop\
   flameshot\
   zsh\
+  ufw\
   dnscrypt-proxy\
   pinentry-tty
 

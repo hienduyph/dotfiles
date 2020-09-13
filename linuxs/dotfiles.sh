@@ -25,11 +25,6 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
 
 nvim +PlugInstall +qall
 
-echo "Install Tmux"
-# install tmux dotfiles
-f_backups ~/.tmux.conf
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-
 echo "Install zsh"
 
 # install oh my zsh
@@ -40,12 +35,18 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # add to plugins
-f_backups ~/.p10k.zsh
-f_backups ~/.zshrc
-f_backups ~/.profile
-f_backups ~/.gitconfig
+dots=(
+  .p10k.zsh
+  .zshrc
+  .profile
+  .gitconfig
+  .pylintrc
+  .htoprc
+  .ideavimrc
+  .tmux.conf
+)
 
-ln ~/dotfiles/.p10k.zsh ~/.p10k.zsh
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.profile ~/.profile
-ln -s ~/dotfiles/.gitconfig ~/
+for f in "${dots[@]}"; do
+  f_backups $HOME/$f
+  ln -s ~/dotfiles/$f $HOME/$f
+done
