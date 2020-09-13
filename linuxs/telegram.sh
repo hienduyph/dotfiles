@@ -35,5 +35,6 @@ EOF
   echo "$content" | tee "$APP_DIR/telegramdesktop.desktop"
 }
 
-# _download "2.3.2"
+sudo curl -Lo /usr/share/icons/telegram.png https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Telegram_Messenger.png/600px-Telegram_Messenger.png
+_download "2.3.2"
 _desktop_entry
