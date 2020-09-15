@@ -118,6 +118,9 @@ cask "sublime-text"
 cask "font-blexmono-nerd-font"
 cask "font-ibm-plex"
 
+cask "alt-tab"
+
+
 # securityes
 brew "dnscrypt-proxy"
 
