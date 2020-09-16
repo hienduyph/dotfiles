@@ -1,8 +1,6 @@
 # core
 tap "homebrew/bundle"
 tap "homebrew/core"
-tap "homebrew/services"
-tap "adoptopenjdk/openjdk"
 tap "derailed/k9s"
 
 # core utils
@@ -11,37 +9,19 @@ brew "stormssh"
 brew "exa"
 brew "bat"
 brew "fd"
-brew "tokei" # count lines of code
-brew "tree"
-brew "unrar"
-brew "watch"
-brew "wget"
-brew "wrk"
-brew "tldr"
-brew "jq"
-brew "htop"
 brew "fzf"
-brew "git-flow-avh"
-brew "neovim"
-brew "kubectx"
 
 brew "gnupg"
 brew "libksba" # required by gnupg
 brew "gmp" # required by gnupg
 
 # cloud tools
-brew "operator-sdk"
 brew "helm"
 brew "kubernetes-cli"
 brew "kustomize"
-brew "kubectx"
 brew "stern"
 brew "ansible"
 brew "derailed/k9s/k9s"
 
-brew "diff-so-fancy"
 brew "git-delta"
 # langluage
-brew "python@3.8"
-brew "go"
-brew "dive"
