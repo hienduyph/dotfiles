@@ -24,6 +24,7 @@ case "$(uname -s)" in
      ;;
    Linux)
     alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection c -o'
      ;;
    CYGWIN*|MINGW32*|MSYS*|MINGW*)
      ;;
