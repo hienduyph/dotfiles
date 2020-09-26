@@ -22,18 +22,16 @@ plugins=(
   tmux
   git-flow
   docker
+  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
 
+export FPATH=$ZSH/completions:$FPATH
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
+  export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
-
-
+autoload -U compinit && compinit
 
 eval "$(direnv hook zsh)"
 
