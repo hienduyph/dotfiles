@@ -10,5 +10,7 @@ sudo apt install -y \
   nodejs\
   golang-go\
   gcc g++ make\
-  libmysqlclient-dev
+  libmysqlclient-dev\
+  libssl-dev\
+  libpq-dev
 

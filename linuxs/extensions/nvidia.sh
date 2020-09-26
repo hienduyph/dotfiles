@@ -1,6 +1,10 @@
 sudo add-apt-repository ppa:graphics-drivers/ppa
 
-sudo apt install nvidia-driver-450 
+sudo apt install -y \
+  nvidia-driver-450\
+  libvulkan1\
+  vulkan-tools\
+  vulkan-utils
 
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
