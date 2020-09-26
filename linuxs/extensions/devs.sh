@@ -10,7 +10,9 @@ sudo apt install -y \
   nodejs\
   golang-go\
   gcc g++ make\
-  libmysqlclient-dev
+  libmysqlclient-dev\
+  libssl-dev\
+  libpq-dev
 
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
