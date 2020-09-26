@@ -12,7 +12,8 @@ if [[ -f $HOME/.cargo/env ]]; then
 fi
 
 if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  #$eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin";
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,node_modules,vendor,.direnv,.mypy_cache,__pycache__}/*" 2> /dev/null'
