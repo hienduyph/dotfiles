@@ -1,21 +1,6 @@
 {
   "python.venvFolders": [".venv"],
   "languageserver": {
-    "cquery": {
-      "command": "cquery",
-      "args": ["--log-file=/tmp/cq.log"],
-      "filetypes": ["c", "cpp"],
-      "rootPatterns": [
-        "compile_flags.txt",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cacheDirectory": "/tmp/cquery"
-      }
-    },
     "terraform": {
       "command": "terraform-ls",
       "args": ["serve"],
@@ -67,5 +52,6 @@
   "go.goplsPath": "gopls",
   "go.disable": {
     "workspaceFolders": false
-  }
+  },
+  "clangd.path": "/home/hienduyph/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
