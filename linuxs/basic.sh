@@ -10,6 +10,8 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 echo 'Add Git Repo'
 sudo add-apt-repository ppa:git-core/ppa -y
 
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
 # enpass
 echo 'Add Enpass Repo'
 echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
@@ -49,6 +51,7 @@ sudo apt-get install -y \
   zsh\
   ufw\
   dnscrypt-proxy\
+  git-lfs\
   pinentry-tty
 
 sudo usermod -aG docker $USER
