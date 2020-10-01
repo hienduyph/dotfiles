@@ -16,6 +16,10 @@ if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin";
 fi
 
+if [[ -f $HOME/.venv/cli/bin/python ]]; then
+  export PATH="$PATH:$HOME/.venv/cli/bin";
+fi
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,node_modules,vendor,.direnv,.mypy_cache,__pycache__}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
@@ -47,8 +51,8 @@ alias kk="$GOPATH/bin/kaf"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 alias rsync_git="rsync --exclude-from=.gitignore"
-alias y2j="$HOME/.venv/python_packages/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
-alias json2yaml="$HOME/.venv/python_packages/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
+alias y2j="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
+alias j2y="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
 alias ktz="kustomize"
 alias kdf="k diff -f"
 alias kdfs="kubectl diff -f -"
