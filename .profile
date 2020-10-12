@@ -10,9 +10,11 @@ export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local
 if [[ -f $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
 fi
+if [[ -f /usr/local/opt/python@3.9/bin/python3.9 ]]; then
+  export PATH="$PATH:/usr/local/opt/python@3.9/bin/"
+fi
 
 if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-  #$eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin";
 fi
 
@@ -47,8 +49,8 @@ alias kk="$GOPATH/bin/kaf"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 alias rsync_git="rsync --exclude-from=.gitignore"
-alias y2j="$HOME/.venv/python_packages/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
-alias json2yaml="$HOME/.venv/python_packages/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
+alias y2j="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
+alias j2y="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
 alias ktz="kustomize"
 alias kdf="k diff -f"
 alias kdfs="kubectl diff -f -"
