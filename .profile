@@ -40,6 +40,7 @@ esac
 # alias config
 alias plz="sudo"
 alias emacs='emacs -nw'
+alias nvim5="/opt/neovim/bin/nvim -u ~/dotfiles/vim/nvim.vim"
 alias vim="nvim"
 alias vi="vim"
 alias v="vim"
