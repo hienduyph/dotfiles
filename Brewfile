@@ -98,6 +98,7 @@ brew "node"
 brew "icu4c" # required by node
 
 brew "rustup-init"
+brew "sops"
 
 # apps
 cask "calibre"
@@ -117,8 +118,6 @@ cask "sublime-text"
 
 cask "font-blexmono-nerd-font"
 cask "font-ibm-plex"
-
-cask "alt-tab"
 
 
 # securityes
