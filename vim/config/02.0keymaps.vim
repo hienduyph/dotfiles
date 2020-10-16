@@ -56,3 +56,9 @@ nnoremap <silent> <leader>o  :<C-u>CocFzfList outline<CR>
 nnoremap <silent> <leader>s  :<C-u>CocFzfList symbols<CR>
 nnoremap <silent> <leader>S  :<C-u>CocFzfList services<CR>
 nnoremap <silent> <leader>p  :<C-u>CocFzfListResume<CR>
+
+" Format json
+" com! FormatJSON %!python -m json.tool
+com! FormatJSON %!jq '.'
+com! MinifyJSON %!jq -c .
+
