@@ -1,5 +1,5 @@
 " Hide some extentions
-let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.git$', '\.so$', '.vscode', '.mypy_cache', '\.swp$', 'node_modules', 'vendor', '.cache$', '.task', '\.idea$', '.next$', "\.direnv$"]
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.git$', '\.so$', '.vscode', '.mypy_cache', '\.swp$', 'node_modules', 'vendor', '.cache$', '.task', '\.idea$', '.next$', "\.direnv$", "target"]
 let NERDTreeRespectWildIgnore=1
 let NERDTreeShowHidden=1
 
