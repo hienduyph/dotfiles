@@ -10,6 +10,7 @@ export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local
 if [[ -f $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
 fi
+
 if [[ -f /usr/local/opt/python@3.9/bin/python3.9 ]]; then
   export PATH="$PATH:/usr/local/opt/python@3.9/bin/"
 fi
@@ -37,9 +38,7 @@ case "$(uname -s)" in
      ;;
 esac
 
-# alias config
 alias plz="sudo"
-alias emacs='emacs -nw'
 alias nvim5="/opt/neovim/bin/nvim -u ~/dotfiles/vim/nvim.vim"
 alias vim="nvim"
 alias vi="vim"
@@ -53,14 +52,17 @@ alias awm="aws --endpoint-url http://localhost:9000"
 alias kk="$GOPATH/bin/kaf"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
-alias rsync_git="rsync --exclude-from=.gitignore"
+
 alias y2j="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
 alias j2y="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
+
 alias ktz="kustomize"
 alias kdf="k diff -f"
 alias kdfs="kubectl diff -f -"
 alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
+alias kctx="kubectx"
+alias kns="kubens"
 alias dk="docker"
 alias dkm="docker-compose"
 
