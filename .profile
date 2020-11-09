@@ -6,6 +6,7 @@ export NNN_USE_EDITOR=1
 export GOPATH="$HOME/go"
 
 export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local/sbin:$HOME/google-cloud-sdk/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ -f $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
