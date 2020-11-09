@@ -29,6 +29,9 @@ echo 'Add Ibus Repo'
 # ibus
 sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo -y
 
+echo 'Add alacritty'
+sudo add-apt-repository ppa:mmstick76/alacritty -y
+
 # Install all
 echo 'Install all package'
 sudo apt-get update
@@ -52,6 +55,7 @@ sudo apt-get install -y \
   ufw\
   dnscrypt-proxy\
   git-lfs\
+  alacritty\
   pinentry-tty
 
 sudo usermod -aG docker $USER
