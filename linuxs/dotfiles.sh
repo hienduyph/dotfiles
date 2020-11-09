@@ -46,10 +46,17 @@ dots=(
   .ideavimrc
   .tmux.conf
 )
-
 for f in "${dots[@]}"; do
   f_backups $HOME/$f
   ln -s ~/dotfiles/$f $HOME/$f
+done
+
+dot_linux=(
+  .alacritty.yml
+)
+for f in "${dots_linux[@]}"; do
+  f_backups $HOME/$f
+  ln -s ~/dotfiles/linuxs/$f $HOME/$f
 done
 
 # zsh config
