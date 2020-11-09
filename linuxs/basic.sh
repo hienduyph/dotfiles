@@ -32,31 +32,34 @@ sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo -y
 echo 'Add alacritty'
 sudo add-apt-repository ppa:mmstick76/alacritty -y
 
+packages=(
+  zsh
+  google-chrome-stable
+  chrome-gnome-shell
+  gnome-tweak-tool
+  ttf-mscorefonts-installer
+  enpass
+  ibus-bamboo
+  snapd
+  docker-ce
+  docker-ce-cli
+  containerd.io
+  gnome-shell-pomodoro
+  tmux
+  htop
+  flameshot
+  zsh
+  ufw
+  dnscrypt-proxy
+  git-lfs
+  alacritty
+  pinentry-tty
+)
+
 # Install all
 echo 'Install all package'
 sudo apt-get update
-sudo apt-get install -y \
-  zsh \
-  google-chrome-stable\
-  chrome-gnome-shell\
-  gnome-tweak-tool \
-  ttf-mscorefonts-installer\
-  enpass \
-  ibus-bamboo\
-  snapd \
-  docker-ce\
-  docker-ce-cli\
-  containerd.io\
-  gnome-shell-pomodoro\
-  tmux\
-  htop\
-  flameshot\
-  zsh\
-  ufw\
-  dnscrypt-proxy\
-  git-lfs\
-  alacritty\
-  pinentry-tty
+sudo apt-get install -y "${packages[@]}"
 
 sudo usermod -aG docker $USER
 
@@ -65,11 +68,14 @@ curl -sfL https://direnv.net/install.sh | sudo bash
 
 ibus restart
 
+services=(
+  docker
+  dnscrypt-proxy
+)
 
-sudo systemctl start docker
-sudo systemctl enable docker
-
-sudo systemctl start dnscrypt-proxy
-sudo systemctl enable dnscrypt-proxy
+for pkg in "${services[@]}"; do
+  sudo systemctl start $pkg
+  sudo systemctl enable $pkg
+done
 
 sudo update-alternatives --config pinentry
