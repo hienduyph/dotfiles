@@ -51,7 +51,7 @@ for f in "${dots[@]}"; do
   ln -s ~/dotfiles/$f $HOME/$f
 done
 
-dot_linux=(
+dots_linux=(
   .alacritty.yml
 )
 for f in "${dots_linux[@]}"; do
