@@ -1,14 +1,14 @@
 format = """
 $username\
 $hostname\
-$shlvl\
-$kubernetes\
 $directory\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status\
 $hg_branch\
+$shlvl\
+$kubernetes\
 $docker_context\
 $package\
 $cmake\
@@ -78,3 +78,8 @@ format = "via [🏎💨 $version](bold cyan) "
 [java]
 symbol = "🌟 "
 disabled = false
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+truncate_to_repo = true
