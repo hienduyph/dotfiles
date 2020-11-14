@@ -33,14 +33,10 @@ mv ~/.tmux.conf  ~/.tmux.conf.bak || true
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
 echo "Install zsh"
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+mkdir -p ~/.zsh
+curl -L git.io/antigen > ~/.zsh/antigen.zsh
 
-# add to plugins
-sed -i 's/plugins=(/&zsh-autosuggestions /' ~/.zshrc
 mv ~/.p10k.zsh ~/.p10k.zsh.bak || true
 ln ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 
