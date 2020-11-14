@@ -1,0 +1,19 @@
+[kubernetes]
+format = '[⛵ $context](dimmed green) '
+disabled = false
+
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+
+[gcloud]
+disabled = true
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+
+[time]
+disabled = false
+format = '🕙[ $time ]($style)'
+time_format = "%T"
+style = "green"
