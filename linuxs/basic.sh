@@ -54,6 +54,10 @@ packages=(
   git-lfs
   alacritty
   pinentry-tty
+  openjdk-8-jdk
+  openjdk-8-jre
+  openjdk-11-jdk
+  openjdk-11-jre
 )
 
 # Install all
