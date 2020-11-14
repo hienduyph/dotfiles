@@ -39,7 +39,6 @@ brew "exa"
 brew "bat"
 brew "fd"
 brew "tokei" # count lines of code
-brew "tree"
 brew "unrar"
 brew "watch"
 brew "wget"
