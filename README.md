@@ -2,33 +2,23 @@
 
 ![screenshot](./screenshot.png)
 
-## TLDL
-
+## Steps
+### 1. Install platform base first
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/hienduyph/dotfiles/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-## Detail
-
-Fonts
-- https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/IBMPlexMono
-
-### Vim Stack
-- [Vim Plug](https://github.com/junegunn/vim-plug)
-- Language:
-    - [x] https://github.com/neoclide/coc-rls
-    - [x] https://github.com/josa42/coc-go
-    - [x] JavaScript, TypeScript, HTML, SCSS, CSS
-    - [x] Ruby
-    - [x] https://github.com/neoclide/coc-python
-
-### ViFM
+**In each platform**
 ```bash
-mkdir -p ~/.vifm/colors
-curl -Lo ~/.vifm/colors/gruvbox.vifm https://raw.githubusercontent.com/vifm/vifm-colors/master/gruvbox.vifm
-# backup old files
-mv ~/.vifm/vifmrc ~/.vifm/vifmrc.bak
-ln -s $(pwd)/.vifmrc ~/.vifm/vifmrc
+brew bundle
+```
+
+- [Linux](./platform/linux)
+- [MacOs](./platform/darwin)
+
+### 2. Bootstrap dotfiles
+```bash
+bash ./install.sh
 ```
 
 
@@ -36,11 +26,19 @@ ln -s $(pwd)/.vifmrc ~/.vifm/vifmrc
 *Install [Rust](https://www.rust-lang.org/tools/install)*
 
 ```
-$ curl https://sh.rustup.rs -sSf | sh
 $ cargo build --release
 $ cp ./target/release/yaml2json ~/.local/bin
 ```
 
+## Misc
+### Install latest nvim?
+```
+curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz | tar xz --strip-components=1 -C /opt/neovim
+# or macos
+curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz | tar xz --strip-components=1 -C /opt/neovim
+```
+
 # License
 [MIT License](LICENSE)
+
 
