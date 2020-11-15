@@ -41,9 +41,6 @@ if type brew &>/dev/null; then
 fi
 autoload -U compinit && compinit
 
-# bind auto complete key for zsh-autosuggestions
-bindkey '^n' autosuggest-accept
-
 ## 3third plugins
 eval "$(direnv hook zsh)"
 

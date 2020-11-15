@@ -4,12 +4,7 @@
 ```bash
 sudo bash ./basic.sh
 sudo bash ./ui.sh
-sudo bash ./dotfiles.sh
-sudo bash ./apps.sh
-
-# install linux brew
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew bundle
+sudo bash ./telegram.sh
 ```
 
 **Themes**
@@ -46,5 +41,5 @@ $ cp OSX-Arc-Darker ./default
 #panel .panel-button {
   -natural-hpadding: 2px;
   -minimum-hpadding: 2px;
-  }
+}
 ```

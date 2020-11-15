@@ -25,6 +25,7 @@ brew "derailed/k9s/k9s"
 brew "krew"
 brew "kubectx"
 brew "kubens"
+brew "go"
 
 brew "git-delta"
 # langluage
