@@ -2,4 +2,4 @@ echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbunt
 curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key | sudo apt-key add - 
 
 sudo apt update
-sudo apt install albert
+sudo apt install albert -y

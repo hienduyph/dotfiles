@@ -35,9 +35,4 @@ antigen apply
 # load default shell
 eval "$(starship init zsh)"
 
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# load default profile
-source ~/.profile
+source $HOME/dotfiles/shell/after-hook.sh

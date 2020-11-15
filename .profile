@@ -28,10 +28,12 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
 
-case "$(uname -s)" in
-   Darwin)
+export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+case "$PLATFORM" in
+   darwin)
      ;;
-   Linux)
+   linux)
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection c -o'
      ;;
@@ -60,7 +62,9 @@ alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 alias y2j="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
 alias j2y="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
 
+alias i="istioctl"
 alias ktz="kustomize"
+alias kf="kfctl"
 alias kdf="k diff -f"
 alias kdfs="kubectl diff -f -"
 alias kafs="kubectl apply -f -"
@@ -107,13 +111,3 @@ fkill() {
 }
 
 export GPG_TTY=${TTY}
-
-tar_url() {
-  dest=$1
-  url=$2
-  rm -rf /tmp/download.tar.gz
-  curl -Lo /tmp/download.tar.gz $url
-  rm -rf $dest/*
-  mkdir -p $dest/
-  tar -xf /tmp/download.tar.gz -C $dest --strip-components=1
-}
