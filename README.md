@@ -1,8 +1,12 @@
 # The Q dotfiles
 
 ![screenshot](./screenshot.png)
-
 ## Steps
+```bash
+# install path must be at `$HOME/dotfiles`
+git clone https://github.com/hienduyph/dotfiles ~/
+```
+
 ### 1. Install platform base first
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"

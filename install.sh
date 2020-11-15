@@ -36,6 +36,8 @@ _shell() {
   rustup completions zsh cargo > ~/.zsh/completions/_cargo
 }
 
+PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
 _dots() {
   dots=(
     .zshrc
@@ -54,10 +56,9 @@ _dots() {
   platform_dots=(
     .alacritty.yaml
   )
-  platform="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
   for f in "${platform_dots[@]}"; do
-    fullpath="~/dotfiles/$platform/$f"
+    fullpath="~/dotfiles/$PLATFORM/$f"
     if [ -f $fullpath ]; then
       f_backups $HOME/$f
       ln -s $fullpath $HOME/$f
@@ -65,10 +66,27 @@ _dots() {
   done
 }
 
+_fonts() {
+  FONT_DIR=""
+  case "$PLATFORM" in
+    darwin)
+      FONT_DIR="/Library/Fonts"
+      ;;
+    linux)
+      FONT_DIR="/usr/share/fonts/truetype"
+      ;;
+    *)
+      echo "Unsupport platform $PLATFORM"
+      exit;
+  esac
+  sudo tar -xf ~/dotfiles/fonts/InputMonoNerdFont.tar.gz -C $FONT_DIR
+}
+
 main() {
   _neovim
   _shell
   _dots
+  _fonts
 }
 
 main
