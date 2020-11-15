@@ -35,7 +35,12 @@ sudo add-apt-repository ppa:mmstick76/alacritty -y
 echo 'Add vlc'
 sudo add-apt-repository ppa:videolan/stable-daily -y
 
+echo 'Add dbeaver'
 sudo add-apt-repository ppa:serge-rider/dbeaver-ce -y
+
+echo 'Add albert'
+echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list\
+  && curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key | sudo apt-key add -
 
 packages=(
   zsh
@@ -74,6 +79,7 @@ packages=(
   libssl-dev
   libpq-dev
   dbeaver-ce
+  albert 
 )
 
 # Install all

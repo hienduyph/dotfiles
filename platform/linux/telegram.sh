@@ -2,7 +2,7 @@
 set -e
 
 _download() {
-  VERSION=$1
+  VERSION=$(curl -fsSL https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest | jq -r ".tag_name" | cut -d'v' -f 2)
   curl -Lo /tmp/file.tar.gz https://github.com/telegramdesktop/tdesktop/releases/download/v$VERSION/tsetup.$VERSION.tar.xz
   sudo mkdir -p /opt/
   sudo tar -xf /tmp/file.tar.gz -C /opt
@@ -36,5 +36,5 @@ EOF
 }
 
 sudo curl -Lo /usr/share/icons/telegram.png https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Telegram_Messenger.png/600px-Telegram_Messenger.png
-_download "2.3.2"
+_download
 _desktop_entry
