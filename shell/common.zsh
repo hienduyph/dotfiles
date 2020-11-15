@@ -35,7 +35,7 @@ done
 
 
 # completions source
-export FPATH=$ZSH/completions:$FPATH
+export FPATH=$HOME/.zsh/completions:$FPATH
 if type brew &>/dev/null; then
   export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
