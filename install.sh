@@ -34,6 +34,8 @@ _shell() {
   # zsh config
   mkdir -p ~/.zsh/completions/
   rustup completions zsh cargo > ~/.zsh/completions/_cargo
+  mkdir -p ~/.config
+  ln -s ~/dotfiles/shell/starship.toml  ~/.config
 }
 
 PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
