@@ -98,6 +98,7 @@ brew "icu4c" # required by node
 
 brew "rustup-init"
 brew "sops"
+brew "caddy"
 
 # apps
 cask "calibre"
