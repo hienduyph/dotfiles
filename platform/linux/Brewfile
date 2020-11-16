@@ -26,6 +26,7 @@ brew "krew"
 brew "kubectx"
 brew "kubens"
 brew "go"
+brew "istioctl"
 
 brew "git-delta"
 # langluage

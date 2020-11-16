@@ -1,15 +1,14 @@
 #!/bin/bash
 
-FILE="/tmp/kafctl.tar.gz"
-INSTALL_DIR=$(pwd)/kfctl
-URL=$(curl -s https://api.github.com/repos/kubeflow/kfctl/releases/latest \
-  | grep "https://.*kfctl_.*_darwin.tar.gz" \
-  | cut -d : -f 2,3 \
-  | tr -d \")
+_install() {
+  downloads_urls=$(curl -fsSL https://api.github.com/repos/kubeflow/kfctl/releases/latest | jq -r '.assets[].browser_download_url')
+  for url in $downloads_urls; do
+    if echo "$url" | grep -q $PLATFORM; then
+      echo "Downloading $url"
+      curl -fsSL $url | sudo tar xz -C /usr/local/bin --strip-components=1
+    fi
+  done
+}
 
-echo "Got File $URL"
-curl -Lo $FILE $URL
-rm -rf $INSTALL_DIR && mkdir -p $INSTALL_DIR
-tar -xf $FILE -C $INSTALL_DIR --strip-components=1
-rm -rf $FILE
-mv $INSTALL_DIR/kfctl /usr/local/bin/
+sudo rm -rf /usr/local/bin/kfctl
+_install
