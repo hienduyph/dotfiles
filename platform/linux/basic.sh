@@ -79,7 +79,8 @@ packages=(
   libssl-dev
   libpq-dev
   dbeaver-ce
-  albert 
+  albert
+  xsel # clipboard for vim
 )
 
 # Install all
