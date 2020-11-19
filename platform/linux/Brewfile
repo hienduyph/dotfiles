@@ -10,6 +10,7 @@ brew "exa"
 brew "bat"
 brew "fd"
 brew "fzf"
+brew "starship"
 
 brew "gnupg"
 brew "libksba" # required by gnupg
@@ -29,6 +30,8 @@ brew "go"
 brew "istioctl"
 brew "caddy"
 brew "protobuf"
+brew "fswatch"
+brew "bufbuild/buf/buf"
 
 brew "git-delta"
 # langluage
