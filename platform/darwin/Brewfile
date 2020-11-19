@@ -67,9 +67,6 @@ brew "awscli"
 brew "ansible"
 brew "derailed/k9s/k9s"
 
-# Blogs
-brew "hugo"
-
 # terminal
 brew "neovim"
 brew "tmux"
@@ -79,6 +76,8 @@ brew "zsh-completions"
 brew "git-delta"
 brew "diff-so-fancy"
 brew "direnv"
+brew "fswatch"
+brew "starship"
 
 # langluage
 brew "python@3.8"
@@ -99,6 +98,7 @@ brew "icu4c" # required by node
 brew "rustup-init"
 brew "sops"
 brew "caddy"
+brew "bufbuild/buf/buf"
 
 # apps
 cask "calibre"
@@ -119,9 +119,7 @@ cask "sublime-text"
 cask "font-blexmono-nerd-font"
 cask "font-ibm-plex"
 
-
 # securityes
 brew "dnscrypt-proxy"
 
-mas "Be Focused", id: 973134470
 mas "Enpass", id: 732710998
