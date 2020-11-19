@@ -83,3 +83,6 @@ disabled = false
 truncation_length = 5
 truncation_symbol = "…/"
 truncate_to_repo = true
+
+[aws]
+disabled = true
