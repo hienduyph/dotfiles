@@ -27,6 +27,8 @@ brew "derailed/k9s/k9s"
 brew "krew"
 brew "kubectx"
 brew "go"
+brew "gcc@5"
+
 brew "istioctl"
 brew "caddy"
 brew "protobuf"
