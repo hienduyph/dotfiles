@@ -10,6 +10,7 @@ tap "homebrew/services"
 # extras
 tap "adoptopenjdk/openjdk"
 tap "derailed/k9s"
+tap "bufbuild/buf"
 
 # common libs
 brew "zlib"
@@ -84,6 +85,7 @@ brew "python@3.8"
 brew "python@3.7"
 brew "python"
 brew "go"
+brew "gcc@5"
 
 brew "gradle"
 brew "maven"
