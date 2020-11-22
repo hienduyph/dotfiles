@@ -71,8 +71,9 @@ alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
 alias ktx="kubectx"
 alias kns="kubens"
-alias dk="docker"
+alias dk="podman"
 alias dkm="docker-compose"
+alias htop="htop -s PERCENT_MEM"
 
 function docker_rm_badimg() {
   docker rmi -f $(docker images -f "dangling=true" -q)

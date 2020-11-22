@@ -18,13 +18,6 @@ echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d
 wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo apt-key add -
 
 
-echo 'Add Docker Repo'
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
- "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
- $(lsb_release -cs) \
- stable" -y
-
 echo 'Add Ibus Repo'
 # ibus
 sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo -y
@@ -42,6 +35,10 @@ echo 'Add albert'
 echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list\
   && curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key | sudo apt-key add -
 
+echo 'Add podman'
+echo 'deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+curl -fsSL https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable/xUbuntu_20.04/Release.key | sudo apt-key add -
+
 packages=(
   zsh
   google-chrome-stable
@@ -51,9 +48,6 @@ packages=(
   enpass
   ibus-bamboo
   snapd
-  docker-ce
-  docker-ce-cli
-  containerd.io
   gnome-shell-pomodoro
   tmux
   htop
@@ -81,6 +75,7 @@ packages=(
   dbeaver-ce
   albert
   xsel # clipboard for vim
+  podman
 )
 
 # Install all
@@ -88,15 +83,12 @@ echo 'Install all package'
 sudo apt-get update
 sudo apt-get install -y "${packages[@]}"
 
-sudo usermod -aG docker $USER
-
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sfL https://direnv.net/install.sh | sudo bash
 
 ibus restart
 
 services=(
-  docker
   dnscrypt-proxy
 )
 
