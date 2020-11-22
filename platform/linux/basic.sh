@@ -84,7 +84,6 @@ sudo apt-get update
 sudo apt-get install -y "${packages[@]}"
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-curl -sfL https://direnv.net/install.sh | sudo bash
 
 ibus restart
 
