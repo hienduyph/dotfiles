@@ -32,6 +32,7 @@ brew "caddy"
 brew "protobuf"
 brew "fswatch"
 brew "bufbuild/buf/buf"
+brew "direnv"
 
 brew "git-delta"
 
