@@ -24,6 +24,7 @@ brew "libtiff"
 brew "jpeg"
 brew "libpq"
 brew "snappy"
+brew "podman"
 
 brew "ccache"
 brew "cmake"
