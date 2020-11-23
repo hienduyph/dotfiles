@@ -24,7 +24,6 @@ brew "kustomize"
 brew "stern"
 brew "ansible"
 brew "derailed/k9s/k9s"
-brew "krew"
 brew "kubectx"
 
 brew "istioctl"

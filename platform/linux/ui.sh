@@ -39,6 +39,23 @@ download_icons() {
   rm -rf /tmp/icon_src
 }
 
+pixel_saver() {
+  VERSION=$1
+  WORKDIR=/tmp/pixel_saver
+  EXT_NAME=pixel-saver@hienph.dev
+  rm -rf $WORKDIR
+  mkdir -p $WORKDIR/src
+  curl -fsSL https://github.com/pixel-saver/pixel-saver/archive/$VERSION.tar.gz | tar xz -C $WORKDIR/src --strip-components=1
+  cp -r $WORKDIR/src/pixel-saver@deadalnix.me $WORKDIR/$EXT_NAME
+  # copy themes
+  rm -rf $WORKDIR/$EXT_NAME/themes/default
+  cp -r $WORKDIR/$EXT_NAME/themes/OSX-Arc-Darker $WORKDIR/$EXT_NAME/themes/default
+  sudo rm -rf /usr/share/gnome-shell/extensions/$EXT_NAME
+
+  # update metadata.json
+  # uuid
+}
+
 
 main() {
   fonts
