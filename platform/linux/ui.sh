@@ -40,6 +40,7 @@ download_icons() {
 }
 
 pixel_saver() {
+  set -e
   VERSION=$1
   WORKDIR=/tmp/pixel_saver
   EXT_NAME=pixel-saver@hienph.dev
@@ -53,7 +54,18 @@ pixel_saver() {
   sudo rm -rf /usr/share/gnome-shell/extensions/$EXT_NAME
 
   # update metadata.json
-  # uuid
+  read -d '' content << EOF || true
+{
+	"uuid": "pixel-saver@hienph.dev",
+	"name": "Pixel Saver",
+	"description": "Pixel Saver is designed to save pixel by fusing activity bar and title bar in a natural way",
+	"url": "https://github.com/pixel-saver/pixel-saver",
+	"shell-version": ["3.32", "3.34", "3.36"]
+}
+EOF
+  echo "$content" | tee "$WORKDIR/$EXT_NAME/metadata.json"
+  patch -f $WORKDIR/$EXT_NAME/themes/default/style.css ./customizations/style.css.patch
+  sudo cp -r $WORKDIR/$EXT_NAME /usr/share/gnome-shell/extensions/
 }
 
 
@@ -62,6 +74,8 @@ main() {
   theme_deps
   download_themes
   download_icons
+  pixel_saver 222088f61267824a589e5ce4210c18b62324043f
 }
 
 main
+

@@ -71,7 +71,7 @@ alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
 alias ktx="kubectx"
 alias kns="kubens"
-alias dk="podman"
+alias dk="docker"
 alias dkm="docker-compose"
 alias htop="htop -s PERCENT_MEM"
 
