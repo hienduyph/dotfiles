@@ -31,10 +31,12 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <C-g> :Rg<Cr>
 map <C-f> :Files<CR>
 map <C-p> :Buffers<CR>
+map <C-s> :NERDTreeRefreshRoot<Cr>
 
 " commenter
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+
 
 " clear search results highlight
 nnoremap <silent> <C-l> :nohl <CR>
