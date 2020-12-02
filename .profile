@@ -56,6 +56,8 @@ alias tn="tmux new-session -A -s"
 alias lala="tmux new -A -s Lala"
 alias awm="aws --endpoint-url http://localhost:9000"
 alias kk="$GOPATH/bin/kaf"
+alias py="python"
+alias ipy="ipython"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 
