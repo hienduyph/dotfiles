@@ -5,6 +5,7 @@ let NERDTreeShowHidden=1
 
 let NERDTreeMapOpenInTab='\r'
 let NERDTreeMinimalUI=1
+let g:NERDTreeHijackNetrw=0
 
 " fzf
 " [Buffers] Jump to the existing window if possible
@@ -45,6 +46,13 @@ let g:indentLine_showFirstIndentLevel = 1
 " commenter
 let g:NERDSpaceDelims = 1
 
+" Floaterm
+let g:floaterm_autoclose = 0
+command! -nargs=+ FN FloatermNew <args>
+
 " rnvimr
 let g:rnvimr_ranger_cmd = '~/.venv/neovim/bin/ranger --cmd="set draw_borders both"'
-let g:floaterm_autoclose = 2
+" Make Ranger replace Netrw and be the file explorer
+let g:rnvimr_enable_ex = 1
+" Make Ranger to be hidden after picking a file
+let g:rnvimr_enable_picker = 1
