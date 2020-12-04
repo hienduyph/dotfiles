@@ -10,7 +10,7 @@ _neovim() {
   echo "Install Neovim Host"
   NEOVIM_HOST=$HOME/.venv/neovim
   python3 -m virtualenv $NEOVIM_HOST
-  $NEOVIM_HOST/bin/pip install neovim pylint black flake8 mypy pydocstyle
+  $NEOVIM_HOST/bin/pip install neovim pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
 
   echo "Install neovim config"
   f_backups ~/.config/nvim/init.vim

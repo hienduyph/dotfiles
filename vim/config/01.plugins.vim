@@ -29,6 +29,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 
+
+Plug 'voldikss/vim-floaterm'
+
+Plug 'kevinhwang91/rnvimr'
+
 " auto complete engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

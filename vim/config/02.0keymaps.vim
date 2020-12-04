@@ -64,3 +64,10 @@ nnoremap <silent> <leader>p  :<C-u>CocFzfListResume<CR>
 com! FormatJSON %!jq '.'
 com! MinifyJSON %!jq -c .
 
+" Float filemanager
+tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
+nnoremap <silent> <M-o> :RnvimrToggle<CR>
+tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
+
+
+command FN FloatermNew
