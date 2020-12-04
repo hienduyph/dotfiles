@@ -1,11 +1,11 @@
 " Hide some extentions
-let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.git$', '\.so$', '.vscode', '.mypy_cache', '\.swp$', 'node_modules', 'vendor', '.cache$', '.task', '\.idea$', '.next$', "\.direnv$", "target"]
-let NERDTreeRespectWildIgnore=1
-let NERDTreeShowHidden=1
-
-let NERDTreeMapOpenInTab='\r'
-let NERDTreeMinimalUI=1
-let g:NERDTreeHijackNetrw=0
+"let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.git$', '\.so$', '.vscode', '.mypy_cache', '\.swp$', 'node_modules', 'vendor', '.cache$', '.task', '\.idea$', '.next$', "\.direnv$", "target"]
+"let NERDTreeRespectWildIgnore=1
+"let NERDTreeShowHidden=1
+"
+"let NERDTreeMapOpenInTab='\r'
+"let NERDTreeMinimalUI=1
+"let g:NERDTreeHijackNetrw=0
 
 " fzf
 " [Buffers] Jump to the existing window if possible
@@ -54,5 +54,6 @@ command! -nargs=+ FN FloatermNew <args>
 let g:rnvimr_ranger_cmd = '~/.venv/neovim/bin/ranger --cmd="set draw_borders both"'
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
+let g:rnvimr_ex_enable = 1
 " Make Ranger to be hidden after picking a file
 let g:rnvimr_enable_picker = 1

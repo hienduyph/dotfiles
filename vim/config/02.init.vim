@@ -1,5 +1,7 @@
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let g:loaded_python_provider = 0
+  let g:loaded_ruby_provider = 0
 endif
 
 " Basic configurations
