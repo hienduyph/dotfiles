@@ -70,4 +70,3 @@ nnoremap <silent> <M-o> :RnvimrToggle<CR>
 tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
 
 
-command FN FloatermNew
