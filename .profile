@@ -77,6 +77,10 @@ alias dk="docker"
 alias dkm="docker-compose"
 alias htop="htop -s PERCENT_MEM"
 
+# git plugins
+
+alias gpm="git pull origin master"
+
 function docker_rm_badimg() {
   docker rmi -f $(docker images -f "dangling=true" -q)
 }
