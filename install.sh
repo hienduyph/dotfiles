@@ -10,7 +10,7 @@ _neovim() {
   echo "Install Neovim Host"
   NEOVIM_HOST=$HOME/.venv/neovim
   python3 -m virtualenv $NEOVIM_HOST
-  $NEOVIM_HOST/bin/pip install neovim pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
+  $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
 
   echo "Install neovim config"
   f_backups ~/.config/nvim/init.vim
@@ -84,11 +84,21 @@ _fonts() {
   sudo tar -xf ~/dotfiles/fonts/InputMonoNerdFont.tar.gz -C $FONT_DIR
 }
 
+_ranger() {
+  DEST_DIR=$HOME/.config/ranger
+  rm -rf $DEST_DIR/*
+  PLUGIN_DIR=$DEST_DIR/plugins
+  mkdir -p $PLUGIN_DIR
+  git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+  ln -s ~/dotfiles/ranger/rc.conf $DEST_DIR/rc.conf
+}
+
 main() {
   _neovim
   _shell
   _dots
   _fonts
+  _ranger
 }
 
 main

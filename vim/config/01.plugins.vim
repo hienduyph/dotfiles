@@ -23,8 +23,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rafalbromirski/vim-aurora'
 
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'scrooloose/nerdtree'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'scrooloose/nerdtree'
 
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'

@@ -19,8 +19,11 @@ nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
-" toggle nerdtree
-map <C-e> :NERDTreeToggle<CR>
+" Float filemanager
+tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
+map <silent> <C-e> :RnvimrToggle<CR>
+tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
+
 " map <C-e> :CHADopen<CR>
 " let g:chadtree_settings = {"keymap": {  "tertiary": ["<S-t>"] }}
 
@@ -31,7 +34,6 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <C-g> :Rg<Cr>
 map <C-f> :Files<CR>
 map <C-p> :Buffers<CR>
-map <C-s> :NERDTreeRefreshRoot<Cr>
 
 " commenter
 vmap ++ <plug>NERDCommenterToggle
@@ -63,10 +65,4 @@ nnoremap <silent> <leader>p  :<C-u>CocFzfListResume<CR>
 " com! FormatJSON %!python -m json.tool
 com! FormatJSON %!jq '.'
 com! MinifyJSON %!jq -c .
-
-" Float filemanager
-tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
-nnoremap <silent> <M-o> :RnvimrToggle<CR>
-tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
-
 
