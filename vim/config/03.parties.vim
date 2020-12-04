@@ -44,3 +44,7 @@ let g:indentLine_showFirstIndentLevel = 1
 
 " commenter
 let g:NERDSpaceDelims = 1
+
+" rnvimr
+let g:rnvimr_ranger_cmd = '~/.venv/neovim/bin/ranger --cmd="set draw_borders both"'
+let g:floaterm_autoclose = 2
