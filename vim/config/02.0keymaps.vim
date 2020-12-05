@@ -24,9 +24,6 @@ tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
 map <silent> <C-e> :RnvimrToggle<CR>
 tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
 
-" map <C-e> :CHADopen<CR>
-" let g:chadtree_settings = {"keymap": {  "tertiary": ["<S-t>"] }}
-
 " resize pane"
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
@@ -36,8 +33,8 @@ map <C-f> :Files<CR>
 map <C-p> :Buffers<CR>
 
 " commenter
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
 " clear search results highlight
@@ -66,3 +63,19 @@ nnoremap <silent> <leader>p  :<C-u>CocFzfListResume<CR>
 com! FormatJSON %!jq '.'
 com! MinifyJSON %!jq -c .
 
+
+" Float windows
+command -bar -bang -nargs=* FTN FloatermNew <args>
+command -bar -bang -nargs=* LazyGit FloatermNew lazygit
+command -bar -bang -nargs=* GC FloatermNew git commit
+command -bar -bang -nargs=* GP FloatermNew! ggp
+
+if has('win32')
+  " do nothing
+elseif has('mac')
+  let g:floaterm_keymap_new  = "<D-o>"
+  let g:floaterm_keymap_toggle  = "<D-g>"
+elseif has('unix')
+  let g:floaterm_keymap_new  = "<M-o>"
+  let g:floaterm_keymap_toggle  = "<M-g>"
+endif

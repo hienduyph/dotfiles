@@ -48,7 +48,6 @@ let g:NERDSpaceDelims = 1
 
 " Floaterm
 let g:floaterm_autoclose = 0
-command! -nargs=+ FN FloatermNew <args>
 
 " rnvimr
 let g:rnvimr_ranger_cmd = '~/.venv/neovim/bin/ranger --cmd="set draw_borders both"'
