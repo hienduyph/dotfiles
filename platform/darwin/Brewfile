@@ -6,6 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "jesseduffield/lazygit"
 
 # extras
 tap "adoptopenjdk/openjdk"
@@ -80,6 +81,7 @@ brew "diff-so-fancy"
 brew "direnv"
 brew "fswatch"
 brew "starship"
+brew "jesseduffield/lazygit/lazygit"
 
 # langluage
 brew "python@3.8"
