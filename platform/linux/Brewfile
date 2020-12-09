@@ -26,6 +26,8 @@ brew "stern"
 brew "ansible"
 brew "derailed/k9s/k9s"
 brew "kubectx"
+brew "kompose"
+
 
 brew "istioctl"
 brew "caddy"
