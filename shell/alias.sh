@@ -38,6 +38,7 @@ alias htop="htop -s PERCENT_MEM"
 # git plugins
 
 alias gpm="git pull origin master"
+alias lgit="lazygit"
 
 
 
