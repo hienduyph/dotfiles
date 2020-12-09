@@ -52,6 +52,7 @@ brew "htop"
 brew "fzf"
 brew "git"
 brew "git-flow-avh"
+brew "kompose"
 
 brew "mysql-connector-c"
 
