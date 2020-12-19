@@ -1,3 +1,8 @@
+" if empty(glob('~/.vim/autoload/plug.vim'))
+"   silent execute \"!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\"
+"   autocmd VimEnter * PlugInstall | source $MYVIMRC
+" endif
+
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
 else
