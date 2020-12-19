@@ -66,7 +66,7 @@ augroup common
   autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql call UseSpaces()
   autocmd Filetype python setlocal tabstop=4
   autocmd Filetype python setlocal shiftwidth=4
-  autocmd FileType python let b:coc_root_patterns = ['.git', '.env', '.python_root', '.envrc']
+  autocmd FileType python let b:coc_root_patterns = ['.git', '.env', '.python_root', '.envrc', 'setup.py']
   autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
   autocmd FileType json set filetype=jsonc
 augroup END
@@ -76,6 +76,13 @@ augroup GO
   autocmd Filetype go setlocal tabstop=4
   autocmd Filetype go setlocal shiftwidth=4
   autocmd FileType go set list lcs=tab:\|\ 
+augroup END
+
+" make
+augroup Make
+  autocmd Filetype make setlocal tabstop=4
+  autocmd Filetype make setlocal shiftwidth=4
+  autocmd FileType make set list lcs=tab:\|\ 
 augroup END
 
 augroup php
