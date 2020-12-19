@@ -51,5 +51,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'neoclide/jsonc.vim'
+
 
 call plug#end()

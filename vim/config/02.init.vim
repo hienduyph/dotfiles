@@ -67,7 +67,8 @@ augroup common
   autocmd Filetype python setlocal tabstop=4
   autocmd Filetype python setlocal shiftwidth=4
   autocmd FileType python let b:coc_root_patterns = ['.git', '.env', '.python_root', '.envrc']
-  autocmd BufNewFile,BufRead *.avsc set filetype=json
+  autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
+  autocmd FileType json set filetype=jsonc
 augroup END
 
 " Golang config
