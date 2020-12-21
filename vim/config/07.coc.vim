@@ -20,6 +20,7 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-flutter',
   \ 'coc-clangd',
+  \ 'coc-sql',
   \]
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience
@@ -42,3 +43,9 @@ command! -nargs=0 Format :call CocAction('format')
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" Golang config
+augroup GO
+  autocmd FileType go let b:coc_root_patterns = ['go.mod', '.git']
+  autocmd FileType python let b:coc_root_patterns = ['.git', 'setup.py', '.envrc']
+augroup END
