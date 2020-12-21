@@ -1,5 +1,5 @@
 [package]
-name = "json2yaml"
+name = "yaml2json"
 version = "0.1.0"
 authors = ["Hien Pham <hien.pham2@tiki.vn>"]
 edition = "2018"
