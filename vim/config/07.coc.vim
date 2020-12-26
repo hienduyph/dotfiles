@@ -7,7 +7,7 @@ set updatetime=300
 set signcolumn=yes
 
 let g:coc_global_extensions = [
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-tsserver',
   \ 'coc-snippets',
   \ 'coc-eslint',
@@ -37,6 +37,9 @@ nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')

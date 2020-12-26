@@ -44,7 +44,8 @@
     "php",
     "terraform",
     "yaml",
-    "sql"
+    "sql",
+    "python"
   ],
   "prettier.eslintIntegration": true,
   "go.goplsOptions": {
