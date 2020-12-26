@@ -1,6 +1,9 @@
 " Press jj to escape insert mode
 inoremap jj <Esc>  """ jj key is <Esc> setting
 
+" reload nvimrc
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
 " save the current buffer
 nnoremap <leader>w :w<cr>
 " save and close all
@@ -30,7 +33,7 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 
 nnoremap <C-g> :Rg<Cr>
 map <C-f> :Files<CR>
-map <C-p> :Buffers<CR>
+map <C-b> :Buffers<CR>
 
 " commenter
 nmap <C-_>   <Plug>NERDCommenterToggle
@@ -65,11 +68,11 @@ com! MinifyJSON %!jq -c .
 
 
 " Float windows
-command -bar -bang -nargs=* TERM FloatermNew <args>
-command -bar -bang -nargs=* LG FloatermNew lazygit
-command -bar -bang -nargs=* GC FloatermNew! git commit
-command -bar -bang -nargs=* GP FloatermNew! ggp
-command -bar -bang -nargs=* GD FloatermNew! git diff
+command! -bar -bang -nargs=* TERM FloatermNew <args>
+command! -bar -bang -nargs=* LG FloatermNew lazygit
+command! -bar -bang -nargs=* GC FloatermNew! git commit
+command! -bar -bang -nargs=* GP FloatermNew! ggp
+command! -bar -bang -nargs=* GD FloatermNew! git diff
 
 if has('win32')
   " do nothing
