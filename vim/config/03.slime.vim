@@ -16,10 +16,10 @@ let g:slime_no_mappings = 1
 nnoremap <Leader>s :SlimeSend1 ipython --matplotlib<CR>
 
 " map <Leader>r to run script
-nnoremap <Leader>r :IPythonCellRun<CR>
+" nnoremap <Leader>r :IPythonCellRun<CR>
 
 " map <Leader>R to run script and time the execution
-nnoremap <Leader>R :IPythonCellRunTime<CR>
+" nnoremap <Leader>R :IPythonCellRunTime<CR>
 
 " map <Leader>c to execute the current cell
 nnoremap <Leader>c :IPythonCellExecuteCell<CR>
