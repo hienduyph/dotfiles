@@ -43,9 +43,9 @@
     "rust",
     "php",
     "terraform",
-    "yaml",
     "sql",
-    "python"
+    "python",
+    "yaml"
   ],
   "prettier.eslintIntegration": true,
   "go.goplsOptions": {
