@@ -1,3 +1,5 @@
+source "$(dirname "$0")/vars.sh"
+
 alias vim="nvim"
 alias vi="vim"
 alias cat="bat"
@@ -16,6 +18,9 @@ alias awm="aws --endpoint-url http://localhost:9000"
 alias kk="$GOPATH/bin/kaf"
 alias py="python"
 alias ipy="ipython"
+alias pycli="$PYCLI_HOME/bin/python"
+alias pgcli="$PYCLI_HOME/bin/pgcli"
+alias mycli="$PYCLI_HOME/bin/mycli"
 alias gurl="grpcurl"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
