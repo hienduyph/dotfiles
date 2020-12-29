@@ -1,5 +1,4 @@
 {
-  "python.venvFolders": [".venv"],
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
@@ -16,7 +15,6 @@
   "suggest.snippetIndicator": "►",
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "python.formatting.provider": "black",
-  "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.pylintUseMinimalCheckers": false,
@@ -43,7 +41,6 @@
     "rust",
     "php",
     "terraform",
-    "sql",
     "python",
     "yaml"
   ],
