@@ -21,6 +21,7 @@ let g:coc_global_extensions = [
   \ 'coc-flutter',
   \ 'coc-clangd',
   \ 'coc-sql',
+  \ 'coc-omnisharp',
   \]
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience
