@@ -53,5 +53,6 @@
   "go.disable": {
     "workspaceFolders": false
   },
-  "rust-analyzer.diagnostics.enableExperimental": false
+  "rust-analyzer.diagnostics.enableExperimental": false,
+  "clangd.path": "/home/hienduyph/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
 }
