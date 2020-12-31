@@ -54,5 +54,8 @@
     "workspaceFolders": false
   },
   "rust-analyzer.diagnostics.enableExperimental": false,
-  "clangd.path": "/home/hienduyph/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
+  "clangd.path": "/home/hienduyph/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+  "java.jdt.ls.vmargs": "-javaagent:/usr/local/lib/lombok.jar -Xbootclasspath/a:/usr/local/lib/lombok.jar",
+  "java.import.maven.enabled": true,
+  "java.maven.downloadSources": true
 }
