@@ -25,6 +25,9 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'joshdick/onedark.vim'
 "Plug 'arzg/vim-colors-xcode'
 "Plug 'tomasiser/vim-code-dark'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'dracula/vim'
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'rafalbromirski/vim-aurora'
 
 Plug 'ryanoasis/vim-devicons'

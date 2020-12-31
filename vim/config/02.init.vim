@@ -4,11 +4,36 @@ if has('nvim')
   let g:loaded_ruby_provider = 0
 endif
 
+
 " Basic configurations
 syntax on
 filetype plugin on
 filetype indent plugin on
 set number relativenumber
+
+" Use gruvbox theme
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+set t_Co=256
+set cursorline
+
+set background=dark
+
+colorscheme aurora
+" colorscheme onedark
+" colorscheme xcodedark
+" colorscheme codedark
+" colorscheme onehalfdark
+" colorscheme dracula
+" colorscheme PaperColor
+
+" Custom aurora theme
+let s:accent_2 = '#1b1b24'
+let s:aqua     = '#18ffe0'
+execute 'highlight! MatchParen' . ' guifg=' . s:aqua
+execute 'highlight! MatchParen' . ' guibg=' . s:accent_2
 
 
 " custom function
@@ -108,25 +133,6 @@ if has('nvim')
   let g:EditorConfig_core_mode = 'external_command'
 endif
 
-" Use gruvbox theme
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-set background=dark
-try
-  " colorscheme onedark
-  " colorscheme xcodedark
-  " colorscheme codedark
-  colorscheme aurora
-catch
-endtry
-
-" Custom aurora theme
-let s:accent_2 = '#1b1b24'
-let s:aqua     = '#18ffe0'
-execute 'highlight! MatchParen' . ' guifg=' . s:aqua
-execute 'highlight! MatchParen' . ' guibg=' . s:accent_2
 
 " The length colum
 highlight ColorColumn ctermbg=2
@@ -134,13 +140,3 @@ highlight ColorColumn ctermbg=2
 " Auto complete
 set completeopt+=noinsert,menuone
 set completeopt-=preview
-
-" Nerdtree config
-" show as tree like
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-" open new file in vertical split
-let g:netrw_browse_split = 4
-" 25% of width
-let g:netrw_winsize = 25
-let g:netrw_altv = 1
