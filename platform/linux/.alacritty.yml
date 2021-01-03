@@ -10,7 +10,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach -s Lala || tmux new-session -A -s Lala"
+    - "tmux new-session -A -s Lala"
 
 window:
   # Window dimensions (changes require restart)
