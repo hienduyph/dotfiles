@@ -1,4 +1,4 @@
-source "$(dirname "$0")/vars.sh"
+source "$HOME/dotfiles/shell/vars.sh"
 
 alias vim="nvim"
 alias vi="vim"
