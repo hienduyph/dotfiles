@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir ~/.backups
+mkdir -p ~/.backups
 
 f_backups() {
   mv $1 ~/.backups/ || true
@@ -9,6 +9,7 @@ f_backups() {
 _neovim() {
   echo "Install Neovim Host"
   NEOVIM_HOST=$HOME/.venv/neovim
+  python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
 
@@ -56,11 +57,13 @@ _dots() {
   done
 
   platform_dots=(
-    .alacritty.yaml
+    .alacritty.yml
   )
 
   for f in "${platform_dots[@]}"; do
-    fullpath="~/dotfiles/$PLATFORM/$f"
+    echo ${PLATFORM}
+    fullpath="$HOME/dotfiles/platform/${PLATFORM}/$f"
+    echo $fullpath
     if [ -f $fullpath ]; then
       f_backups $HOME/$f
       ln -s $fullpath $HOME/$f
