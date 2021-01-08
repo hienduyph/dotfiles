@@ -9,7 +9,7 @@ tap "homebrew/services"
 tap "jesseduffield/lazygit"
 
 # extras
-tap "adoptopenjdk/openjdk"
+tap "AdoptOpenJDK/openjdk"
 tap "derailed/k9s"
 tap "bufbuild/buf"
 
@@ -42,7 +42,6 @@ brew "exa"
 brew "bat"
 brew "fd"
 brew "tokei" # count lines of code
-brew "unrar"
 brew "watch"
 brew "wget"
 brew "wrk"
@@ -53,6 +52,7 @@ brew "fzf"
 brew "git"
 brew "git-flow-avh"
 brew "kompose"
+brew "git-lfs"
 
 brew "mysql-connector-c"
 
@@ -107,22 +107,16 @@ brew "caddy"
 brew "bufbuild/buf/buf"
 
 # apps
-cask "calibre"
+# cask "calibre"
 cask "drawio"
-cask "gimp"
 cask "jdiskreport"
 
 cask "jetbrains-toolbox"
-cask "sequel-pro-nightly"
 cask "tableplus"
-cask "telegram"
-cask "vscodium"
 cask "joplin"
-cask "spotify"
 cask "opera"
-cask "sublime-text"
 
-cask "font-blexmono-nerd-font"
+cask "font-blex-mono-nerd-font"
 cask "font-ibm-plex"
 
 # securityes
