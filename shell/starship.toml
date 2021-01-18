@@ -80,9 +80,12 @@ symbol = "🌟 "
 disabled = false
 
 [directory]
-truncation_length = 5
+truncation_length = 10
 truncation_symbol = "…/"
-truncate_to_repo = true
+truncate_to_repo = false
 
 [aws]
 disabled = true
+
+[docker_context]
+disabled = false
