@@ -22,6 +22,7 @@ let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-sql',
   \ 'coc-omnisharp',
+  \ 'coc-sh',
   \]
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience
