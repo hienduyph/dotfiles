@@ -53,4 +53,5 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 augroup GO
   autocmd FileType go let b:coc_root_patterns = ['go.mod', '.git']
   autocmd FileType python let b:coc_root_patterns = ['.git', 'setup.py', '.envrc']
+  autocmd FileType go nmap gtj :CocCommand go.tags.add json yaml<cr>
 augroup END

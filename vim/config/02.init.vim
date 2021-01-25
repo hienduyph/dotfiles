@@ -88,7 +88,7 @@ augroup web
 augroup END
 
 augroup common
-  autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql call UseSpaces()
+  autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql,lua call UseSpaces()
   autocmd Filetype python setlocal tabstop=4
   autocmd Filetype python setlocal shiftwidth=4
   autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
