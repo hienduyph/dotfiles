@@ -47,6 +47,7 @@ alias htop="htop -s PERCENT_MEM"
 
 alias gpm="git pull origin master"
 alias lgit="lazygit"
+alias gcdd='git checkout dev'
 
 
 
