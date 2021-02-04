@@ -62,16 +62,6 @@ function! SpaceFour()
   set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
 endfunction
 
-" Some group config
-" Python pep 8
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set formatoptions-=t
-
 " C and C++ indent
 augroup cpp
   autocmd Filetype c,cpp setlocal tabstop=2
@@ -87,10 +77,17 @@ augroup web
   autocmd BufReadPre,FileReadPre  *.css,*.js,*.ts,*.scss,*.html,*.json set autoindent
 augroup END
 
+augroup python
+  autocmd Filetype python set tabstop=4
+  autocmd Filetype python set shiftwidth=4
+  autocmd Filetype python set softtabstop=4
+  autocmd Filetype python set shiftwidth=4
+  autocmd Filetype python set expandtab 
+  autocmd Filetype python set formatoptions-=t
+augroup END
+
 augroup common
   autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql,lua call UseSpaces()
-  autocmd Filetype python setlocal tabstop=4
-  autocmd Filetype python setlocal shiftwidth=4
   autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
   autocmd FileType json set filetype=jsonc
 augroup END
