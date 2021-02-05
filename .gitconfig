@@ -20,3 +20,5 @@
 	clean = git-lfs clean -- %f
 [init]
 	defaultBranch = main
+[url "git@github.com:tikivn"]
+	insteadOf = https://github.com/tikivn
