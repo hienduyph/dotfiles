@@ -45,7 +45,7 @@
   ],
   "prettier.eslintIntegration": true,
   "go.goplsOptions": {
-    "experimentalWorkspaceModule": true,
+    "experimentalWorkspaceModule": false,
     "completeUnimported": true
   },
   "go.goplsPath": "gopls",
