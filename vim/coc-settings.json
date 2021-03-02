@@ -43,6 +43,7 @@
     "python",
     "yaml"
   ],
+  "eslint.format.enable": true,
   "prettier.eslintIntegration": true,
   "go.goplsOptions": {
     "experimentalWorkspaceModule": true,
