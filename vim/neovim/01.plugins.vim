@@ -15,27 +15,38 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'joshdick/onedark.vim'
 "Plug 'arzg/vim-colors-xcode'
 "Plug 'tomasiser/vim-code-dark'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'dracula/vim'
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'rafalbromirski/vim-aurora'
 
 Plug 'ryanoasis/vim-devicons'
-
-" Tree
-Plug 'scrooloose/nerdtree'
-" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'scrooloose/nerdtree'
 
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 
-Plug 'neovim/nvim-lspconfig'
+
+Plug 'voldikss/vim-floaterm'
+
+Plug 'kevinhwang91/rnvimr'
 
 " Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
 
 Plug 'sheerun/vim-polyglot'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'neoclide/jsonc.vim'
+
+" work with ipython
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 
 call plug#end()

@@ -42,13 +42,9 @@ Plug 'voldikss/vim-floaterm'
 
 Plug 'kevinhwang91/rnvimr'
 
-" auto complete engine
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
 
 Plug 'sheerun/vim-polyglot'
 
@@ -59,5 +55,9 @@ Plug 'neoclide/jsonc.vim'
 " work with ipython
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+
+" auto complete engine
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 
 call plug#end()
