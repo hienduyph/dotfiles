@@ -10,7 +10,8 @@ export GOPATH="$HOME/go"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local/sbin:$HOME/google-cloud-sdk/bin:$NPM_PACKAGES/bin"
+export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local/sbin:$HOME/google-cloud-sdk/bin:$NPM_PACKAGES/bin:$HOME/.deno/bin"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ -f $HOME/.cargo/env ]]; then
