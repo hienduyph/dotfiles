@@ -53,6 +53,7 @@ brew "git"
 brew "git-flow-avh"
 brew "kompose"
 brew "git-lfs"
+brew "bit-git"
 
 brew "mysql-connector-c"
 
