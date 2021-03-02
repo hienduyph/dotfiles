@@ -42,3 +42,4 @@ brew "jesseduffield/lazygit/lazygit"
 # langluage
 brew "go"
 brew "gcc@5"
+brew "bit-git"

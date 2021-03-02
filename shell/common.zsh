@@ -40,6 +40,10 @@ if type brew &>/dev/null; then
   export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 autoload -U compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+complete -o nospace -C $(brew --prefix bit-git)/bin/bit-git bit
+
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
