@@ -17,9 +17,10 @@ _neovim() {
   f_backups ~/.config/nvim/init.vim
   f_backups ~/.config/nvim/coc-settings.json
 
-  mkdir -p ~/.config/nvim
+  mkdir -p ~/.config/nvim/lua
   ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
   ln -s ~/dotfiles/vim/coc-settings.json ~/.config/nvim/
+  ln -s ~/dotfiles/vim/neovim/lua/lsp.lua ~/.config/nvim/lua
 
   # for nvim
   curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
