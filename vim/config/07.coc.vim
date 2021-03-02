@@ -15,7 +15,6 @@ let g:coc_global_extensions = [
   \ 'coc-rust-analyzer',
   \ 'coc-phpls',
   \ 'coc-go',
-  \ 'coc-java',
   \ 'coc-json',
   \ 'coc-yaml',
   \ 'coc-flutter',
