@@ -37,7 +37,8 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -46,6 +47,10 @@ Plug 'neoclide/jsonc.vim'
 " work with ipython
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+
+" snip
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
