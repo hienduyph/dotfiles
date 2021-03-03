@@ -54,3 +54,14 @@ augroup GO
   autocmd FileType python let b:coc_root_patterns = ['.git', 'setup.py', '.envrc']
   autocmd FileType go nmap gtj :CocCommand go.tags.add json yaml<cr>
 augroup END
+
+" coc list
+nnoremap <silent> <leader>a  :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <leader>b  :<C-u>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <leader>c  :<C-u>CocFzfList commands<CR>
+nnoremap <silent> <leader>e  :<C-u>CocFzfList extensions<CR>
+nnoremap <silent> <leader>l  :<C-u>CocFzfList location<CR>
+nnoremap <silent> <leader>o  :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <leader>s  :<C-u>CocFzfList symbols<CR>
+nnoremap <silent> <leader>S  :<C-u>CocFzfList services<CR>
+nnoremap <silent> <leader>p  :<C-u>CocFzfListResume<CR>
