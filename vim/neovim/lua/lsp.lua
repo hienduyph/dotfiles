@@ -64,6 +64,7 @@ nvim_lsp.gopls.setup {
       analyses = {
         unusedparams = true,
       },
+      staticcheck = true,
       experimentalWorkspaceModule = true,
     },
   },
