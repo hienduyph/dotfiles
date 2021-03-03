@@ -52,3 +52,10 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
   }
 end
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true
+  },
+}
