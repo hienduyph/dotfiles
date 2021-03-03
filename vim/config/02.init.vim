@@ -137,3 +137,5 @@ highlight ColorColumn ctermbg=2
 " Auto complete
 set completeopt+=noinsert,menuone
 set completeopt-=preview
+
+let g:completion_enable_snippet = 'UltiSnips'
