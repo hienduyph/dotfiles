@@ -1,3 +1,4 @@
+-- lsp config
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   require('completion').on_attach()
@@ -68,6 +69,7 @@ nvim_lsp.gopls.setup {
   },
 }
 
+-- use tree sitter
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
   highlight = {
@@ -75,6 +77,49 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+
+-- lua runtime
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+elseif vim.fn.has('win32') == 1 then
+  system_name = "Windows"
+else
+  print("Unsupported system for sumneko")
+end
+
+-- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
+local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
+local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+
+require'lspconfig'.sumneko_lua.setup {
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = vim.split(package.path, ';'),
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        },
+      },
+    },
+  },
+}
+
+-- lsp import
 function lsp_organize_imports()
   local context = { source = { organizeImports = true } }
   vim.validate { context = { context, "table", true } }
@@ -98,3 +143,39 @@ function lsp_organize_imports()
     end
   end
 end
+
+-- jump new tab
+local api = vim.api
+local util = vim.lsp.util
+local callbacks = vim.lsp.handlers
+local log = vim.lsp.log
+
+local location_callback = function(_, method, result)
+  if result == nil or vim.tbl_isempty(result) then
+  local _ = log.info() and log.info(method, 'No location found')
+  return nil
+  end
+
+  -- create a new tab and save bufnr
+  api.nvim_command('tabnew')
+  local buf = api.nvim_get_current_buf()
+
+  if vim.tbl_islist(result) then
+    util.jump_to_location(result[1])
+    if #result > 1 then
+      util.set_qflist(util.locations_to_items(result))
+      api.nvim_command("copen")
+    end
+  else
+    buf = api.nvim_get_current_buf()
+  end
+
+  -- remove the empty buffer created with tabnew
+  -- temp disable because of: Vim(bdelete):E516: No buffers were deleted
+  -- api.nvim_command(buf .. 'bd')
+end
+
+callbacks['textDocument/declaration']    = location_callback
+callbacks['textDocument/definition']     = location_callback
+callbacks['textDocument/typeDefinition'] = location_callback
+callbacks['textDocument/implementation'] = location_callback
