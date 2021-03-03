@@ -29,6 +29,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'dracula/vim'
 " Plug 'NLKNguyen/papercolor-theme'
 Plug 'rafalbromirski/vim-aurora'
+" Plug 'altercation/vim-colors-solarized'
 
 Plug 'ryanoasis/vim-devicons'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
