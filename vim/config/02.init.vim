@@ -10,6 +10,7 @@ syntax on
 filetype plugin on
 filetype indent plugin on
 set number relativenumber
+set signcolumn=yes
 
 " Use gruvbox theme
 if (has("termguicolors"))

@@ -49,5 +49,9 @@ Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
+" python specific
+Plug 'psf/black', { 'branch': 'stable' }
 
 call plug#end()
