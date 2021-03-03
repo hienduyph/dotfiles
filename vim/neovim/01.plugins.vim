@@ -18,6 +18,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'dracula/vim'
 " Plug 'NLKNguyen/papercolor-theme'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'rafalbromirski/vim-aurora'
 
 Plug 'ryanoasis/vim-devicons'

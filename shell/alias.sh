@@ -1,6 +1,7 @@
 source "$HOME/dotfiles/shell/vars.sh"
 
-alias vim="nvim"
+alias nvim5="/opt/neovim/bin/nvim -u ~/dotfiles/vim/nvim.vim"
+alias vim="nvim5"
 alias vi="vim"
 alias cat="bat"
 alias ls="exa"
@@ -9,7 +10,6 @@ alias l="ls -la"
 alias tree="ls -T"
 
 alias plz="sudo"
-alias nvim5="/opt/neovim/bin/nvim -u ~/dotfiles/vim/nvim.vim"
 alias v="vim"
 alias vimd="vim -u None"
 alias tn="tmux new-session -A -s"
