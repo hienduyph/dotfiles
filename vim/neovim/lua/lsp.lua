@@ -1,5 +1,4 @@
 local nvim_lsp = require('lspconfig')
-
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -46,12 +45,27 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local servers = {'pyright', 'gopls', 'rust_analyzer', 'tsserver'}
+local servers = {'pyright', 'rust_analyzer', 'tsserver'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
   }
 end
+
+nvim_lsp.gopls.setup {
+  on_attach = on_attach,
+  cmd = {"gopls", "serve"},
+  filetypes = { "go", "gomod" },
+  root_dir = nvim_lsp.util.root_pattern("go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      experimentalWorkspaceModule = true,
+    },
+  },
+}
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
