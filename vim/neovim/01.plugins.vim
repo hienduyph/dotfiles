@@ -48,11 +48,6 @@ Plug 'neoclide/jsonc.vim'
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
-" snip
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
