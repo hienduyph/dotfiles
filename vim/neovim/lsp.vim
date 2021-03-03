@@ -10,3 +10,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 command! -nargs=0 Format :lua vim.lsp.buf.formatting_sync()
 command! -nargs=0 OR :lua lsp_organize_imports()
 
+" formatter config
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.py execute ':Black'
