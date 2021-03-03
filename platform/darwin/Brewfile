@@ -119,6 +119,7 @@ cask "opera"
 
 cask "font-blex-mono-nerd-font"
 cask "font-ibm-plex"
+brew 'rust-analyzer'
 
 # securityes
 brew "dnscrypt-proxy"
