@@ -1,3 +1,4 @@
+" ln -s ~/dotfiles/vim/neovim/lua/lsp.lua ~/.config/nvim/lua
 lua require("lsp")
 
 " Completion
