@@ -54,4 +54,8 @@ Plug 'nvim-lua/completion-nvim'
 " python specific
 Plug 'psf/black', { 'branch': 'stable' }
 
+" formatter
+Plug 'rhysd/vim-clang-format'
+
 call plug#end()
+
