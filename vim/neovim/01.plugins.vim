@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim5/plugged')
 " misc plugins
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 
 " status line
@@ -26,7 +26,7 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'scrooloose/nerdtree'
 
 Plug 'preservim/nerdcommenter'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 
 Plug 'voldikss/vim-floaterm'
