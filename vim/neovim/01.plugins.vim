@@ -11,19 +11,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-" Themes
-"Plug 'joshdick/onedark.vim'
-"Plug 'arzg/vim-colors-xcode'
-"Plug 'tomasiser/vim-code-dark'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'dracula/vim'
-" Plug 'NLKNguyen/papercolor-theme'
-" Plug 'altercation/vim-colors-solarized'
 Plug 'rafalbromirski/vim-aurora'
 
 Plug 'ryanoasis/vim-devicons'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'scrooloose/nerdtree'
 
 Plug 'preservim/nerdcommenter'
 " Plug 'tpope/vim-surround'
@@ -61,5 +51,10 @@ Plug 'francoiscabrol/ranger.vim'
 
 Plug 'rbgrouleff/bclose.vim'
 
+Plug 'akinsho/nvim-bufferline.lua'
+
 call plug#end()
 
+
+set termguicolors
+lua require'bufferline'.setup{}
