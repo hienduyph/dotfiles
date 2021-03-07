@@ -57,5 +57,9 @@ Plug 'psf/black', { 'branch': 'stable' }
 " formatter
 Plug 'rhysd/vim-clang-format'
 
+Plug 'francoiscabrol/ranger.vim'
+
+Plug 'rbgrouleff/bclose.vim'
+
 call plug#end()
 
