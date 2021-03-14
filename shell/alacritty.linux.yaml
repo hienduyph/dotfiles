@@ -1,0 +1,146 @@
+env:
+  TERM: xterm-256color
+  TERM_PROGRAM: Alacritty
+  LC_ALL: en_US.UTF-8
+  LANG: en_US.UTF-8
+
+shell:
+  program: /bin/bash
+  args:
+    - -l
+    - -c
+    - "tmux new-session -A -s Lala"
+
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+
+  padding:
+    x: 0
+    y: 0
+
+  startup_mode: Maximized
+  decorations: full
+  dynamic_padding: true
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: "InputMonoNarrow Nerd Font"
+    style: Regular
+
+  bold:
+    family: "InputMonoNarrow Nerd Font"
+    style: Bold
+
+  size: 9
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: "0x000000"
+    foreground: "0xeaeaea"
+  normal:
+    black: "0x000000"
+    red: "0xd54e53"
+    green: "0xb9ca4a"
+    yellow: "0xe6c547"
+    blue: "0x7aa6da"
+    magenta: "0xc397d8"
+    cyan: "0x70c0ba"
+    white: "0xffffff"
+
+  # Bright colors
+  bright:
+    black: "0x666666"
+    red: "0xff3334"
+    green: "0x9ec400"
+    yellow: "0xe7c547"
+    blue: "0x7aa6da"
+    magenta: "0xb77ee0"
+    cyan: "0x54ced6"
+    white: "0xffffff"
+
+  dim:
+    black: "0x333333"
+    red: "0xf2777a"
+    green: "0x99cc99"
+    yellow: "0xffcc66"
+    blue: "0x6699cc"
+    magenta: "0xcc99cc"
+    cyan: "0x66cccc"
+    white: "0xdddddd"
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+
+background_opacity: 1.0
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: true
+
+  url:
+    launcher: xdg-open
+
+    modifiers: Option|Shift
+
+cursor:
+  # Cursor style
+  #
+  # Values for 'style':
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Block
+
+  # If this is `true`, the cursor will be rendered as a hollow box when the
+  # window is not focused.
+  unfocused_hollow: true
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+key_bindings:
+  - { key: N, mods: Option, action: SpawnNewInstance }
+
+  # tmux key binding
+  - { key: D, mods: Option, chars: "\x0b\x76" }
+  - { key: D, mods: Option|Shift, chars: "\x0b\x73" }
+  - { key: W, mods: Option, chars: "\x0b\x78" }
+  - { key: H, mods: Option, chars: "\x0b\x68" }
+  - { key: J, mods: Option, chars: "\x0b\x6a" }
+  - { key: K, mods: Option, chars: "\x0b\x6b" }
+  - { key: L, mods: Option, chars: "\x0b\x6c" }
+  - { key: T, mods: Option, chars: "\x0b\x63" }
+  - { key: Key1, mods: Option, chars: "\x0b\x31" }
+  - { key: Key2, mods: Option, chars: "\x0b\x32" }
+  - { key: Key3, mods: Option, chars: "\x0b\x33" }
+  - { key: Key4, mods: Option, chars: "\x0b\x34" }
+  - { key: Key5, mods: Option, chars: "\x0b\x35" }
+  - { key: Key6, mods: Option, chars: "\x0b\x36" }
+  - { key: Key7, mods: Option, chars: "\x0b\x37" }
+  - { key: Key8, mods: Option, chars: "\x0b\x38" }
+  - { key: Key9, mods: Option, chars: "\x0b\x39" }
+  - { key: Left, mods: Option, chars: "\x0b\x48" }
+  - { key: Down, mods: Option, chars: "\x0b\x4a" }
+  - { key: Up, mods: Option, chars: "\x0b\x4b" }
+  - { key: Right, mods: Option, chars: "\x0b\x4c" }
