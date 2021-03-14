@@ -1,3 +1,5 @@
+#!/bin/env python
+
 # gen alacritty config for platform
 import pathlib
 import os
@@ -15,7 +17,7 @@ def linux():
     base_tmp = yaml.load(pathlib.Path(tpl_file).read_text(), Loader=yaml.SafeLoader)
     confs = [
         (
-            {"env": dict(WINIT_X11_SCALE_FACTOR="1.0"), "font": {"size": 14}},
+            {"env": dict(WINIT_X11_SCALE_FACTOR="1.0"), "font": {"size": 15}},
             os.path.join(LINUX_DIR, ".alacritty.4k.yml"),
         ),
         ({}, os.path.join(LINUX_DIR, ".alacritty.yml")),
