@@ -3,6 +3,7 @@ env:
   TERM_PROGRAM: Alacritty
   LC_ALL: en_US.UTF-8
   LANG: en_US.UTF-8
+  WINIT_X11_SCALE_FACTOR: '1.0'
 shell:
   program: /bin/bash
   args:
@@ -29,7 +30,7 @@ font:
   bold:
     family: InputMonoNarrow Nerd Font
     style: Bold
-  size: 9
+  size: 14
   offset:
     x: 0
     y: 0
