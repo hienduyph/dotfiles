@@ -17,7 +17,7 @@ def linux():
     base_tmp = yaml.load(pathlib.Path(tpl_file).read_text(), Loader=yaml.SafeLoader)
     confs = [
         (
-            {"env": dict(WINIT_X11_SCALE_FACTOR="1.0"), "font": {"size": 16}},
+            {"env": dict(WINIT_X11_SCALE_FACTOR="1.0"), "font": {"size": 17}},
             os.path.join(LINUX_DIR, ".alacritty.4k.yml"),
         ),
         ({}, os.path.join(LINUX_DIR, ".alacritty.yml")),
