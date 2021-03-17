@@ -1,3 +1,5 @@
+lua require'bufferline'.setup{}
+
 let g:clang_format#code_style='google'
 
 " formatter config
