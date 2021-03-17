@@ -1,4 +1,4 @@
-call plug#begin('~/.local/share/nvim5/plugged')
+call plug#begin(g:plug_dir)
 " misc plugins
 Plug 'bronson/vim-trailing-whitespace'
 " Plug 'airblade/vim-gitgutter'
@@ -54,7 +54,3 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'akinsho/nvim-bufferline.lua'
 
 call plug#end()
-
-
-set termguicolors
-lua require'bufferline'.setup{}

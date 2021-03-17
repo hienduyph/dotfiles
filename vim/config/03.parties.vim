@@ -48,7 +48,6 @@ let g:NERDSpaceDelims = 1
 let g:floaterm_autoclose = 0
 
 " rnvimr
-let g:rnvimr_ranger_cmd = '~/.venv/neovim/bin/ranger --cmd="set draw_borders both"'
 let g:ranger_open_new_tab = 1
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
