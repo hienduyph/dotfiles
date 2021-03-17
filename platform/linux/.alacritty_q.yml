@@ -8,9 +8,6 @@ shell:
   args:
   - -l
   - -c
-  - tmux new-session -A -s Lala
-  - -l
-  - -c
   - xseticon -id $WINDOWID $HOME/.local/share/icons/qalacritty.png && tmux new-session
     -A -s qq
 window:

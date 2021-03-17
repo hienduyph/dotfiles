@@ -9,7 +9,6 @@ shell:
   args:
     - -l
     - -c
-    - "tmux new-session -A -s Lala"
 
 window:
   dimensions:
