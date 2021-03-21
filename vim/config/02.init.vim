@@ -98,6 +98,7 @@ augroup GO
   autocmd Filetype go setlocal tabstop=4
   autocmd Filetype go setlocal shiftwidth=4
   autocmd FileType go set list lcs=tab:\|\ 
+  autocmd FileType go set expandtab
 augroup END
 
 " make
