@@ -73,3 +73,7 @@ elseif has('unix')
   let g:floaterm_keymap_new  = "<M-o>"
   let g:floaterm_keymap_toggle  = "<M-g>"
 endif
+
+
+" delete all other buffer but this one
+command! BufOnly execute '%bdelete!|edit #|normal `"'
