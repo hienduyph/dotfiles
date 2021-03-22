@@ -22,9 +22,6 @@ let g:airline#extensions#tabline#tab_nr_type = 2
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#formatter = 'short_path'
 
-" Show clocks
-let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
-
 " markdown config
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
