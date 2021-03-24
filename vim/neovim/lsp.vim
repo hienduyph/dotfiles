@@ -1,4 +1,4 @@
-" ln -s ~/dotfiles/vim/neovim/lua/lsp.lua ~/.config/nvim/lua
+" ln -s ~/dotfiles/vim/neovim/lua ~/.config/nvim/lua
 lua require("lsp")
 
 " Completion
@@ -22,5 +22,7 @@ function! LspStatus() abort
   return ''
 endfunction
 
-" Show clocks
-let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
+" formatter config
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.proto execute ':ClangFormat'

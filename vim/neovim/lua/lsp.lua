@@ -1,15 +1,3 @@
--- local lsp_status = require('lsp-status')
--- lsp_status.config({
---   indicator_errors = 'E',
---   indicator_warnings = 'W',
---   indicator_info = 'i',
---   indicator_hint = '?',
---   indicator_ok = 'Ok',
--- })
--- lsp_status.register_progress()
-
-require('gitsigns').setup()
-
 -- lsp config
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
@@ -104,15 +92,6 @@ nvim_lsp.rust_analyzer.setup({
   },
   root_dir = nvim_lsp.util.root_pattern('Cargo.lock', '.git'),
 })
-
--- use tree sitter
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true
-  },
-}
-
 
 -- lua runtime
 local system_name

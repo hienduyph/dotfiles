@@ -9,19 +9,10 @@ set signcolumn=yes
 let g:coc_global_extensions = [
   \ 'coc-pyright',
   \ 'coc-tsserver',
-  \ 'coc-snippets',
-  \ 'coc-eslint',
-  \ 'coc-prettier',
   \ 'coc-rust-analyzer',
-  \ 'coc-phpls',
   \ 'coc-go',
-  \ 'coc-json',
   \ 'coc-yaml',
-  \ 'coc-flutter',
   \ 'coc-clangd',
-  \ 'coc-sql',
-  \ 'coc-omnisharp',
-  \ 'coc-sh',
   \]
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience
