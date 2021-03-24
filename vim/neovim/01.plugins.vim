@@ -1,8 +1,11 @@
 call plug#begin(g:plug_dir)
 " misc plugins
 Plug 'bronson/vim-trailing-whitespace'
-" Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 
 " status line
 Plug 'vim-airline/vim-airline'
