@@ -23,7 +23,9 @@ xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
 " Float filemanager
-map <silent> <C-e> :NnnPicker<CR>
+tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
+map <silent> <C-e> :RnvimrToggle<CR>
+tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
 
 " resize pane"
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
