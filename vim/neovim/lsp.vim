@@ -23,4 +23,4 @@ function! LspStatus() abort
 endfunction
 
 " Show clocks
-let g:airline_section_b = 'mrq %{strftime("%H:%M")} %{LspStatus()}'
+let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
