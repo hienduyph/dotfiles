@@ -8,6 +8,8 @@
 -- })
 -- lsp_status.register_progress()
 
+require('gitsigns').setup()
+
 -- lsp config
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
