@@ -1,19 +1,19 @@
-local lsp_status = require('lsp-status')
-lsp_status.config({
-  indicator_errors = 'E',
-  indicator_warnings = 'W',
-  indicator_info = 'i',
-  indicator_hint = '?',
-  indicator_ok = 'Ok',
-})
-lsp_status.register_progress()
+-- local lsp_status = require('lsp-status')
+-- lsp_status.config({
+--   indicator_errors = 'E',
+--   indicator_warnings = 'W',
+--   indicator_info = 'i',
+--   indicator_hint = '?',
+--   indicator_ok = 'Ok',
+-- })
+-- lsp_status.register_progress()
 
 -- lsp config
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   print("LSP started.");
   require('completion').on_attach()
-  lsp_status.on_attach(client)
+  -- lsp_status.on_attach(client)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -58,17 +58,17 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local servers = {'pyright', 'rust_analyzer', 'tsserver', 'clangd', 'yamlls'}
+local servers = {'pyright', 'tsserver', 'clangd', 'yamlls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
-    capabilities = lsp_status.capabilities,
+    -- capabilities = lsp_status.capabilities,
     on_attach = on_attach,
   }
 end
 
 nvim_lsp.gopls.setup {
   on_attach = on_attach,
-  capabilities = lsp_status.capabilities,
+  -- capabilities = lsp_status.capabilities,
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
   root_dir = nvim_lsp.util.root_pattern(".git", "go.mod"),
@@ -82,6 +82,26 @@ nvim_lsp.gopls.setup {
     },
   },
 }
+
+nvim_lsp.rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        loadOutDirsFromCheck = true,
+        allFeatures = true
+      },
+      procMacro = {
+        enable = true
+      },
+      checkOnSave = {
+        command = "clippy"
+      },
+    }
+  },
+  root_dir = nvim_lsp.util.root_pattern('Cargo.lock', '.git'),
+})
 
 -- use tree sitter
 require'nvim-treesitter.configs'.setup {
