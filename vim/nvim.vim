@@ -11,4 +11,5 @@ exec 'source' '~/dotfiles/vim/neovim/lsp.vim'
 exec 'source' '~/dotfiles/vim/neovim/formatter.vim'
 
 set cmdheight=1
+let g:rnvimr_ranger_cmd = '~/.venv/neovim/bin/ranger --cmd="set draw_borders both"'
 set runtimepath+=g:plug_dir

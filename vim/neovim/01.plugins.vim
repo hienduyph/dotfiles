@@ -23,7 +23,8 @@ Plug 'preservim/nerdcommenter'
 
 
 Plug 'voldikss/vim-floaterm'
-Plug 'mcchrish/nnn.vim'
+
+Plug 'kevinhwang91/rnvimr'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

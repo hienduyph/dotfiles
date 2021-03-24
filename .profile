@@ -57,6 +57,3 @@ fi
 export GPG_TTY=${TTY}
 
 source "$HOME/dotfiles/shell/alias.sh"
-
-export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;v:imgview;p:preview-tui'
-export NNN_FIFO=/tmp/nnn.fifo
