@@ -1,31 +1,46 @@
 #!/bin/bash
 
 # install neovim as root
+set -ex
 
 WORK_DIR=$(dirname $(realpath "$0"))
 ROOT_CONF=/root/.config/nvim
 NVIM=/root/.local/share/nvim/
 
-mkdir -p ${ROOT_CONF} ${ROOT_CONF}/lua $NVIM
+mkdir -p ${ROOT_CONF} $NVIM
+sudo rm -rf ${ROOT_CONF}/lua
 
 read -d '' content << EOF || true
-let g:nvim_system_wide = 1
 exec 'source' '${WORK_DIR}/shared.vim'
 
 let g:plug_dir = '$NVIM/plugged'
+let g:lsp_enable = 0
 
-exec 'source' '${WORK_DIR}/neovim/01.plugins.vim'
+exec 'source' '${WORK_DIR}/plugin.vim'
 exec 'source' '${WORK_DIR}/config/02.0keymaps.vim'
 exec 'source' '${WORK_DIR}/config/02.init.vim'
 exec 'source' '${WORK_DIR}/config/03.parties.vim'
 exec 'source' '${WORK_DIR}/config/03.slime.vim'
-exec 'source' '${WORK_DIR}/neovim/lsp.vim'
-exec 'source' '${WORK_DIR}/neovim/formatter.vim'
+
+if has(g:lsp_enable == 1) && has('nvim-0.5')
+  exec 'source' '${WORK_DIR}/neovim/lsp.vim'
+else
+  exec 'source' '${WORK_DIR}/config/07.coc.vim'
+endif
+
+if has('nvim')
+  exec 'source' '${WORK_DIR}/neovim/config.vim'
+endif
+
 let g:rnvimr_ranger_cmd = '/opt/cli/bin/ranger --cmd="set draw_borders both"'
+
+set runtimepath+=g:plug_dir
+let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
 EOF
 
 echo "${content}" > ${ROOT_CONF}/init.vim
 curl -fLo ${NVIM}/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
-ln -s "${WORK_DIR}/neovim/lua/lsp.lua" "${ROOT_CONF}/lua"
+ln -s "${WORK_DIR}/neovim/lua" "${ROOT_CONF}/lua"
+ln -s "${WORK_DIR}/coc-settings.json" "${ROOT_CONF}"
