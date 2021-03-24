@@ -33,30 +33,30 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " formatter
 Plug 'rhysd/vim-clang-format'
 
-if has(g:lsp_enable)
+if has(g:lsp_enable) && has('nvim-0.5')
   " auto complete
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
-  Plug 'nvim-lua/lsp-status.nvim'
+  " python specific
+  Plug 'psf/black', { 'branch': 'stable' }
 else
   " auto complete engine
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
 end
 
-if has('nvim')
+if has('nvim-0.5')
   "enable nvim features
   Plug 'akinsho/nvim-bufferline.lua'
+  " lua utils
   Plug 'nvim-lua/plenary.nvim'
 
   " repalce for gitgutter
   Plug 'lewis6991/gitsigns.nvim'
 
+  " better syntax highlight
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
-
-  " python specific
-  Plug 'psf/black', { 'branch': 'stable' }
 else
   "fallback vim features
   Plug 'sheerun/vim-polyglot'
