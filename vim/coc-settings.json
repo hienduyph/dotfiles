@@ -2,10 +2,17 @@
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
-      "args": ["serve"],
-      "filetypes": ["terraform"],
+      "args": [
+        "serve"
+      ],
+      "filetypes": [
+        "terraform"
+      ],
       "initializationOptions": {},
-      "rootPatterns": ["main.tf", ".git/"]
+      "rootPatterns": [
+        "main.tf",
+        ".git/"
+      ]
     }
   },
   "suggest.triggerAfterInsertEnter": true,
@@ -47,11 +54,12 @@
   "prettier.eslintIntegration": true,
   "go.goplsOptions": {
     "experimentalWorkspaceModule": true,
-    "completeUnimported": true
+    "completeUnimported": true,
+    "staticcheck": true
   },
   "go.goplsPath": "gopls",
   "go.disable": {
-    "workspaceFolders": true
+    "workspaceFolders": false
   },
   "rust-analyzer.diagnostics.enableExperimental": false
 }
