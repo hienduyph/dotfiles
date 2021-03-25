@@ -33,7 +33,7 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " formatter
 Plug 'rhysd/vim-clang-format'
 
-if has(g:lsp_enable) && has('nvim-0.5')
+if g:lsp_enable == 1 && has('nvim-0.5')
   " auto complete
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'

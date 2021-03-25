@@ -61,7 +61,7 @@ nvim_lsp.gopls.setup {
   -- capabilities = lsp_status.capabilities,
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
-  root_dir = nvim_lsp.util.root_pattern(".git", "go.mod"),
+  root_dir = nvim_lsp.util.root_pattern(".git"),
   settings = {
     gopls = {
       analyses = {
