@@ -23,12 +23,11 @@ plugins=(
   vi-mode
   colorize
   tmux
-  git-flow
-  docker
+  wfxr/forgit
 )
 
 for p in "$plugins[@]"; do
-  antigen bundle $p
+  antigen bundle "$p"
 done
 antigen apply
 
