@@ -74,3 +74,7 @@ bqx() {
   fi
   bq extract --destination_format NEWLINE_DELIMITED_JSON $1 $2
 }
+
+gch() {
+ git checkout "$(git branch | fzf| tr -d '[:space:]')"
+}
