@@ -16,7 +16,7 @@ else
   exec 'source' '~/dotfiles/vim/config/07.coc.vim'
 endif
 
-if has('nvim')
+if has('nvim-0.5')
   exec 'source' '~/dotfiles/vim/neovim/config.vim'
 endif
 

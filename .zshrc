@@ -16,6 +16,7 @@ source $HOME/dotfiles/shell/common.zsh
 antigen use oh-my-zsh
 
 # antigen theme romkatv/powerlevel10k
+export FORGIT_NO_ALIASES=1
 
 plugins=(
   git

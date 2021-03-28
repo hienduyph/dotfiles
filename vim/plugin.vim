@@ -33,12 +33,19 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " formatter
 Plug 'rhysd/vim-clang-format'
 
+" snippet
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
 if g:lsp_enable == 1 && has('nvim-0.5')
   " auto complete
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
   " python specific
   Plug 'psf/black', { 'branch': 'stable' }
+
+  Plug 'nvim-lua/lsp_extensions.nvim'
 else
   " auto complete engine
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
