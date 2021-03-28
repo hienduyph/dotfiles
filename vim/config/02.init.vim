@@ -88,7 +88,7 @@ augroup python
 augroup END
 
 augroup common
-  autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql,lua call UseSpaces()
+  autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql,lua,zsh,bash call UseSpaces()
   autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
   autocmd FileType json set filetype=jsonc
 augroup END
@@ -108,9 +108,6 @@ augroup Make
   autocmd FileType make set list lcs=tab:\|\ 
 augroup END
 
-augroup php
-  autocmd FileType php setlocal omnifunc=phpactor#Complete
-augroup END
 
 augroup Markdown
   " hotfit for indent listing of vim-markdown plugin
