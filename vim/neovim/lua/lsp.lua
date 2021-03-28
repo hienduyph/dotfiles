@@ -3,7 +3,6 @@ local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   print("LSP started.");
   require('completion').on_attach()
-  -- lsp_status.on_attach(client)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -23,8 +22,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', 'g[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', 'g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
@@ -51,14 +51,12 @@ end
 local servers = {'pyright', 'tsserver', 'clangd', 'yamlls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
-    -- capabilities = lsp_status.capabilities,
     on_attach = on_attach,
   }
 end
 
 nvim_lsp.gopls.setup {
   on_attach = on_attach,
-  -- capabilities = lsp_status.capabilities,
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
   root_dir = nvim_lsp.util.root_pattern(".git"),
@@ -83,7 +81,7 @@ nvim_lsp.rust_analyzer.setup({
         allFeatures = true
       },
       procMacro = {
-        enable = true
+        enable = false
       },
       checkOnSave = {
         command = "clippy"
@@ -191,6 +189,7 @@ local location_callback = function(_, method, result)
 end
 
 callbacks['textDocument/declaration']    = location_callback
-callbacks['textDocument/definition']     = location_callback
 callbacks['textDocument/typeDefinition'] = location_callback
 callbacks['textDocument/implementation'] = location_callback
+
+-- callbacks['textDocument/definition']     = location_callback
