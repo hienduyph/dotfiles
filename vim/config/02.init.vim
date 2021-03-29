@@ -12,6 +12,9 @@ filetype indent plugin on
 set number relativenumber
 set signcolumn=yes
 
+" enbalbe limit 120 chars highlight
+set colorcolumn=120
+
 " Use gruvbox theme
 if (has("termguicolors"))
   set termguicolors
@@ -138,3 +141,4 @@ set completeopt+=noinsert,menuone
 set completeopt-=preview
 
 let g:completion_enable_snippet = 'UltiSnips'
+
