@@ -38,7 +38,7 @@ Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 
-if g:lsp_enable == 1 && has('nvim-0.5')
+if g:lsp_enable == 1
   " auto complete
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
@@ -46,6 +46,8 @@ if g:lsp_enable == 1 && has('nvim-0.5')
   Plug 'psf/black', { 'branch': 'stable' }
 
   Plug 'nvim-lua/lsp_extensions.nvim'
+elseif g:lsc == 1
+  Plug 'natebosch/vim-lsc'
 else
   " auto complete engine
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
