@@ -2,6 +2,7 @@ exec 'source' '~/dotfiles/vim/shared.vim'
 
 let g:plug_dir = '~/.local/share/nvim/plugged'
 let g:lsp_enable = 1
+let g:lsc = 0
 
 exec 'source' '~/dotfiles/vim/plugin.vim'
 
@@ -12,6 +13,8 @@ exec 'source' '~/dotfiles/vim/config/03.slime.vim'
 
 if g:lsp_enable == 1
   exec 'source' '~/dotfiles/vim/neovim/lsp.vim'
+elseif g:lsc == 1
+  exec 'source' '~/dotfiles/vim/config/07.lsc.vim'
 else
   exec 'source' '~/dotfiles/vim/config/07.coc.vim'
 endif
