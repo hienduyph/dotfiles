@@ -70,6 +70,12 @@ nvim_lsp.gopls.setup {
       experimentalWorkspaceModule = true,
     },
   },
+  on_init = function(client)
+        client.config.flags = {}
+        if client.config.flags then
+          client.config.flags.allow_incremental_sync = true
+        end
+    end;
 }
 
 nvim_lsp.rust_analyzer.setup({
@@ -192,13 +198,4 @@ end
 callbacks['textDocument/declaration']    = location_callback
 callbacks['textDocument/typeDefinition'] = location_callback
 callbacks['textDocument/implementation'] = location_callback
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    underline = false,
-    virtual_text = false,
-    update_in_insert = false
-  }
-)
-
 -- callbacks['textDocument/definition']     = location_callback

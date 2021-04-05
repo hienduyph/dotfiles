@@ -2,6 +2,9 @@
 lua require("lsp")
 
 " Completion
+let g:completion_timer_cycle = 200 "default value is 80
+let g:completion_trigger_keyword_length = 3 " default = 1
+let g:completion_matching_smart_case = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
