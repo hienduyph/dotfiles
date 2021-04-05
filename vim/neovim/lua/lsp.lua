@@ -1,8 +1,34 @@
 -- lsp config
+--
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 200;
+  source_timeout = 200;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = true;
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = true;
+  };
+}
+
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   print("LSP started.");
-  require('completion').on_attach()
+  -- require('completion').on_attach()
+  --
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -71,11 +97,10 @@ nvim_lsp.gopls.setup {
     },
   },
   on_init = function(client)
-        client.config.flags = {}
-        if client.config.flags then
-          client.config.flags.allow_incremental_sync = true
-        end
-    end;
+    client.config.flags = {
+      allow_incremental_sync = false;
+    }
+  end;
 }
 
 nvim_lsp.rust_analyzer.setup({
