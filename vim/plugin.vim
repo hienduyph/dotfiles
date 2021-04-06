@@ -44,7 +44,7 @@ if g:lsp_enable == 1
   " Plug 'nvim-lua/completion-nvim'
   Plug 'hrsh7th/nvim-compe'
   " python specific
-  Plug 'psf/black', { 'branch': 'stable' }
+  Plug 'psf/black'
 
   Plug 'nvim-lua/lsp_extensions.nvim'
 elseif g:lsc == 1
