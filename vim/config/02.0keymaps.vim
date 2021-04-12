@@ -59,7 +59,7 @@ com! MinifyJSON %!jq -c .
 
 " Float windows
 command! -bar -bang -nargs=* TERM FloatermNew <args>
-command! -bar -bang -nargs=* LG FloatermNew lazygit
+command! -bar -bang -nargs=* LG FloatermNew --autoclose=1 lazygit
 command! -bar -bang -nargs=* GC FloatermNew! git commit
 command! -bar -bang -nargs=* GP FloatermNew! ggp
 command! -bar -bang -nargs=* GD FloatermNew! git diff
