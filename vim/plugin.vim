@@ -41,9 +41,10 @@ Plug 'honza/vim-snippets'
 if g:lsp_enable == 1
   " auto complete
   Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/completion-nvim'
+  " Plug 'nvim-lua/completion-nvim'
+  Plug 'hrsh7th/nvim-compe'
   " python specific
-  Plug 'psf/black', { 'branch': 'stable' }
+  Plug 'psf/black'
 
   Plug 'nvim-lua/lsp_extensions.nvim'
 elseif g:lsc == 1
