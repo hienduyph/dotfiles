@@ -1,3 +1,8 @@
+let g:ale_disable_lsp = 1
+let g:ale_completion_enabled = 0
+let g:ale_completion_autoimport = 0
+let g:ale_linters = {'go': ['golangci-lint']}
+
 call plug#begin(g:plug_dir)
 
 " misc plugins
@@ -37,6 +42,9 @@ Plug 'rhysd/vim-clang-format'
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+
+" code linter
+Plug 'dense-analysis/ale'
 
 if g:lsp_enable == 1
   " auto complete
