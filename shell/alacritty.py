@@ -19,7 +19,7 @@ def linux():
         (
             {
                 "env": dict(WINIT_X11_SCALE_FACTOR="1.0"),
-                "font": {"size": 16},
+                "font": {"size": 15},
                 "shell": {"args": ["tmux new-session -A -s Lala"]},
             },
             os.path.join(LINUX_DIR, ".alacritty.4k.yml"),
