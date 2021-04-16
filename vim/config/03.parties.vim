@@ -44,3 +44,6 @@ let g:rnvimr_ex_enable = 1
 let g:rnvimr_enable_picker = 1
 
 let g:clang_format#code_style='google'
+
+let g:ale_go_golangci_lint_package = 1
+let g:ale_go_golangci_lint_options = "--fast"

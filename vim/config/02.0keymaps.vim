@@ -77,3 +77,7 @@ endif
 
 " delete all other buffer but this one
 command! BufOnly execute '%bdelete!|edit #|normal `"'
+
+" navigate ale fix
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
