@@ -5,6 +5,7 @@ export LC_ALL=en_US.UTF-8
 
 export NNN_USE_EDITOR=1
 export NPM_PACKAGES="${HOME}/.npm-packages"
+export RUSTC_WRAPPER=sccache
 export GOPATH="$HOME/go"
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.

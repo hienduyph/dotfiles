@@ -120,8 +120,10 @@ cask "opera"
 cask "font-blex-mono-nerd-font"
 cask "font-ibm-plex"
 brew 'rust-analyzer'
+brew 'sccache'
 
 # securityes
 brew "dnscrypt-proxy"
 
 mas "Enpass", id: 732710998
+
