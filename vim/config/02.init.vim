@@ -4,6 +4,8 @@ if has('nvim')
   let g:loaded_ruby_provider = 0
 endif
 
+" Enable local vimrc
+set exrc
 
 " Basic configurations
 syntax on
