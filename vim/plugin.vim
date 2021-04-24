@@ -1,7 +1,12 @@
 let g:ale_disable_lsp = 1
 let g:ale_completion_enabled = 0
 let g:ale_completion_autoimport = 0
-let g:ale_linters = {'go': ['golangci-lint']}
+let g:ale_linters = {
+  \'go': ['golangci-lint'],
+  \'c': ['clangd'],
+  \'cpp': ['clangd'],
+\}
+let g:ale_linters_explicit = 1
 
 call plug#begin(g:plug_dir)
 
