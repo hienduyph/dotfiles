@@ -110,15 +110,19 @@ nvim_lsp.rust_analyzer.setup({
     ["rust-analyzer"] = {
       cargo = {
         loadOutDirsFromCheck = true,
-        allFeatures = true
+        allFeatures = true,
+        runBuildScripts = true
       },
       procMacro = {
-        enable = false
+        enable = true,
       },
       checkOnSave = {
-        command = "clippy"
+        command = "clippy",
       },
-    }
+      diagnostics = {
+        disabled = {"missing-unsafe"},
+      },
+    },
   },
   root_dir = nvim_lsp.util.root_pattern('Cargo.lock', '.git'),
 })
