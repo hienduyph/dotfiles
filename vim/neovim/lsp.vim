@@ -14,7 +14,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :lua vim.lsp.buf.formatting_sync()
 command! -nargs=0 OR :lua lsp_organize_imports()
-command! -nargs=0 LspStop :lua vim.lsp.stop_client(vim.lsp.get_active_clients())
 command! -nargs=0 List :lua vim.lsp.diagnostic.set_loclist()
 
 " formatter config
