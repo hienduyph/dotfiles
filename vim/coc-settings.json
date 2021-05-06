@@ -2,17 +2,10 @@
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
-      "args": [
-        "serve"
-      ],
-      "filetypes": [
-        "terraform"
-      ],
+      "args": ["serve"],
+      "filetypes": ["terraform"],
       "initializationOptions": {},
-      "rootPatterns": [
-        "main.tf",
-        ".git/"
-      ]
+      "rootPatterns": ["main.tf", ".git/"]
     }
   },
   "suggest.triggerAfterInsertEnter": true,
@@ -55,7 +48,10 @@
   "go.goplsOptions": {
     "experimentalWorkspaceModule": true,
     "completeUnimported": true,
-    "staticcheck": false
+    "staticcheck": false,
+    "buildFlags": [
+      "-tags=integration wireinject unit"
+    ]
   },
   "go.goplsPath": "gopls",
   "go.disable": {
