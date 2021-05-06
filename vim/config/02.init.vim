@@ -4,6 +4,8 @@ if has('nvim')
   let g:loaded_ruby_provider = 0
 endif
 
+set nocompatible
+
 " Enable local vimrc
 set exrc
 
