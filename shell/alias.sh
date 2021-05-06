@@ -1,8 +1,9 @@
 source "$HOME/dotfiles/shell/vars.sh"
 
 alias nvim5="/opt/neovim/bin/nvim"
-alias vim="nvim5"
+alias nvim="nvim5"
 alias vi="vim"
+alias vim="nvim"
 alias cat="bat"
 alias ls="exa"
 alias ll="ls -l"
@@ -11,7 +12,6 @@ alias tree="ls -T"
 
 alias plz="sudo"
 alias v="vim"
-alias vimd="vim -u None"
 alias tn="tmux new-session -A -s"
 alias lala="tmux new -A -s Lala"
 alias awm="aws --endpoint-url http://localhost:9000"

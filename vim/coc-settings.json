@@ -55,7 +55,7 @@
   "go.goplsOptions": {
     "experimentalWorkspaceModule": true,
     "completeUnimported": true,
-    "staticcheck": true
+    "staticcheck": false
   },
   "go.goplsPath": "gopls",
   "go.disable": {
