@@ -44,4 +44,3 @@ curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-macos
 # License
 [MIT License](LICENSE)
 
-
