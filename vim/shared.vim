@@ -33,7 +33,7 @@ set showmatch
 set exrc
 set secure
 
-set clipboard^=unnamed,unnamedplus
+set clipboard+=unnamed,unnamedplus
 
 " make delete works in macos
 set backspace=indent,eol,start

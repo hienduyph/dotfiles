@@ -11,6 +11,7 @@ _p10k_theme() {
   PS1='$(show_virtual_env)'$PS1
 }
 
+source $HOME/dotfiles/shell/core.sh
 source $HOME/dotfiles/shell/common.zsh
 
 antigen use oh-my-zsh

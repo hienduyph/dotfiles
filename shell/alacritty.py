@@ -40,6 +40,18 @@ def linux():
             },
             os.path.join(LINUX_DIR, ".alacritty_q.yml"),
         ),
+        (
+            {
+                "shell": {
+                    "program": "C:\\Windows\\System32\\wsl.exe",
+                    "args": [
+                        "--",
+                        "tmux new-session -A -s qq",
+                    ]
+                }
+            },
+            os.path.join(LINUX_DIR, ".alacritty.wsl.yml"),
+        ),
     ]
     for conf, out in confs:
         c = always_merger.merge(deepcopy(base_tmp), conf)
