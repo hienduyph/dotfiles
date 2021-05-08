@@ -41,3 +41,5 @@ brew "gcc@5"
 brew "bit-git"
 brew 'rust-analyzer'
 brew 'sccache'
+
+brew 'golangci-lint'
