@@ -53,9 +53,7 @@ packages=(
   snapd
   gnome-shell-pomodoro
   tmux
-  htop
   flameshot
-  zsh
   ufw
   dnscrypt-proxy
   git-lfs
