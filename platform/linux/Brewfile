@@ -46,3 +46,4 @@ brew "bit-git"
 brew 'rust-analyzer'
 brew 'sccache'
 brew 'golangci-lint'
+brew 'htop'
