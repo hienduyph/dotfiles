@@ -1,7 +1,7 @@
 exec 'source' '~/dotfiles/vim/shared.vim'
 
 let g:plug_dir = '~/.local/share/nvim/plugged'
-let g:lsp_enable = 1
+let g:lsp_enable = 0
 let g:lsc = 0
 
 exec 'source' '~/dotfiles/vim/plugin.vim'

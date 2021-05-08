@@ -95,12 +95,7 @@ nvim_lsp.gopls.setup {
       staticcheck = false,
       experimentalWorkspaceModule = true,
     },
-  },
-  on_init = function(client)
-    client.config.flags = {
-      allow_incremental_sync = false;
-    }
-  end;
+  }
 }
 
 nvim_lsp.rust_analyzer.setup({
