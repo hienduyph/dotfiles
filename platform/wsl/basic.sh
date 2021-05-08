@@ -21,8 +21,6 @@ sudo apt-get remove gpg -y
 packages=(
   zsh
   tmux
-  htop
-  zsh
   git-lfs
   git
   pinentry-tty
