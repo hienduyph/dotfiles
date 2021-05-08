@@ -121,6 +121,7 @@ cask "font-blex-mono-nerd-font"
 cask "font-ibm-plex"
 brew 'rust-analyzer'
 brew 'sccache'
+brew 'golangci-lint'
 
 # securityes
 brew "dnscrypt-proxy"
