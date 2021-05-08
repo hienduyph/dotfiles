@@ -32,6 +32,10 @@ if has('nvim')
   exec 'source' '${WORK_DIR}/neovim/config.vim'
 endif
 
+if $WSL_ENABLED == "yes"
+  exec 'source' '${WORK_DIR}/config/02.wsl.vim'
+endif
+
 let g:rnvimr_ranger_cmd = '/opt/cli/bin/ranger --cmd="set draw_borders both"'
 
 set runtimepath+=g:plug_dir
