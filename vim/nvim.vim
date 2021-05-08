@@ -1,7 +1,7 @@
 exec 'source' '~/dotfiles/vim/shared.vim'
 
 let g:plug_dir = '~/.local/share/nvim/plugged'
-let g:lsp_enable = 0
+let g:lsp_enable = $LSP_ENGINE != "coc"
 let g:lsc = 0
 
 exec 'source' '~/dotfiles/vim/plugin.vim'
@@ -21,6 +21,11 @@ endif
 
 if has('nvim-0.5')
   exec 'source' '~/dotfiles/vim/neovim/config.vim'
+
+endif
+
+if $WSL_ENABLED == "yes"
+  exec 'source' '~/dotfiles/vim/config/02.wsl.vim'
 endif
 
 set cmdheight=1
@@ -29,3 +34,4 @@ set runtimepath+=g:plug_dir
 
 " Show clocks
 let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
+
