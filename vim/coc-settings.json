@@ -14,7 +14,7 @@
     "--show-column-numbers",
     "--strict"
   ],
-  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.jumpCommand": "edit",
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",

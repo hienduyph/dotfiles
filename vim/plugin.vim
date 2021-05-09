@@ -23,7 +23,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rafalbromirski/vim-aurora'
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'preservim/nerdcommenter'
+Plug 'reservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
 Plug 'kevinhwang91/rnvimr'
 Plug 'rbgrouleff/bclose.vim'
@@ -65,6 +65,7 @@ elseif g:lsc == 1
 else
   " auto complete engine
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 end
 
 if has('nvim-0.5')
