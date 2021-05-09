@@ -15,6 +15,8 @@ filetype plugin on
 filetype indent plugin on
 set number relativenumber
 set signcolumn=yes
+set synmaxcol=250
+set nocursorline
 
 " enbalbe limit 120 chars highlight
 set colorcolumn=120
