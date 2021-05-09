@@ -1,19 +1,4 @@
 {
-  "languageserver": {
-    "terraform": {
-      "command": "terraform-ls",
-      "args": ["serve"],
-      "filetypes": ["terraform"],
-      "initializationOptions": {},
-      "rootPatterns": ["main.tf", ".git/"]
-    }
-  },
-  "suggest.triggerAfterInsertEnter": true,
-  "suggest.enablePreview": true,
-  "suggest.echodocSupport": true,
-  "suggest.noselect": false,
-  "suggest.snippetIndicator": "►",
-  "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
