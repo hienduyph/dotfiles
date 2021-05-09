@@ -23,17 +23,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 source $HOME/.zsh/antigen.zsh
 
-plugins=(
-  "zsh-users/zsh-completions"
-  "zsh-users/zsh-autosuggestions"
-  "zsh-users/zsh-syntax-highlighting"
-)
-
-for p in "$plugins[@]"; do
-  antigen bundle $p
-done
-
-
 # completions source
 export FPATH=$HOME/.zsh/completions:$FPATH
 if type brew &>/dev/null; then
@@ -41,7 +30,16 @@ if type brew &>/dev/null; then
 fi
 autoload -U compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C $(brew --prefix bit-git)/bin/bit-git bit
+
+plugins=(
+  "Aloxaf/fzf-tab"
+  "zsh-users/zsh-autosuggestions"
+  "zsh-users/zsh-syntax-highlighting"
+)
+
+for p in "$plugins[@]"; do
+  antigen bundle $p
+done
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
