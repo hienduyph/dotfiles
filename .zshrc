@@ -37,5 +37,3 @@ antigen apply
 eval "$(starship init zsh)"
 
 source $HOME/dotfiles/shell/after-hook.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
