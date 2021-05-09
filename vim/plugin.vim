@@ -65,7 +65,6 @@ elseif g:lsc == 1
 else
   " auto complete engine
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'antoinemadec/coc-fzf'
 end
 
 if has('nvim-0.5')

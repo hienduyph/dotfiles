@@ -1,11 +1,3 @@
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-" coc.nvim
-set cmdheight=2
-set updatetime=300
-set signcolumn=yes
-
 let g:coc_global_extensions = [
   \ 'coc-pyright',
   \ 'coc-tsserver',
