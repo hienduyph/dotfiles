@@ -28,7 +28,7 @@ export FPATH=$HOME/.zsh/completions:$FPATH
 if type brew &>/dev/null; then
   export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
 plugins=(
@@ -40,6 +40,10 @@ plugins=(
 for p in "$plugins[@]"; do
   antigen bundle $p
 done
+
+antigen apply
+
+enable-fzf-tab
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
@@ -53,3 +57,5 @@ show_virtual_env() {
   fi
 }
 PS1='$(show_virtual_env)'$PS1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

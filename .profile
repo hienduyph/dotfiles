@@ -1,16 +1,3 @@
-export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
-
-case "$PLATFORM" in
-   darwin)
-     ;;
-   linux)
-    alias pbcopy='xclip -selection clipboard'
-    alias pbpaste='xclip -selection c -o'
-     ;;
-   CYGWIN*|MINGW32*|MSYS*|MINGW*)
-     ;;
-esac
-
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # source secrets files
