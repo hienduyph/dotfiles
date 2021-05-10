@@ -21,8 +21,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 
 
-Plug 'morhetz/gruvbox'
-" Plug 'rafalbromirski/vim-aurora'
+" Plug 'morhetz/gruvbox'
+Plug 'rafalbromirski/vim-aurora'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'preservim/nerdcommenter'
