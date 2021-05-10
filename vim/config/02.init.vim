@@ -31,8 +31,8 @@ set cursorline
 
 set background=dark
 
-" colorscheme aurora
-colorscheme gruvbox
+colorscheme aurora
+" colorscheme gruvbox
 " colorscheme onedark
 " colorscheme xcodedark
 " colorscheme codedark
