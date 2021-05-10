@@ -23,7 +23,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rafalbromirski/vim-aurora'
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'reservim/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
 Plug 'kevinhwang91/rnvimr'
 Plug 'rbgrouleff/bclose.vim'
