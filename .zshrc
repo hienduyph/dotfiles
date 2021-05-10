@@ -31,7 +31,11 @@ plugins=(
 for p in "$plugins[@]"; do
   antigen bundle "$p"
 done
+
 antigen apply
+
+enable-fzf-tab
+
 
 # load default shell
 eval "$(starship init zsh)"

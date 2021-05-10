@@ -41,10 +41,6 @@ for p in "$plugins[@]"; do
   antigen bundle $p
 done
 
-antigen apply
-
-enable-fzf-tab
-
 ## 3third plugins
 eval "$(direnv hook zsh)"
 
