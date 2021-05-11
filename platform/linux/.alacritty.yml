@@ -81,9 +81,6 @@ mouse:
   triple_click:
     threshold: 300
   hide_when_typing: true
-  url:
-    launcher: xdg-open
-    modifiers: Option|Shift
 cursor:
   style: Block
   unfocused_hollow: true
