@@ -20,7 +20,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-
 " Plug 'morhetz/gruvbox'
 Plug 'rafalbromirski/vim-aurora'
 Plug 'ryanoasis/vim-devicons'
@@ -39,8 +38,10 @@ Plug 'plasticboy/vim-markdown'
 Plug 'neoclide/jsonc.vim'
 
 " work with ipython
-Plug 'jpalardy/vim-slime', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+if g:slime_enable == 1
+  Plug 'jpalardy/vim-slime', { 'for': 'python' }
+  Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+endif
 
 " formatter
 Plug 'rhysd/vim-clang-format'
@@ -68,7 +69,7 @@ else
   " auto complete engine
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
-end
+endif
 
 if has('nvim-0.5')
   "enable nvim features

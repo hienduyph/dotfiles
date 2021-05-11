@@ -49,6 +49,7 @@ alias gpm="git pull origin master"
 alias lgit="lazygit"
 alias gcdd='git checkout dev'
 alias gdf="forgit::diff"
+alias se="sudoedit"
 
 
 
