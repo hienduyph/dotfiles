@@ -131,8 +131,6 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 if has('nvim')
-  "Setup venv for nvim
-  let g:python_host_prog = "~/.venv/neovim/bin/python"
   let g:python3_host_prog = "~/.venv/neovim/bin/python"
   " editor config
   let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
