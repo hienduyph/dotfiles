@@ -20,7 +20,6 @@ sudo apt-get remove gpg -y
 
 packages=(
   zsh
-  tmux
   git-lfs
   git
   pinentry-tty

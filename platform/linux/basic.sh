@@ -52,7 +52,6 @@ packages=(
   ibus-bamboo
   snapd
   gnome-shell-pomodoro
-  tmux
   flameshot
   ufw
   dnscrypt-proxy

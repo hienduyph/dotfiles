@@ -3,13 +3,17 @@ exec 'source' '~/dotfiles/vim/shared.vim'
 let g:plug_dir = '~/.local/share/nvim/plugged'
 let g:lsp_enable = $LSP_ENGINE != "coc"
 let g:lsc = 0
+let g:slime_enable = 0
 
 exec 'source' '~/dotfiles/vim/plugin.vim'
 
 exec 'source' '~/dotfiles/vim/config/02.0keymaps.vim'
 exec 'source' '~/dotfiles/vim/config/02.init.vim'
 exec 'source' '~/dotfiles/vim/config/03.parties.vim'
-exec 'source' '~/dotfiles/vim/config/03.slime.vim'
+
+if g:slime_enable == 1
+  exec 'source' '~/dotfiles/vim/config/03.slime.vim'
+endif
 
 if g:lsp_enable == 1
   exec 'source' '~/dotfiles/vim/neovim/lsp.vim'
