@@ -4,8 +4,6 @@ if has('nvim')
   let g:loaded_ruby_provider = 0
 endif
 
-set nocompatible
-
 " Enable local vimrc
 set exrc
 
@@ -16,29 +14,19 @@ filetype indent plugin on
 set number relativenumber
 set signcolumn=yes
 set synmaxcol=250
-set nocursorline
+set cursorline
 
 " enbalbe limit 120 chars highlight
 set colorcolumn=120
 
-" Use gruvbox theme
-if (has("termguicolors"))
+if exists('+termguicolors')
   set termguicolors
 endif
 
 set t_Co=256
-set cursorline
-
 set background=dark
 
 colorscheme aurora
-" colorscheme gruvbox
-" colorscheme onedark
-" colorscheme xcodedark
-" colorscheme codedark
-" colorscheme onehalfdark
-" colorscheme dracula
-" colorscheme PaperColor
 
 " Custom aurora theme
 let s:accent_2 = '#1b1b24'
