@@ -91,7 +91,7 @@ nvim_lsp.gopls.setup {
       analyses = {
         unusedparams = false,
       },
-      buildFlags={"tags=integration wireinject unit"},
+      buildFlags={"-tags=integration wireinject unit"},
       staticcheck = false,
       experimentalWorkspaceModule = true,
     },
