@@ -21,8 +21,6 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-source $HOME/.zsh/antigen.zsh
-
 # completions source
 export FPATH=$HOME/.zsh/completions:$FPATH
 if type brew &>/dev/null; then
@@ -31,15 +29,15 @@ fi
 autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
-plugins=(
-  "Aloxaf/fzf-tab"
-  "zsh-users/zsh-autosuggestions"
-  "zsh-users/zsh-syntax-highlighting"
-)
+zinit light-mode for  \
+  Aloxaf/fzf-tab \
+  zsh-users/zsh-autosuggestions \
+  zdharma/fast-syntax-highlighting
 
-for p in "$plugins[@]"; do
-  antigen bundle $p
-done
+zinit snippet OMZP::git
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::vi-mode
+zinit snippet OMZP::colorize
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
@@ -53,5 +51,3 @@ show_virtual_env() {
   fi
 }
 PS1='$(show_virtual_env)'$PS1
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

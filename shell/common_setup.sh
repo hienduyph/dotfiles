@@ -31,7 +31,6 @@ _neovim() {
 
 _shell() {
   mkdir -p ~/.zsh
-  curl -fsSL git.io/antigen > ~/.zsh/antigen.zsh
   curl -fsSL https://starship.rs/install.sh | bash
   # zsh config
   mkdir -p ~/.zsh/completions/
