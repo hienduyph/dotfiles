@@ -1,7 +1,14 @@
 exec 'source' '~/dotfiles/vim/shared.vim'
 
-let g:plug_dir = '~/.local/share/nvim/plugged'
-let g:lsp_enable = $LSP_ENGINE != "coc"
+let g:engine = $LSP_ENGINE
+
+if !exists("g:engine") || g:engine == ""
+  let g:engine="coc"
+endif
+
+let g:lsp_enable = g:engine == "nvim"
+let g:plug_dir = "~/.local/share/nvim/plugged/" . g:engine
+
 let g:lsc = 0
 let g:slime_enable = 0
 
