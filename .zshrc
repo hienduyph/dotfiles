@@ -24,7 +24,6 @@ plugins=(
   kubectl
   vi-mode
   colorize
-  tmux
   wfxr/forgit
 )
 

@@ -22,3 +22,5 @@
 	defaultBranch = main
 [url "git@github.com:tikivn"]
 	insteadOf = https://github.com/tikivn
+[user]
+	name = Hien Pham

@@ -14,7 +14,7 @@ read -d '' content << EOF || true
 exec 'source' '${WORK_DIR}/shared.vim'
 
 let g:plug_dir = '$NVIM/plugged'
-let g:lsp_enable = 0
+let g:lsp_enable = 1
 
 exec 'source' '${WORK_DIR}/plugin.vim'
 exec 'source' '${WORK_DIR}/config/02.0keymaps.vim'

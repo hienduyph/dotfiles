@@ -14,7 +14,7 @@ window:
     x: 0
     y: 0
   startup_mode: Maximized
-  decorations: full
+  decorations: none
   dynamic_padding: true
 scrolling:
   history: 10000

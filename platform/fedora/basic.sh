@@ -41,6 +41,7 @@ packages=(
   nodejs
   java-11-openjdk
   xclip
+  chrome-gnome-shell
 )
 
 # Install all
