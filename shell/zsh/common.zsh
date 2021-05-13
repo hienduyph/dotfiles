@@ -34,6 +34,7 @@ zinit light-mode for  \
   zsh-users/zsh-autosuggestions \
   zdharma/fast-syntax-highlighting
 
+zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::vi-mode
