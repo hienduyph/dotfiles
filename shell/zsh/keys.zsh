@@ -1,14 +1,6 @@
 # bind auto complete key for zsh-autosuggestions
 bindkey '^n' autosuggest-accept
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# load default profile
-source ~/.profile
-
-enable-fzf-tab
-
 export LOCAL_HIS_DIR=$HOME/.local/hisfiles
 
 # https://github.com/junegunn/fzf/blob/764316a53d0eb60b315f0bbcd513de58ed57a876/shell/key-bindings.zsh#L93
