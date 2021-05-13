@@ -78,12 +78,14 @@ _fonts() {
       FONT_DIR="/Library/Fonts"
       ;;
     linux)
-      FONT_DIR="/usr/share/fonts/truetype"
+      FONT_DIR="/usr/share/fonts/input-mono-nerd-fonts"
       ;;
     *)
       echo "Unsupport platform $PLATFORM"
       exit;
   esac
+  rm -rf ${FONT_DIR}
+  sudo mkdir -p ${FONT_DIR}
   sudo tar -xf ~/dotfiles/fonts/InputMonoNerdFont.tar.gz -C $FONT_DIR
 }
 
