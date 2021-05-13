@@ -1,3 +1,4 @@
+source "$HOME/dotfiles/shell/alias.sh"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # source secrets files
@@ -10,5 +11,3 @@ if [[ -d $PROFILE_EXTRA_DIRS ]]; then
 fi
 
 export GPG_TTY=${TTY}
-
-source "$HOME/dotfiles/shell/alias.sh"
