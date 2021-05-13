@@ -40,6 +40,11 @@ _shell() {
   ln -s ~/dotfiles/shell/starship.toml  ~/.config
 }
 
+_htop() {
+  mkdir -p $HOME/.config/htop/
+  ln -s $HOME/dotfiles/.htoprc $HOME/.config/htop/htoprc
+}
+
 _dots() {
   PLATFORM=$1
   dots=(
@@ -47,7 +52,6 @@ _dots() {
     .profile
     .gitconfig
     .pylintrc
-    .htoprc
     .ideavimrc
     .tmux.conf
   )
