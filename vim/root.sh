@@ -4,8 +4,8 @@
 set -ex
 
 WORK_DIR=$(dirname $(realpath "$0"))
-ROOT_CONF=/root/.config/nvim
-NVIM=/root/.local/share/nvim/
+ROOT_CONF=$HOME/.config/nvim
+NVIM=$HOME/.local/share/nvim
 
 mkdir -p ${ROOT_CONF} $NVIM
 sudo rm -rf ${ROOT_CONF}/lua
@@ -13,8 +13,15 @@ sudo rm -rf ${ROOT_CONF}/lua
 read -d '' content << EOF || true
 exec 'source' '${WORK_DIR}/shared.vim'
 
-let g:plug_dir = '$NVIM/plugged'
-let g:lsp_enable = 1
+let g:engine = \$LSP_ENGINE
+
+if !exists("g:engine")
+  let g:engine="coc"
+endif
+
+let g:lsp_enable = g:engine == "nvim"
+let g:plug_dir = "${NVIM}/plugged/" . g:engine
+
 
 exec 'source' '${WORK_DIR}/plugin.vim'
 exec 'source' '${WORK_DIR}/config/02.0keymaps.vim'
@@ -32,7 +39,7 @@ if has('nvim')
   exec 'source' '${WORK_DIR}/neovim/config.vim'
 endif
 
-if $WSL_ENABLED == "yes"
+if \$WSL_ENABLED == "yes"
   exec 'source' '${WORK_DIR}/config/02.wsl.vim'
 endif
 
