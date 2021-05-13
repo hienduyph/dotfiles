@@ -9,6 +9,11 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-vimlsp',
+  \ 'coc-java',
+  \ 'coc-kotlin',
+  \ 'coc-omnisharp',
+  \ 'coc-html',
+  \ 'coc-sh',
   \]
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience

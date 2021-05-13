@@ -38,7 +38,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'neoclide/jsonc.vim'
 
 " work with ipython
-if g:slime_enable == 1
+if exists("g:slime_enable")  && g:slime_enable == 1
   Plug 'jpalardy/vim-slime', { 'for': 'python' }
   Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 endif
@@ -63,7 +63,7 @@ if g:lsp_enable == 1
   Plug 'psf/black'
 
   Plug 'nvim-lua/lsp_extensions.nvim'
-elseif g:lsc == 1
+elseif exists("g:lsc") &&  g:lsc == 1
   Plug 'natebosch/vim-lsc'
 else
   " auto complete engine
