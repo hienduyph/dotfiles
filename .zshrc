@@ -12,28 +12,36 @@ _p10k_theme() {
 }
 
 source $HOME/dotfiles/shell/core.sh
-source $HOME/dotfiles/shell/common.zsh
-
-antigen use oh-my-zsh
-
-# antigen theme romkatv/powerlevel10k
-export FORGIT_NO_ALIASES=1
-
-plugins=(
-  git
-  kubectl
-  vi-mode
-  colorize
-  wfxr/forgit
-)
-
-for p in "$plugins[@]"; do
-  antigen bundle "$p"
-done
-
-antigen apply
 
 # load default shell
 eval "$(starship init zsh)"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
+
+# start our codes
+source $HOME/dotfiles/shell/commonzsh
 source $HOME/dotfiles/shell/after-hook.sh
