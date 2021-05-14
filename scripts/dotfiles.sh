@@ -17,6 +17,7 @@ _neovim() {
   f_backups ~/.config/nvim/init.vim
   f_backups ~/.config/nvim/coc-settings.json
 
+  rm -rf ~/.config/nvim/lua
   mkdir -p ~/.config/nvim/lua
   ln -s ~/dotfiles/vim/nvim.vim ~/.config/nvim/init.vim
   ln -s ~/dotfiles/vim/coc-settings.json ~/.config/nvim/
