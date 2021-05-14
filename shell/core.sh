@@ -11,16 +11,12 @@ export GOPATH="$HOME/.go"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:/usr/local/opt/qt/bin:$PATH:/usr/local/sbin:$HOME/.local/google-cloud-sdk/bin:$NPM_PACKAGES/bin:$HOME/.deno/bin"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH:/usr/local/sbin:$HOME/.local/google-cloud-sdk/bin:$NPM_PACKAGES/bin:$HOME/.deno/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ -f $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
-fi
-
-if [[ -f /usr/local/opt/python@3.9/bin/python3.9 ]]; then
-  export PATH="$PATH:/usr/local/opt/python@3.9/bin/"
 fi
 
 if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
