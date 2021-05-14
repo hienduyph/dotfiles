@@ -1,7 +1,5 @@
 source "$HOME/dotfiles/shell/vars.sh"
 
-alias nvim5="/opt/neovim/bin/nvim"
-alias nvim="nvim5"
 alias vi="vim"
 alias vim="nvim"
 alias cat="bat"
