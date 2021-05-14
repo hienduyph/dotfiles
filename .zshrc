@@ -33,8 +33,5 @@ zinit light-mode for \
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/common.zsh
-source $HOME/dotfiles/shell/zsh/keys.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+source $HOME/dotfiles/shell/zsh/keys.zsh
