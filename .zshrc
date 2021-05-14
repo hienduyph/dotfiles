@@ -38,4 +38,3 @@ source $HOME/dotfiles/shell/zsh/completion.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-enable-fzf-tab
