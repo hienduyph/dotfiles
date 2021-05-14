@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./shell/common_setup.sh
+source ./scripts/dotfiles.sh
 
 PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
