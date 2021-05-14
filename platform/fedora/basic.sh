@@ -6,7 +6,7 @@ _pkg() {
 	sudo dnf "$@"
 }
 
-_pkg update -y && _pkg install -y curl wget python3.9 python3.9-pip liberation-fonts dnf-plugins-core
+_pkg update -y && _pkg install -y curl wget python3.9 python3.9-pip python3.9-devel liberation-fonts dnf-plugins-core
 
 echo "Add brave"
 _pkg config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/\
