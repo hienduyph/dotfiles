@@ -6,7 +6,11 @@ _pkg() {
 	sudo dnf "$@"
 }
 
-_pkg update && _pkg install -y curl wget python3.9 python3.9-pip liberation-fonts
+_pkg update && _pkg install -y curl wget python3.9 python3.9-pip liberation-fonts dnf-plugins-core
+
+echo "Add brave"
+_pkg config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/\
+  && sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 echo 'Add Enpass Repo'
 _pkg config-manager --add-repo  https://yum.enpass.io/enpass-yum.repo
@@ -42,7 +46,7 @@ packages=(
   java-11-openjdk
   java-11-openjdk-devel
   xclip
-  chrome-gnome-shell
+  brave-browser
 )
 
 # Install all
