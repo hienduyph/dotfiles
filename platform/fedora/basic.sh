@@ -55,6 +55,10 @@ packages=(
   gnome-shell-extension-user-theme
   gnome-shell-extension-appindicator
   libgnome
+  mysql-devel
+  postgresql-devel
+  clang
+  clang-tools-extra
 )
 
 # Install all
