@@ -40,6 +40,7 @@ packages=(
   g++ libstdc++-devel libstdc++
   nodejs
   java-11-openjdk
+  java-11-openjdk-devel
   xclip
   chrome-gnome-shell
 )
