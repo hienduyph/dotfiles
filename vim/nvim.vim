@@ -45,4 +45,3 @@ set runtimepath+=g:plug_dir
 
 " Show clocks
 let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
-
