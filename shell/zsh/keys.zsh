@@ -26,3 +26,6 @@ q_command() {
 
 zle     -N   q_command
 bindkey '^H' q_command
+bindkey '^n' autosuggest-accept
+
+enable-fzf-tab
