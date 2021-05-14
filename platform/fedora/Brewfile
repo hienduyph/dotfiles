@@ -33,7 +33,9 @@ brew "jesseduffield/lazygit/lazygit"
 
 # langluage
 brew "go"
+brew 'gcc@5' # for go
 brew 'rust-analyzer'
 brew 'sccache'
 brew 'golangci-lint'
 brew 'htop'
+brew 'python@3.8'
