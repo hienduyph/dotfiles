@@ -1,4 +1,7 @@
-zmodload zsh/zprof
+if [[ $ZSH_PROFILNG == "yes" ]]; then
+  zmodload zsh/zprof
+fi
+
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
 source $HOME/.profile
@@ -37,4 +40,7 @@ zinit light-mode for \
 source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
-zprof
+
+if [[ $ZSH_PROFILNG == "yes" ]]; then
+  zprof
+fi
