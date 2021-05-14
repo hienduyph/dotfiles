@@ -8,14 +8,13 @@ _clone_n_install() {
   cd /tmp
   NAME=gtk-work
   rm -rf /tmp/${NAME}
-  git clone git@github.com:vinceliuice/Mojave-gtk-theme.git ${NAME}
+  git clone $1 ${NAME}
   cd /tmp/${NAME}
-  ./install.sh -i
+  ./install.sh
 }
 
 main() {
   _dep
 }
-
-_clone_n_install
+_clone_n_install https://github.com/vinceliuice/Orchis-theme.git
 
