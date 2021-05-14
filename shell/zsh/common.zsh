@@ -1,4 +1,4 @@
-# enable history for multi tmux sessions
+# enable istory for multi tmux sessions
 setopt inc_append_history
 export ZSH_DISABLE_COMPFIX='true'
 export ZSH_DOTENV_PROMPT='false'
@@ -36,7 +36,7 @@ zinit light-mode for  \
 
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::kubectl
+# zinit snippet OMZP::kubectl
 zinit snippet OMZP::vi-mode
 zinit snippet OMZP::colorize
 
@@ -52,3 +52,23 @@ show_virtual_env() {
   fi
 }
 PS1='$(show_virtual_env)'$PS1
+
+alias k="kubectl"
+
+# Check if 'kubectl' is a command in $PATH
+if [ $commands[kubectl] ]; then
+  # Placeholder 'kubectl' shell function:
+  # Will only be executed on the first call to 'kubectl'
+  kubectl() {
+
+    # Remove this function, subsequent calls will execute 'kubectl' directly
+    unfunction "$0"
+
+    # Load auto-completion
+    source <(kubectl completion zsh)
+
+    # Execute 'kubectl' binary
+    $0 "$@"
+  }
+fi
+
