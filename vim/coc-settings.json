@@ -34,13 +34,15 @@
     "experimentalWorkspaceModule": true,
     "completeUnimported": true,
     "staticcheck": false,
-    "buildFlags": [
-      "-tags=integration wireinject unit"
-    ]
+    "buildFlags": ["-tags=integration wireinject unit"]
   },
   "go.goplsPath": "gopls",
   "go.disable": {
     "workspaceFolders": false
   },
-  "rust-analyzer.diagnostics.enableExperimental": false
+  "rust-analyzer.diagnostics.enableExperimental": false,
+  "Lua.workspace.library": {
+    "/usr/share/nvim/runtime": true,
+    "/usr/share/nvim/runtime/vim/lsp": true
+  }
 }

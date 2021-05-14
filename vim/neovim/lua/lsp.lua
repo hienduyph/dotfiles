@@ -85,7 +85,7 @@ nvim_lsp.gopls.setup {
   on_attach = on_attach,
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
-  root_dir = nvim_lsp.util.root_pattern(".git"),
+  root_dir = nvim_lsp.util.root_pattern(".git", "go.mod"),
   settings = {
     gopls = {
       analyses = {
@@ -94,6 +94,7 @@ nvim_lsp.gopls.setup {
       buildFlags={"-tags=integration wireinject unit"},
       staticcheck = false,
       experimentalWorkspaceModule = true,
+      expandWorkspaceToModule = true,
     },
   }
 }
