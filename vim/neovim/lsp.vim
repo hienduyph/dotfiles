@@ -24,11 +24,8 @@ autocmd BufWritePre *.proto execute ':ClangFormat'
 " Set updatetime for CursorHold
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
-" Show diagnostic popup on cursor hold
-" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
-
 " Enable type inlay hints
-autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
+autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
 inoremap <silent><expr> <C-Space> compe#complete()
