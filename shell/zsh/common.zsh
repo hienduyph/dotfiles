@@ -26,7 +26,14 @@ export FPATH=$HOME/.zsh/completions:$FPATH
 if type brew &>/dev/null; then
   export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
+# https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
 autoload -U +X bashcompinit && bashcompinit
 
 zinit light-mode for  \

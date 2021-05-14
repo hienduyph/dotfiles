@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
 source $HOME/.profile
@@ -18,6 +19,7 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 fi
 
 source "$HOME/.zinit/bin/zinit.zsh"
+
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -35,3 +37,4 @@ zinit light-mode for \
 source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
+zprof
