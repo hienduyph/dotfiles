@@ -38,6 +38,7 @@ packages=(
   dnscrypt-proxy
   git-lfs
   git
+  git-subtree
   albert
   docker-ce
   docker-ce-cli
