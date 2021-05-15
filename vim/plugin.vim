@@ -20,8 +20,11 @@ Plug 'vim-airline/vim-airline-themes'
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-" Plug 'morhetz/gruvbox'
+Plug 'marko-cerovac/material.nvim'
+Plug 'folke/tokyonight.nvim'
 Plug 'rafalbromirski/vim-aurora'
+Plug 'ayu-theme/ayu-vim'
+
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'preservim/nerdcommenter'
