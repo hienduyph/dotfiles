@@ -75,8 +75,6 @@ else
 endif
 
 if has('nvim-0.5')
-  "enable nvim features
-  Plug 'akinsho/nvim-bufferline.lua'
   " lua utils
   Plug 'nvim-lua/plenary.nvim'
 
