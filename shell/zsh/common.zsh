@@ -4,7 +4,6 @@ export ZSH_DISABLE_COMPFIX='true'
 export ZSH_DOTENV_PROMPT='false'
 
 # history config
-
 HISTSIZE=1000000000
 SAVEHIST=10000000000
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
@@ -20,6 +19,7 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+setopt histignorealldups         # trim all duplicates
 
 # completions source
 export FPATH=$HOME/.zsh/completions:$FPATH

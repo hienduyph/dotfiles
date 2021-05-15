@@ -13,8 +13,25 @@ _clone_n_install() {
   ./install.sh
 }
 
+_github_dl() {
+  user=$1
+  name=$2
+  branch=$3
+  url="https://github.com/${user}/${name}/archive/refs/heads/${branch}.zip"
+  echo "Downloading $url"
+  curl -sfSL -o /tmp/download.zip "${url}"
+  unzip /tmp/download.zip -d /tmp
+  cp -r /tmp/${name}-${branch}/* $HOME/.themes
+}
+
+
 main() {
   _dep
+  _clone_n_install https://github.com/vinceliuice/Orchis-theme.git
+  _clone_n_install https://github.com/cbrnix/Flatery.git
+  _clone_n_install https://github.com/vinceliuice/Mojave-gtk-theme.git
+  _github_dl  rtlewis88 rtl88-Themes material-black-COLORS
+  _github_dl  paullinuxthemer Prof-Gnome master
 }
-_clone_n_install https://github.com/vinceliuice/Orchis-theme.git
 
+#main
