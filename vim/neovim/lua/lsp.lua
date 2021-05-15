@@ -21,14 +21,20 @@ require'compe'.setup {
     nvim_lsp = true;
     nvim_lua = true;
     vsnip = true;
+    ultisnips = true;
   };
 }
 
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   print("LSP started.");
+  require "lsp_signature".on_attach({
+    bind = true,
+    handler_opts = {
+      border = "single"
+    }
+  })
   -- require('completion').on_attach()
-  --
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -96,6 +102,16 @@ nvim_lsp.gopls.setup {
       experimentalWorkspaceModule = true,
       expandWorkspaceToModule = true,
     },
+  }
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
   }
 }
 

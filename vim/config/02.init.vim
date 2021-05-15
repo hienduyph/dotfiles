@@ -9,7 +9,6 @@ set exrc
 
 " Basic configurations
 syntax on
-filetype plugin on
 filetype indent plugin on
 set number relativenumber
 set signcolumn=yes
@@ -81,7 +80,7 @@ augroup python
   autocmd Filetype python set shiftwidth=4
   autocmd Filetype python set softtabstop=4
   autocmd Filetype python set shiftwidth=4
-  autocmd Filetype python set expandtab 
+  autocmd Filetype python set expandtab
   autocmd Filetype python set formatoptions-=t
 augroup END
 
@@ -129,8 +128,3 @@ endif
 " The length colum
 highlight ColorColumn ctermbg=2
 
-" Auto complete
-set completeopt+=noinsert,menuone
-set completeopt-=preview
-
-let g:completion_enable_snippet = 'UltiSnips'
