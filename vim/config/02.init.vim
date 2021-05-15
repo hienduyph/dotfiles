@@ -30,7 +30,7 @@ set background=dark
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-" colorscheme tokyonight
+colorscheme tokyonight
 
 let g:material_style = 'deep ocean'
 " colorscheme material
@@ -38,7 +38,7 @@ let g:material_style = 'deep ocean'
 " colorscheme aurora
 
 let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" colorscheme ayu
 
 " Custom aurora theme
 let s:accent_2 = '#1b1b24'
