@@ -61,8 +61,8 @@ if g:lsp_enable == 1
   Plug 'hrsh7th/nvim-compe'
   " python specific
   Plug 'psf/black'
-
   Plug 'nvim-lua/lsp_extensions.nvim'
+  Plug 'ray-x/lsp_signature.nvim'
 elseif exists("g:lsc") &&  g:lsc == 1
   Plug 'natebosch/vim-lsc'
 else
