@@ -11,6 +11,10 @@ _cli() {
   cp target/release/json2yaml target/release/yaml2json ~/.local/bin
 }
 
+_system() {
+  sudo ln -sf $HOME/dotfiles/shell/system.sh /etc/profile.d/
+}
+
 main() {
   _neovim
   _shell
@@ -18,6 +22,7 @@ main() {
   _fonts
   _ranger
   _cli
+  _system
 }
 
 
