@@ -88,5 +88,8 @@ else
   "fallback vim features
   Plug 'sheerun/vim-polyglot'
 endif
+
 Plug 'Yggdroot/indentLine'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
