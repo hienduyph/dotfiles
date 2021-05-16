@@ -51,6 +51,8 @@ $line_break\
 $status\
 $character"""
 
+add_newline = false
+
 [kubernetes]
 format = '[⛵ $context](dimmed green) '
 disabled = false
