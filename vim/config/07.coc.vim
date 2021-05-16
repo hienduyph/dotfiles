@@ -2,6 +2,8 @@
 set completeopt+=noinsert,menuone
 set completeopt-=preview
 set shortmess+=c
+set updatetime=300
+
 
 let g:coc_global_extensions = [
   \ 'coc-pyright',
@@ -56,7 +58,6 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 " Golang config
 augroup GO
   autocmd FileType go let b:coc_root_patterns = ['.git', 'go.mod']
-  autocmd FileType go nmap gtj :CocCommand go.tags.add json yaml<cr>
 augroup END
 
 augroup PYCOC

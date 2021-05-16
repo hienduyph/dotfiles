@@ -60,6 +60,7 @@ packages=(
   postgresql-devel
   clang
   clang-tools-extra
+  hexyl
 )
 
 # Install all
