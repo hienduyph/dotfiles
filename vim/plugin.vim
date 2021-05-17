@@ -87,8 +87,10 @@ if has('nvim-0.5')
 else
   "fallback vim features
   Plug 'sheerun/vim-polyglot'
-endif
 
+endif
+" Debug tools
+Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
