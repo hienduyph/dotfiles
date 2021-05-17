@@ -17,11 +17,17 @@ _github_dl() {
   user=$1
   name=$2
   branch=$3
+  wrap=$4
   url="https://github.com/${user}/${name}/archive/refs/heads/${branch}.zip"
   echo "Downloading $url"
   curl -sfSL -o /tmp/download.zip "${url}"
   unzip /tmp/download.zip -d /tmp
-  cp -r /tmp/${name}-${branch}/* $HOME/.themes
+  if [[ ${wrap} != "" ]]; then
+    mkdir -p $HOME/.themes/${wrap}
+    cp -r /tmp/${name}-${branch}/* $HOME/.themes/${wrap}/
+  else
+    cp -r /tmp/${name}-${branch}/* $HOME/.themes/
+  fi
 }
 
 
@@ -32,6 +38,7 @@ main() {
   _clone_n_install https://github.com/vinceliuice/Mojave-gtk-theme.git
   _github_dl  rtlewis88 rtl88-Themes material-black-COLORS
   _github_dl  paullinuxthemer Prof-Gnome master
+  _github_dl  EliverLara Juno master Juno
 }
 
 #main
