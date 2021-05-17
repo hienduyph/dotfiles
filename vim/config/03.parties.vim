@@ -47,3 +47,8 @@ let g:clang_format#code_style='google'
 
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = "--fast"
+
+
+" Enable inspector keymap
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
