@@ -12,7 +12,7 @@ _cli() {
 }
 
 _system() {
-  sudo ln -sf $HOME/dotfiles/shell/system.sh /etc/profile.d/
+  sudo cp $HOME/dotfiles/shell/system.sh /etc/profile.d/
 }
 
 main() {
