@@ -43,9 +43,9 @@ zinit light-mode for  \
 
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
-# zinit snippet OMZP::kubectl
 zinit snippet OMZP::vi-mode
 zinit snippet OMZP::colorize
+zinit snippet OMZP::systemd
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
@@ -71,4 +71,3 @@ if [ $commands[kubectl] ]; then
     $0 "$@"
   }
 fi
-
