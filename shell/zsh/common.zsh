@@ -22,10 +22,12 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 setopt histignorealldups         # trim all duplicates
 
 # completions source
+LINUX_BREW=/home/linuxbrew/.linuxbrew
 export FPATH=$HOME/.zsh/completions:$FPATH
-if type brew &>/dev/null; then
-  export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+if [[ -f ${LINUX_BREW}/bin/brew ]]; then
+  export FPATH="${LINUX_BREW}share/zsh/site-functions:${FPATH}"
 fi
+
 # autoload -Uz compinit && compinit
 # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
 autoload -Uz compinit
@@ -52,22 +54,3 @@ eval "$(direnv hook zsh)"
 
 # direnv support venv
 setopt PROMPT_SUBST
-
-alias k="kubectl"
-
-# Check if 'kubectl' is a command in $PATH
-if [ $commands[kubectl] ]; then
-  # Placeholder 'kubectl' shell function:
-  # Will only be executed on the first call to 'kubectl'
-  kubectl() {
-
-    # Remove this function, subsequent calls will execute 'kubectl' directly
-    unfunction "$0"
-
-    # Load auto-completion
-    source <(kubectl completion zsh)
-
-    # Execute 'kubectl' binary
-    $0 "$@"
-  }
-fi
