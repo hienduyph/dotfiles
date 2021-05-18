@@ -52,15 +52,16 @@ packages=(
   neovim
   kitty
   code
-  gnome-tweaks
-  gnome-shell-extension-user-theme
-  gnome-shell-extension-appindicator
+  gnome-tweak-tool
   libgnome
   mysql-devel
   postgresql-devel
   clang
+  clang-devel
   clang-tools-extra
+  llvm
   hexyl
+  icu
 )
 
 # Install all
@@ -87,3 +88,6 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 npm config set prefix "${HOME}/.npm-packages"
+
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install flathub org.gnome.Extensions -y
