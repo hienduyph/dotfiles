@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. "${BASH_SOURCE[0]}../shell/vars.sh"
+
 mkdir -p ~/.backups
 
 f_backups() {
@@ -8,7 +10,6 @@ f_backups() {
 
 _neovim() {
   echo "Install Neovim Host"
-  NEOVIM_HOST=$HOME/.venv/neovim
   python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
@@ -101,4 +102,17 @@ _ranger() {
   git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
   ln -s ~/dotfiles/ranger/rc.conf $DEST_DIR/rc.conf
   ln -s ~/dotfiles/ranger/rifle.conf $DEST_DIR/
+}
+
+_py_cli() {
+  sudo python3.9 -m pip install virtualenv
+  python3.9 -m virtualenv $PYCLI_HOME
+  $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli
+  bins=(
+    mycli
+    pgcli
+  )
+  for b in ${bins[@]}; do
+    ln -sf $PYCLI_HOME/bin/$b $HOME/.local/bin
+  done
 }

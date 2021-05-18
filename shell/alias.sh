@@ -48,6 +48,7 @@ alias lgit="lazygit"
 alias gcdd='git checkout dev'
 alias gdf="forgit::diff"
 alias se="sudoedit"
+alias bytes="numfmt --to=iec-i"
 
 input_fonts() {
   _TMP_FILE=/tmp/font_dl.zip
