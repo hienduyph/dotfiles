@@ -100,7 +100,7 @@ nvim_lsp.gopls.setup {
       buildFlags={"-tags=integration wireinject unit"},
       staticcheck = false,
       experimentalWorkspaceModule = true,
-      expandWorkspaceToModule = true,
+      expandWorkspaceToModule = false,
     },
   }
 }
