@@ -91,3 +91,7 @@ bqx() {
 gch() {
  git checkout "$(git branch | fzf| tr -d '[:space:]')"
 }
+
+go_mod_update() {
+  go list -f '{{if not (or .Main .Indirect)}}{{.Path}}{{end}}' -m all | xargs -n 1 bash -c 'echo $0; go get $0 || true'
+}
