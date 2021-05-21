@@ -26,6 +26,8 @@ require'compe'.setup {
 }
 
 local nvim_lsp = require('lspconfig')
+vim.lsp.set_log_level("debug")
+
 local on_attach = function(client, bufnr)
   print("LSP started.");
   require "lsp_signature".on_attach({
@@ -100,7 +102,7 @@ nvim_lsp.gopls.setup {
       buildFlags={"-tags=integration wireinject unit"},
       staticcheck = false,
       experimentalWorkspaceModule = true,
-      expandWorkspaceToModule = false,
+      expandWorkspaceToModule = true,
     },
   }
 }
