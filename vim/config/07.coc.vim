@@ -16,8 +16,6 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-vimlsp',
-  \ 'coc-java',
-  \ 'coc-kotlin',
   \ 'coc-omnisharp',
   \ 'coc-html',
   \ 'coc-sh',
