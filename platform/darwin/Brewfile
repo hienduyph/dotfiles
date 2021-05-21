@@ -106,6 +106,9 @@ brew "rustup-init"
 brew "sops"
 brew "caddy"
 brew "bufbuild/buf/buf"
+brew 'fd'
+brew 'entr'
+brew 'clang-format'
 
 # apps
 # cask "calibre"
