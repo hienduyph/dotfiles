@@ -109,6 +109,7 @@ brew "bufbuild/buf/buf"
 brew 'fd'
 brew 'entr'
 brew 'clang-format'
+brew 'terraform'
 
 # apps
 # cask "calibre"
