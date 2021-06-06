@@ -4,6 +4,7 @@ tap "homebrew/core"
 tap "derailed/k9s"
 tap "bufbuild/buf"
 tap "jesseduffield/lazygit"
+tap "tgotwig/linux-dust"
 
 # core utils
 brew "ripgrep"
@@ -46,3 +47,9 @@ brew 'sops'
 brew 'terraform'
 brew 'wrk'
 brew 'grpcurl'
+
+brew "dust"
+brew 'gitui'
+brew 'procs'
+brew 'zoxide'
+brew 'broot'
