@@ -8,6 +8,7 @@ source $HOME/.profile
 
 # load default shell
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -57,3 +58,4 @@ function set-title-preexec() {
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd set-title-precmd
 add-zsh-hook preexec set-title-preexec
+
