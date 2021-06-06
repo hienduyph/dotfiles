@@ -40,9 +40,5 @@
   "go.disable": {
     "workspaceFolders": false
   },
-  "rust-analyzer.diagnostics.enableExperimental": false,
-  "Lua.workspace.library": {
-    "/usr/share/nvim/runtime": true,
-    "/usr/share/nvim/runtime/vim/lsp": true
-  }
+  "rust-analyzer.diagnostics.enableExperimental": false
 }
