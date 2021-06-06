@@ -8,7 +8,7 @@ source $HOME/.profile
 
 # load default shell
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd j)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

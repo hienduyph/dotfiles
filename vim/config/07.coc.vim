@@ -19,6 +19,7 @@ let g:coc_global_extensions = [
   \ 'coc-omnisharp',
   \ 'coc-html',
   \ 'coc-sh',
+  \ 'coc-flutter',
   \]
 
 " use <tab> for trigger completion and navigate to the next complete item
