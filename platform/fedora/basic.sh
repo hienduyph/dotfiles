@@ -62,6 +62,8 @@ packages=(
   llvm
   hexyl
   icu
+  vlc
+  transmission
 )
 
 # Install all
