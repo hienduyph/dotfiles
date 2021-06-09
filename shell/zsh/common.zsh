@@ -48,6 +48,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
 zinit snippet OMZP::colorize
 zinit snippet OMZP::systemd
+zinit snippet OMZP::vagrant
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
