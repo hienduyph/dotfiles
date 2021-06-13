@@ -5,6 +5,7 @@ tap "derailed/k9s"
 tap "bufbuild/buf"
 tap "jesseduffield/lazygit"
 tap "tgotwig/linux-dust"
+tap "hashicorp/tap"
 
 # core utils
 brew "ripgrep"
@@ -54,3 +55,4 @@ brew 'procs'
 brew 'zoxide'
 brew 'broot'
 brew 'k3d'
+brew "hashicorp/tap/vault"
