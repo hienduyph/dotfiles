@@ -93,7 +93,9 @@ nvim_lsp.gopls.setup {
   on_attach = on_attach,
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
-  root_dir = nvim_lsp.util.root_pattern(".git", "go.mod"),
+  root_dir = function(fname)
+    return nvim_lsp.util.find_git_ancestor(fname) or nvim_lsp.util.root_pattern("go.mod", ".git")(fname)
+  end;
   settings = {
     gopls = {
       analyses = {
