@@ -61,6 +61,8 @@ brew "mysql-connector-c"
 brew "gnupg"
 brew "libksba" # required by gnupg
 brew "gmp" # required by gnupg
+brew "graphviz"
+
 
 # cloud tools
 brew "helm"
