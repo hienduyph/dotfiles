@@ -7,6 +7,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "hashicorp/tap"
 
 # extras
 tap "AdoptOpenJDK/openjdk"
@@ -127,8 +128,17 @@ brew 'rust-analyzer'
 brew 'sccache'
 brew 'golangci-lint'
 
+brew "delve"
+brew "grpcurl"
+brew "dust"
+brew 'gitui'
+brew 'procs'
+brew 'zoxide'
+brew 'broot'
+brew 'k3d'
+brew "hashicorp/tap/vault"
+
 # securityes
 brew "dnscrypt-proxy"
 
 mas "Enpass", id: 732710998
-
