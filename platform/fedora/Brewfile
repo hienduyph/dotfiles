@@ -56,3 +56,5 @@ brew 'zoxide'
 brew 'broot'
 brew 'k3d'
 brew "hashicorp/tap/vault"
+brew 'node'
+brew 'delve'
