@@ -14,6 +14,19 @@ brew "exa"
 brew "bat"
 brew "fzf"
 brew "starship"
+brew 'entr'
+brew 'htop'
+brew 'fd'
+brew 'hyperfine'
+brew 'sops'
+brew 'wrk'
+brew 'grpcurl'
+brew "dust"
+brew 'gitui'
+brew 'procs'
+brew 'zoxide'
+brew 'broot'
+brew "direnv"
 
 # cloud tools
 brew "helm"
@@ -28,7 +41,6 @@ brew "caddy"
 brew "protobuf"
 brew "fswatch"
 brew "bufbuild/buf/buf"
-brew "direnv"
 
 brew "git-delta"
 brew "jesseduffield/lazygit/lazygit"
@@ -39,22 +51,12 @@ brew 'gcc@5' # for go
 brew 'rust-analyzer'
 brew 'sccache'
 brew 'golangci-lint'
-brew 'htop'
 brew 'python@3.8'
-brew 'entr'
-brew 'fd'
-brew 'docker-compose'
-brew 'sops'
-brew 'terraform'
-brew 'wrk'
-brew 'grpcurl'
 
-brew "dust"
-brew 'gitui'
-brew 'procs'
-brew 'zoxide'
-brew 'broot'
-brew 'k3d'
-brew "hashicorp/tap/vault"
-brew 'node'
+brew 'terraform'
+
 brew 'delve'
+brew 'k3d'
+brew 'node'
+brew "hashicorp/tap/vault"
+brew 'docker-compose'
