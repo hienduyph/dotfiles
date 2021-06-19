@@ -7,6 +7,7 @@ alias ls="exa"
 alias ll="ls -l"
 alias l="ls -la"
 alias tree="ls -T"
+alias man="tldr"
 
 alias plz="sudo"
 alias v="vim"

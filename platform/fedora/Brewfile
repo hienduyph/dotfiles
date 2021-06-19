@@ -6,6 +6,7 @@ tap "bufbuild/buf"
 tap "jesseduffield/lazygit"
 tap "tgotwig/linux-dust"
 tap "hashicorp/tap"
+tap "cantino/mcfly"
 
 # core utils
 brew "ripgrep"
@@ -14,19 +15,25 @@ brew "exa"
 brew "bat"
 brew "fzf"
 brew "starship"
-brew 'entr'
-brew 'htop'
-brew 'fd'
-brew 'hyperfine'
-brew 'sops'
-brew 'wrk'
-brew 'grpcurl'
+brew "entr"
+brew "htop"
+brew "fd"
+brew "hyperfine"
+brew "sops"
+brew "wrk"
+brew "grpcurl"
 brew "dust"
-brew 'gitui'
-brew 'procs'
-brew 'zoxide'
-brew 'broot'
+brew "gitui"
+brew "procs"
+brew "zoxide"
+brew "broot"
 brew "direnv"
+brew "mcfly"
+brew "duf"
+brew "xh"
+brew "the_silver_searcher"
+brew "cheat"
+brew "sd"
 
 # cloud tools
 brew "helm"
@@ -47,16 +54,16 @@ brew "jesseduffield/lazygit/lazygit"
 
 # langluage
 brew "go"
-brew 'gcc@5' # for go
-brew 'rust-analyzer'
-brew 'sccache'
-brew 'golangci-lint'
-brew 'python@3.8'
+brew "gcc@5" # for go
+brew "rust-analyzer"
+brew "sccache"
+brew "golangci-lint"
+brew "python@3.8"
 
-brew 'terraform'
+brew "terraform"
 
-brew 'delve'
-brew 'k3d'
-brew 'node'
+brew "delve"
+brew "k3d"
+brew "node"
 brew "hashicorp/tap/vault"
-brew 'docker-compose'
+brew "docker-compose"
