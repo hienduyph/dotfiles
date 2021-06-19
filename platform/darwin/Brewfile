@@ -8,6 +8,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
 tap "hashicorp/tap"
+tap "cantino/mcfly"
 
 # extras
 tap "AdoptOpenJDK/openjdk"
@@ -33,7 +34,6 @@ brew "cmake"
 brew "coreutils"
 brew "ctags"
 brew "curl"
-
 # core utils
 brew "editorconfig"
 brew "ripgrep"
@@ -55,6 +55,12 @@ brew "git-flow-avh"
 brew "kompose"
 brew "git-lfs"
 brew "bit-git"
+brew "duf"
+brew "the_silver_searcher"
+brew "mcfly"
+brew "xh"
+brew "cheat"
+brew "sd"
 
 brew "mysql-connector-c"
 
