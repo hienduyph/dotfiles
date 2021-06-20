@@ -66,6 +66,7 @@ if g:lsp_enable == 1
   Plug 'psf/black'
   Plug 'nvim-lua/lsp_extensions.nvim'
   Plug 'ray-x/lsp_signature.nvim'
+  Plug 'windwp/nvim-autopairs'
 elseif exists("g:lsc") &&  g:lsc == 1
   Plug 'natebosch/vim-lsc'
 else
