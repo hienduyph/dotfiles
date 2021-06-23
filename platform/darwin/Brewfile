@@ -82,7 +82,6 @@ brew "ansible"
 brew "derailed/k9s/k9s"
 
 # terminal
-brew "neovim"
 brew "tmux"
 cask "alacritty"
 brew "zsh"
