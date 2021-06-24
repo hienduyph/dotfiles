@@ -34,6 +34,8 @@ brew "xh"
 brew "the_silver_searcher"
 brew "cheat"
 brew "sd"
+brew "jq"
+brew "yq"
 
 # cloud tools
 brew "helm"
