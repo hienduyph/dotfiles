@@ -95,4 +95,6 @@ Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
