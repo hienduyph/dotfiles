@@ -26,6 +26,7 @@
     "php",
     "terraform",
     "python",
+    "dart",
     "yaml"
   ],
   "eslint.format.enable": true,

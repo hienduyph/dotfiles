@@ -46,8 +46,8 @@ packages=(
   g++ libstdc++-devel libstdc++
   java-11-openjdk
   java-11-openjdk-devel
+  java-1.8.0-openjdk
   xclip
-  brave-browser
   neovim
   kitty
   code
