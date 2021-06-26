@@ -107,6 +107,7 @@ cask "adoptopenjdk"
 cask "adoptopenjdk11"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
 
+
 brew "node@14"
 brew "node"
 brew "icu4c" # required by node
@@ -145,6 +146,9 @@ brew 'zoxide'
 brew 'broot'
 brew 'k3d'
 brew "hashicorp/tap/vault"
+
+cask "flutter"
+brew "cocoapods"
 
 # securityes
 brew "dnscrypt-proxy"
