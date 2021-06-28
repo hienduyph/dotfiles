@@ -14,6 +14,7 @@ require('gitsigns').setup {
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
   autopairs = {enable = true},
+  tree_docs = {enable = true},
   highlight = {
     enable = true
   },
