@@ -109,11 +109,17 @@ local servers = {'pyright', 'tsserver', 'clangd', 'yamlls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    },
   }
 end
 
 nvim_lsp.gopls.setup {
   on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
   root_dir = function(fname)
@@ -145,6 +151,9 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 nvim_lsp.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
   settings = {
     ["rust-analyzer"] = {
       cargo = {
@@ -184,6 +193,9 @@ local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-s
 
 require'lspconfig'.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  flags = {
+    debounce_text_changes = 150,
+  },
   settings = {
     Lua = {
       runtime = {
