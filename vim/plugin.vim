@@ -85,7 +85,6 @@ if has('nvim-0.5')
   " better syntax highlight
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
-  Plug 'nvim-treesitter/nvim-tree-docs'
 else
   "fallback vim features
   Plug 'sheerun/vim-polyglot'
