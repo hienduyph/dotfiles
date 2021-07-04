@@ -81,6 +81,7 @@ brew "stern"
 brew "awscli"
 brew "ansible"
 brew "derailed/k9s/k9s"
+brew "neovim"
 
 # terminal
 brew "tmux"
