@@ -36,6 +36,7 @@ brew "cheat"
 brew "sd"
 brew "jq"
 brew "yq"
+brew "neovim"
 
 # cloud tools
 brew "helm"
