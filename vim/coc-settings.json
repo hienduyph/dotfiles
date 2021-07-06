@@ -41,5 +41,8 @@
   "go.disable": {
     "workspaceFolders": false
   },
-  "rust-analyzer.diagnostics.enableExperimental": false
+  "rust-analyzer.diagnostics.enableExperimental": false,
+  "yaml.trace.server": "verbose",
+  "yaml.schemaStore.enable": true,
+  "yaml.schemaStore.url": []
 }
