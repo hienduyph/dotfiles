@@ -6,6 +6,8 @@ _pkg() {
 	sudo dnf "$@"
 }
 
+_pkg copr enable pkgstore/neovim
+
 _pkg update -y && _pkg install -y curl wget python3.9 python3.9-pip python3.9-devel liberation-fonts dnf-plugins-core
 
 echo "Add brave"
@@ -24,8 +26,6 @@ echo 'Add Docker Repo'
 _pkg config-manager \
     --add-repo \
     https://download.docker.com/linux/fedora/docker-ce.repo
-
-sudo dnf copr enable agriffis/neovim-nightly -y
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
   sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
