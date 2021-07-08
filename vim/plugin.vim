@@ -24,6 +24,7 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'folke/tokyonight.nvim'
 Plug 'rafalbromirski/vim-aurora'
 Plug 'ayu-theme/ayu-vim'
+Plug 'yashguptaz/calvera-dark.nvim'
 
 Plug 'ryanoasis/vim-devicons'
 
