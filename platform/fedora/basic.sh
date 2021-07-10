@@ -7,6 +7,7 @@ _pkg() {
 }
 
 _pkg copr enable pkgstore/neovim
+_pkg copr enable luminoso/Signal-Desktop
 
 _pkg update -y && _pkg install -y curl wget python3.9 python3.9-pip python3.9-devel liberation-fonts dnf-plugins-core
 
@@ -63,6 +64,7 @@ packages=(
   icu
   vlc
   transmission
+  signal-desktop
 )
 
 # Install all
