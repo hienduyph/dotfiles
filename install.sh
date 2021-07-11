@@ -23,6 +23,7 @@ main() {
   _ranger
   _cli
   _system
+  _completions
 }
 
 
