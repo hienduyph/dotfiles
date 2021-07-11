@@ -41,6 +41,7 @@ autoload -U +X bashcompinit && bashcompinit
 zinit light-mode for  \
   Aloxaf/fzf-tab \
   zsh-users/zsh-autosuggestions \
+  zsh-users/zsh-completions \
   zdharma/fast-syntax-highlighting
 
 zinit snippet OMZL::git.zsh

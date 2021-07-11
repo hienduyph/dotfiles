@@ -16,6 +16,7 @@ exec 'source' '~/dotfiles/vim/plugin.vim'
 
 exec 'source' '~/dotfiles/vim/config/02.0keymaps.vim'
 exec 'source' '~/dotfiles/vim/config/02.init.vim'
+exec 'source' '~/dotfiles/vim/config/02.theme.vim'
 exec 'source' '~/dotfiles/vim/config/03.parties.vim'
 
 if g:slime_enable == 1
