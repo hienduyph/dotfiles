@@ -20,11 +20,12 @@ Plug 'vim-airline/vim-airline-themes'
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'marko-cerovac/material.nvim'
+" Theme trying collections, put currenty used at top
 Plug 'folke/tokyonight.nvim'
-Plug 'rafalbromirski/vim-aurora'
-Plug 'ayu-theme/ayu-vim'
-Plug 'yashguptaz/calvera-dark.nvim'
+" Plug 'marko-cerovac/material.nvim'
+" Plug 'rafalbromirski/vim-aurora'
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'yashguptaz/calvera-dark.nvim'
 
 Plug 'ryanoasis/vim-devicons'
 

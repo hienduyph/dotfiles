@@ -2,11 +2,14 @@ export NNN_USE_EDITOR=1
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export RUSTC_WRAPPER=sccache
 export GOPATH="$HOME/.go"
+
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH:/usr/local/sbin:$HOME/.local/google-cloud-sdk/bin:$NPM_PACKAGES/bin:$HOME/.deno/bin"
+SYSTEM="/usr/local/sbin:$HOME/.local/bin:$HOME/.bin"
+THIRD_PARTIES="$GOPATH/bin:$HOME/.local/google-cloud-sdk/bin:$NPM_PACKAGES/bin:$HOME/.deno/bin"
+export PATH="$PATH:${SYSTEM}:${THIRD_PARTIES}"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -26,3 +29,6 @@ export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
 py_core_setup() {
   /usr/bin/env python -m pip install black pylint ipdb wheel pynvim --upgrade
 }
+
+# https://github.com/cheat/cheat
+export CHEAT_USE_FZF=true

@@ -116,3 +116,6 @@ _py_cli() {
     ln -sf $PYCLI_HOME/bin/$b $HOME/.local/bin
   done
 }
+
+_completions() {
+}
