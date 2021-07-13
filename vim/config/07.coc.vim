@@ -44,6 +44,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> g] <Plug>(coc-diagnostic-next)
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <leader>ac  <Plug>(coc-codeaction)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
