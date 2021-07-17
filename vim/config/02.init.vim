@@ -4,6 +4,9 @@ if has('nvim')
   let g:loaded_ruby_provider = 0
 endif
 
+" disable auto fold by default
+set nofoldenable
+
 " Enable local vimrc
 set exrc
 " Basic configurations
