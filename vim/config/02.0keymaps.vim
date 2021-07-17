@@ -95,3 +95,7 @@ command! BufOnly execute '%bdelete!|edit #|normal `"'
 " navigate ale fix
 nmap <silent> <leader>g[ <Plug>(ale_next_wrap)
 nmap <silent> <leader>g] <Plug>(ale_previous_wrap)
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader>f"
+let g:UltiSnipsJumpBackwardTrigger="<leader>b"

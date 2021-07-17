@@ -19,19 +19,3 @@ set updatetime=300
 autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
-" enter to complete
-function! Compe_select_confirm() abort
-  if !exists('*complete_info')
-    throw 'compe#_select_confirm requires complete_info function to work'
-  endif
-  let selected = complete_info()['selected']
-  if selected != -1
-     return compe#confirm()
-  elseif pumvisible()
-     call feedkeys("\<down>\<cr>")
-     return compe#confirm()
-  endif
-  return ''
-endfunction
-
-inoremap <silent><expr> <cr> pumvisible() ? Compe_select_confirm() : '<cr>'

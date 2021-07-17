@@ -26,6 +26,6 @@
 # error handling
 snippet if1err "Return Error handling" b
 if err != nil {
-	return fmt.Errorf("${1:Error}: %w", err)
+	return nil, fmt.Errorf("${1:Error}: %w", err)
 }
 endsnippet
