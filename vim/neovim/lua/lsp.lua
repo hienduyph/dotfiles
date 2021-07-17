@@ -1,4 +1,6 @@
 -- lsp config
+vim.lsp.set_log_level("debug")
+
 require('nvim-autopairs').setup()
 
 require'compe'.setup {
@@ -7,7 +9,8 @@ require'compe'.setup {
   debug = false;
   min_length = 1;
   preselect = 'enable';
-  throttle_time = 200;
+
+  throttle_time = 80;
   source_timeout = 200;
   incomplete_delay = 400;
   max_abbr_width = 100;
@@ -115,29 +118,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-nvim_lsp.gopls.setup {
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  cmd = {"gopls", "serve"},
-  filetypes = { "go", "gomod" },
-  root_dir = function(fname)
-    return nvim_lsp.util.find_git_ancestor(fname) or nvim_lsp.util.root_pattern("go.mod", ".git")(fname)
-  end;
-  settings = {
-    gopls = {
-      analyses = {
-        unusedparams = false,
-      },
-      buildFlags={"-tags=integration wireinject unit"},
-      staticcheck = false,
-      experimentalWorkspaceModule = true,
-      expandWorkspaceToModule = true,
-    },
-  }
-}
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
@@ -148,6 +128,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   }
 }
 
+-- Rust setups
 nvim_lsp.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -174,6 +155,32 @@ nvim_lsp.rust_analyzer.setup({
   },
   root_dir = nvim_lsp.util.root_pattern('Cargo.lock', '.git'),
 })
+
+
+-- Golang setup
+nvim_lsp.gopls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  cmd = {"gopls", "serve"},
+  filetypes = { "go", "gomod" },
+  root_dir = function(fname)
+    return nvim_lsp.util.find_git_ancestor(fname) or nvim_lsp.util.root_pattern("go.mod", ".git")(fname)
+  end;
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = false,
+      },
+      buildFlags={"-tags=integration wireinject unit"},
+      staticcheck = false,
+    },
+  }
+}
+
 
 -- lua runtime
 local system_name
@@ -243,6 +250,10 @@ function lsp_organize_imports()
     end
   end
 end
+
+
+-- auto select first item
+vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm({ 'keys': '<CR>', 'select': v:true })", { expr = true })
 
 -- jump new tab
 local api = vim.api

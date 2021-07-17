@@ -10,23 +10,18 @@ f_backups() {
 
 _neovim() {
   echo "Install Neovim Host"
+  npm i -g tree-sitter-cli
   python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
 
   echo "Install neovim config"
-  f_backups ~/.config/nvim/init.vim
-  f_backups ~/.config/nvim/coc-settings.json
+  rm -rf ~/.config/nvim && mkdir -p ~/.config/nvim
 
-  rm -rf ~/.config/nvim/lua
-  mkdir -p ~/.config/nvim/lua
   ln -s ~/dotfiles/vim/nvim.vim ~/.config/nvim/init.vim
   ln -s ~/dotfiles/vim/coc-settings.json ~/.config/nvim/
-  ln -s ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/lua
-
-  # for nvim
-  curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ln -s ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/
+  ln -s ~/dotfiles/vim/UltiSnips ~/.config/nvim
 
   nvim +PlugInstall +qall
 }
