@@ -99,3 +99,4 @@ nmap <silent> <leader>g] <Plug>(ale_previous_wrap)
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader>f"
 let g:UltiSnipsJumpBackwardTrigger="<leader>b"
+let g:UltiSnipsEditSplit="vertical"

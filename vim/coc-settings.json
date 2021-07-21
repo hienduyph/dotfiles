@@ -32,8 +32,6 @@
   "eslint.format.enable": true,
   "prettier.eslintIntegration": true,
   "go.goplsOptions": {
-    "experimentalWorkspaceModule": true,
-    "completeUnimported": true,
     "staticcheck": false,
     "buildFlags": ["-tags=integration wireinject unit"]
   },

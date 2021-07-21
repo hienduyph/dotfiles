@@ -18,7 +18,7 @@ set synmaxcol=250
 set cursorline
 
 " enbalbe limit 120 chars highlight
-set colorcolumn=120
+" set colorcolumn=120
 
 if exists('+termguicolors')
   set termguicolors

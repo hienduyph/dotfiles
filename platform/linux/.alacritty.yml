@@ -21,11 +21,14 @@ scrolling:
   multiplier: 3
 font:
   normal:
-    family: InputMonoNarrow Nerd Font
-    style: Regular
+    family: JetBrainsMono Nerd Font
+    style: Light
   bold:
-    family: InputMonoNarrow Nerd Font
-    style: Bold
+    family: JetBrainsMono Nerd Font
+    style: Light
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Light
   size: 9
   offset:
     x: 0
@@ -83,69 +86,27 @@ cursor:
   unfocused_hollow: true
 live_config_reload: true
 key_bindings:
-  - key: N
-    mods: Option
-    action: SpawnNewInstance
-  - key: D
-    mods: Option
-    chars: "\vv"
-  - key: D
-    mods: Option|Shift
-    chars: "\vs"
-  - key: W
-    mods: Option
-    chars: "\vx"
-  - key: H
-    mods: Option
-    chars: "\vh"
-  - key: J
-    mods: Option
-    chars: "\vj"
-  - key: K
-    mods: Option
-    chars: "\vk"
-  - key: L
-    mods: Option
-    chars: "\vl"
-  - key: T
-    mods: Option
-    chars: "\vc"
-  - key: Key1
-    mods: Option
-    chars: "\v1"
-  - key: Key2
-    mods: Option
-    chars: "\v2"
-  - key: Key3
-    mods: Option
-    chars: "\v3"
-  - key: Key4
-    mods: Option
-    chars: "\v4"
-  - key: Key5
-    mods: Option
-    chars: "\v5"
-  - key: Key6
-    mods: Option
-    chars: "\v6"
-  - key: Key7
-    mods: Option
-    chars: "\v7"
-  - key: Key8
-    mods: Option
-    chars: "\v8"
-  - key: Key9
-    mods: Option
-    chars: "\v9"
-  - key: Left
-    mods: Option
-    chars: "\vH"
-  - key: Down
-    mods: Option
-    chars: "\vJ"
-  - key: Up
-    mods: Option
-    chars: "\vK"
-  - key: Right
-    mods: Option
-    chars: "\vL"
+  - { key: N,     mods: Option,       action: SpawnNewInstance }
+  - { key: D,     mods: Option,       chars: "\x02\x76" }
+  - { key: D,     mods: Option|Shift, chars: "\x02\x73" }
+  - { key: W,     mods: Option,       chars: "\x02\x78" }
+  - { key: H,     mods: Option,       chars: "\x02\x68" }
+  - { key: J,     mods: Option,       chars: "\x02\x6a" }
+  - { key: K,     mods: Option,       chars: "\x02\x6b" }
+  - { key: L,     mods: Option,       chars: "\x02\x6c" }
+  - { key: T,     mods: Option,       chars: "\x02\x63" }
+  - { key: Key1,  mods: Option,       chars: "\x02\x31" }
+  - { key: Key2,  mods: Option,       chars: "\x02\x32" }
+  - { key: Key3,  mods: Option,       chars: "\x02\x33" }
+  - { key: Key4,  mods: Option,       chars: "\x02\x34" }
+  - { key: Key5,  mods: Option,       chars: "\x02\x35" }
+  - { key: Key6,  mods: Option,       chars: "\x02\x36" }
+  - { key: Key7,  mods: Option,       chars: "\x02\x37" }
+  - { key: Key8,  mods: Option,       chars: "\x02\x38" }
+  - { key: Key9,  mods: Option,       chars: "\x02\x39" }
+  - { key: Left,  mods: Option,       chars: "\x02\x48" }
+  - { key: Down,  mods: Option,       chars: "\x02\x4a" }
+  - { key: Up,    mods: Option,       chars: "\x02\x4b" }
+  - { key: Right, mods: Option,       chars: "\x02\x4c" }
+  - { key: "LBracket", mods: Option,       chars: "\x02\x68" }
+  - { key: "RBracket", mods: Option,       chars: "\x02\x6c" }

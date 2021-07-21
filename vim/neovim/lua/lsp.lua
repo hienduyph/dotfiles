@@ -1,68 +1,12 @@
 -- lsp config
-vim.lsp.set_log_level("debug")
-
-require('nvim-autopairs').setup()
-
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = true;
-
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-    ultisnips = true;
-  };
-}
-
-local remap = vim.api.nvim_set_keymap
-local npairs = require('nvim-autopairs')
-
--- skip it, if you use another global object
-_G.MUtils= {}
-
-vim.g.completion_confirm_key = ""
-MUtils.completion_confirm = function()
-  if vim.fn.pumvisible() ~= 0  then
-    if vim.fn.complete_info()["selected"] ~= -1 then
-      return vim.fn["compe#confirm"](npairs.esc("<cr>"))
-    else
-      return npairs.esc("<cr>")
-    end
-  else
-    return npairs.autopairs_cr()
-  end
-end
-
-remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
-
-
 local nvim_lsp = require('lspconfig')
 vim.lsp.set_log_level("debug")
 
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+vim.lsp.handlers["textDocument/documentHighlight"] = function() end
+
 local on_attach = function(client, bufnr)
   print("LSP started.");
-  require "lsp_signature".on_attach({
-    bind = true,
-    handler_opts = {
-      border = "single"
-    }
-  })
-  -- require('completion').on_attach()
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -92,20 +36,6 @@ local on_attach = function(client, bufnr)
   elseif client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
-
-  -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
-  end
 end
 
 local servers = {'pyright', 'tsserver', 'clangd', 'yamlls'}
@@ -133,7 +63,7 @@ nvim_lsp.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   flags = {
-    debounce_text_changes = 150,
+    debounce_text_changes = 500,
   },
   settings = {
     ["rust-analyzer"] = {
@@ -161,15 +91,11 @@ nvim_lsp.rust_analyzer.setup({
 nvim_lsp.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  capabilities = capabilities,
   flags = {
-    debounce_text_changes = 150,
+    debounce_text_changes = 500,
   },
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
-  root_dir = function(fname)
-    return nvim_lsp.util.find_git_ancestor(fname) or nvim_lsp.util.root_pattern("go.mod", ".git")(fname)
-  end;
   settings = {
     gopls = {
       analyses = {
@@ -179,51 +105,6 @@ nvim_lsp.gopls.setup {
       staticcheck = false,
     },
   }
-}
-
-
--- lua runtime
-local system_name
-if vim.fn.has("mac") == 1 then
-  system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-  system_name = "Linux"
-elseif vim.fn.has('win32') == 1 then
-  system_name = "Windows"
-else
-  print("Unsupported system for sumneko")
-end
-
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
-
-require'lspconfig'.sumneko_lua.setup {
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
-  flags = {
-    debounce_text_changes = 150,
-  },
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = vim.split(package.path, ';'),
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-        },
-      },
-    },
-  },
 }
 
 -- lsp import
@@ -251,10 +132,6 @@ function lsp_organize_imports()
   end
 end
 
-
--- auto select first item
-vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm({ 'keys': '<CR>', 'select': v:true })", { expr = true })
-
 -- jump new tab
 local api = vim.api
 local util = vim.lsp.util
@@ -280,13 +157,8 @@ local location_callback = function(_, method, result)
   else
     buf = api.nvim_get_current_buf()
   end
-
-  -- remove the empty buffer created with tabnew
-  -- temp disable because of: Vim(bdelete):E516: No buffers were deleted
-  -- api.nvim_command(buf .. 'bd')
 end
 
 callbacks['textDocument/declaration']    = location_callback
 callbacks['textDocument/typeDefinition'] = location_callback
 callbacks['textDocument/implementation'] = location_callback
--- callbacks['textDocument/definition']     = location_callback
