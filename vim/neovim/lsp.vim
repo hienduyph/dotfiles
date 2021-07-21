@@ -1,4 +1,3 @@
-set completeopt=menuone,noselect
 
 " ln -s ~/dotfiles/vim/neovim/lua ~/.config/nvim/lua
 lua require("lsp")
@@ -18,4 +17,7 @@ set updatetime=300
 " Enable type inlay hints
 autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
+
+set completeopt=menuone,noselect
+lua require('qcompletion')
 
