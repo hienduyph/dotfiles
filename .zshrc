@@ -41,6 +41,7 @@ zinit light-mode for \
 source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
+source $HOME/dotfiles/shell/zsh/kubectl.zsh
 
 if [[ $ZSH_PROFILNG == "yes" ]]; then
   zprof
