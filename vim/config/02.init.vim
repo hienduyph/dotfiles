@@ -12,7 +12,7 @@ set exrc
 " Basic configurations
 syntax on
 filetype indent plugin on
-set number relativenumber
+set number "relativenumber
 set signcolumn=yes
 set synmaxcol=250
 set cursorline

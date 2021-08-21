@@ -36,16 +36,15 @@ Plug 'folke/tokyonight.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 
-" Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 Plug 'kevinhwang91/rnvimr'
-" Plug 'rbgrouleff/bclose.vim'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 
 " work with ipython
 if exists("g:slime_enable")  && g:slime_enable == 1
@@ -69,14 +68,10 @@ if g:lsp_enable == 1
   Plug 'psf/black'
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 endif
 
-if has('nvim-0.5')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-else
-  Plug 'sheerun/vim-polyglot'
-endif
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'sheerun/vim-polyglot'
 
 " Debug tools
 " Plug 'puremourning/vimspector'
