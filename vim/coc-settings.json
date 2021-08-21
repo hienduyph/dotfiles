@@ -26,8 +26,7 @@
     "php",
     "terraform",
     "python",
-    "dart",
-    "yaml"
+    "dart"
   ],
   "eslint.format.enable": true,
   "prettier.eslintIntegration": true,
