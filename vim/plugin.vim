@@ -64,8 +64,15 @@ Plug 'honza/vim-snippets'
 
 if g:lsp_enable == 1
   Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
   Plug 'psf/black'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'L3MON4D3/LuaSnip'
+  " source for cmp
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-nvim-lua'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'saadparwaiz1/cmp_luasnip'
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif

@@ -11,6 +11,5 @@ autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePre *.proto execute ':ClangFormat'
 
-set completeopt=menuone,noselect
 lua require('qcompletion')
 
