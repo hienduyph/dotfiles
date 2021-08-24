@@ -63,7 +63,7 @@ nvim_lsp.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   flags = {
-    debounce_text_changes = 500,
+    debounce_text_changes = 150,
   },
   settings = {
     ["rust-analyzer"] = {
@@ -92,7 +92,7 @@ nvim_lsp.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   flags = {
-    debounce_text_changes = 500,
+    debounce_text_changes = 150,
   },
   cmd = {"gopls", "serve"},
   filetypes = { "go", "gomod" },
@@ -101,7 +101,7 @@ nvim_lsp.gopls.setup {
       analyses = {
         unusedparams = false,
       },
-      buildFlags={"-tags=integration wireinject unit"},
+      buildFlags={"-tags=integration,wireinject,unit"},
       staticcheck = false,
     },
   }
