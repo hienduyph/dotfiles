@@ -55,10 +55,6 @@ endif
 " formatter
 Plug 'rhysd/vim-clang-format'
 
-" snippet
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
 " code linter
 " Plug 'dense-analysis/ale'
 
@@ -73,6 +69,8 @@ if g:lsp_enable == 1
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-path'
   Plug 'saadparwaiz1/cmp_luasnip'
+
+  Plug 'rafamadriz/friendly-snippets'
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
