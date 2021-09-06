@@ -27,7 +27,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Theme trying collections, put currenty used at top
-Plug 'folke/tokyonight.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " Plug 'marko-cerovac/material.nvim'
 " Plug 'rafalbromirski/vim-aurora'
 " Plug 'ayu-theme/ayu-vim'
@@ -76,7 +76,6 @@ else
 endif
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'sheerun/vim-polyglot'
 
 " Debug tools
 " Plug 'puremourning/vimspector'
