@@ -14,10 +14,10 @@
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
   autopairs = {
-    enable = false,
+    enable = true,
   },
   indent = {
-    enable = false,
+    enable = true,
   },
   highlight = {
     enable = true,
