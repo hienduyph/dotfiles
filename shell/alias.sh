@@ -50,6 +50,7 @@ alias gcdd='git checkout dev'
 alias gdf="forgit::diff"
 alias se="sudoedit"
 alias bytes="numfmt --to=iec-i"
+alias sc='sudo SYSTEMD_EDITOR=nvim /usr/bin/systemctl'
 
 input_fonts() {
   _TMP_FILE=/tmp/font_dl.zip
