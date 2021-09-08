@@ -59,9 +59,8 @@ Plug 'rhysd/vim-clang-format'
 
 if g:lsp_enable == 1
   Plug 'neovim/nvim-lspconfig'
-  Plug 'psf/black'
-  Plug 'hrsh7th/nvim-cmp'
   Plug 'L3MON4D3/LuaSnip'
+  Plug 'hrsh7th/nvim-cmp'
   " source for cmp
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-nvim-lua'
@@ -69,7 +68,11 @@ if g:lsp_enable == 1
   Plug 'hrsh7th/cmp-path'
   Plug 'saadparwaiz1/cmp_luasnip'
 
+  " snippets collections
   Plug 'rafamadriz/friendly-snippets'
+
+  Plug 'psf/black'
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
@@ -79,5 +82,5 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Debug tools
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
 call plug#end()
