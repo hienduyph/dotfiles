@@ -32,15 +32,26 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " Plug 'ayu-theme/ayu-vim'
 " Plug 'yashguptaz/calvera-dark.nvim'
 
-Plug 'ryanoasis/vim-devicons'
-Plug 'voldikss/vim-floaterm'
 
+if has('nvim-0.5')
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+else
+  Plug 'airblade/vim-gitgutter'
+  Plug 'ryanoasis/vim-devicons'
+  " Fuzzy finder
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+endif
+
+Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'kevinhwang91/rnvimr'
 
-" Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -76,10 +87,6 @@ if g:lsp_enable == 1
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Debug tools
 Plug 'puremourning/vimspector'

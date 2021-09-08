@@ -31,28 +31,36 @@ tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 
-" FZF
-nnoremap <C-g> :Rg<Cr>
-map <C-f> :Files<CR>
-map <C-b> :Buffers<CR>
-" CTRL-A CTRL-Q to select all and build quickfix list
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
 
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+if has('nvim-0.5')
+  " Telescope (Replace FZF)
+  nnoremap <C-f> <cmd>Telescope find_files<cr>
+  nnoremap <C-g> <cmd>Telescope live_grep<cr>
+  nnoremap <C-b> <cmd>Telescope buffers<cr>
+  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+else
+  " FZF
+  nnoremap <C-g> :Rg<Cr>
+  map <C-f> :Files<CR>
+  map <C-b> :Buffers<CR>
+  " CTRL-A CTRL-Q to select all and build quickfix list
+  function! s:build_quickfix_list(lines)
+    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+    copen
+    cc
+  endfunction
+
+  let g:fzf_action = {
+    \ 'ctrl-q': function('s:build_quickfix_list'),
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-x': 'split',
+    \ 'ctrl-v': 'vsplit' }
+  let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+endif
 
 " commenter
 nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
-
 
 " clear search results highlight
 nnoremap <silent> <C-l> :nohl <CR>
@@ -88,15 +96,9 @@ elseif has('unix')
   let g:floaterm_keymap_toggle  = "<M-g>"
 endif
 
-
 " delete all other buffer but this one
 command! BufOnly execute '%bdelete!|edit #|normal `"'
 
 " navigate ale fix
 nmap <silent> <leader>g[ <Plug>(ale_next_wrap)
 nmap <silent> <leader>g] <Plug>(ale_previous_wrap)
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<leader>f"
-let g:UltiSnipsJumpBackwardTrigger="<leader>b"
-let g:UltiSnipsEditSplit="vertical"
