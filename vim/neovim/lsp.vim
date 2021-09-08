@@ -14,7 +14,10 @@ augroup pylsp
   autocmd Filetype python command! -nargs=0 Format :Black
 augroup END
 
+augroup prettier
+  autocmd Filetype javascript,typescript,typescriptreact,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html command! -nargs=0 Format :PrettierAsync
+augroup END
+
 autocmd BufWritePre *.proto execute ':ClangFormat'
 
 lua require('qcompletion')
-
