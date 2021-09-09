@@ -27,14 +27,15 @@ nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 
 
-if has('nvim-0.5')
+nnoremap <C-y> :NvimTreeToggle<CR>
+
+if g:telescope == 1
   " Telescope (Replace FZF)
-  nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*' } })<cr>
-  nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*' } })<cr>
+  nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv' } })<cr>
+  nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv' } })<cr>
   nnoremap <C-b> <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-  map <silent> <C-e> <cmd>lua require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })<cr>
-  nnoremap <C-y> :NvimTreeToggle<CR>
+  nnoremap <leader>fb <cmd>lua require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })<cr>
 else
   " FZF
   nnoremap <C-g> :Rg<Cr>
@@ -54,7 +55,7 @@ else
     \ 'ctrl-v': 'vsplit' }
   let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
   " Float filemanager
-  map <silent> <C-e> :RnvimrToggle<CR>
+  map <silent> <leader>fb :RnvimrToggle<CR>
 endif
 
 " commenter

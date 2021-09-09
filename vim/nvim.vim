@@ -11,6 +11,7 @@ let g:plug_dir = "~/.local/share/nvim/plugged/" . g:engine
 
 let g:lsc = 0
 let g:slime_enable = 0
+let g:telescope = 0
 
 exec 'source' '~/dotfiles/vim/plugin.vim'
 

@@ -122,3 +122,7 @@ endif
 " The length colum
 highlight ColorColumn ctermbg=2
 
+augroup direnv
+  au!
+  autocmd BufNewFile,BufRead *.envrc set filetype=bash
+augroup END
