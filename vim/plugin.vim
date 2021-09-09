@@ -40,18 +40,18 @@ if has('nvim-0.5')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'kyazdani42/nvim-tree.lua'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
   " Fuzzy finder
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'kevinhwang91/rnvimr'
 endif
 
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
-Plug 'kevinhwang91/rnvimr'
-
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -72,6 +72,7 @@ if g:lsp_enable == 1
   Plug 'neovim/nvim-lspconfig'
   Plug 'L3MON4D3/LuaSnip'
   Plug 'hrsh7th/nvim-cmp'
+
   " source for cmp
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-nvim-lua'

@@ -18,6 +18,11 @@ require'nvim-treesitter.configs'.setup {
 require'nvim-web-devicons'.setup {
 }
 require('telescope').setup {
+  defaults = {
+    layout_config = {
+      vertical = { width = 0.5 }
+    },
+  },
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching

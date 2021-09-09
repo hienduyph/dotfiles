@@ -1,24 +1,22 @@
-export NNN_USE_EDITOR=1
-export NPM_PACKAGES="${HOME}/.npm-packages"
-export RUSTC_WRAPPER=sccache
-export GOPATH="$HOME/.go"
-
-# Preserve MANPATH if you already defined it somewhere in your config.
-# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
-
-SYSTEM="/usr/local/sbin:$HOME/.local/bin:$HOME/.bin"
-THIRD_PARTIES="$GOPATH/bin:$HOME/.local/google-cloud-sdk/bin:$NPM_PACKAGES/bin:$HOME/.deno/bin"
-export PATH="$PATH:${SYSTEM}:${THIRD_PARTIES}"
+_CUS_PATH=(
+  "$HOME/.local/bin"
+  "/usr/local/sbin"
+  "$HOME/.bin"
+  "$GOPATH/bin"
+  "$HOME/.local/google-cloud-sdk/bin"
+  "$NPM_PACKAGES/bin"
+  "$HOME/.deno/bin"
+  "$HOME/.cargo/bin"
+  "$HOME/.pub-cache/bin"
+)
+for p in ${_CUS_PATH[@]}; do
+  addToPATH $p
+done
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-if [[ -f $HOME/.cargo/env ]]; then
-  source $HOME/.cargo/env
-fi
-
 if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-  export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin";
+  addToPATH "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,node_modules,vendor,.direnv,.mypy_cache,__pycache__,target,.pytest_cache,.next}" 2> /dev/null'
