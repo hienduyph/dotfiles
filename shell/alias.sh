@@ -1,5 +1,3 @@
-source "$HOME/dotfiles/shell/vars.sh"
-
 alias vi="vim"
 alias vim="nvim"
 alias cat="bat"
@@ -14,7 +12,6 @@ alias v="vim"
 alias tn="tmux new-session -A -s"
 alias lala="tmux new -A -s Lala"
 alias awm="aws --endpoint-url http://localhost:9000"
-alias kk="$GOPATH/bin/kaf"
 alias py="python"
 alias ipy="ipython"
 alias pycli="$PYCLI_HOME/bin/python"

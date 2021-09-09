@@ -10,4 +10,3 @@ if [[ -d $PROFILE_EXTRA_DIRS ]]; then
 fi
 
 export GPG_TTY=${TTY}
-. "$HOME/.cargo/env"
