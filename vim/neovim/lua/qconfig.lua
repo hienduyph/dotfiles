@@ -1,4 +1,4 @@
--- require('gitsigns').setup()
+require('gitsigns').setup()
 
 -- use tree sitter
 require'nvim-treesitter.configs'.setup {
