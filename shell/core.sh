@@ -5,7 +5,7 @@ PREPEND=(
   "$GOPATH/bin"
 )
 
-for p in ${_CUS_PATH[@]}; do
+for p in ${PREPEND[@]}; do
   prependToPATH $p
 done
 
