@@ -9,6 +9,13 @@ export GOPATH="$HOME/.go"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 
+function prependToPATH {
+  case ":$PATH:" in
+    *":$1:"*) :;; # already there
+    *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
+  esac
+}
+
 function addToPATH {
   case ":$PATH:" in
     *":$1:"*) :;; # already there

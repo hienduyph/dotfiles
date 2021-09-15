@@ -1,8 +1,15 @@
-_CUS_PATH=(
+PREPEND=(
   "$HOME/.local/bin"
   "/usr/local/sbin"
   "$HOME/.bin"
   "$GOPATH/bin"
+)
+
+for p in ${_CUS_PATH[@]}; do
+  prependToPATH $p
+done
+
+_CUS_PATH=(
   "$HOME/.local/google-cloud-sdk/bin"
   "$NPM_PACKAGES/bin"
   "$HOME/.deno/bin"
