@@ -43,24 +43,15 @@ scrolling:
 
 # Font configuration (changes require restart)
 font:
-  # Normal (roman) font face
   normal:
-    family: "BlexMono Nerd Font"
-    # The `style` can be specified to pick a specific face.
-    style: Book
-
-  # Bold font face
+    family: JetBrainsMono Nerd Font
+    style: Light
   bold:
-    family: "BlexMono Nerd Font"
-    # The `style` can be specified to pick a specific face.
-    style: Bold
-
-  # Italic font face
+    family: JetBrainsMono Nerd Font
+    style: Light
   italic:
-    family: "BlexMono Nerd Font"
-    # The `style` can be specified to pick a specific face.
-    style: "Medium Italic"
-
+    family: JetBrainsMono Nerd Font
+    style: Light
   # Point size
   size: 12.0
 
@@ -248,3 +239,5 @@ key_bindings:
   - { key: Down, mods: Command, chars: "\x02\x4a" }
   - { key: Up, mods: Command, chars: "\x02\x4b" }
   - { key: Right, mods: Command, chars: "\x02\x4c" }
+  - { key: "LBracket", mods: Command,       chars: "\x02\x68" }
+  - { key: "RBracket", mods: Command,       chars: "\x02\x6c" }

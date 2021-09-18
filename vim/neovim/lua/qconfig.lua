@@ -22,7 +22,6 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-    disable={"markdown", "markdown.pandoc", "md"},
     additional_vim_regex_highlighting = false,
   },
 }
@@ -56,6 +55,8 @@ require("indent_blankline").setup {
   char = "|",
   buftype_exclude = {"terminal"},
   space_char_blankline=' ',
+  use_treesitter=true,
+  char_list={'|', '¦', '┆', '┊'},
 }
 
 require('lualine').setup({

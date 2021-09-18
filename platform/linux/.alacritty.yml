@@ -25,10 +25,10 @@ font:
     style: Light
   bold:
     family: JetBrainsMono Nerd Font
-    style: Light
+    style: Regular
   italic:
     family: JetBrainsMono Nerd Font
-    style: Light
+    style: Italic
   size: 9
   offset:
     x: 0
