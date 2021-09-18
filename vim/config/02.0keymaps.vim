@@ -1,16 +1,6 @@
 " Press jj to escape insert mode
 inoremap jj <Esc>  """ jj key is <Esc> setting
 
-" reload nvimrc
-nnoremap <leader>sv :source $MYVIMRC<CR>
-
-" save the current buffer
-nnoremap <leader>w :w<cr>
-" save and close all
-nnoremap <leader>wa :wqa<cr>
-nnoremap <leader>q :q!<cr>
-nnoremap <leader>qa :qa!<cr>
-
 " move lines around
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
@@ -33,14 +23,14 @@ if g:telescope == 1
   " Telescope (Replace FZF)
   nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv' } })<cr>
   nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv' } })<cr>
-  nnoremap <C-b> <cmd>Telescope buffers<cr>
+  nnoremap <leader>b <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
   nnoremap <leader>fb <cmd>lua require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })<cr>
 else
   " FZF
   nnoremap <C-g> :Rg<Cr>
   map <C-f> :Files<CR>
-  map <C-b> :Buffers<CR>
+  map <leader>b :Buffers<CR>
   " CTRL-A CTRL-Q to select all and build quickfix list
   function! s:build_quickfix_list(lines)
     call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
@@ -48,14 +38,15 @@ else
     cc
   endfunction
 
+  " say good bye with tab for now, old value `tab split`
   let g:fzf_action = {
     \ 'ctrl-q': function('s:build_quickfix_list'),
-    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-t': 'drop',
     \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
   let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
   " Float filemanager
-  map <silent> <leader>fb :RnvimrToggle<CR>
+  map <silent> <leader>t :RnvimrToggle<CR>
 endif
 
 " clear search results highlight
@@ -73,7 +64,6 @@ vmap <leader>at :Tabularize /\|<CR>
 " com! FormatJSON %!python -m json.tool
 com! FormatJSON %!jq '.'
 com! MinifyJSON %!jq -c .
-
 
 " Float windows
 command! -bar -bang -nargs=* TERM FloatermNew <args>
@@ -99,3 +89,18 @@ command! BufOnly execute '%bdelete!|edit #|normal `"'
 nmap <silent> <leader>g[ <Plug>(ale_next_wrap)
 nmap <silent> <leader>g] <Plug>(ale_previous_wrap)
 nmap <silent> <leader>l :ALELint <CR>
+
+" Buffer navigations"
+nnoremap <silent>gb :BufferLineCycleNext<CR>
+nnoremap <silent>gB :BufferLineCyclePrev<CR>
+nnoremap <silent>gt :BufferLineCycleNext<CR>
+nnoremap <silent>gT :BufferLineCyclePrev<CR>
+nnoremap <silent>1gb <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent>2gb <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent>3gb <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent>4gb <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent>5gb <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent>6gb <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent>7gb <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent>8gb <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent>9gb <Cmd>BufferLineGoToBuffer 9<CR>

@@ -20,15 +20,6 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_fenced_languages = []
 
 
-
-" grid indent
-let g:indentLine_enabled = 1
-let g:indentLine_color_term = 239
-let g:indentLine_setColors = 1
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_showFirstIndentLevel = 1
-
-
 " commenter
 let g:NERDSpaceDelims = 1
 
@@ -56,3 +47,7 @@ let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 
 " Nvim tree
 let g:nvim_tree_width = 50
+
+" Pandoc conf
+let g:pandoc#spell#enabled = 0
+let g:pandoc#syntax#codeblocks#embeds#langs = ["python", "rust", "go", "yaml", "bash"]
