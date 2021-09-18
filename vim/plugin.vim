@@ -29,10 +29,12 @@ if has('nvim-0.5')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'kdheepak/tabline.nvim'
+  Plug 'akinsho/bufferline.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'b3nj5m1n/kommentary'
+  Plug 'windwp/nvim-autopairs'
+  Plug 'folke/twilight.nvim'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
@@ -57,8 +59,11 @@ endif
 Plug 'voldikss/vim-floaterm'
 Plug 'godlygeek/tabular'
 
-Plug 'plasticboy/vim-markdown'
+" Markdown writting
+" Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " formatter
 Plug 'rhysd/vim-clang-format'

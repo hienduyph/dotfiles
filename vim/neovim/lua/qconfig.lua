@@ -1,5 +1,16 @@
 require('gitsigns').setup()
 
+local npairs = require("nvim-autopairs")
+
+npairs.setup({
+  check_ts = true,
+  ts_config = {
+    lua = {'string'},-- it will not add a pair on that treesitter node
+    javascript = {'template_string'},
+    java = false,-- don't check treesitter on java
+  }
+})
+
 -- use tree sitter
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
@@ -11,6 +22,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
+    disable={"markdown", "markdown.pandoc", "md"},
     additional_vim_regex_highlighting = false,
   },
 }
@@ -41,34 +53,29 @@ require'nvim-web-devicons'.setup {
 require('kommentary.config').use_extended_mappings()
 
 require("indent_blankline").setup {
-    char = "|",
-    buftype_exclude = {"terminal"}
-}
-
-require'tabline'.setup {
-  -- Defaults configuration options
-  enable = true,
-  options = {
-  -- If lualine is installed tabline will use separators configured in lualine by default.
-  -- These options can be used to override those settings.
-    section_separators = {'', ''},
-    component_separators = {'', ''},
-    max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
-    show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
-    show_devicons = true, -- this shows devicons in buffer section
-    show_bufnr = false, -- this appends [bufnr] to buffer section,
-    show_filename_only = false, -- shows base filename only instead of relative path in filename
-  }
+  char = "|",
+  buftype_exclude = {"terminal"},
+  space_char_blankline=' ',
 }
 
 require('lualine').setup({
-  options = {theme = 'palenight'},
+  options = {
+    theme = 'palenight',
+    always_show_bufferline=true,
+  },
+  extensions = {'quickfix', 'nvim-tree', 'fzf'},
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch'},
-    lualine_c = {'filename'},
+    lualine_c = {
+      {
+        'filename',
+        file_status=true,
+        path=1,
+      }
+    },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
+    lualine_y = {'progress', 'diff'},
     lualine_z = {'location'}
   },
   inactive_sections = {
@@ -82,9 +89,20 @@ require('lualine').setup({
   tabline = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = { require'tabline'.tabline_buffers },
-    lualine_x = { require'tabline'.tabline_tabs },
+    lualine_c = {},
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {},
   },
 })
+
+require("twilight").setup { }
+
+require("bufferline").setup{
+  options = {
+    numbers = "ordinal",
+    diagnostics = "nvim_lsp",
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+  },
+}

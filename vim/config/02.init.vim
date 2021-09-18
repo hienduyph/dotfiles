@@ -89,7 +89,6 @@ augroup END
 augroup GO
   autocmd Filetype go setlocal tabstop=4
   autocmd Filetype go setlocal shiftwidth=4
-  autocmd FileType go set list lcs=tab:\|\ 
   autocmd FileType go set expandtab
 augroup END
 
@@ -97,15 +96,8 @@ augroup END
 augroup Make
   autocmd Filetype make setlocal tabstop=4
   autocmd Filetype make setlocal shiftwidth=4
-  autocmd FileType make set list lcs=tab:\|\ 
 augroup END
 
-
-augroup Markdown
-  " hotfit for indent listing of vim-markdown plugin
-  au filetype markdown set formatoptions+=ro
-  au filetype markdown set comments=b:*,b:-,b:+,b:1.,n:>
-augroup END
 
 
 " Flagging Unnecessary Whitespace
