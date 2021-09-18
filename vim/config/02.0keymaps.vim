@@ -104,3 +104,6 @@ nnoremap <silent>6gb <Cmd>BufferLineGoToBuffer 6<CR>
 nnoremap <silent>7gb <Cmd>BufferLineGoToBuffer 7<CR>
 nnoremap <silent>8gb <Cmd>BufferLineGoToBuffer 8<CR>
 nnoremap <silent>9gb <Cmd>BufferLineGoToBuffer 9<CR>
+
+" Format keymap
+nmap <silent> <leader>f :Format <CR>
