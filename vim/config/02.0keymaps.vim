@@ -58,10 +58,6 @@ else
   map <silent> <leader>fb :RnvimrToggle<CR>
 endif
 
-" commenter
-nmap <C-_>   <Plug>NERDCommenterToggle
-vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
-
 " clear search results highlight
 nnoremap <silent> <C-l> :nohl <CR>
 
@@ -102,3 +98,4 @@ command! BufOnly execute '%bdelete!|edit #|normal `"'
 " navigate ale fix
 nmap <silent> <leader>g[ <Plug>(ale_next_wrap)
 nmap <silent> <leader>g] <Plug>(ale_previous_wrap)
+nmap <silent> <leader>l :ALELint <CR>
