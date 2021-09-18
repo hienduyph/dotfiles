@@ -11,7 +11,6 @@ set nofoldenable
 set exrc
 " Basic configurations
 " Use tree sitter conf
-syntax off
 filetype indent plugin on
 set number "relativenumber
 set signcolumn=yes
