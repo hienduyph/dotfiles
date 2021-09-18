@@ -1,3 +1,4 @@
+" setup ale
 let g:ale_disable_lsp = 1
 let g:ale_completion_enabled = 0
 let g:ale_completion_autoimport = 0
@@ -7,6 +8,8 @@ let g:ale_linters = {
   \'cpp': ['clangd'],
 \}
 let g:ale_linters_explicit = 1
+" only run in manual mode
+let g:ale_lint_on_enter = 0
 
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -17,30 +20,28 @@ endif
 
 call plug#begin(g:plug_dir)
 
-" misc plugins
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'Yggdroot/indentLine'
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Theme trying collections, put currenty used at top
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-" Plug 'marko-cerovac/material.nvim'
-" Plug 'rafalbromirski/vim-aurora'
-" Plug 'ayu-theme/ayu-vim'
-" Plug 'yashguptaz/calvera-dark.nvim'
-
 if has('nvim-0.5')
+  " Theme trying collections, put currenty used at top
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'hoob3rt/lualine.nvim'
+  Plug 'kdheepak/tabline.nvim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'b3nj5m1n/kommentary'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'rafalbromirski/vim-aurora'
+  Plug 'Yggdroot/indentLine'
+  Plug 'bronson/vim-trailing-whitespace'
+  Plug 'preservim/nerdcommenter'
 endif
 
 if g:telescope == 1
@@ -54,10 +55,19 @@ else
 endif
 
 Plug 'voldikss/vim-floaterm'
-Plug 'preservim/nerdcommenter'
-
 Plug 'godlygeek/tabular'
+
 Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+" formatter
+Plug 'rhysd/vim-clang-format'
+
+Plug 'editorconfig/editorconfig-vim'
+" Debug tools
+Plug 'puremourning/vimspector'
+" code linter
+Plug 'dense-analysis/ale'
 
 " work with ipython
 if exists("g:slime_enable")  && g:slime_enable == 1
@@ -65,12 +75,8 @@ if exists("g:slime_enable")  && g:slime_enable == 1
   Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 endif
 
-" formatter
-Plug 'rhysd/vim-clang-format'
 
-" code linter
-" Plug 'dense-analysis/ale'
-
+" LSP Config
 if g:lsp_enable == 1
   Plug 'neovim/nvim-lspconfig'
   Plug 'L3MON4D3/LuaSnip'
@@ -91,7 +97,4 @@ if g:lsp_enable == 1
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
-
-" Debug tools
-Plug 'puremourning/vimspector'
 call plug#end()

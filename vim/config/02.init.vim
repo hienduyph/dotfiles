@@ -10,7 +10,8 @@ set nofoldenable
 " Enable local vimrc
 set exrc
 " Basic configurations
-syntax on
+" Use tree sitter conf
+syntax off
 filetype indent plugin on
 set number "relativenumber
 set signcolumn=yes
