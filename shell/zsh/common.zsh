@@ -23,7 +23,7 @@ setopt histignorealldups         # trim all duplicates
 
 # completions source
 LINUX_BREW=/home/linuxbrew/.linuxbrew
-export FPATH=$HOME/.zsh/completions:$FPATH
+export FPATH=$HOME/.zsh/completions:$FPATH:/usr/share/zsh/vendor-completions
 if [[ -f ${LINUX_BREW}/bin/brew ]]; then
   export FPATH="${LINUX_BREW}share/zsh/site-functions:${FPATH}"
 fi
