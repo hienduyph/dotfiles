@@ -60,10 +60,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'godlygeek/tabular'
 
 " Markdown writting
-" Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " formatter
 Plug 'rhysd/vim-clang-format'
