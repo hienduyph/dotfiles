@@ -23,6 +23,7 @@ call plug#begin(g:plug_dir)
 if has('nvim-0.5')
   " Theme trying collections, put currenty used at top
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  Plug 'sainnhe/gruvbox-material'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'lewis6991/gitsigns.nvim'

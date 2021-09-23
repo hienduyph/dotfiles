@@ -1,8 +1,13 @@
 " tokyonight
-let g:tokyonight_style = "night"
+let g:tokyonight_style = "storm"
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-colorscheme tokyonight
+" colorscheme tokyonight
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'medium'
+colorscheme gruvbox-material
 
 " let g:calvera_italic_comments = 1
 " let g:calvera_italic_keywords = 1
