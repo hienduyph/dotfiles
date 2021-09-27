@@ -84,7 +84,12 @@ disabled = false
 [directory]
 truncation_length = 10
 truncation_symbol = "…/"
-truncate_to_repo = false
+truncate_to_repo = true
+use_logical_path = true
+
+[directory.substitutions]
+"/mnt/fastdata1" = "/fast"
+"/mnt/standard1" = "/std"
 
 [aws]
 disabled = true

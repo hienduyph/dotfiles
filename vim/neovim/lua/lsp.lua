@@ -1,6 +1,6 @@
 -- lsp config
 local nvim_lsp = require('lspconfig')
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
 
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 vim.lsp.handlers["textDocument/documentHighlight"] = function() end
@@ -38,25 +38,18 @@ local on_attach = function(client, bufnr)
   end
 end
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 local servers = {'pyright', 'tsserver', 'clangd', 'yamlls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     },
   }
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
 
 -- Rust setups
 nvim_lsp.rust_analyzer.setup({

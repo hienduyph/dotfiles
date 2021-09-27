@@ -50,6 +50,7 @@ zinit snippet OMZP::vi-mode
 zinit snippet OMZP::colorize
 zinit snippet OMZP::systemd
 zinit snippet OMZP::vagrant
+zinit snippet OMZP::terraform
 
 ## 3third plugins
 eval "$(direnv hook zsh)"
