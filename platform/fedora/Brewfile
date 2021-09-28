@@ -74,3 +74,5 @@ brew "docker-compose"
 brew "dvc"
 brew "universal-ctags"
 brew "dbt"
+brew 'parquet-tools'
+
