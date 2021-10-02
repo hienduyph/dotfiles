@@ -100,6 +100,17 @@ nvim_lsp.gopls.setup {
   }
 }
 
+-- omnisharp setups
+local omnisharp_bin = "/opt/omnisharp/run"
+require'lspconfig'.omnisharp.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) };
+}
+
 -- lsp import
 function lsp_organize_imports()
   local context = { source = { organizeImports = true } }
