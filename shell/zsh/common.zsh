@@ -23,10 +23,11 @@ setopt histignorealldups         # trim all duplicates
 
 # completions source
 LINUX_BREW=/home/linuxbrew/.linuxbrew
-export FPATH=$HOME/.zsh/completions:$FPATH:/usr/share/zsh/vendor-completions
+CF_PATH=$HOME/.zsh/completions:/usr/share/zsh/vendor-completions
 if [[ -f ${LINUX_BREW}/bin/brew ]]; then
-  export FPATH="${LINUX_BREW}share/zsh/site-functions:${FPATH}"
+  CF_PATH="${LINUX_BREW}/share/zsh/site-functions:${CF_PATH}"
 fi
+export FPATH=$FPATH:${CF_PATH}
 
 # autoload -Uz compinit && compinit
 # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
