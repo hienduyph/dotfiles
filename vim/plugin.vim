@@ -26,6 +26,8 @@ if has('nvim-0.5')
   Plug 'sainnhe/gruvbox-material'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lua/popup.nvim'
+
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'kyazdani42/nvim-tree.lua'
@@ -39,6 +41,8 @@ if has('nvim-0.5')
 
   Plug 'mfussenegger/nvim-dap'
   Plug 'rcarriga/nvim-dap-ui'
+  Plug 'leoluz/nvim-dap-go'
+  Plug 'simrat39/rust-tools.nvim'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
