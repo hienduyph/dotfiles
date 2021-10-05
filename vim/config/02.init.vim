@@ -9,6 +9,7 @@ set nofoldenable
 
 " Enable local vimrc
 set exrc
+set secure
 " Basic configurations
 " Use tree sitter conf
 filetype indent plugin on
@@ -106,7 +107,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 if has('nvim')
   let g:python3_host_prog = "~/.venv/neovim/bin/python"
   " editor config
-  let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+  let g:EditorConfig_exec_path = 'editorconfig'
   let g:EditorConfig_core_mode = 'external_command'
 endif
 

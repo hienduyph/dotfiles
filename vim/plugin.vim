@@ -36,6 +36,9 @@ if has('nvim-0.5')
   Plug 'b3nj5m1n/kommentary'
   Plug 'windwp/nvim-autopairs'
   Plug 'folke/twilight.nvim'
+
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'rcarriga/nvim-dap-ui'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
@@ -45,11 +48,14 @@ else
   Plug 'Yggdroot/indentLine'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'preservim/nerdcommenter'
+  " Debug tools
+  Plug 'puremourning/vimspector'
 endif
 
 if g:telescope == 1
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'nvim-telescope/telescope-dap.nvim'
 else
   " Fuzzy finder
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -68,8 +74,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'rhysd/vim-clang-format'
 
 Plug 'editorconfig/editorconfig-vim'
-" Debug tools
-Plug 'puremourning/vimspector'
 " code linter
 Plug 'dense-analysis/ale'
 
