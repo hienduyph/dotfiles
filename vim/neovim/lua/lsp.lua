@@ -1,3 +1,4 @@
+local M = {}
 -- lsp config
 local nvim_lsp = require('lspconfig')
 -- vim.lsp.set_log_level("debug")
@@ -40,8 +41,7 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = {'pyright', 'tsserver', 'clangd', 'yamlls'}
-for _, lsp in ipairs(servers) do
+function M.setup_ls(lsp)
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -49,6 +49,18 @@ for _, lsp in ipairs(servers) do
       debounce_text_changes = 150,
     },
   }
+end
+function M.angularls()
+  M.setup_ls('angularls')
+end
+
+function M.nodels()
+  M.setup_ls('tsserver')
+end
+
+local servers = {'pyright', 'clangd', 'yamlls'}
+for _, lsp in ipairs(servers) do
+  M.setup_ls(lsp)
 end
 
 -- Rust setups
@@ -166,3 +178,5 @@ end
 callbacks['textDocument/declaration']    = location_callback
 callbacks['textDocument/typeDefinition'] = location_callback
 callbacks['textDocument/implementation'] = location_callback
+
+return M
