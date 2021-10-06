@@ -69,6 +69,7 @@ brew "terraform"
 brew "delve"
 brew "k3d"
 brew "node"
+brew 'yarn'
 brew "hashicorp/tap/vault"
 brew "docker-compose"
 brew "dvc"

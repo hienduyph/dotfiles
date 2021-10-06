@@ -3,7 +3,7 @@ exec 'source' '~/dotfiles/vim/shared.vim'
 let g:engine = $LSP_ENGINE
 
 if !exists("g:engine") || g:engine == ""
-  let g:engine="coc"
+  let g:engine="nvim"
 endif
 
 let g:lsp_enable = g:engine == "nvim"
