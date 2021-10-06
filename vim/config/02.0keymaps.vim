@@ -105,5 +105,16 @@ nnoremap <silent>7gb <Cmd>BufferLineGoToBuffer 7<CR>
 nnoremap <silent>8gb <Cmd>BufferLineGoToBuffer 8<CR>
 nnoremap <silent>9gb <Cmd>BufferLineGoToBuffer 9<CR>
 
+" override tab behavior
+nnoremap <silent>1gt <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent>2gt <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent>3gt <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent>4gt <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent>5gt <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent>6gt <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent>7gt <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent>8gt <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent>9gt <Cmd>BufferLineGoToBuffer 9<CR>
+
 " Format keymap
 nmap <silent> <leader>f :Format <CR>
