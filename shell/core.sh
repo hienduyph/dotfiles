@@ -22,8 +22,9 @@ done
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-  addToPATH "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
+if [[ -f "${LINUX_BREW}/bin/brew" ]]; then
+  addToPATH "${LINUX_BREW}/bin"
+  addToPATH "${LINUX_BREW}/sbin"
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow -g "!{.git,node_modules,vendor,.direnv,.mypy_cache,__pycache__,target,.pytest_cache,.next}" 2> /dev/null'
