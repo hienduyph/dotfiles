@@ -5,7 +5,7 @@ export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 
 if [[ -d $PROFILE_EXTRA_DIRS ]]; then
   for filename in $PROFILE_EXTRA_DIRS/*.sh; do
-    source $filename
+    source ${filename}
   done
 fi
 
