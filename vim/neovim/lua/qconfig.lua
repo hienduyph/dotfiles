@@ -29,6 +29,8 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true,
+    -- workaround because python indent is bad!
+    disable = {"python", "yaml", },
   },
   highlight = {
     enable = true,
@@ -98,6 +100,7 @@ require("bufferline").setup{
   },
 }
 
+vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache', '__pycache__', '.direnv', '.ipynb_checkpoints'}
 -- tree
 require'nvim-tree'.setup {
   update_focused_file = {

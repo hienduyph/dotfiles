@@ -52,6 +52,10 @@ cmp.setup {
   },
 
   sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'path' },
+    { name = 'nvim_lua' },
     {
       name = 'buffer',
       opts={
@@ -65,10 +69,6 @@ cmp.setup {
         end,
       },
     },
-    { name = 'path' },
-    { name = 'luasnip' },
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
   },
 }
 
