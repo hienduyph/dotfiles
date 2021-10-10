@@ -61,7 +61,7 @@ function M.nodels()
   M.setup_ls('tsserver')
 end
 
-local servers = {'pyright', 'clangd', 'yamlls'}
+local servers = {'pyright', 'clangd', 'yamlls', 'dartls'}
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
