@@ -1,5 +1,10 @@
 local dap = require("dap")
 require('dap-go').setup()
+require("flutter-tools").setup{
+  debugger = {
+    enabled = true,
+  },
+}
 
 require("dapui").setup{
   tray = {

@@ -43,6 +43,7 @@ if has('nvim-0.5')
   Plug 'rcarriga/nvim-dap-ui'
   Plug 'leoluz/nvim-dap-go'
   Plug 'simrat39/rust-tools.nvim'
+  Plug 'akinsho/flutter-tools.nvim'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
