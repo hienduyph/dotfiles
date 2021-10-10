@@ -27,8 +27,8 @@ cmp.setup {
       select = true,
     }),
     -- https://github.com/hrsh7th/nvim-cmp#how-to-setup-supertab-like-mapping
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if vim.fn.pumvisible() == 1 then
+    ["<Tab>"] = function(fallback)
+      if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"), "")
@@ -37,22 +37,16 @@ cmp.setup {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if vim.fn.pumvisible() then
+    end,
+    ["<S-Tab>"] = function(fallback)
+      if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
         vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end,
   },
 
   sources = {
