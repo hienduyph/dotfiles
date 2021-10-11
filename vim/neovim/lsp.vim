@@ -4,7 +4,7 @@ lua require("lsp")
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :lua vim.lsp.buf.formatting_sync()
-command! -nargs=0 OR :lua lsp_organize_imports()
+command! -nargs=0 OR :lua lsp_organize_imports(5000)
 command! -nargs=0 List :lua vim.lsp.diagnostic.set_loclist()
 
 " formatter config

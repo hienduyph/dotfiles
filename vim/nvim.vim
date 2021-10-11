@@ -50,3 +50,6 @@ let g:airline_section_b = 'mrq %{strftime("%H:%M")}'
 
 " Include after hook
 exec 'source' '~/dotfiles/vim/config/after.vim'
+if exists("g:neovide")
+  exec 'source' '~/dotfiles/vim/neovim/neovide.vim'
+endif

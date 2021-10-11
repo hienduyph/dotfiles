@@ -100,8 +100,9 @@ require("bufferline").setup{
   },
 }
 
-vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache', '__pycache__', '.direnv', '.ipynb_checkpoints'}
 -- tree
+vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache', '__pycache__', '.direnv', '.ipynb_checkpoints'}
+vim.g.nvim_tree_disable_window_picker = 1
 require'nvim-tree'.setup {
   update_focused_file = {
     enable = true,
