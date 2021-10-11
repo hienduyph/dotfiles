@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. "${BASH_SOURCE[0]}../shell/vars.sh"
+source $HOME/dotfiles/shell/vars.sh
 
 mkdir -p ~/.backups
 
@@ -33,7 +33,7 @@ _shell() {
   mkdir -p ~/.zsh/completions/
   rustup completions zsh cargo > ~/.zsh/completions/_cargo
   mkdir -p ~/.config
-  ln -s ~/dotfiles/shell/starship.toml  ~/.config
+  ln -fs ~/dotfiles/shell/starship.toml  ~/.config
 }
 
 _htop() {
@@ -113,4 +113,5 @@ _py_cli() {
 }
 
 _completions() {
+  echo "Install completions"
 }
