@@ -121,7 +121,16 @@ nvim_lsp.gopls.setup {
   flags = {
     debounce_text_changes = 150,
   },
-  cmd = {"gopls", "serve"},
+  on_new_config = function(config, root)
+    local gomarker = nvim_lsp.util.path.join(root, '.go2')
+    if nvim_lsp.util.path.exists(gomarker) then
+      print("gopls2")
+      config.cmd = {"gopls2", "serve"}
+    else
+      print("stable")
+      config.cmd = {"gopls", "serve"}
+    end
+  end,
   filetypes = { "go", "gomod" },
   settings = {
     gopls = {
