@@ -21,8 +21,8 @@ nnoremap <C-y> :NvimTreeToggle<CR>
 
 if g:telescope == 1
   " Telescope (Replace FZF)
-  nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv' } })<cr>
-  nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv' } })<cr>
+  nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
+  nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
   command! -bar -bang -nargs=* GitFiles :lua require('telescope.builtin').git_files()
   nnoremap <leader>b <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
