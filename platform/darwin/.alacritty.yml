@@ -28,7 +28,7 @@ window:
     x: 0
     y: 0
 
-  startup_mode: Maximized # SimpleFullscreen
+  startup_mode: Fullscreen # SimpleFullscreen
   decorations: full
   dynamic_padding: true
 
