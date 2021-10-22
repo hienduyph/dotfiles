@@ -8,7 +8,6 @@ vim.lsp.handlers["textDocument/documentHighlight"] = function() end
 
 local opts = { noremap=true, silent=true }
 local on_attach = function(client, bufnr)
-  print("LSP started.");
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -97,7 +96,6 @@ nvim_lsp.rust_analyzer.setup{
 local function get_python_path(workspace)
   -- Use activated virtualenv.
   if vim.env.VIRTUAL_ENV then
-    print('got local env' .. vim.env.VIRTUAL_ENV)
     return nvim_lsp.util.path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
   end
   return exepath('python3') or exepath('python') or 'python'
@@ -124,10 +122,8 @@ nvim_lsp.gopls.setup {
   on_new_config = function(config, root)
     local gomarker = nvim_lsp.util.path.join(root, '.go2')
     if nvim_lsp.util.path.exists(gomarker) then
-      print("gopls2")
       config.cmd = {"gopls2", "serve"}
     else
-      print("stable")
       config.cmd = {"gopls", "serve"}
     end
   end,
