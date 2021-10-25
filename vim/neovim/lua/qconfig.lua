@@ -51,9 +51,18 @@ require("indent_blankline").setup {
   char_list={'|', '¦', '┆', '┊'},
 }
 
+require("bufferline").setup{
+  options = {
+    numbers = "ordinal",
+    diagnostics = "nvim_lsp",
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+  },
+}
+
 require('lualine').setup({
   options = {
-    theme = 'palenight',
+    theme = 'gruvbox',
     always_show_bufferline=true,
   },
   extensions = {'quickfix', 'nvim-tree', 'fzf'},
@@ -80,25 +89,11 @@ require('lualine').setup({
     lualine_z = {}
   },
   tabline = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
   },
 })
 
 require("twilight").setup { }
 
-require("bufferline").setup{
-  options = {
-    numbers = "ordinal",
-    diagnostics = "nvim_lsp",
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-  },
-}
 
 -- tree
 vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache', '__pycache__', '.direnv', '.ipynb_checkpoints', 'vendor'}
