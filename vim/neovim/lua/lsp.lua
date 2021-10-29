@@ -1,25 +1,7 @@
 local M = {}
--- lsp config
 local nvim_lsp = require('lspconfig')
--- vim.lsp.set_log_level("debug")
-
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
-vim.lsp.handlers["textDocument/documentHighlight"] = function() end
 
 local opts = { noremap=true, silent=true }
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Set some keybinds conditional on server capabilities
-  if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  elseif client.resolved_capabilities.document_range_formatting then
-    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-  end
-end
 
 -- set keymaps
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -39,8 +21,21 @@ vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line
 vim.api.nvim_set_keymap('n', 'g[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 
-
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Set some keybinds conditional on server capabilities
+  if client.resolved_capabilities.document_formatting then
+    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  elseif client.resolved_capabilities.document_range_formatting then
+    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+  end
+end
 
 function M.setup_ls(lsp)
   nvim_lsp[lsp].setup {
@@ -181,36 +176,5 @@ function lsp_organize_imports(timeout_ms)
     vim.lsp.buf.execute_command(action)
   end
 end
-
--- jump new tab
-local api = vim.api
-local util = vim.lsp.util
-local callbacks = vim.lsp.handlers
-local log = vim.lsp.log
-
-local location_callback = function(_, method, result)
-  if result == nil or vim.tbl_isempty(result) then
-  local _ = log.info() and log.info(method, 'No location found')
-  return nil
-  end
-
-  -- create a new tab and save bufnr
-  api.nvim_command('tabnew')
-  local buf = api.nvim_get_current_buf()
-
-  if vim.tbl_islist(result) then
-    util.jump_to_location(result[1])
-    if #result > 1 then
-      util.set_qflist(util.locations_to_items(result))
-      api.nvim_command("copen")
-    end
-  else
-    buf = api.nvim_get_current_buf()
-  end
-end
-
-callbacks['textDocument/declaration']    = location_callback
-callbacks['textDocument/typeDefinition'] = location_callback
-callbacks['textDocument/implementation'] = location_callback
 
 return M
