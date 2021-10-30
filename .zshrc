@@ -11,32 +11,29 @@ source $HOME/.profile
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd j)"
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
+ZNAPDIR=$HOME/.znap/git
 
-source "$HOME/.zinit/bin/zinit.zsh"
+# Download Znap, if it's not there yet.
+[[ -f ${ZNAPDIR}/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ${ZNAPDIR}
 
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+source ${ZNAPDIR}/znap.zsh  # Start Znap
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+# load plugins
+znap source ohmyzsh/ohmyzsh plugins/git
+znap source ohmyzsh/ohmyzsh plugins/vi-mode
+znap source ohmyzsh/ohmyzsh plugins/colorize
+znap source ohmyzsh/ohmyzsh plugins/systemd
+znap source ohmyzsh/ohmyzsh plugins/vagrant
+znap source ohmyzsh/ohmyzsh plugins/terraform
 
-### End of Zinit's installer chunk
+znap source Aloxaf/fzf-tab
+znap source zsh-users/zsh-completions
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/common.zsh
