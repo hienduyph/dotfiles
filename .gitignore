@@ -3,3 +3,4 @@ target
 Brewfile.lock.json
 .envrc
 .direnv
+*.zwc

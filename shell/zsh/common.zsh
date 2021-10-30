@@ -39,20 +39,6 @@ compinit -C
 
 autoload -U +X bashcompinit && bashcompinit
 
-zinit light-mode for  \
-  Aloxaf/fzf-tab \
-  zsh-users/zsh-autosuggestions \
-  zsh-users/zsh-completions \
-  zdharma/fast-syntax-highlighting
-
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
-zinit snippet OMZP::vi-mode
-zinit snippet OMZP::colorize
-zinit snippet OMZP::systemd
-zinit snippet OMZP::vagrant
-zinit snippet OMZP::terraform
-
 ## 3third plugins
 eval "$(direnv hook zsh)"
 
