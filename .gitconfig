@@ -24,3 +24,10 @@
 	insteadOf = https://github.com/tikivn
 [user]
 	name = Hien Pham
+[maintenance]
+	repo = /home/hienduyph/.znap/fzf-tab
+	repo = /home/hienduyph/.znap/git
+	repo = /home/hienduyph/.znap/ohmyzsh
+	repo = /home/hienduyph/.znap/zsh-autosuggestions
+	repo = /home/hienduyph/.znap/zsh-completions
+	repo = /home/hienduyph/.znap/zsh-syntax-highlighting
