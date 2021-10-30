@@ -11,8 +11,6 @@ source $HOME/.profile
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd j)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 ZNAPDIR=$HOME/.znap/git
 
 # Download Znap, if it's not there yet.
@@ -23,24 +21,27 @@ ZNAPDIR=$HOME/.znap/git
 source ${ZNAPDIR}/znap.zsh  # Start Znap
 
 # load plugins
-znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh lib/git.zsh
+znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/vi-mode
 znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source ohmyzsh/ohmyzsh plugins/systemd
 znap source ohmyzsh/ohmyzsh plugins/vagrant
 znap source ohmyzsh/ohmyzsh plugins/terraform
 
-znap source Aloxaf/fzf-tab
+
 znap source zsh-users/zsh-completions
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
 source $HOME/dotfiles/shell/zsh/kubectl.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+znap source Aloxaf/fzf-tab
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
 
 if [[ $ZSH_PROFILNG == "yes" ]]; then
   zprof
