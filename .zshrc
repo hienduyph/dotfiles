@@ -25,11 +25,6 @@ znap source ohmyzsh/ohmyzsh lib/git.zsh
 znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/vi-mode
 znap source ohmyzsh/ohmyzsh plugins/colorize
-znap source ohmyzsh/ohmyzsh plugins/systemd
-znap source ohmyzsh/ohmyzsh plugins/vagrant
-znap source ohmyzsh/ohmyzsh plugins/terraform
-
-
 znap source zsh-users/zsh-completions
 
 # start our codes
@@ -37,8 +32,8 @@ source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
 source $HOME/dotfiles/shell/zsh/kubectl.zsh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
