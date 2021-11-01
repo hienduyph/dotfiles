@@ -1,21 +1,14 @@
-local check_back_space = function()
-  local col = vim.fn.col '.' - 1
-  return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s' ~= nil
-end
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
 local cmp = require('cmp')
 
-local luasnip = require 'luasnip'
+vim.o.completeopt = 'menuone,noselect'
 
+local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      require('luasnip').lsp_expand(args.body)
     end
   },
 
@@ -28,14 +21,12 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    -- https://github.com/hrsh7th/nvim-cmp#how-to-setup-supertab-like-mapping
+    -- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion#auto-import
     ["<Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
-        vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"), "")
-      elseif check_back_space() then
-        vim.fn.feedkeys(t("<Tab>"), "n")
+        luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -44,7 +35,7 @@ cmp.setup {
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
-        vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
+        luasnip.jump(-1)
       else
         fallback()
       end
