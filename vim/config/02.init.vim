@@ -83,6 +83,7 @@ augroup common
   autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql,lua,zsh,bash call UseSpaces()
   autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
   autocmd FileType json set filetype=jsonc
+  autocmd BufNewFile,BufRead *.sol set filetype=solidity syntax=solidity
 augroup END
 
 " Golang config

@@ -110,4 +110,7 @@ if g:lsp_enable == 1
 else
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
+
+Plug 'TovarishFin/vim-solidity'
+
 call plug#end()

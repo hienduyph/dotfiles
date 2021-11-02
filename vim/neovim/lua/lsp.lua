@@ -1,5 +1,6 @@
 local M = {}
 local nvim_lsp = require('lspconfig')
+vim.lsp.set_log_level("DEBUG")
 
 local opts = { noremap=true, silent=true }
 
@@ -55,7 +56,7 @@ function M.nodels()
   M.setup_ls('tsserver')
 end
 
-local servers = {'clangd', 'yamlls'}
+local servers = {'clangd', 'yamlls', 'solang'}
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
