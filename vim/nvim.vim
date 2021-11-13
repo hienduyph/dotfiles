@@ -1,4 +1,5 @@
 exec 'source' '~/dotfiles/vim/shared.vim'
+exec 'source' '~/dotfiles/vim/config/01.pre.vim'
 
 let g:engine = $LSP_ENGINE
 
