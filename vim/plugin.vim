@@ -62,6 +62,7 @@ endif
 
 Plug 'voldikss/vim-floaterm'
 Plug 'godlygeek/tabular'
+Plug 'dhruvasagar/vim-table-mode'
 
 " Markdown writting
 Plug 'plasticboy/vim-markdown'
