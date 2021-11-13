@@ -7,3 +7,4 @@ set foldexpr=nvim_treesitter#foldexpr()
 if g:telescope == 1
   lua require('qtelescope')
 endif
+

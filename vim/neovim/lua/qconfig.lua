@@ -43,6 +43,10 @@ require'nvim-web-devicons'.setup {
 
 require('kommentary.config').use_extended_mappings()
 
+
+vim.g.indent_blankline_filetype_exclude = {'dashboard'}
+vim.g.indent_blankline_buftype_exclude = {'dashboard', 'terminal'}
+
 require("indent_blankline").setup {
   char = "|",
   buftype_exclude = {"terminal"},
@@ -60,6 +64,9 @@ require("bufferline").setup{
   },
 }
 
+local gps = require("nvim-gps")
+gps.setup()
+
 require('lualine').setup({
   options = {
     theme = 'gruvbox',
@@ -74,7 +81,11 @@ require('lualine').setup({
         'filename',
         file_status=true,
         path=1,
-      }
+      },
+      {
+        gps.get_location,
+        cond = gps.is_available,
+      },
     },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress', 'diff'},
@@ -105,3 +116,5 @@ require'nvim-tree'.setup {
     custom = {  '.git', 'node_modules', '.cache', '__pycache__', '.direnv', '.ipynb_checkpoints', 'vendor' },
   },
 }
+
+require'lightspeed'.setup { }

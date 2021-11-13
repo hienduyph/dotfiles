@@ -1,16 +1,3 @@
-" setup ale
-let g:ale_disable_lsp = 1
-let g:ale_completion_enabled = 0
-let g:ale_completion_autoimport = 0
-let g:ale_linters = {
-  \'go': ['golangci-lint'],
-  \'c': ['clangd'],
-  \'cpp': ['clangd'],
-\}
-let g:ale_linters_explicit = 1
-" only run in manual mode
-let g:ale_lint_on_enter = 0
-
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -44,6 +31,11 @@ if has('nvim-0.5')
   Plug 'leoluz/nvim-dap-go'
   Plug 'simrat39/rust-tools.nvim'
   Plug 'akinsho/flutter-tools.nvim'
+  Plug 'glepnir/dashboard-nvim'
+  " show function signature
+  Plug 'SmiteshP/nvim-gps'
+  " motion plugins
+  Plug 'ggandor/lightspeed.nvim'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'

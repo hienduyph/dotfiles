@@ -45,21 +45,18 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'path' },
-    { name = 'nvim_lua' },
     {
       name = 'buffer',
-      opts={
-        -- only get visible buffers
+      opts = {
+        keyword_length = 1,
+        -- get completion in all buffer
         get_bufnrs = function()
-          local bufs = {}
-          for _, win in ipairs(vim.api.nvim_list_wins()) do
-            bufs[vim.api.nvim_win_get_buf(win)] = true
-          end
-          return vim.tbl_keys(bufs)
+          return vim.api.nvim_list_bufs()
         end,
       },
     },
+    { name = 'path' },
+    { name = 'nvim_lua' },
   },
 }
 
