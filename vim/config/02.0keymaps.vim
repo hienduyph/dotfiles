@@ -1,5 +1,7 @@
 " Press jj to escape insert mode
-inoremap jj <Esc>  """ jj key is <Esc> setting
+imap jj <Esc>
+imap jk <Esc>
+imap kj <Esc>
 
 " move lines around
 nnoremap <leader>k :m-2<cr>==
