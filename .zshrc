@@ -9,7 +9,7 @@ source $HOME/.profile
 
 # load default shell
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh --cmd j)"
+eval "$(zoxide init zsh --cmd z)"
 
 ZNAPDIR=$HOME/.znap/git
 
