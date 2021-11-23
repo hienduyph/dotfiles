@@ -76,6 +76,9 @@ packages=(
   golang
   ripgrep
   fd-find
+  htop
+  protobuf-compiler
+  git-delta
 )
 
 # Install all
