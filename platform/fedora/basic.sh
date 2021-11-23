@@ -73,6 +73,9 @@ packages=(
   jq
   dropbox
   calibre
+  golang
+  ripgrep
+  fd-find
 )
 
 # Install all
