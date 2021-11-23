@@ -41,4 +41,4 @@ main() {
   _github_dl  EliverLara Juno master Juno
 }
 
-#main
+main
