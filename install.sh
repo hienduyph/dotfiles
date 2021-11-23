@@ -18,11 +18,9 @@ main() {
   _neovim
   _shell
   _dots $PLATFORM
-  _fonts
-  _ranger
-  _cli
   _system
   _completions
+  _cli
 }
 
 main

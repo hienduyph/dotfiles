@@ -1,14 +1,11 @@
 #!/bin/bash
 
+set -x
+
 source $HOME/dotfiles/shell/vars.sh
 
-mkdir -p ~/.backups
-
-f_backups() {
-  mv $1 ~/.backups/ || true
-}
-
 _neovim() {
+  set -x
   echo "Install Neovim Host"
   npm i -g tree-sitter-cli
   python3 -m pip install virtualenv
@@ -18,10 +15,10 @@ _neovim() {
   echo "Install neovim config"
   rm -rf ~/.config/nvim && mkdir -p ~/.config/nvim
 
-  ln -s ~/dotfiles/vim/nvim.vim ~/.config/nvim/init.vim
-  ln -s ~/dotfiles/vim/coc-settings.json ~/.config/nvim/
-  ln -s ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/
-  ln -s ~/dotfiles/vim/UltiSnips ~/.config/nvim
+  ln -sf ~/dotfiles/vim/nvim.vim ~/.config/nvim/init.vim
+  ln -sf ~/dotfiles/vim/coc-settings.json ~/.config/nvim/
+  ln -sf ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/
+  ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim
 
   nvim +PlugInstall +qall
 }
@@ -38,7 +35,7 @@ _shell() {
 
 _htop() {
   mkdir -p $HOME/.config/htop/
-  ln -s $HOME/dotfiles/.htoprc $HOME/.config/htop/htoprc
+  ln -sf $HOME/dotfiles/.htoprc $HOME/.config/htop/htoprc
 }
 
 _dots() {
@@ -52,8 +49,7 @@ _dots() {
     .tmux.conf
   )
   for f in "${dots[@]}"; do
-    f_backups $HOME/$f
-    ln -s ~/dotfiles/$f $HOME/$f
+    ln -sf ~/dotfiles/$f $HOME/$f
   done
 
   platform_dots=(
@@ -65,8 +61,7 @@ _dots() {
     fullpath="$HOME/dotfiles/platform/${PLATFORM}/$f"
     echo $fullpath
     if [ -f $fullpath ]; then
-      f_backups $HOME/$f
-      ln -s $fullpath $HOME/$f
+      ln -sf $fullpath $HOME/$f
     fi
   done
 }
