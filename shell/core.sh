@@ -10,6 +10,7 @@ _CUS_PATH=(
   "$HOME/.deno/bin"
   "$HOME/.cargo/bin"
   "$HOME/.pub-cache/bin"
+  "$HOME/.krew/bin"
 )
 
 if [[ -f "${LINUX_BREW}/bin/brew" ]]; then
