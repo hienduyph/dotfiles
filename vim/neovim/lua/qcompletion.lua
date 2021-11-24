@@ -47,7 +47,7 @@ cmp.setup {
     { name = 'luasnip' },
     {
       name = 'buffer',
-      opts = {
+      option = {
         keyword_length = 1,
         -- get completion in all buffer
         get_bufnrs = function()

@@ -77,8 +77,9 @@ packages=(
   ripgrep
   fd-find
   htop
-  protobuf-compiler
   git-delta
+  blueman
+  telnet
 )
 
 # Install all
