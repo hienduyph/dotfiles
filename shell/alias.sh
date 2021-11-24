@@ -36,8 +36,8 @@ alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
 alias ktx="kubectx"
 alias kns="kubens"
-alias dk="podman"
-alias dkm="podman-compose"
+alias dk="docker"
+alias dkm="docker"
 alias htop="htop -s PERCENT_MEM"
 
 # git plugins
