@@ -12,13 +12,16 @@ if has('nvim-0.5')
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
   Plug 'sainnhe/gruvbox-material'
   Plug 'kyazdani42/nvim-web-devicons'
+  " Lua libs
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'MunifTanjim/nui.nvim'
+
   Plug 'nvim-lua/popup.nvim'
 
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'hoob3rt/lualine.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'akinsho/bufferline.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'ntpeters/vim-better-whitespace'
@@ -36,6 +39,7 @@ if has('nvim-0.5')
   Plug 'SmiteshP/nvim-gps'
   " motion plugins
   Plug 'ggandor/lightspeed.nvim'
+  Plug 'VonHeikemen/searchbox.nvim'
 else
   Plug 'airblade/vim-gitgutter'
   Plug 'ryanoasis/vim-devicons'
