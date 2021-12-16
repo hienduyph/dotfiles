@@ -82,6 +82,7 @@ packages=(
   telnet
   python3.8
   python3.9
+  mpv
 )
 
 # Install all
@@ -119,3 +120,6 @@ _py() {
 }
 
 _py
+
+# mpv
+ln -sf $(pwd)/platform/linux/mpv $HOME/.config
