@@ -80,6 +80,8 @@ packages=(
   git-delta
   blueman
   telnet
+  python3.8
+  python3.9
 )
 
 # Install all
@@ -106,4 +108,14 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 npm config set prefix "${HOME}/.npm-packages"
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install flathub org.gnome.Extensions -y
+flatpak install flathub org.gnome.Extensions -y
+flatpak install flathub io.dbeaver.DBeaverCommunity -y
+
+_py() {
+  python3.9 -m ensurepip --user
+  python3.9 -m pip install virtualenv
+  python3.8 -m ensurepip --user
+  python3.8 -m pip install virtualenv
+}
+
+_py
