@@ -43,7 +43,6 @@ _dots() {
   dots=(
     .zshrc
     .profile
-    .gitconfig
     .pylintrc
     .ideavimrc
     .tmux.conf
