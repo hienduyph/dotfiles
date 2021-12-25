@@ -34,6 +34,8 @@ echo "Add rpm fushion non free"
 _pkg install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 _pkg install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+_pkg copr enable robot/rust-analyzer
+
 
 packages=(
   zsh
@@ -87,6 +89,7 @@ packages=(
   python3.9
   mpv
   ibus-bamboo
+  rust-analyzer
 )
 
 # Install all
