@@ -135,6 +135,7 @@ brew "zoxide"
 brew "broot"
 brew "k3d"
 brew "hashicorp/tap/vault"
+brew "hugo"
 
 cask "flutter"
 brew "cocoapods"
