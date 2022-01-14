@@ -93,6 +93,8 @@ packages=(
   ansible
   https://github.com/muesli/duf/releases/download/v0.7.0/duf_0.7.0_linux_amd64.rpm
   httpie
+  helm
+  kubectl
 )
 
 # Install all
