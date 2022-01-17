@@ -86,7 +86,6 @@ brew "neovim"
 # terminal
 brew "tmux"
 cask "alacritty"
-cask "kitty"
 brew "zsh"
 brew "zsh-completions"
 brew "git-delta"
