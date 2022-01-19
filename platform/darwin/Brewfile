@@ -9,6 +9,7 @@ tap "homebrew/services"
 tap "jesseduffield/lazygit"
 tap "hashicorp/tap"
 tap "cantino/mcfly"
+tap "wez/wezterm"
 
 # extras
 tap "AdoptOpenJDK/openjdk"
@@ -147,5 +148,5 @@ brew "solana"
 brew "dnscrypt-proxy"
 
 cask "font-jetbrains-mono"
-
+cask "wez/wezterm/wezterm"
 mas "Enpass", id: 732710998
