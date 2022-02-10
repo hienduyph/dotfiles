@@ -33,7 +33,9 @@ source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
 source $HOME/dotfiles/shell/zsh/kubectl.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
