@@ -106,12 +106,15 @@ packages=(
   helm
   kubectl
   starship
+  telegram
 )
 
 # Install all
 echo 'Install all package'
 _pkg update
 _pkg install -y "${packages[@]}"
+
+sudo dnf remove PackageKit -y
 
 sudo usermod -aG docker $USER
 
