@@ -1,15 +1,11 @@
 env:
   TERM: xterm-256color
-  TERM_PROGRAM: Alacritty
-  LC_ALL: en_US.UTF-8
-  LANG: en_US.UTF-8
-  WINIT_X11_SCALE_FACTOR: '1.0'
 shell:
-  program: /bin/bash
+  program: /bin/sh
   args:
-  - -l
-  - -c
-  - tmux new-session -A -s Lala
+    - -l
+    - -c
+    - tmux new-session -A -s Lala
 window:
   dimensions:
     columns: 0
@@ -18,19 +14,22 @@ window:
     x: 0
     y: 0
   startup_mode: Maximized
-  decorations: full
+  decorations: none
   dynamic_padding: true
 scrolling:
   history: 10000
   multiplier: 3
 font:
   normal:
-    family: InputMonoNarrow Nerd Font
-    style: Regular
+    family: JetBrainsMono Nerd Font
+    style: Light
   bold:
-    family: InputMonoNarrow Nerd Font
-    style: Bold
-  size: 15
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  size: 9.6
   offset:
     x: 0
     y: 0
@@ -38,121 +37,105 @@ font:
     x: 0
     y: 0
 draw_bold_text_with_bright_colors: true
+# Colors (Gruvbox dark)
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xeaeaea'
-  normal:
-    black: '0x000000'
-    red: '0xd54e53'
-    green: '0xb9ca4a'
-    yellow: '0xe6c547'
-    blue: '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan: '0x70c0ba'
-    white: '0xffffff'
+    # hard contrast background - '#1d2021'
+    background:        &gruvbox_dark_bg '#282828'
+    # soft contrast background - '#32302f'
+    foreground:        '#ebdbb2'
+    bright_foreground: '#fbf1c7'
+    dim_foreground:    '#a89984'
+  cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  # search:
+  #   matches:
+  #     foreground: '#000000'
+  #     background: '#ffffff'
+  #   focused_match:
+  #    foreground: CellBackground
+  #    background: CellForeground
+  #   bar:
+  #     background: ''
+  #     foreground: ''
+  # line_indicator:
+  #   foreground: None
+  #   background: None
+  selection:
+    text:       CellBackground
+    background: CellForeground
   bright:
-    black: '0x666666'
-    red: '0xff3334'
-    green: '0x9ec400'
-    yellow: '0xe7c547'
-    blue: '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan: '0x54ced6'
-    white: '0xffffff'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+  normal:
+    black:   *gruvbox_dark_bg
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
   dim:
-    black: '0x333333'
-    red: '0xf2777a'
-    green: '0x99cc99'
-    yellow: '0xffcc66'
-    blue: '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan: '0x66cccc'
-    white: '0xdddddd'
+    black:   '#32302f'
+    red:     '#9d0006'
+    green:   '#79740e'
+    yellow:  '#b57614'
+    blue:    '#076678'
+    magenta: '#8f3f71'
+    cyan:    '#427b58'
+    white:   '#928374'
+  # indexed_colors: []
+
 bell:
   animation: EaseOutExpo
   duration: 0
 background_opacity: 1.0
 mouse_bindings:
-- mouse: Middle
-  action: PasteSelection
+  - mouse: Middle
+    action: PasteSelection
 mouse:
   double_click:
     threshold: 300
   triple_click:
     threshold: 300
   hide_when_typing: true
-  url:
-    launcher: xdg-open
-    modifiers: Option|Shift
 cursor:
   style: Block
   unfocused_hollow: true
 live_config_reload: true
 key_bindings:
-- key: N
-  mods: Option
-  action: SpawnNewInstance
-- key: D
-  mods: Option
-  chars: "\vv"
-- key: D
-  mods: Option|Shift
-  chars: "\vs"
-- key: W
-  mods: Option
-  chars: "\vx"
-- key: H
-  mods: Option
-  chars: "\vh"
-- key: J
-  mods: Option
-  chars: "\vj"
-- key: K
-  mods: Option
-  chars: "\vk"
-- key: L
-  mods: Option
-  chars: "\vl"
-- key: T
-  mods: Option
-  chars: "\vc"
-- key: Key1
-  mods: Option
-  chars: "\v1"
-- key: Key2
-  mods: Option
-  chars: "\v2"
-- key: Key3
-  mods: Option
-  chars: "\v3"
-- key: Key4
-  mods: Option
-  chars: "\v4"
-- key: Key5
-  mods: Option
-  chars: "\v5"
-- key: Key6
-  mods: Option
-  chars: "\v6"
-- key: Key7
-  mods: Option
-  chars: "\v7"
-- key: Key8
-  mods: Option
-  chars: "\v8"
-- key: Key9
-  mods: Option
-  chars: "\v9"
-- key: Left
-  mods: Option
-  chars: "\vH"
-- key: Down
-  mods: Option
-  chars: "\vJ"
-- key: Up
-  mods: Option
-  chars: "\vK"
-- key: Right
-  mods: Option
-  chars: "\vL"
+  - { key: N,     mods: Option,       action: SpawnNewInstance }
+  - { key: D,     mods: Option,       chars: "\x02\x76" }
+  - { key: D,     mods: Option|Shift, chars: "\x02\x73" }
+  - { key: W,     mods: Option,       chars: "\x02\x78" }
+  - { key: H,     mods: Option,       chars: "\x02\x68" }
+  - { key: J,     mods: Option,       chars: "\x02\x6a" }
+  - { key: K,     mods: Option,       chars: "\x02\x6b" }
+  - { key: L,     mods: Option,       chars: "\x02\x6c" }
+  - { key: T,     mods: Option,       chars: "\x02\x63" }
+  - { key: Key1,  mods: Option,       chars: "\x02\x31" }
+  - { key: Key2,  mods: Option,       chars: "\x02\x32" }
+  - { key: Key3,  mods: Option,       chars: "\x02\x33" }
+  - { key: Key4,  mods: Option,       chars: "\x02\x34" }
+  - { key: Key5,  mods: Option,       chars: "\x02\x35" }
+  - { key: Key6,  mods: Option,       chars: "\x02\x36" }
+  - { key: Key7,  mods: Option,       chars: "\x02\x37" }
+  - { key: Key8,  mods: Option,       chars: "\x02\x38" }
+  - { key: Key9,  mods: Option,       chars: "\x02\x39" }
+  - { key: Left,  mods: Option,       chars: "\x02\x48" }
+  - { key: Down,  mods: Option,       chars: "\x02\x4a" }
+  - { key: Up,    mods: Option,       chars: "\x02\x4b" }
+  - { key: Right, mods: Option,       chars: "\x02\x4c" }
+  - { key: "LBracket", mods: Option,       chars: "\x02\x68" }
+  - { key: "RBracket", mods: Option,       chars: "\x02\x6c" }
