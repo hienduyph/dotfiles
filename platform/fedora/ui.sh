@@ -11,7 +11,7 @@ _clone_n_install() {
   NAME=gtk-work
   rm -rf ${TMP_DIR}/${NAME}
   git clone $1 ${NAME}
-  cd ${TMP_DIR/}${NAME}
+  cd ${TMP_DIR}/${NAME}
   ./install.sh
   rm -rf ${TMP_DIR}/${NAME}
 }

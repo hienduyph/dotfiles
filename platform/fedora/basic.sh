@@ -31,11 +31,21 @@ echo "Add Chrome"
 sudo dnf config-manager --set-enabled google-chrome
 
 echo "Add rpm fushion non free"
-_pkg install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-_pkg install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+_pkg install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+_pkg install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-_pkg copr enable robot/rust-analyzer
+_pkg copr enable robot/rust-analyzer -y
 
+
+cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
 
 packages=(
   zsh
@@ -95,6 +105,7 @@ packages=(
   httpie
   helm
   kubectl
+  starship
 )
 
 # Install all
@@ -115,8 +126,6 @@ for pkg in "${services[@]}"; do
   sudo systemctl start $pkg
   sudo systemctl enable $pkg
 done
-
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 npm config set prefix "${HOME}/.npm-packages"
 
