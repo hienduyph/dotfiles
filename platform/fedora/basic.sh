@@ -36,7 +36,8 @@ _pkg install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-r
 
 _pkg copr enable robot/rust-analyzer -y
 
-
+sudo rpm --import https://packages.cloud.google.com/yum/doc/yum-key.gpg
+sudo rpm --import https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -107,6 +108,7 @@ packages=(
   kubectl
   starship
   telegram
+  editorconfig
 )
 
 # Install all
