@@ -1,4 +1,4 @@
-export PYCLI_HOME=$HOME/.venv/cli
+export PYCLI_HOME=/opt/cli
 export NEOVIM_HOST=$HOME/.venv/neovim
 export NNN_USE_EDITOR=1
 export NPM_PACKAGES="${HOME}/.npm-packages"
