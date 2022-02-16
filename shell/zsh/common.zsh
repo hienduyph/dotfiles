@@ -22,10 +22,9 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 setopt histignorealldups         # trim all duplicates
 
 # completions source
-LINUX_BREW=/home/linuxbrew/.linuxbrew
 CF_PATH=$HOME/.zsh/completions:/usr/share/zsh/vendor-completions:/usr/share/zsh/site-functions
-if [[ -f ${LINUX_BREW}/bin/brew ]]; then
-  CF_PATH="${LINUX_BREW}/share/zsh/site-functions:${CF_PATH}"
+if [[ -f ${BREW_PREFIX}/bin/brew ]]; then
+  CF_PATH="${BREW_PREFIX}/share/zsh/site-functions:${CF_PATH}"
 fi
 export FPATH=$FPATH:${CF_PATH}
 

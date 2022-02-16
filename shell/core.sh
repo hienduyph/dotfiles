@@ -13,12 +13,8 @@ _CUS_PATH=(
   "$HOME/.krew/bin"
 )
 
-if [[ -f "${LINUX_BREW}/bin/brew" ]]; then
-  _CUS_PATH+=("${LINUX_BREW}/bin" "${LINUX_BREW}/sbin")
-fi
-
-if [[ -f "${HOMEBREW_PREFIX}/bin/brew" ]]; then
-  _CUS_PATH+=("${HOMEBREW_PREFIX}/bin" "${HOMEBREW_PREFIX}/sbin")
+if [[ -f "${BREW_PREFIX}/bin/brew" ]]; then
+  _CUS_PATH+=("${BREW_PREFIX}/bin" "${BREW_PREFIX}/sbin")
 fi
 
 _before_path=$(IFS=:; echo "${PREPEND[*]}")
