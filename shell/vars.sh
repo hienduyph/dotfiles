@@ -8,6 +8,7 @@ export GOPATH="$HOME/.go"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export LINUX_BREW=/home/linuxbrew/.linuxbrew
+export HOMEBREW_PREFIX=/opt/homebrew
 
 prependToPATH() {
   case ":$PATH:" in
