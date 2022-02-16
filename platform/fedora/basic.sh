@@ -116,7 +116,7 @@ echo 'Install all package'
 _pkg update
 _pkg install -y "${packages[@]}"
 
-sudo dnf remove PackageKit -y
+sudo dnf remove PackageKit fedora-chromium-config -y
 
 sudo usermod -aG docker $USER
 
