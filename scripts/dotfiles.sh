@@ -7,7 +7,6 @@ source $HOME/dotfiles/shell/vars.sh
 _neovim() {
   set -x
   echo "Install Neovim Host"
-  npm i -g tree-sitter-cli
   python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
@@ -25,7 +24,6 @@ _neovim() {
 
 _shell() {
   mkdir -p ~/.zsh
-  curl -fsSL https://starship.rs/install.sh | bash
   # zsh config
   mkdir -p ~/.zsh/completions/
   rustup completions zsh cargo > ~/.zsh/completions/_cargo
@@ -53,6 +51,7 @@ _dots() {
 
   platform_dots=(
     .alacritty.yml
+    .wezterm.lua
   )
 
   for f in "${platform_dots[@]}"; do
@@ -95,7 +94,8 @@ _ranger() {
 
 _py_cli() {
   sudo python3.9 -m pip install virtualenv
-  python3.9 -m virtualenv $PYCLI_HOME
+  sudo python3.9 -m virtualenv $PYCLI_HOME
+  sudo chown -R $(whoami) $PYCLI_HOME
   $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli
   bins=(
     mycli
