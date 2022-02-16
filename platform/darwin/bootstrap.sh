@@ -9,3 +9,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle
 
 rustup-init -y
+
+$(brew --prefix fzf)/install --all
