@@ -141,6 +141,10 @@ brew "cocoapods"
 cask "calibre"
 cask "vlc"
 cask "dropbox"
+cask "visual-studio-code"
+cask "alt-tab"
+cask "google-chrome"
+cask "intellij-idea-ce"
 
 brew "solana"
 
