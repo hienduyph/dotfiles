@@ -37,7 +37,7 @@ alias kpf="kubectl port-forward"
 alias ktx="kubectl ctx"
 alias kns="kubectl ns"
 alias dk="docker"
-alias dkm="docker"
+alias dkm="docker-compose"
 alias htop="htop -s PERCENT_MEM"
 
 # git plugins

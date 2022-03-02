@@ -38,7 +38,8 @@ if has('nvim-0.5')
   " show function signature
   Plug 'SmiteshP/nvim-gps'
   " motion plugins
-  Plug 'ggandor/lightspeed.nvim'
+  " https://github.com/ggandor/lightspeed.nvim/issues/127
+  Plug 'ggandor/lightspeed.nvim', { 'commit': '4d8359a30b26ee5316d0e7c79af08b10cb17a57b' }
   Plug 'VonHeikemen/searchbox.nvim'
 else
   Plug 'airblade/vim-gitgutter'
