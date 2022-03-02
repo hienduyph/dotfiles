@@ -1,6 +1,5 @@
 local M = {}
 local nvim_lsp = require('lspconfig')
-vim.lsp.set_log_level("DEBUG")
 
 local opts = { noremap=true, silent=true }
 
