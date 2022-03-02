@@ -98,6 +98,7 @@ brew "jesseduffield/lazygit/lazygit"
 
 # langluage
 brew "python@3.8"
+brew "python@3.10"
 brew "python"
 brew "go"
 brew "gradle"

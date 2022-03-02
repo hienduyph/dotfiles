@@ -106,8 +106,6 @@ require('lualine').setup({
 
 require("twilight").setup { }
 
--- tree
-vim.g.nvim_tree_disable_window_picker = 1
 require'nvim-tree'.setup {
   update_focused_file = {
     enable = true,
@@ -115,6 +113,13 @@ require'nvim-tree'.setup {
   filters = {
     dotfiles = false,
     custom = {  '.git', 'node_modules', '.cache', '__pycache__', '.direnv', '.ipynb_checkpoints', 'vendor' },
+  },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      },
+    },
   },
 }
 
