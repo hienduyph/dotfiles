@@ -126,3 +126,5 @@ require'nvim-tree'.setup {
 require("lightspeed").setup {
   ignore_case = false,
 }
+
+require('rust-tools').setup({})

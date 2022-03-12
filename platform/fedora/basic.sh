@@ -48,6 +48,8 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
+_pkg copr enable atim/lazygit -y
+
 packages=(
   zsh
   enpass
@@ -109,6 +111,9 @@ packages=(
   starship
   telegram
   editorconfig
+  lazygit
+  tokei
+  unrar
 )
 
 # Install all
