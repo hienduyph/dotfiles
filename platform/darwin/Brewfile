@@ -86,7 +86,6 @@ brew "neovim"
 
 # terminal
 brew "tmux"
-cask "alacritty"
 brew "zsh"
 brew "zsh-completions"
 brew "git-delta"
@@ -119,7 +118,6 @@ brew "clang-format"
 brew "terraform"
 
 cask "jdiskreport"
-cask "jetbrains-toolbox"
 cask "tableplus"
 
 brew "rust-analyzer"

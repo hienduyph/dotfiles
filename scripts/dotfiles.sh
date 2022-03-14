@@ -71,15 +71,16 @@ _fonts() {
       FONT_DIR="/Library/Fonts"
       ;;
     linux)
-      FONT_DIR="/usr/share/fonts/input-mono-nerd-fonts"
+      FONT_DIR="/usr/share/fonts"
       ;;
     *)
       echo "Unsupport platform $PLATFORM"
       exit;
   esac
-  rm -rf ${FONT_DIR}
   sudo mkdir -p ${FONT_DIR}
-  sudo tar -xf ~/dotfiles/fonts/InputMonoNerdFont.tar.gz -C $FONT_DIR
+  cd ${FONT_DIR} && {
+    curl -O 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf'
+  cd -; }
 }
 
 _ranger() {
