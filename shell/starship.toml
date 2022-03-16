@@ -52,6 +52,7 @@ $status\
 $character"""
 
 add_newline = false
+command_timeout = 5000
 
 [kubernetes]
 format = '[⛵ $context](dimmed green) '
