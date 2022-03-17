@@ -152,4 +152,6 @@ brew "dnscrypt-proxy"
 cask "font-jetbrains-mono"
 cask "wez/wezterm/wezterm"
 cask "telegram"
+cask "cloudflare-warp"
+
 mas "Enpass", id: 732710998
