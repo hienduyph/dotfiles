@@ -114,6 +114,7 @@ packages=(
   lazygit
   tokei
   unrar
+  sysstat
 )
 
 # Install all
@@ -130,6 +131,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 services=(
   dnscrypt-proxy
   docker
+  sysstat
 )
 
 for pkg in "${services[@]}"; do

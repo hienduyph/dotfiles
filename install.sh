@@ -20,6 +20,7 @@ _cli() {
 _system() {
   sudo mkdir -p /etc/profile.d/
   sudo cp $HOME/dotfiles/shell/system.sh /etc/profile.d/
+  sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
 }
 
 main() {
