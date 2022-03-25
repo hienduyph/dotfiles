@@ -11,3 +11,6 @@ brew bundle
 rustup-init -y
 
 $(brew --prefix fzf)/install --all
+
+kubectl krew install ctx
+kubectl krew install ns

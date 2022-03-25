@@ -9,7 +9,6 @@ $git_status\
 $hg_branch\
 $shlvl\
 $kubernetes\
-$docker_context\
 $package\
 $cmake\
 $dart\
