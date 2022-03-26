@@ -22,10 +22,9 @@ alias c="cheat"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 
-# alias y2j="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); json.dump(y, sys.stdout, indent=2)'"
 alias y2j="yaml2json"
-# alias j2y="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
 alias j2y="json2yaml"
+
 
 alias kdf="kubectl diff -f"
 alias kdfs="kubectl diff -f -"
