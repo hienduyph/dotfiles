@@ -1,4 +1,5 @@
 #!/bin/bash
 
-sudo dnf install akmod-nvidia nvidia-persistenced xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-power -y
-sudo systemctl enable nvidia-{suspend,resume,hibernate}
+# Read here: https://github.com/nilanshu96/Fedora-35-Post-Install
+
+sudo dnf install -y akmod-nvidia nvidia-persistenced xorg-x11-drv-nvidia-cuda vdpauinfo libva-vdpau-driver libva-utils vulkan vulkan-tools
