@@ -34,7 +34,6 @@ if has('nvim-0.5')
   Plug 'leoluz/nvim-dap-go'
   Plug 'simrat39/rust-tools.nvim'
   Plug 'akinsho/flutter-tools.nvim'
-  Plug 'glepnir/dashboard-nvim'
   " show function signature
   Plug 'SmiteshP/nvim-gps'
   " motion plugins
