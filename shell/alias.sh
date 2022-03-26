@@ -27,17 +27,19 @@ alias y2j="yaml2json"
 # alias j2y="$HOME/.venv/cli/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'"
 alias j2y="json2yaml"
 
-alias i="istioctl"
-alias ktz="kustomize"
-alias kf="kfctl"
-alias kdf="k diff -f"
+alias kdf="kubectl diff -f"
 alias kdfs="kubectl diff -f -"
 alias kafs="kubectl apply -f -"
 alias kpf="kubectl port-forward"
 alias ktx="kubectl ctx"
 alias kns="kubectl ns"
+alias ktz="kustomize"
+
 alias dk="docker"
 alias dkm="docker-compose"
+alias pm="podman"
+alias pmm="podman-compose"
+
 alias htop="htop -s PERCENT_MEM"
 
 # git plugins
