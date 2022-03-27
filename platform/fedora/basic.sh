@@ -115,6 +115,7 @@ packages=(
   tokei
   unrar
   sysstat
+  pipewire-codec-aptx
 )
 
 # Install all

@@ -57,10 +57,8 @@ if g:telescope == 1
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'nvim-telescope/telescope-dap.nvim'
 else
-  " Fuzzy finder
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
-  Plug 'kevinhwang91/rnvimr'
 endif
 
 Plug 'voldikss/vim-floaterm'
