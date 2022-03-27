@@ -22,7 +22,7 @@ _after_path=$(IFS=:; echo "${_CUS_PATH[*]}")
 export PATH="${_before_path}:${PATH}:${_after_path}"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude '.git|node_modules|vendor|.direnv|.mypy_cache|__pycache__|target|.pytest_cache|.next'"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow -E .git -E node_modules -E vendor -E .direnv -E .mypy_cache -E __pycache__ -E target -E .pytest_cache -E .next"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d"
 

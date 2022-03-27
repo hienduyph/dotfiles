@@ -48,8 +48,6 @@ else
     \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
   let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
-  " Float filemanager
-  map <silent> <leader>t :RnvimrToggle<CR>
 endif
 
 " clear search results highlight
