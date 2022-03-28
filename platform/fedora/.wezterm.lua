@@ -2,6 +2,8 @@ local wezterm = require "wezterm";
 return {
   font = wezterm.font("JetBrainsMono Nerd Font"),
   font_size=9.6,
+  tab_max_width = 16,
+  use_fancy_tab_bar=false,
   color_scheme = "Gruvbox Dark",
   exit_behavior = "Close",
   window_decorations = "NONE",

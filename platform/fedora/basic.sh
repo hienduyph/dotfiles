@@ -116,6 +116,7 @@ packages=(
   unrar
   sysstat
   pipewire-codec-aptx
+  gnome-sound-recorder
 )
 
 # Install all
