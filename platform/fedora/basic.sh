@@ -104,7 +104,6 @@ packages=(
   ibus-bamboo
   rust-analyzer
   ansible
-  https://github.com/muesli/duf/releases/download/v0.7.0/duf_0.7.0_linux_amd64.rpm
   httpie
   helm
   kubectl
@@ -117,6 +116,8 @@ packages=(
   sysstat
   pipewire-codec-aptx
   gnome-sound-recorder
+  https://github.com/wez/wezterm/releases/download/20220319-142410-0fcdea07/wezterm-20220319_142410_0fcdea07-1.fc35.x86_64.rpm
+  https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
 )
 
 # Install all
@@ -146,6 +147,7 @@ npm config set prefix "${HOME}/.npm-packages"
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.Extensions -y
 flatpak install flathub io.dbeaver.DBeaverCommunity -y
+flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
 
 _py() {
   python3.9 -m ensurepip --user
