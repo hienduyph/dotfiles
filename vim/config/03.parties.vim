@@ -2,23 +2,11 @@
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 
-" Airline themes
-" Automatically displays all buffers when there's only one tab open.
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#coc#enabled = 1
-
-" enable extensions
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#formatter = 'short_path'
-
 " markdown config
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_fenced_languages = []
-
 
 " commenter
 let g:NERDSpaceDelims = 1

@@ -103,7 +103,6 @@ packages=(
   mpv
   ibus-bamboo
   rust-analyzer
-  ansible
   httpie
   helm
   kubectl
@@ -145,9 +144,14 @@ done
 npm config set prefix "${HOME}/.npm-packages"
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.Extensions -y
-flatpak install flathub io.dbeaver.DBeaverCommunity -y
-flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
+
+flatpaks=(
+  org.gnome.Extensions
+  io.dbeaver.DBeaverCommunity
+)
+for pkg in "${flatpaks[@]}";do
+  flatpak install flathub ${pkg} -y
+done
 
 _py() {
   python3.9 -m ensurepip --user
@@ -160,3 +164,7 @@ _py
 
 # mpv
 ln -sf $(pwd)/platform/linux/mpv $HOME/.config
+
+echo "Jetbrain toolbox"
+
+curl -fsSL 'https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11680.tar.gz' | tar xz -C ~/.local/bin --strip-components=1
