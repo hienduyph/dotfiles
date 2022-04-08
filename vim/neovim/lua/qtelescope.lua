@@ -3,6 +3,9 @@ require('telescope').setup {
     layout_config = {
       vertical = { width = 0.5 }
     },
+    preview = {
+      treesitter = false,
+    },
   },
   extensions = {
     fzf = {
