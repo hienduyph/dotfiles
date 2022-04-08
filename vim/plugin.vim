@@ -7,50 +7,37 @@ endif
 
 call plug#begin(g:plug_dir)
 
-if has('nvim-0.5')
-  " Theme trying collections, put currenty used at top
-  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-  Plug 'sainnhe/gruvbox-material'
-  Plug 'kyazdani42/nvim-web-devicons'
-  " Lua libs
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'MunifTanjim/nui.nvim'
+" Theme trying collections, put currenty used at top
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'sainnhe/gruvbox-material'
+Plug 'kyazdani42/nvim-web-devicons'
+" Lua libs
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
 
-  Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/popup.nvim'
 
-  Plug 'lewis6991/gitsigns.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'nvim-lualine/lualine.nvim'
-  Plug 'akinsho/bufferline.nvim'
-  Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'ntpeters/vim-better-whitespace'
-  Plug 'b3nj5m1n/kommentary'
-  Plug 'windwp/nvim-autopairs'
-  Plug 'folke/twilight.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'b3nj5m1n/kommentary'
+Plug 'windwp/nvim-autopairs'
+Plug 'folke/twilight.nvim'
 
-  Plug 'mfussenegger/nvim-dap'
-  Plug 'rcarriga/nvim-dap-ui'
-  Plug 'leoluz/nvim-dap-go'
-  Plug 'simrat39/rust-tools.nvim'
-  Plug 'akinsho/flutter-tools.nvim'
-  " show function signature
-  Plug 'SmiteshP/nvim-gps'
-  " motion plugins
-  Plug 'ggandor/lightspeed.nvim'
-  Plug 'VonHeikemen/searchbox.nvim'
-else
-  Plug 'airblade/vim-gitgutter'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'rafalbromirski/vim-aurora'
-  Plug 'Yggdroot/indentLine'
-  Plug 'bronson/vim-trailing-whitespace'
-  Plug 'preservim/nerdcommenter'
-  " Debug tools
-  Plug 'puremourning/vimspector'
-endif
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'leoluz/nvim-dap-go'
+Plug 'simrat39/rust-tools.nvim'
+Plug 'akinsho/flutter-tools.nvim'
+" show function signature
+Plug 'SmiteshP/nvim-gps'
+" motion plugins
+Plug 'ggandor/lightspeed.nvim'
+Plug 'VonHeikemen/searchbox.nvim'
 
 if g:telescope == 1
   Plug 'nvim-telescope/telescope.nvim'
@@ -76,35 +63,24 @@ Plug 'editorconfig/editorconfig-vim'
 " code linter
 Plug 'dense-analysis/ale'
 
-" work with ipython
-if exists("g:slime_enable")  && g:slime_enable == 1
-  Plug 'jpalardy/vim-slime', { 'for': 'python' }
-  Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
-endif
+Plug 'neovim/nvim-lspconfig'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'hrsh7th/nvim-cmp'
 
+" source for cmp
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
 
-" LSP Config
-if g:lsp_enable == 1
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'L3MON4D3/LuaSnip'
-  Plug 'hrsh7th/nvim-cmp'
+" snippets collections
+Plug 'rafamadriz/friendly-snippets'
 
-  " source for cmp
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-nvim-lua'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'saadparwaiz1/cmp_luasnip'
-
-  " snippets collections
-  Plug 'rafamadriz/friendly-snippets'
-
-  Plug 'psf/black'
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-else
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+Plug 'psf/black'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plug 'TovarishFin/vim-solidity'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
