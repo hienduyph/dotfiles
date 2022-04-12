@@ -12,10 +12,6 @@ echo 'Add Enpass Repo'
 _pkg config-manager --add-repo  https://yum.enpass.io/enpass-yum.repo
 
 
-echo 'Add albert'
-sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_35/home:manuelschneid3r.repo
-
 echo "Add ibus"
 _pkg config-manager --add-repo https://download.opensuse.org/repositories/home:lamlng/Fedora_35/home:lamlng.repo
 
@@ -57,7 +53,6 @@ packages=(
   git-lfs
   git
   git-subtree
-  albert
   g++ libstdc++-devel libstdc++
   java-11-openjdk
   java-11-openjdk-devel
@@ -114,14 +109,17 @@ packages=(
   sysstat
   pipewire-codec-aptx
   gnome-sound-recorder
-  https://github.com/wez/wezterm/releases/download/20220319-142410-0fcdea07/wezterm-20220319_142410_0fcdea07-1.fc35.x86_64.rpm
+  https://github.com/wez/wezterm/releases/download/20220408-101518-b908e2dd/wezterm-20220408_101518_b908e2dd-1.fc35.x86_64.rpm
   https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
+  ulauncher
 )
 
 # Install all
 echo 'Install all package'
 _pkg update
 _pkg install -y "${packages[@]}"
+
+systemctl --user enable --now ulauncher
 
 sudo dnf remove PackageKit fedora-chromium-config -y
 
