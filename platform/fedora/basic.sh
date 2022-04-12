@@ -53,7 +53,6 @@ _pkg copr enable atim/lazygit -y
 packages=(
   zsh
   enpass
-  flameshot
   dnscrypt-proxy
   git-lfs
   git
