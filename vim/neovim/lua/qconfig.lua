@@ -23,7 +23,6 @@ parser_config.gotmpl = {
 
 -- use tree sitter
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
   ignore_install = {"norg"},
   autopairs = {
     enable = true,
