@@ -146,7 +146,6 @@ cask "intellij-idea-ce"
 
 brew "solana"
 brew "alt-tab"
-cask "flameshot"
 
 # securityes
 brew "dnscrypt-proxy"
