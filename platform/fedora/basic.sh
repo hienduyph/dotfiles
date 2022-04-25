@@ -30,6 +30,10 @@ echo "Add rpm fushion non free"
 _pkg install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 _pkg install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+echo "Add albert"
+sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_35/home:manuelschneid3r.repo
+
 _pkg copr enable robot/rust-analyzer -y
 
 sudo rpm --import https://packages.cloud.google.com/yum/doc/yum-key.gpg
@@ -90,7 +94,6 @@ packages=(
   fd-find
   htop
   git-delta
-  blueman
   telnet
   python3.8
   python3.9
@@ -111,7 +114,8 @@ packages=(
   gnome-sound-recorder
   https://github.com/wez/wezterm/releases/download/20220408-101518-b908e2dd/wezterm-20220408_101518_b908e2dd-1.fc35.x86_64.rpm
   https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
-  ulauncher
+  cabextract xorg-x11-font-utils fontconfig
+  albert
 )
 
 # Install all
@@ -165,3 +169,4 @@ ln -sf $(pwd)/platform/linux/mpv $HOME/.config
 echo "Jetbrain toolbox"
 
 curl -fsSL 'https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11680.tar.gz' | tar xz -C ~/.local/bin --strip-components=1
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
