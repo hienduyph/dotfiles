@@ -48,6 +48,8 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
+echo "Add Signal repo"
+_pkg copr enable luminoso/Signal-Desktop -y
 _pkg copr enable atim/lazygit -y
 
 packages=(
@@ -116,6 +118,8 @@ packages=(
   https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
   cabextract xorg-x11-font-utils fontconfig
   albert
+  signal-desktop
+  podman-compose
 )
 
 # Install all
