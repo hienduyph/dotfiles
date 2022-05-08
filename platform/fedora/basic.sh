@@ -115,6 +115,7 @@ packages=(
   albert
   signal-desktop
   podman-compose
+  flameshot
 )
 
 # Install all

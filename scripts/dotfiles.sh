@@ -66,15 +66,15 @@ _dots() {
 
 _fonts() {
   FONT_DIR=""
-  case "$PLATFORM" in
+  case "$1" in
     darwin)
       FONT_DIR="/Library/Fonts"
       ;;
     linux)
-      FONT_DIR="/usr/share/fonts"
+      FONT_DIR="/usr/local/share/fonts"
       ;;
     *)
-      echo "Unsupport platform $PLATFORM"
+      echo "Unsupport platform $1"
       exit;
   esac
   sudo mkdir -p ${FONT_DIR}

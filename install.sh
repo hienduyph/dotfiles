@@ -27,7 +27,7 @@ main() {
   _neovim
   _shell
   _dots $PLATFORM
-  _fonts
+  _fonts $PLATFORM
   _system
   _completions
   _cli
