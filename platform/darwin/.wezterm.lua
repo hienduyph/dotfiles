@@ -1,6 +1,7 @@
 local wezterm = require "wezterm";
 return {
   font = wezterm.font("JetBrainsMono Nerd Font"),
+  native_macos_fullscreen_mode = true,
   color_scheme = "Gruvbox Dark",
   exit_behavior = "Close",
   tab_max_width = 16,
