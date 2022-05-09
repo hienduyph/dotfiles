@@ -79,7 +79,7 @@ _fonts() {
   esac
   sudo mkdir -p ${FONT_DIR}
   cd ${FONT_DIR} && {
-    curl -O 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf'
+    sudo curl -LO 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf'
   cd -; }
 }
 
