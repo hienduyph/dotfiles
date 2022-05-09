@@ -4,6 +4,8 @@ return {
   font_size=9,
   tab_max_width = 16,
   use_fancy_tab_bar=false,
+  initial_cols=1920,
+  initial_rows=1080,
   color_scheme = "Gruvbox Dark",
   exit_behavior = "Close",
   window_decorations = "NONE",
