@@ -3,8 +3,6 @@ return {
   font = wezterm.font("JetBrainsMono Nerd Font"),
   font_size=9.6,
   tab_max_width = 16,
-  initial_cols=1920,
-  initial_rows=1080,
   use_fancy_tab_bar=false,
   color_scheme = "Gruvbox Dark",
   exit_behavior = "Close",

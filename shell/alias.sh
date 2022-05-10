@@ -39,8 +39,6 @@ alias dkm="docker-compose"
 alias pm="podman"
 alias pmm="podman-compose"
 
-alias htop="htop -s PERCENT_MEM"
-
 # git plugins
 
 alias gpm="git pull origin master"
