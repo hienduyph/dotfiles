@@ -29,8 +29,10 @@ main() {
   _dots $PLATFORM
   _fonts $PLATFORM
   _system
-  _completions
   _cli
+  _py_cli
+  _htop
+  _completions
 }
 
 main
