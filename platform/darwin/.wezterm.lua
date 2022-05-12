@@ -4,6 +4,8 @@ return {
   native_macos_fullscreen_mode = true,
   color_scheme = "Gruvbox Dark",
   exit_behavior = "Close",
+  initial_cols=1920,
+  initial_rows=1080,
   tab_max_width = 16,
   use_fancy_tab_bar=false,
   native_macos_fullscreen_mode = true,
