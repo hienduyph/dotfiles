@@ -15,6 +15,16 @@ _cli() {
   source $HOME/.cargo/env
   cargo build --release
   cp target/release/json2yaml target/release/yaml2json ~/.local/bin
+
+  pkgs=(
+    jwt-cli
+    cargo-edit
+  )
+
+  for pk in "${pkgs[@]}"; do
+    echo "[Cargo] installing $pk"
+    cargo install $pk
+  done
 }
 
 _system() {
