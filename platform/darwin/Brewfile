@@ -145,7 +145,6 @@ cask "google-chrome"
 cask "intellij-idea-ce"
 
 brew "solana"
-brew "alt-tab"
 
 # securityes
 brew "dnscrypt-proxy"
