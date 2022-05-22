@@ -34,13 +34,20 @@ _github_dl() {
   rm -rf ${TMP_DIR}/*
 }
 
+_gnome() {
+  echo "Settings some gnome configs"
+  gsettings set org.gnome.shell.window-switcher app-icon-mode 'app-icon-only'
+  gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<alt>Tab']"
+}
 
 main() {
+  _gnome
   _dep
   # themes
   _github_dl  EliverLara Juno master Juno
   # icons
   _clone_n_install https://github.com/cbrnix/Flatery.git
 }
+
 
 main

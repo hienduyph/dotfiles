@@ -38,6 +38,8 @@ alias dk="docker"
 alias dkm="docker-compose"
 alias pm="podman"
 alias pmm="podman-compose"
+alias spm="sudo podman"
+alias sdkm="sudo podman-compose"
 
 # git plugins
 
