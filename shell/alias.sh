@@ -1,6 +1,6 @@
 alias vi="vim"
 alias vim="nvim"
-alias cat="bat"
+alias cat="bat --theme GitHub"
 alias ls="exa"
 alias ll="ls -l"
 alias l="ls -la"

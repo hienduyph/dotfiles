@@ -7,7 +7,10 @@ let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 " This configuration option should be placed before `colorscheme gruvbox-material`.
 " Available values: 'hard', 'medium'(default), 'soft'
 let g:gruvbox_material_background = 'medium'
-colorscheme gruvbox-material
+
+set background=light
+" colorscheme gruvbox-material
+colorscheme github_light_default
 
 " let g:calvera_italic_comments = 1
 " let g:calvera_italic_keywords = 1

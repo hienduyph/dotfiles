@@ -11,11 +11,14 @@ call plug#begin(g:plug_dir)
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'projekt0n/github-nvim-theme'
+
 " Lua libs
 Plug 'nvim-lua/plenary.nvim'
 Plug 'MunifTanjim/nui.nvim'
 
 Plug 'nvim-lua/popup.nvim'
+Plug 'sindrets/diffview.nvim'
 
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

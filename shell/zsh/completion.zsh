@@ -6,3 +6,9 @@ _dotnet_zsh_complete()
 }
 
 compctl -K _dotnet_zsh_complete dotnet
+
+GCLOUD_COMPLETETION=$HOME/.local/google-cloud-sdk/completion.zsh.inc
+if [ -f $GCLOUD_COMPLETETION ]; then
+  . ${GCLOUD_COMPLETETION}
+fi
+

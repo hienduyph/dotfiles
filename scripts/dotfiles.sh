@@ -111,3 +111,7 @@ _py_cli() {
 _completions() {
   echo "Install completions"
 }
+
+_git() {
+  git config --global init.defaultBranch main
+}
