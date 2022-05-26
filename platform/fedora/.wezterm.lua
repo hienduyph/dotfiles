@@ -7,6 +7,8 @@ return {
   color_scheme = "AtomOneLight",
   exit_behavior = "Close",
   window_decorations = "NONE",
+  initial_cols = 160,
+  initial_rows = 48,
   window_frame = {
     font_size=10.0,
   },
