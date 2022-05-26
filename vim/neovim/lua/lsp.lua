@@ -51,11 +51,7 @@ function M.angularls()
   M.setup_ls('angularls')
 end
 
-function M.nodels()
-  M.setup_ls('tsserver')
-end
-
-local servers = {'clangd', 'yamlls', 'solang'}
+local servers = {'clangd', 'yamlls', 'solang', 'tsserver', 'jsonls', 'html', 'eslint', 'cssls'}
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end

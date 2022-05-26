@@ -4,7 +4,7 @@ return {
   font_size=9.6,
   tab_max_width = 16,
   use_fancy_tab_bar=false,
-  color_scheme = "Gruvbox Dark",
+  color_scheme = "AtomOneLight",
   exit_behavior = "Close",
   window_decorations = "NONE",
   window_frame = {

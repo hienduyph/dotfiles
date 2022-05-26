@@ -42,6 +42,7 @@ main() {
   _cli
   _py_cli
   _htop
+  _git
   _completions
 }
 
