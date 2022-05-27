@@ -39,7 +39,7 @@ source $HOME/dotfiles/shell/zsh/kubectl.zsh
 
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
+znap source zdharma-continuum/fast-syntax-highlighting
 
 if [[ $ZSH_PROFILNG == "yes" ]]; then
   zprof
