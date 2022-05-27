@@ -6,7 +6,7 @@ return {
   use_fancy_tab_bar=false,
   initial_cols=1920,
   initial_rows=1080,
-  color_scheme = "Gruvbox Dark",
+  color_scheme = "AtomOneLight",
   exit_behavior = "Close",
   window_decorations = "NONE",
   window_frame = {
