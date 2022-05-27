@@ -2,7 +2,7 @@ local wezterm = require "wezterm";
 return {
   font = wezterm.font("JetBrainsMono Nerd Font"),
   native_macos_fullscreen_mode = true,
-  color_scheme = "Gruvbox Dark",
+  color_scheme = "AtomOneLight",
   exit_behavior = "Close",
   initial_cols=1920,
   initial_rows=1080,

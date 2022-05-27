@@ -3,7 +3,7 @@ lua require("qdebug")
 
 setlocal foldmethod=indent
 " setlocal foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+" set foldexpr=nvim_treesitter#foldexpr()
 
 " disable auto fold by default
 set nofoldenable
