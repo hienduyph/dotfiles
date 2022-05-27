@@ -163,4 +163,3 @@ ln -sf $(pwd)/platform/linux/mpv $HOME/.config
 echo "Jetbrain toolbox"
 
 curl -fsSL 'https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz' | tar xz -C ~/.local/bin --strip-components=1
-_pkg install -y https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
