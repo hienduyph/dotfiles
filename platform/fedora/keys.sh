@@ -6,6 +6,7 @@ _gnome() {
   gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<alt>Tab']"
   gsettings set org.gnome.desktop.wm.keybindings switch-input-source '["<Control>space"]'
   gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward '["<Shift><Control>space"]'
+  gsettings set org.gnome.desktop.interface enable-hot-corners false
 
   # name binding command
   cmds=(
