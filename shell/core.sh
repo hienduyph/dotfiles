@@ -11,6 +11,7 @@ _CUS_PATH=(
   "$HOME/.cargo/bin"
   "$HOME/.pub-cache/bin"
   "$HOME/.krew/bin"
+  "${PYCLI_HOME}/bin"
 )
 
 if [[ -f "${BREW_PREFIX}/bin/brew" ]]; then
