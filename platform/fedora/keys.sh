@@ -7,6 +7,7 @@ _gnome() {
   gsettings set org.gnome.desktop.wm.keybindings switch-input-source '["<Control>space"]'
   gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward '["<Shift><Control>space"]'
   gsettings set org.gnome.desktop.interface enable-hot-corners false
+  gsettings set org.gnome.desktop.default-applications.terminal exec 'wezterm'
 
   # name binding command
   cmds=(
