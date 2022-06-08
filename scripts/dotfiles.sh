@@ -98,7 +98,7 @@ _py_cli() {
   sudo python3.9 -m pip install virtualenv
   sudo python3.9 -m virtualenv $PYCLI_HOME
   sudo chown -R $(whoami) $PYCLI_HOME
-  $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli pyyaml awscli ansible
+  $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli pyyaml awscli ansible black darker
   bins=(
     mycli
     pgcli

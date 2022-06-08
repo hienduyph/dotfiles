@@ -79,7 +79,6 @@ brew "kubernetes-cli"
 brew "kustomize"
 brew "krew"
 brew "awscli"
-brew "ansible"
 brew "derailed/k9s/k9s"
 brew "neovim"
 

@@ -57,7 +57,7 @@ Plug 'dhruvasagar/vim-table-mode'
 
 " Markdown writting
 Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install --omit=dev' }
 
 " formatter
 Plug 'rhysd/vim-clang-format'
@@ -81,7 +81,10 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
 
 Plug 'psf/black'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --omit=dev',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 Plug 'TovarishFin/vim-solidity'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
