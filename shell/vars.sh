@@ -8,6 +8,7 @@ export GOPATH="$HOME/.go"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
+
 LINUX_BREW=/home/linuxbrew/.linuxbrew
 HOMEBREW_PREFIX=/opt/homebrew
 
@@ -41,3 +42,5 @@ export EDITOR=nvim
 export VISUAL=nvim
 export SYSTEMD_EDITOR=nvim
 export KUBE_EDITOR=nvim
+
+alias pipcli=${PYCLI_HOME}/bin/pip
