@@ -115,6 +115,7 @@ packages=(
   signal-desktop
   podman-compose
   flameshot
+  ncdu
 )
 
 # Install all
