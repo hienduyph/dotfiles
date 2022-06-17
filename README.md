@@ -41,6 +41,12 @@ curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-linux
 curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz | tar xz --strip-components=1 -C /opt/neovim
 ```
 
+### Gnome Terminal
+```bash
+dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+```
+
 # License
 [MIT License](LICENSE)
 
