@@ -44,3 +44,5 @@ export SYSTEMD_EDITOR=nvim
 export KUBE_EDITOR=nvim
 
 alias pipcli=${PYCLI_HOME}/bin/pip
+
+export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"

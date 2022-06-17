@@ -19,7 +19,7 @@ _neovim() {
   ln -sf ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/
   ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim
 
-  nvim +PlugInstall +qall
+  nvi +PlugInstall +qall
 }
 
 _shell() {
@@ -31,9 +31,30 @@ _shell() {
   ln -fs ~/dotfiles/shell/starship.toml  ~/.config
 }
 
-_htop() {
-  mkdir -p $HOME/.config/htop/
-  ln -sf $HOME/dotfiles/.htoprc $HOME/.config/htop/htoprc
+_configs() {
+  mkdir -p $HOME/.config/
+  PLATFORM=$1
+  pkgs=(
+    htop
+  )
+  for pk in "${pkgs[@]}"; do
+    echo "Settings up ${pk}"
+    rm -rf $HOME/.config/${pk}
+    ln -sf $HOME/dotfiles/.config/${pk} $HOME/.config/${pk}
+  done
+
+  specifics=(
+    kitty
+  )
+
+  for pk in "${specifics[@]}"; do
+    fullpath="$HOME/dotfiles/platform/${PLATFORM}/.config/${pk}"
+    echo "Settings ${fullpath}"
+    if [ -d $fullpath ] || [ -f ${fullpath} ]; then
+      rm -rf $HOME/.config/${pk}
+      ln -sf ${fullpath} $HOME/.config/${pk}
+    fi
+  done
 }
 
 _dots() {
@@ -80,6 +101,7 @@ _fonts() {
   sudo mkdir -p ${FONT_DIR}
   cd ${FONT_DIR} && {
     sudo curl -LO 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf'
+    sudo curl -LO 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete%20Mono.ttf'
   cd -; }
 }
 

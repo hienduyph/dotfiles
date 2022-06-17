@@ -29,7 +29,7 @@ font:
   italic:
     family: JetBrainsMono Nerd Font
     style: Italic
-  size: 9
+  size: 13
   offset:
     x: 0
     y: 0
@@ -37,66 +37,37 @@ font:
     x: 0
     y: 0
 draw_bold_text_with_bright_colors: true
-# Colors (Gruvbox dark)
 colors:
+  # Default colors
   primary:
-    # hard contrast background - '#1d2021'
-    background:        &gruvbox_dark_bg '#282828'
-    # soft contrast background - '#32302f'
-    foreground:        '#ebdbb2'
-    bright_foreground: '#fbf1c7'
-    dim_foreground:    '#a89984'
-  cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  # search:
-  #   matches:
-  #     foreground: '#000000'
-  #     background: '#ffffff'
-  #   focused_match:
-  #    foreground: CellBackground
-  #    background: CellForeground
-  #   bar:
-  #     background: ''
-  #     foreground: ''
-  # line_indicator:
-  #   foreground: None
-  #   background: None
-  selection:
-    text:       CellBackground
-    background: CellForeground
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
-  normal:
-    black:   *gruvbox_dark_bg
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
-  dim:
-    black:   '#32302f'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#928374'
-  # indexed_colors: []
+    background: '0xffffff'
+    foreground: '0x586069'
 
+  # Normal colors
+  normal:
+    black:   '0x697179'
+    red:     '0xd03d3d'
+    green:   '0x14ce14'
+    yellow:  '0x949800'
+    blue:    '0x0451a5'
+    magenta: '0xbc05bc'
+    cyan:    '0x0598bc'
+    white:   '0x586069'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xcd3131'
+    green:   '0x14ce14'
+    yellow:  '0xb5ba00'
+    blue:    '0x0451a5'
+    magenta: '0xbc05bc'
+    cyan:    '0x0598bc'
+    white:   '0x586069'
+
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xcd3131' }
 bell:
   animation: EaseOutExpo
   duration: 0

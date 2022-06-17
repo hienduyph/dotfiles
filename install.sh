@@ -38,6 +38,7 @@ main() {
   _shell
   _dots $PLATFORM
   _fonts $PLATFORM
+  _configs $PLATFORM
   _system
   _cli
   _py_cli

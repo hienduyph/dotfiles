@@ -7,6 +7,7 @@ return {
   exit_behavior = "Close",
   window_decorations = "NONE",
   initial_cols = 160,
+  enable_wayland = false,
   initial_rows = 48,
   window_frame = {
     font_size=10.0,
