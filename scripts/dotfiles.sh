@@ -64,7 +64,7 @@ _dots() {
     .profile
     .pylintrc
     .ideavimrc
-    .tmux.conf
+    .tmux.common.conf
   )
   for f in "${dots[@]}"; do
     ln -sf ~/dotfiles/$f $HOME/$f
@@ -73,6 +73,7 @@ _dots() {
   platform_dots=(
     .alacritty.yml
     .wezterm.lua
+    .tmux.conf
   )
 
   for f in "${platform_dots[@]}"; do

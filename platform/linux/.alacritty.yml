@@ -93,19 +93,20 @@ key_bindings:
   - { key: J,     mods: Option,       chars: "\x02\x6a" }
   - { key: K,     mods: Option,       chars: "\x02\x6b" }
   - { key: L,     mods: Option,       chars: "\x02\x6c" }
-  - { key: T,     mods: Option,       chars: "\x02\x63" }
-  - { key: Key1,  mods: Option,       chars: "\x02\x31" }
-  - { key: Key2,  mods: Option,       chars: "\x02\x32" }
-  - { key: Key3,  mods: Option,       chars: "\x02\x33" }
-  - { key: Key4,  mods: Option,       chars: "\x02\x34" }
-  - { key: Key5,  mods: Option,       chars: "\x02\x35" }
-  - { key: Key6,  mods: Option,       chars: "\x02\x36" }
-  - { key: Key7,  mods: Option,       chars: "\x02\x37" }
-  - { key: Key8,  mods: Option,       chars: "\x02\x38" }
-  - { key: Key9,  mods: Option,       chars: "\x02\x39" }
   - { key: Left,  mods: Option,       chars: "\x02\x48" }
   - { key: Down,  mods: Option,       chars: "\x02\x4a" }
   - { key: Up,    mods: Option,       chars: "\x02\x4b" }
   - { key: Right, mods: Option,       chars: "\x02\x4c" }
   - { key: "LBracket", mods: Option,       chars: "\x02\x68" }
   - { key: "RBracket", mods: Option,       chars: "\x02\x6c" }
+
+    # - { key: T,     mods: Option,       chars: "\x02\x63" }
+    # - { key: Key1,  mods: Option,       chars: "\x02\x31" }
+    # - { key: Key2,  mods: Option,       chars: "\x02\x32" }
+    # - { key: Key3,  mods: Option,       chars: "\x02\x33" }
+    # - { key: Key4,  mods: Option,       chars: "\x02\x34" }
+    # - { key: Key5,  mods: Option,       chars: "\x02\x35" }
+    # - { key: Key6,  mods: Option,       chars: "\x02\x36" }
+    # - { key: Key7,  mods: Option,       chars: "\x02\x37" }
+    # - { key: Key8,  mods: Option,       chars: "\x02\x38" }
+    # - { key: Key9,  mods: Option,       chars: "\x02\x39" }
