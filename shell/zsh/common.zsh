@@ -1,4 +1,4 @@
-# enable istory for multi tmux sessions
+# enabl istory for multi tmux sessions
 setopt inc_append_history
 export ZSH_DISABLE_COMPFIX='true'
 export ZSH_DOTENV_PROMPT='false'

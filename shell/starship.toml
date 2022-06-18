@@ -1,4 +1,5 @@
 format = """
+$shell\
 $username\
 $hostname\
 $directory\
@@ -99,3 +100,8 @@ disabled = false
 
 [lua]
 disabled = true
+
+[shell]
+bash_indicator = "_"
+disabled = false
+zsh_indicator = ""
