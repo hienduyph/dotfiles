@@ -1,18 +1,3 @@
-
-input_fonts() {
-  _TMP_FILE=/tmp/font_dl.zip
-  rm -f ${_TMP_FILE}
-  url="https://input.djr.com/build/?fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&asterisk=0&braces=0&preset=default&line-height=1.2&accept=I+do&email="
-  dir=$HOME/.local/share/fonts/
-  echo "Downloading"
-  curl -fsSL -o $_TMP_FILE $url
-  unzip $_TMP_FILE -d /tmp
-  echo "Extra"
-  cp -r /tmp/Input_Fonts/InputMono  /tmp/Input_Fonts/InputSans /tmp/Input_Fonts/InputSerif $dir
-  echo "Done"
-}
-
-
 fkill() {
   ps aux | grep  $1 | awk {'print $2'} | xargs kill -9
 }
