@@ -134,6 +134,8 @@ _py_cli() {
 
 _completions() {
   echo "Install completions"
+  mkdir -p ~/.bash_completion.d/
+  kubectl completion bash >> ~/.bash_completion.d/kubectl
 }
 
 _git() {

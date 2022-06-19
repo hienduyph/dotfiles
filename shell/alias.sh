@@ -55,3 +55,6 @@ alias du="ncdu"
 
 
 alias yt-mp3="yt-dlp --extract-audio --audio-format mp3"
+
+alias k=kubectl
+complete -o default -F __start_kubectl k
