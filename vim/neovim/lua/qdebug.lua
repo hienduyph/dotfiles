@@ -7,11 +7,11 @@ require("flutter-tools").setup{
 }
 
 require("dapui").setup{
-  tray = {
+  layouts = {{
     elements = { "repl" },
     size = 100,
     position = "right", -- Can be "left", "right", "top", "bottom"
-  },
+  }},
 }
 
 dap.adapters.python = {
