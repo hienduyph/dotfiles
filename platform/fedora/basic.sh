@@ -116,6 +116,7 @@ packages=(
   podman-compose
   flameshot
   ncdu
+  onedrive
 )
 
 # Install all

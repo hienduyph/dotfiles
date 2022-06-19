@@ -16,7 +16,7 @@ eval "$(zoxide init bash --cmd z)"
 
 set -o vi
 
+
 # fzf tab
 source ${BASHMAN_DIR}/lincheney/fzf-tab-completion/bash/fzf-bash-completion.sh
 bind -x '"\t": fzf_bash_completion'
-
