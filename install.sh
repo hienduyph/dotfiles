@@ -33,6 +33,11 @@ _system() {
   sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
 }
 
+_mac() {
+  echo "Setting mac links"
+  sudo ln -sf /opt/homebrew/bin/bash /usr/local/bin/bash
+}
+
 main() {
   _neovim
   _shell
@@ -45,6 +50,10 @@ main() {
   _htop
   _git
   _completions
+
+  if [ ${PLATFORM} == "darwin" ]; then
+    _mac
+  fi
 }
 
 main

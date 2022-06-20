@@ -1,4 +1,3 @@
-export HISTFILE=$HOME/.bash_history
 source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
@@ -31,3 +30,5 @@ then
     source "$f"
   done
 fi
+
+export HISTFILE=$HOME/.bash_history

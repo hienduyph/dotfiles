@@ -92,6 +92,7 @@ brew "direnv"
 brew "fswatch"
 brew "starship"
 brew "jesseduffield/lazygit/lazygit"
+brew "gnu-sed"
 
 # langluage
 brew "python@3.8"
@@ -115,7 +116,6 @@ brew "entr"
 brew "clang-format"
 brew "terraform"
 
-cask "jdiskreport"
 cask "tableplus"
 
 brew "rust-analyzer"
@@ -132,6 +132,8 @@ brew "broot"
 brew "k3d"
 brew "hashicorp/tap/vault"
 brew "hugo"
+brew "ncdu"
+brew "bash"
 
 cask "flutter"
 brew "cocoapods"
