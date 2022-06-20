@@ -13,9 +13,9 @@ window:
   padding:
     x: 0
     y: 0
-  startup_mode: Fullscreen
+  startup_mode: Maximized
   decorations: none
-  dynamic_padding: true
+  dynamic_padding: false
 scrolling:
   history: 10000
   multiplier: 3
