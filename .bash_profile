@@ -1,3 +1,7 @@
+export HISTCONTROL=ignoredups
+export HISTSIZE=1000000000
+export HISTFILESIZE=1000000000
+
 source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
