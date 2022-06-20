@@ -105,3 +105,4 @@ disabled = true
 bash_indicator = "_"
 disabled = false
 zsh_indicator = ""
+style = "cyan bold"
