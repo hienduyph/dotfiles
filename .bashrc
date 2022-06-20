@@ -6,6 +6,7 @@ source $HOME/dotfiles/shell/func.sh
 source $HOME/.profile
 
 source $HOME/dotfiles/shell/alias/git.sh
+source $HOME/dotfiles/shell/bash/alias.sh
 
 # load default shell
 eval "$(starship init bash)"
