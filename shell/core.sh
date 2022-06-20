@@ -57,4 +57,3 @@ if [[ -d $PROFILE_EXTRA_DIRS ]]; then
   done
 fi
 
-export GPG_TTY=${TTY}
