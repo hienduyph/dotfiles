@@ -32,3 +32,5 @@ then
 fi
 
 export HISTFILE=$HOME/.bash_history
+
+export GPG_TTY=$(tty)
