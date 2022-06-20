@@ -3,9 +3,9 @@ env:
 shell:
   program: /bin/sh
   args:
-    - -l
-    - -c
-    - tmux new-session -A -s Lala
+  - -l
+  - -c
+  - tmux new-session -A -s Lala
 window:
   dimensions:
     columns: 0
@@ -13,7 +13,7 @@ window:
   padding:
     x: 0
     y: 0
-  startup_mode: Maximized
+  startup_mode: Fullscreen
   decorations: none
   dynamic_padding: true
 scrolling:
@@ -29,7 +29,7 @@ font:
   italic:
     family: JetBrainsMono Nerd Font
     style: Italic
-  size: 14
+  size: 9
   offset:
     x: 0
     y: 0
