@@ -102,7 +102,7 @@ disabled = false
 disabled = true
 
 [shell]
-bash_indicator = "_"
+bash_indicator = ""
 disabled = false
-zsh_indicator = ""
+zsh_indicator = "_"
 style = "cyan bold"
