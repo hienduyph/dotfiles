@@ -22,7 +22,7 @@ window:
     y: 0
 
   startup_mode: Maximized # SimpleFullscreen
-  decorations: buttonless
+  decorations: none
   opacity: 1.0
 
 scrolling:
@@ -47,7 +47,7 @@ font:
     style: ExtraLight
 
   # Point size
-  size: 12.0
+  size: 13
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

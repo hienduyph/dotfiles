@@ -14,11 +14,10 @@ alias lala="tmux new -A -s Lala"
 alias awm="aws --endpoint-url http://localhost:9000"
 alias py="python"
 alias ipy="ipython"
-alias pycli="$PYCLI_HOME/bin/python"
-alias pgcli="$PYCLI_HOME/bin/pgcli"
-alias mycli="$PYCLI_HOME/bin/mycli"
 alias gurl="grpcurl"
 alias c="cheat"
+
+alias pycli="source $PYCLI_HOME/bin/activate"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 
