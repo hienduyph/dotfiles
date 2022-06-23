@@ -35,6 +35,8 @@ then
   done
 fi
 
+eval "$(direnv hook bash)"
+
 export HISTFILE=$HOME/.bash_history
 
 export GPG_TTY=$(tty)
