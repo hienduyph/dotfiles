@@ -6,6 +6,7 @@ source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
 source $HOME/dotfiles/shell/func.sh
+source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/.profile
 
 # load default shell
@@ -29,7 +30,6 @@ znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source zsh-users/zsh-completions
 
 # start our codes
-source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
 source $HOME/dotfiles/shell/zsh/kubectl.zsh
@@ -59,3 +59,9 @@ add-zsh-hook precmd set-title-precmd
 add-zsh-hook preexec set-title-preexec
 
 export GPG_TTY=${TTY}
+
+## 3third plugins
+eval "$(direnv hook zsh)"
+
+# direnv support venv
+setopt PROMPT_SUBST
