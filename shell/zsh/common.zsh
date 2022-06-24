@@ -30,5 +30,9 @@ if [[ -f ${BREW_PREFIX}/bin/brew ]]; then
 fi
 export FPATH=$FPATH:${CF_PATH}
 
+# case insensitive completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+
 # znap already set completion for us.
 # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
