@@ -18,6 +18,10 @@ if [[ -f "${BREW_PREFIX}/bin/brew" ]]; then
   _CUS_PATH+=("${BREW_PREFIX}/bin" "${BREW_PREFIX}/sbin")
 fi
 
+if [[ -f "${PORT_PREFIX}/bin/port" ]]; then
+  _CUS_PATH+=("${PORT_PREFIX}/bin" "${PORT_PREFIX}/sbin")
+fi
+
 _before_path=$(IFS=:; echo "${PREPEND[*]}")
 _after_path=$(IFS=:; echo "${_CUS_PATH[*]}")
 export PATH="${_before_path}:${PATH}:${_after_path}"
