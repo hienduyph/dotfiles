@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 PKGS=(
   zoxide
   fzf
@@ -14,5 +16,20 @@ PKGS=(
   gnupg2
   git
   git-lfs
+  python39
+  nodejs16
+  go
+  fd
+  ripgrep
+  inetutils
+  wget
+  jq
+  gsed
+  rust-analyzer
+  rust
+  cargo
+  openjdk11
+  podman
+  podman-compose
 )
-sudo port install -N ${PKGS[@]}
+sudo port -N install ${PKGS[@]}
