@@ -103,9 +103,6 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 if has('nvim')
   let g:python3_host_prog = "~/.venv/neovim/bin/python"
-  " editor config
-  let g:EditorConfig_exec_path = 'editorconfig'
-  let g:EditorConfig_core_mode = 'external_command'
 endif
 
 

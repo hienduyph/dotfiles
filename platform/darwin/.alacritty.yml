@@ -5,11 +5,12 @@ env:
   LANG: en_US.UTF-8
 
 shell:
-  program: /bin/bash
+  program: /usr/local/bin/tmux
   args:
-  - -l
-  - -c
-  - tmux new-session -A -s Lala
+    - new-session
+    - -A
+    - -s
+    - Lala
 
 window:
   dimensions:
