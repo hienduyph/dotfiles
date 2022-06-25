@@ -24,6 +24,7 @@ elif [ -x "$(command -v brew)" ]; then
 fi
 
 export BREW_PREFIX=${BREW_PREFIX}
+export PORT_PREFIX=/opt/local
 
 prependToPATH() {
   case ":$PATH:" in
