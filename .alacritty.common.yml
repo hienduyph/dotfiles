@@ -24,6 +24,9 @@ font:
   size: 9
   normal:
     family: JetBrainsMono Nerd Font Mono
+    style: ExtraLight
+  bold:
+    family: JetBrainsMono Nerd Font Mono
     style: Light
   offset:
     x: 0
