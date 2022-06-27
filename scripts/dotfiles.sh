@@ -66,6 +66,7 @@ _dots() {
     .pylintrc
     .ideavimrc
     .tmux.common.conf
+    .alacritty.common.yml
   )
   for f in "${dots[@]}"; do
     ln -sf ~/dotfiles/$f $HOME/$f
