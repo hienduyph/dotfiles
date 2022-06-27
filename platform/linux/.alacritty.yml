@@ -2,5 +2,8 @@ import:
 - ~/.alacritty.common.yml
 font:
   size: 9
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+    style: ExtraLight
 key_bindings:
   - { key: N,     mods: Option,       action: SpawnNewInstance }
