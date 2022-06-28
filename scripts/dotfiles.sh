@@ -72,8 +72,16 @@ _dots() {
     ln -sf ~/dotfiles/$f $HOME/$f
   done
 
-  platform_dots=(
+
+  locals=(
     .alacritty.yml
+  )
+  for f in "${locals[@]}"; do
+    cp ~/dotfiles/$f $HOME
+  done
+
+  platform_dots=(
+    .alacritty.sys.yml
     .wezterm.lua
     .tmux.conf
   )

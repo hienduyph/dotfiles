@@ -1,0 +1,3 @@
+import:
+  - ~/.alacritty.common.yml
+  - ~/.alacritty.sys.yml
