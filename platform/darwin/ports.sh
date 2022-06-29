@@ -31,5 +31,8 @@ PKGS=(
   openjdk11
   podman
   podman-compose
+  htop
 )
 sudo port -N install ${PKGS[@]}
+
+curl -qL https://www.npmjs.com/install.sh | sh

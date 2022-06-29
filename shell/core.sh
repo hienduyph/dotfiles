@@ -6,7 +6,7 @@ PREPEND=(
 )
 _CUS_PATH=(
   "$HOME/.local/google-cloud-sdk/bin"
-  "$NPM_PACKAGES/bin"
+  "${NPM_CONFIG_PREFIX}/bin"
   "$HOME/.deno/bin"
   "$HOME/.cargo/bin"
   "$HOME/.pub-cache/bin"
