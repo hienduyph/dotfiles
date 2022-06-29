@@ -1,7 +1,7 @@
 export PYCLI_HOME=/opt/cli
 export NEOVIM_HOST=$HOME/.venv/neovim
 export NNN_USE_EDITOR=1
-export NPM_PACKAGES="${HOME}/.npm-packages"
+export NPM_CONFIG_PREFIX="${HOME}/.npm-packages"
 export RUSTC_WRAPPER=sccache
 export GOPATH="$HOME/.go"
 # Preserve MANPATH if you already defined it somewhere in your config.

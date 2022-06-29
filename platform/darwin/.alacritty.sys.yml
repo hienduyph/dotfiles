@@ -1,5 +1,3 @@
-import:
-  - ~/.alacritty.common.yml
 shell:
   program: /usr/local/bin/tmux
 font:
