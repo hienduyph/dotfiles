@@ -4,7 +4,6 @@ export ZSH_DISABLE_COMPFIX='true'
 export ZSH_DOTENV_PROMPT='false'
 
 
-export HISTFILE=$HOME/.zsh_history
 # history config
 export HISTSIZE=1000000000
 export SAVEHIST=10000000000

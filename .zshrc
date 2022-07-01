@@ -2,6 +2,7 @@ if [[ $ZSH_PROFILNG == "yes" ]]; then
   zmodload zsh/zprof
 fi
 
+export HISTFILE=$HOME/.zsh_history
 source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
