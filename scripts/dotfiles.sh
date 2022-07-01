@@ -4,6 +4,54 @@ set -x
 
 source $HOME/dotfiles/shell/vars.sh
 
+# system stuff
+
+_fonts() {
+  FONT_DIR=""
+  case "$1" in
+    darwin)
+      FONT_DIR="/Library/Fonts"
+      ;;
+    linux)
+      FONT_DIR="/usr/local/share/fonts"
+      ;;
+    *)
+      echo "Unsupport platform $1"
+      exit;
+  esac
+  sudo mkdir -p ${FONT_DIR}
+  cd ${FONT_DIR} && {
+    BASE=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures
+    sudo curl -Lo 'JetBrains Mono Light Nerd Font Complete.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf"
+    sudo curl -Lo 'JetBrains Mono Light Nerd Font Complete Mono.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete%20Mono.ttf"
+    sudo curl -Lo 'JetBrains Mono ExtraLight Nerd Font Complete Mono.ttf' "${BASE}/ExtraLight/complete/JetBrains%20Mono%20ExtraLight%20Nerd%20Font%20Complete%20Mono.ttf"
+  cd -; }
+}
+
+_py_cli() {
+  sudo python3.9 -m ensurepip
+  sudo python3.9 -m pip install virtualenv
+  sudo python3.9 -m virtualenv $PYCLI_HOME
+  sudo chown -R $(whoami) $PYCLI_HOME
+  $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli pyyaml awscli ansible black darker
+  bins=(
+    mycli
+    pgcli
+  )
+  for b in ${bins[@]}; do
+    ln -sf $PYCLI_HOME/bin/$b $HOME/.local/bin
+  done
+}
+
+_system() {
+  sudo mkdir -p /etc/profile.d/
+  sudo cp $HOME/dotfiles/shell/system.sh /etc/profile.d/
+  sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
+}
+
+
+# user stuff
+
 _neovim() {
   set -x
   echo "Install Neovim Host"
@@ -19,7 +67,7 @@ _neovim() {
   ln -sf ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/
   ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim
 
-  nvi +PlugInstall +qall
+  nvim +PlugInstall +qall
 }
 
 _shell() {
@@ -96,28 +144,6 @@ _dots() {
   done
 }
 
-_fonts() {
-  FONT_DIR=""
-  case "$1" in
-    darwin)
-      FONT_DIR="/Library/Fonts"
-      ;;
-    linux)
-      FONT_DIR="/usr/local/share/fonts"
-      ;;
-    *)
-      echo "Unsupport platform $1"
-      exit;
-  esac
-  sudo mkdir -p ${FONT_DIR}
-  cd ${FONT_DIR} && {
-    BASE=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures
-    sudo curl -Lo 'JetBrains Mono Light Nerd Font Complete.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf"
-    sudo curl -Lo 'JetBrains Mono Light Nerd Font Complete Mono.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete%20Mono.ttf"
-    sudo curl -Lo 'JetBrains Mono ExtraLight Nerd Font Complete Mono.ttf' "${BASE}/ExtraLight/complete/JetBrains%20Mono%20ExtraLight%20Nerd%20Font%20Complete%20Mono.ttf"
-  cd -; }
-}
-
 _ranger() {
   DEST_DIR=$HOME/.config/ranger
   rm -rf $DEST_DIR/*
@@ -128,22 +154,7 @@ _ranger() {
   ln -s ~/dotfiles/ranger/rifle.conf $DEST_DIR/
 }
 
-_py_cli() {
-  sudo python3.9 -m ensurepip
-  sudo python3.9 -m pip install virtualenv
-  sudo python3.9 -m virtualenv $PYCLI_HOME
-  sudo chown -R $(whoami) $PYCLI_HOME
-  $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli pyyaml awscli ansible black darker
-  bins=(
-    mycli
-    pgcli
-  )
-  for b in ${bins[@]}; do
-    ln -sf $PYCLI_HOME/bin/$b $HOME/.local/bin
-  done
-}
-
-_completions() {
+_bash_cmp() {
   echo "Install completions"
   mkdir -p ~/.bash_completion.d/
   kubectl completion bash >> ~/.bash_completion.d/kubectl

@@ -111,3 +111,10 @@ sudo snap install code --classic
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 
 gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
+
+if ! command -v sccache &> /dev/null
+then
+  VERSION=0.3.0
+  curl -fsSL https://github.com/mozilla/sccache/releases/download/v${VERSION}/sccache-v${VERSION}-x86_64-unknown-linux-musl.tar.gz | sudo tar zx -C /usr/local/bin --strip-components=1
+  sudo chmod +x /usr/local/bin/sccache
+fi

@@ -6,12 +6,6 @@ source ./scripts/dotfiles.sh
 PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
 _cli() {
-  if ! command -v sccache &> /dev/null
-  then
-    curl -fsSL https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-x86_64-unknown-linux-musl.tar.gz | sudo tar zx -C /usr/local/bin --strip-components=1
-    sudo chmod +x /usr/local/bin/sccache
-  fi
-
   source $HOME/.cargo/env
   cargo build --release
   cp target/release/json2yaml target/release/yaml2json ~/.local/bin
@@ -27,33 +21,35 @@ _cli() {
   done
 }
 
-_system() {
-  sudo mkdir -p /etc/profile.d/
-  sudo cp $HOME/dotfiles/shell/system.sh /etc/profile.d/
-  sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
-}
-
 _mac() {
   echo "Setting mac links"
   sudo ln -sf /opt/homebrew/bin/bash /usr/local/bin/bash
 }
 
-main() {
-  _neovim
-  _shell
-  _dots $PLATFORM
+__system() {
   _fonts $PLATFORM
-  _configs $PLATFORM
   _system
-  _cli
   _py_cli
-  _htop
-  _git
-  _completions
-
   if [ ${PLATFORM} == "darwin" ]; then
     _mac
   fi
+}
+
+__users() {
+  _neovim
+  _shell
+  _dots $PLATFORM
+  _configs $PLATFORM
+  _cli
+  _git
+}
+
+main() {
+  if [ $1 == "system" ]; then
+    __system
+    exit 0;
+  fi
+  __users
 }
 
 main
