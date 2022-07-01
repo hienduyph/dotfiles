@@ -165,3 +165,7 @@ ln -sf $(pwd)/platform/linux/mpv $HOME/.config
 echo "Jetbrain toolbox"
 
 curl -fsSL 'https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz' | tar xz -C ~/.local/bin --strip-components=1
+
+_dep() {
+  sudo dnf install gtk-murrine-engine glib2-devel gtk2-engines -y
+}
