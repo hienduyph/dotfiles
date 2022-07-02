@@ -44,8 +44,17 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-echo "Add Signal repo"
-_pkg copr enable luminoso/Signal-Desktop -y
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-cli]
+name=Google Cloud CLI
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el8-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+
 _pkg copr enable atim/lazygit -y
 
 packages=(
@@ -58,7 +67,6 @@ packages=(
   g++ libstdc++-devel libstdc++
   java-11-openjdk
   java-11-openjdk-devel
-  java-1.8.0-openjdk
   xclip
   code
   gnome-tweak-tool
@@ -91,7 +99,6 @@ packages=(
   htop
   git-delta
   telnet
-  python3.8
   python3.9
   mpv
   ibus-bamboo
@@ -108,15 +115,17 @@ packages=(
   sysstat
   pipewire-codec-aptx
   gnome-sound-recorder
-  https://github.com/wez/wezterm/releases/download/20220408-101518-b908e2dd/wezterm-20220408_101518_b908e2dd-1.fc35.x86_64.rpm
   https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
   cabextract xorg-x11-font-utils fontconfig
   albert
-  signal-desktop
   podman-compose
   flameshot
   ncdu
   onedrive
+  gtk-murrine-engine
+  glib2-devel
+  gtk2-engines
+  google-cloud-cli
 )
 
 # Install all
@@ -125,8 +134,6 @@ _pkg update
 _pkg install -y "${packages[@]}"
 
 sudo dnf remove PackageKit fedora-chromium-config -y
-
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 services=(
   dnscrypt-proxy
@@ -138,8 +145,6 @@ for pkg in "${services[@]}"; do
   sudo systemctl enable $pkg
 done
 
-npm config set prefix "${HOME}/.npm-packages"
-
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpaks=(
@@ -149,23 +154,3 @@ flatpaks=(
 for pkg in "${flatpaks[@]}";do
   flatpak install flathub ${pkg} -y
 done
-
-_py() {
-  python3.9 -m ensurepip --user
-  python3.9 -m pip install virtualenv
-  python3.8 -m ensurepip --user
-  python3.8 -m pip install virtualenv
-}
-
-_py
-
-# mpv
-ln -sf $(pwd)/platform/linux/mpv $HOME/.config
-
-echo "Jetbrain toolbox"
-
-curl -fsSL 'https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz' | tar xz -C ~/.local/bin --strip-components=1
-
-_dep() {
-  sudo dnf install gtk-murrine-engine glib2-devel gtk2-engines -y
-}

@@ -13,32 +13,13 @@ cd ~/dotfiles
 ### 1. Install platform base first
 **In each platform**
 ```bash
-brew bundle
-```
+sudo bash basic.sh
 
-- [Linux](./platform/linux)
-- [MacOs](./platform/darwin)
+```
 
 ### 2. Bootstrap dotfiles
 ```bash
 bash ./install.sh
-```
-
-
-## Q Utils
-*Install [Rust](https://www.rust-lang.org/tools/install)*
-
-```
-$ cargo build --release
-$ cp ./target/release/yaml2json ~/.local/bin
-```
-
-## Misc
-### Install latest nvim?
-```
-curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz | tar xz --strip-components=1 -C /opt/neovim
-# or macos
-curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz | tar xz --strip-components=1 -C /opt/neovim
 ```
 
 ### Gnome Terminal
@@ -49,4 +30,3 @@ dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
 
 # License
 [MIT License](LICENSE)
-

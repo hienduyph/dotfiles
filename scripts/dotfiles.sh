@@ -93,6 +93,7 @@ _configs() {
 
   specifics=(
     kitty
+    mpv
   )
 
   for pk in "${specifics[@]}"; do
