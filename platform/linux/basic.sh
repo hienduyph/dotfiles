@@ -2,119 +2,52 @@
 
 set -ex
 
-sudo apt update && sudo apt install -y curl wget python3-dev python3 python3-pip python3-venv
-echo 'Add Chrome Repo'
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - \
-&& echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+_py() {
+  python3.9 -m ensurepip --user
+  python3.9 -m pip install virtualenv
+  python3.8 -m ensurepip --user
+  python3.8 -m pip install virtualenv
+}
 
-echo 'Add Git Repo'
-sudo add-apt-repository ppa:git-core/ppa -y
+_jetbrains() {
+  # Note that we grep for linux here, if you are using this on mac/windows please see json output
+  TOOLBOX_URL=$(curl --silent 'https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release' \
+      -H 'Origin: https://www.jetbrains.com' \
+      -H 'Accept-Encoding: gzip, deflate, br' \
+      -H 'Accept-Language: en-US,en;q=0.8' \
+      -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+      -H 'Referer: https://www.jetbrains.com/toolbox/download/' \
+      -H 'Connection: keep-alive' \
+      -H 'DNT: 1' \
+      --compressed \
+    | grep -Po '"linux":.*?[^\\]",' \
+    | awk -F ':' '{print $3,":"$4}'| sed 's/[", ]//g')
 
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  curl -fsSL ${TOOLBOX_URL} | tar xz --directory=${HOME}/.local/bin --strip-components=1
+}
 
-# enpass
-echo 'Add Enpass Repo'
-echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
-wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo apt-key add -
+_sccache() {
+  if ! command -v sccache &> /dev/null
+  then
+    VERSION=0.3.0
+    curl -fsSL https://github.com/mozilla/sccache/releases/download/v${VERSION}/sccache-v${VERSION}-x86_64-unknown-linux-musl.tar.gz | sudo tar zx -C /usr/local/bin --strip-components=1
+    sudo chmod +x /usr/local/bin/sccache
+  fi
+}
 
+_rust() {
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
 
-echo 'Add Ibus Repo'
-# ibus
-sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo -y
+main() {
+  _py
+  _jetbrains
+  _rust
+}
 
-echo 'Add alacritty'
-sudo add-apt-repository ppa:mmstick76/alacritty -y
-
-echo 'Add vlc'
-sudo add-apt-repository ppa:videolan/stable-daily -y
-
-echo 'Add dbeaver'
-sudo add-apt-repository ppa:serge-rider/dbeaver-ce -y
-
-echo 'Add albert'
-echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list\
-  && curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key | sudo apt-key add -
-
-echo 'Add Docker Repo'
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
- "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
- $(lsb_release -cs) \
- stable" -y
-
-packages=(
-  zsh
-  google-chrome-stable
-  chrome-gnome-shell
-  gnome-tweak-tool
-  ttf-mscorefonts-installer
-  enpass
-  ibus-bamboo
-  snapd
-  gnome-shell-pomodoro
-  flameshot
-  ufw
-  dnscrypt-proxy
-  git-lfs
-  git
-  alacritty
-  pinentry-tty
-  openjdk-8-jdk
-  openjdk-8-jre
-  openjdk-11-jdk
-  openjdk-11-jre
-  jq
-  lm-sensors
-  psensor
-  anki
-  nodejs
-  gcc g++ make
-  libmysqlclient-dev
-  libssl-dev
-  libpq-dev
-  dbeaver-ce
-  albert
-  xsel # clipboard for vim
-  docker-ce
-  docker-ce-cli
-  containerd.io
-)
-
-# Install all
-echo 'Install all package'
-sudo apt-get update
-sudo apt-get install -y "${packages[@]}"
-
-sudo usermod -aG docker $USER
-
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-ibus restart
-
-services=(
-  dnscrypt-proxy
-  docker
-)
-
-for pkg in "${services[@]}"; do
-  sudo systemctl start $pkg
-  sudo systemctl enable $pkg
-done
-
-sudo update-alternatives --config pinentry
-
-wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
-
-sudo snap install intellij-idea-community --classic
-sudo snap install code --classic
-
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-
-gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
-
-if ! command -v sccache &> /dev/null
-then
-  VERSION=0.3.0
-  curl -fsSL https://github.com/mozilla/sccache/releases/download/v${VERSION}/sccache-v${VERSION}-x86_64-unknown-linux-musl.tar.gz | sudo tar zx -C /usr/local/bin --strip-components=1
-  sudo chmod +x /usr/local/bin/sccache
+if [[ $_ == $0 ]]; then
+  main
+else
+  echo "Sourced"
 fi
+
