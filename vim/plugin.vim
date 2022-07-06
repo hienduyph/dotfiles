@@ -37,7 +37,7 @@ Plug 'leoluz/nvim-dap-go'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 " show function signature
-Plug 'SmiteshP/nvim-gps'
+Plug 'SmiteshP/nvim-navic'
 " motion plugins
 Plug 'ggandor/lightspeed.nvim'
 Plug 'VonHeikemen/searchbox.nvim'
