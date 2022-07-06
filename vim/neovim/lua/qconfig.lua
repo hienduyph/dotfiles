@@ -64,8 +64,7 @@ require("bufferline").setup{
   },
 }
 
-local gps = require("nvim-gps")
-gps.setup()
+local navic = require("nvim-navic")
 
 require('lualine').setup({
   options = {
@@ -83,8 +82,8 @@ require('lualine').setup({
         path=1,
       },
       {
-        gps.get_location,
-        cond = gps.is_available,
+        navic.get_location,
+        cond = navic.is_available,
       },
     },
     lualine_x = {'encoding', 'fileformat', 'filetype'},

@@ -84,6 +84,7 @@ _configs() {
   PLATFORM=$1
   pkgs=(
     htop
+    mpv
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -93,7 +94,6 @@ _configs() {
 
   specifics=(
     kitty
-    mpv
   )
 
   for pk in "${specifics[@]}"; do
