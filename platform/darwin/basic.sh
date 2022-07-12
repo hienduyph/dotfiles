@@ -31,9 +31,9 @@ PKGS=(
   podman
   podman-compose
   htop
+  google-cloud-sdk
+  sccache
 )
 sudo port -N install ${PKGS[@]}
 
 curl -qL https://www.npmjs.com/install.sh | sh
-
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

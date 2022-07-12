@@ -43,6 +43,21 @@ _py_cli() {
   done
 }
 
+_cli() {
+  source $HOME/.cargo/env
+  cargo build --release
+  sudo cp target/release/json2yaml target/release/yaml2json /usr/local/bin
+
+  pkgs=(
+    jwt-cli
+    --features vendored-openssl cargo-edit
+  )
+  for pk in "${pkgs[@]}"; do
+    echo "[Cargo] installing $pk"
+    eval "sudo cargo install --locked --root=/usr/local/ ${pk}"
+  done
+}
+
 _system() {
   sudo mkdir -p /etc/profile.d/
   sudo cp $HOME/dotfiles/shell/system.sh /etc/profile.d/
