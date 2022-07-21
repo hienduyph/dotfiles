@@ -36,7 +36,10 @@ PKGS=(
   google-cloud-sdk
   sccache
   OpenBLAS lapack
+  mysql8
+  postgresql14
 )
 sudo port -N install ${PKGS[@]}
+sudo port select mysql mysql8
 
 curl -qL https://www.npmjs.com/install.sh | sh
