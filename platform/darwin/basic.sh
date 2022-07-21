@@ -8,6 +8,7 @@ PKGS=(
   bat
   neovim
   tmux
+  tmux-pasteboard
   direnv
   starship
   alacritty
@@ -24,6 +25,7 @@ PKGS=(
   wget
   jq
   gsed
+  findutils
   rust-analyzer
   rust
   cargo
@@ -33,6 +35,7 @@ PKGS=(
   htop
   google-cloud-sdk
   sccache
+  OpenBLAS lapack
 )
 sudo port -N install ${PKGS[@]}
 
