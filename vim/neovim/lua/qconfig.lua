@@ -1,3 +1,7 @@
+vim.diagnostic.config({
+  virtual_text = false
+})
+
 require('gitsigns').setup()
 
 local npairs = require("nvim-autopairs")
