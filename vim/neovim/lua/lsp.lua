@@ -52,11 +52,20 @@ function M.setup_ls(lsp)
     },
   }
 end
+
 function M.angularls()
   M.setup_ls('angularls')
 end
+function M.node()
+  M.setup_ls('tsserver')
+  M.setup_ls('eslint')
+end
 
-local servers = {'clangd', 'yamlls', 'solang', 'tsserver', 'jsonls', 'html', 'eslint', 'cssls'}
+function M.deno()
+  M.setup_ls('denols')
+end
+
+local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls'}
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
