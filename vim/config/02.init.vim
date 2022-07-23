@@ -80,6 +80,7 @@ augroup common
   autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
   autocmd FileType json set filetype=jsonc
   autocmd BufNewFile,BufRead *.sol set filetype=solidity syntax=solidity
+  autocmd BufNewFile,BufRead *.carbon set syntax=rust
 augroup END
 
 " Golang config

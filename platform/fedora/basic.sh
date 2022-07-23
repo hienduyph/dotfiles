@@ -21,6 +21,9 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
 
 echo "Add Chrome"
 sudo dnf config-manager --set-enabled google-chrome
+echo "Add Brave"
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 echo "Add rpm fushion non free"
 _pkg install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
@@ -57,6 +60,8 @@ EOM
 
 _pkg copr enable atim/lazygit -y
 
+_pkg copr enable vbatts/bazel -y
+
 packages=(
   zsh
   enpass
@@ -75,10 +80,10 @@ packages=(
   postgresql-devel
   clang
   clang-devel clang-tools-extra
-  llvm
+  llvm lld
   hexyl
   icu
-  transmission
+  qbittorrent
   google-chrome-stable
   nodejs
   bat
@@ -126,6 +131,10 @@ packages=(
   glib2-devel
   gtk2-engines
   google-cloud-cli
+  brave-browser
+  bazel5
+  # some math stuff
+  openblas-devel lapack-devel
 )
 
 # Install all
