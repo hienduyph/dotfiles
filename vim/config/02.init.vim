@@ -81,6 +81,7 @@ augroup common
   autocmd FileType json set filetype=jsonc
   autocmd BufNewFile,BufRead *.sol set filetype=solidity syntax=solidity
   autocmd BufNewFile,BufRead *.carbon set syntax=rust
+  autocmd BufNewFile,BufRead Caddyfile set syntax=tf
 augroup END
 
 " Golang config
