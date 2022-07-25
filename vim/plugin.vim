@@ -7,9 +7,6 @@ endif
 
 call plug#begin(g:plug_dir)
 
-" Theme trying collections, put currenty used at top
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'projekt0n/github-nvim-theme'
 
@@ -29,7 +26,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'b3nj5m1n/kommentary'
 Plug 'windwp/nvim-autopairs'
-Plug 'folke/twilight.nvim'
 
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
@@ -38,9 +34,6 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 " show function signature
 Plug 'SmiteshP/nvim-navic'
-" motion plugins
-Plug 'ggandor/lightspeed.nvim'
-Plug 'VonHeikemen/searchbox.nvim'
 
 if g:telescope == 1
   Plug 'nvim-telescope/telescope.nvim'
@@ -63,6 +56,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install --omit=dev' 
 Plug 'rhysd/vim-clang-format'
 
 Plug 'editorconfig/editorconfig-vim'
+
 " code linter
 Plug 'dense-analysis/ale'
 
