@@ -106,8 +106,6 @@ require('lualine').setup({
   },
 })
 
-require("twilight").setup { }
-
 require'nvim-tree'.setup {
   update_focused_file = {
     enable = true,
@@ -124,10 +122,6 @@ require'nvim-tree'.setup {
       },
     },
   },
-}
-
-require("lightspeed").setup {
-  ignore_case = false,
 }
 
 require('rust-tools').setup({})
