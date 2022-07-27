@@ -65,10 +65,23 @@ function M.deno()
   M.setup_ls('denols')
 end
 
-local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls'}
+local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texlab'}
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
+
+local servers_lsp = servers
+table.insert(servers_lsp, "rust_analyzer")
+table.insert(servers_lsp, "tsserver")
+table.insert(servers_lsp, "eslint")
+table.insert(servers_lsp, "gopls")
+table.insert(servers_lsp, "pyright")
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = servers_lsp,
+  automatic_installation = true,
+})
 
 -- Rust setups
 nvim_lsp.rust_analyzer.setup{

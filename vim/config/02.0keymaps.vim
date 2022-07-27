@@ -2,6 +2,7 @@
 imap jj <Esc>
 imap jk <Esc>
 imap kj <Esc>
+vnoremap jk  <esc>
 
 " move lines around
 nnoremap <leader>k :m-2<cr>==
