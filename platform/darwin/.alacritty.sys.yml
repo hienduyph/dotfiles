@@ -1,5 +1,7 @@
 shell:
   program: /usr/local/bin/tmux
+window:
+  decorations: full
 font:
   size: 13
 key_bindings:
