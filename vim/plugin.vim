@@ -10,11 +10,12 @@ call plug#begin(g:plug_dir)
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'projekt0n/github-nvim-theme'
 
-" Lua libs
+" Common Lua libs
 Plug 'nvim-lua/plenary.nvim'
 Plug 'MunifTanjim/nui.nvim'
-
 Plug 'nvim-lua/popup.nvim'
+
+
 Plug 'sindrets/diffview.nvim'
 
 Plug 'lewis6991/gitsigns.nvim'
@@ -44,7 +45,6 @@ else
   Plug 'junegunn/fzf.vim'
 endif
 
-Plug 'voldikss/vim-floaterm'
 Plug 'godlygeek/tabular'
 Plug 'dhruvasagar/vim-table-mode'
 
@@ -60,6 +60,8 @@ Plug 'editorconfig/editorconfig-vim'
 " code linter
 Plug 'dense-analysis/ale'
 
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/nvim-cmp'
@@ -70,7 +72,6 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
 Plug 'saadparwaiz1/cmp_luasnip'
-
 " snippets collections
 Plug 'rafamadriz/friendly-snippets'
 
@@ -79,8 +80,5 @@ Plug 'psf/black'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --omit=dev',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-
-Plug 'TovarishFin/vim-solidity'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
