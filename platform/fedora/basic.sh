@@ -13,7 +13,7 @@ _pkg config-manager --add-repo  https://yum.enpass.io/enpass-yum.repo
 
 
 echo "Add ibus"
-_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:lamlng/Fedora_35/home:lamlng.repo
+_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:lamlng/Fedora_36/home:lamlng.repo
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
   sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -31,7 +31,7 @@ _pkg install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-r
 
 echo "Add albert"
 sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_35/home:manuelschneid3r.repo
+_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
 _pkg copr enable robot/rust-analyzer -y
 

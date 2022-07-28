@@ -19,12 +19,12 @@ k9s:
   clusters:
     k3d-captain:
       namespace:
-        active: all
+        active: default
         favorites:
         - all
         - default
       view:
-        active: po
+        active: pod
       featureGates:
         nodeShell: false
       shellPod:
