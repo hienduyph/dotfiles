@@ -48,3 +48,4 @@ export KUBE_EDITOR=nvim
 alias pipcli=${PYCLI_HOME}/bin/pip
 
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
+export PROFILE_EXTRA_DIRS=$HOME/.profile_src
