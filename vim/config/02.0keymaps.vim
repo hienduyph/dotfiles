@@ -1,5 +1,4 @@
 " Press jj to escape insert mode
-imap jj <Esc>
 imap jk <Esc>
 imap kj <Esc>
 vnoremap jk  <esc>
