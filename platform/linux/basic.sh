@@ -35,6 +35,39 @@ _sccache() {
   fi
 }
 
+_telegram() {
+  sudo mkdir -p /opt/Telegram
+  curl -fSL -o /tmp/file.gz 'https://github.com/telegramdesktop/tdesktop/releases/download/v4.0.2/tsetup.4.0.2.tar.xz'
+  sudo tar xf /tmp/file.gz -C /opt/Telegram --strip-components=1
+  sudo curl -fsSL -o /usr/share/icons/telegram.svg 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg'
+
+  sudo tee /usr/local/share/applications/telegramdesktop.desktop << EOM
+[Desktop Entry]
+Version=1.5
+Name=Telegram Desktop
+Comment=Official desktop version of Telegram messaging app
+TryExec=/opt/Telegram/Telegram
+Exec=/opt/Telegram/Telegram -- %u
+Icon=telegram.svg
+Terminal=false
+StartupWMClass=TelegramDesktop
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;
+Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
+Actions=Quit;
+SingleMainWindow=true
+X-GNOME-UsesNotifications=true
+X-GNOME-SingleWindow=true
+
+[Desktop Action Quit]
+Exec=telegram-desktop -quit
+Name=Quit Telegram
+Icon=application-exit
+
+EOM
+}
+
 _rust() {
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
@@ -43,7 +76,9 @@ main() {
   _py
   _jetbrains
   _rust
+  _telegram
 }
+
 
 if [[ $_ == $0 ]]; then
   main
