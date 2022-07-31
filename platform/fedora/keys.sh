@@ -39,4 +39,20 @@ _gnome() {
   gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[${binds}]"
 }
 
+_scroll() {
+  sudo tee /usr/share/X11/xorg.conf.d/40-libinput.conf  << EOF
+Section "InputClass"
+  Identifier "libinput pointer catchall"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Driver "libinput"
+  Option "NaturalScrolling" "True"
+EndSection
+
+EOF
+}
+
 _gnome
+
+
+

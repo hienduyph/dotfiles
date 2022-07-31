@@ -49,3 +49,5 @@ alias pipcli=${PYCLI_HOME}/bin/pip
 
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
+# ranger bat style
+export BAT_THEME=GitHub
