@@ -58,3 +58,4 @@ alias yt-mp3="yt-dlp --extract-audio --audio-format mp3"
 alias la="tmux new-session -A -s Lala"
 alias q="tmux new-session -A -s q"
 alias tm="tmux new-session -A -s"
+alias f="ranger" # f=file
