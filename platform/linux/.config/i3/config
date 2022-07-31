@@ -13,7 +13,7 @@ set $mod Mod4
 
 # is used in the bar {} block below.
 font Liberation Sans Regular 12
-font pango:Liberation Sans Regular 10
+font pango:JetBrainsMono Nerd Font Regular 10
 
 # border
 default_border pixel 1
