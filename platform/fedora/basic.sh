@@ -136,6 +136,7 @@ packages=(
   # some math stuff
   openblas-devel lapack-devel
 
+  blueman
   # term ftuff
   ranger
 )
