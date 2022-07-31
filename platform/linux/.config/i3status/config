@@ -5,7 +5,7 @@ general {
 }
 
 # order += "wireless wlo1"
-order += "ethernet enp34s0"
+# order += "ethernet enp34s0"
 order += "tztime local"
 
 wireless wlo1 {
