@@ -12,6 +12,7 @@ _CUS_PATH=(
   "$HOME/.pub-cache/bin"
   "$HOME/.krew/bin"
   "${PYCLI_HOME}/bin"
+  "/opt/Telegram/"
 )
 
 if [[ -f "${BREW_PREFIX}/bin/brew" ]]; then

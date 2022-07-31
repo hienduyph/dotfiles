@@ -135,6 +135,9 @@ packages=(
   bazel5
   # some math stuff
   openblas-devel lapack-devel
+
+  # term ftuff
+  ranger
 )
 
 # Install all
