@@ -39,7 +39,7 @@ _telegram() {
   sudo mkdir -p /opt/Telegram
   curl -fSL -o /tmp/file.gz 'https://github.com/telegramdesktop/tdesktop/releases/download/v4.0.2/tsetup.4.0.2.tar.xz'
   sudo tar xf /tmp/file.gz -C /opt/Telegram --strip-components=1
-  sudo curl -fsSL -o /usr/share/icons/telegram.svg 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg'
+  sudo curl -fsSL -o /usr/share/icons/telegram.png 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png'
 
   sudo tee /usr/local/share/applications/telegramdesktop.desktop << EOM
 [Desktop Entry]
@@ -48,7 +48,7 @@ Name=Telegram Desktop
 Comment=Official desktop version of Telegram messaging app
 TryExec=/opt/Telegram/Telegram
 Exec=/opt/Telegram/Telegram -- %u
-Icon=telegram.svg
+Icon=telegram.png
 Terminal=false
 StartupWMClass=TelegramDesktop
 Type=Application
