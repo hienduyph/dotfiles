@@ -10,6 +10,13 @@ _mac() {
   sudo ln -sf /opt/homebrew/bin/bash /usr/local/bin/bash
 }
 
+_linux() {
+  mkdir -p ~/.gnupg
+  tee ~/.gnupg/gpg-agent.conf << EOF
+pinentry-program $(which pinentry-curses)
+EOF
+}
+
 __system() {
   _fonts $PLATFORM
   _system
@@ -17,6 +24,8 @@ __system() {
   _cli
   if [ ${PLATFORM} == "darwin" ]; then
     _mac
+  elif [ ${PLATFORM} == "linux" ]; then
+    _linux
   fi
 }
 
