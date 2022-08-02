@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim
+sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart rofi
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
@@ -14,7 +14,7 @@ export XDG_SESSION_DESKTOP=sway
 exec sway --unsupported-gpu
 EOF
 
-sudo chmod +x /usr/bin/start-sway 
+sudo chmod +x /usr/bin/start-sway
 
 sudo tee /usr/share/wayland-sessions/sway.desktop  << EOF
 [Desktop Entry]

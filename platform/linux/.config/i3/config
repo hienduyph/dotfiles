@@ -12,6 +12,7 @@ default_floating_border pixel 1
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id ibus-daemon --xim -d -r
+exec --no-startup-id redshift -v
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -170,8 +171,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    position top
-    status_command i3status
+  position top
+  status_command i3status
 }
 
 # remap caplocks to ctl
