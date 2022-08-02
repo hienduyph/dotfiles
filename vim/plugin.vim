@@ -63,6 +63,8 @@ Plug 'dense-analysis/ale'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
+ Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
 Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/nvim-cmp'
 
