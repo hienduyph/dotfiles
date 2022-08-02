@@ -12,11 +12,14 @@ exec --no-startup-id dex-autostart --autostart --environment sway
 exec --no-startup-id ibus-daemon --xim -d -r
 
 exec swayidle -w \
-       timeout 300 'swaylock -f -c 000000' \
-       timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-       before-sleep 'swaylock -f -c 000000'
+    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t' \
+    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 000000'
 
-bindsym Mod1+l exec swaylock -f -c 000000 -i ~/.config/sway/screenlock.png & sleep 5 && xset dpms force off
+bindsym Mod1+l exec swayidle -w  \
+    timeout 1 'swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t' \
+    timeout 2 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
 
 exec --no-startup-id nm-applet
 
@@ -30,11 +33,12 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # screenshot
-bindsym Mod1+Ctrl+4 exec flameshot gui
+bindsym Mod1+Ctrl+4 exec grim -g "$(slurp)" - | swappy -f -
 
-bindsym $mod+d exec --no-startup-id wofi --show=drun
+bindsym $mod+d exec --no-startup-id rofi -m "$(swaymsg -t get_outputs | jq '.[] | select(.focused == true) | .name')" -show drun -show-icons -font "JetBrainsMono Nerd Font Regular 20"
 
 # change focus
+
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -57,6 +61,7 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -121,9 +126,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r swaymsg reload
+bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
@@ -155,13 +158,21 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
 }
 
-input 1133:49271:Logitech_USB_Optical_Mouse {
+input * {
     natural_scroll enable
 }
 
 # remap caplocks to ctl
-# exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+input * {
+    xkb_options caps:ctrl_modifier
+}
+
+bindsym Control+Space exec --no-startup-id ~/.bin/ibus-switch
 exec --no-startup-id ~/.local/startup.sh
+# support flameshot
+# exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# exec hash dbus-update-activation-environment 2>/dev/null && \
+#      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
