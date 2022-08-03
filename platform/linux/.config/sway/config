@@ -35,7 +35,8 @@ bindsym $mod+Shift+q kill
 # screenshot
 bindsym Mod1+Ctrl+4 exec grim -g "$(slurp)" - | swappy -f -
 
-bindsym $mod+d exec --no-startup-id rofi -m "$(swaymsg -t get_outputs | jq '.[] | select(.focused == true) | .name')" -show drun -show-icons -font "JetBrainsMono Nerd Font Regular 20"
+bindsym $mod+d exec --no-startup-id rofi -monitor "XWAYLAND$(swaymsg -t get_outputs | jq '[.[].focused] | index(true)')" \
+    -show drun -show-icons -font "JetBrainsMono Nerd Font Regular 20"
 
 # change focus
 
