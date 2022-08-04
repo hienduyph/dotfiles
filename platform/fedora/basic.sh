@@ -139,6 +139,7 @@ packages=(
   blueman
   # term ftuff
   ranger
+  cheat
 )
 
 # Install all
