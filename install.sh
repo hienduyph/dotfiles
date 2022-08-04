@@ -35,6 +35,7 @@ __users() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
+  _ranger
 }
 
 main() {

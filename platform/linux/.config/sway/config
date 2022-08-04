@@ -171,9 +171,8 @@ input * {
     xkb_options caps:ctrl_modifier
 }
 
+output "*" background "~/.config/sway/screenlock.png" fill
+
 bindsym Control+Space exec --no-startup-id ~/.bin/ibus-switch
-exec --no-startup-id ~/.local/startup.sh
-# support flameshot
-# exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-# exec hash dbus-update-activation-environment 2>/dev/null && \
-#      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+include ~/.config/sway/config.d/*

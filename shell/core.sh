@@ -51,6 +51,7 @@ fi
 # https://github.com/cheat/cheat
 export CHEAT_USE_FZF=true
 
+export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 if [[ -d $PROFILE_EXTRA_DIRS ]]; then

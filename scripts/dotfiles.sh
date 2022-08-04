@@ -100,6 +100,7 @@ _configs() {
   pkgs=(
     htop
     mpv
+    ranger
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -109,6 +110,10 @@ _configs() {
 
   specifics=(
     kitty
+    i3
+    i3status
+    redshift
+    sway
   )
 
   for pk in "${specifics[@]}"; do
@@ -162,12 +167,10 @@ _dots() {
 
 _ranger() {
   DEST_DIR=$HOME/.config/ranger
-  rm -rf $DEST_DIR/*
   PLUGIN_DIR=$DEST_DIR/plugins
+  rm -rf $PLUGIN_DIR
   mkdir -p $PLUGIN_DIR
-  git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-  ln -s ~/dotfiles/ranger/rc.conf $DEST_DIR/rc.conf
-  ln -s ~/dotfiles/ranger/rifle.conf $DEST_DIR/
+  git clone https://github.com/alexanderjeurissen/ranger_devicons ${PLUGIN_DIR}/ranger_devicons
 }
 
 _bash_cmp() {
