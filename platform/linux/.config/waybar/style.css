@@ -1,0 +1,12 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+  background: #000000;
+  color: #e5e9f0;
+}

@@ -159,7 +159,8 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
-    status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
+    swaybar_command waybar
 }
 
 input * {
