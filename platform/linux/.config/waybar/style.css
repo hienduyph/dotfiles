@@ -10,3 +10,12 @@ window#waybar {
   background: #000000;
   color: #e5e9f0;
 }
+
+#workspaces button{
+  border-bottom: 1px solid #000000;
+}
+
+#workspaces button.focused {
+  background: #4c566a;
+  border-bottom: 1px solid #e5e9f0;
+}
