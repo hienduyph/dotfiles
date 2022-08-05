@@ -9,7 +9,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 exec --no-startup-id dex-autostart --autostart --environment sway
-exec --no-startup-id ibus-daemon --xim -d -r
+exec_always /usr/libexec/fcitx5-wayland-launcher
 
 exec swayidle -w \
     timeout 300 'swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t' \
@@ -174,6 +174,6 @@ input * {
 
 output "*" background "~/.config/sway/screenlock.png" fill
 
-bindsym Control+Space exec --no-startup-id ~/.bin/ibus-switch
+# bindsym Control+Space exec --no-startup-id ~/.bin/ibus-switch
 
 include ~/.config/sway/config.d/*

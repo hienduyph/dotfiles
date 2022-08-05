@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart rofi waybar
+sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart rofi waybar fcitx5 fcitx5-unikey
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
@@ -23,3 +23,5 @@ Comment=An i3-compatible Wayland compositor
 Exec=/usr/bin/start-sway
 Type=Application
 EOF
+
+mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
