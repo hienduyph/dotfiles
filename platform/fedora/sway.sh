@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart rofi waybar fcitx5 fcitx5-unikey
+sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fcitx5 fcitx5-unikey fuzzel
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash

@@ -36,9 +36,10 @@ _sccache() {
 }
 
 _telegram() {
-  sudo mkdir -p /opt/Telegram
+  DST=/opt/Telegram
+  sudo mkdir -p $DST
   curl -fSL -o /tmp/file.gz 'https://github.com/telegramdesktop/tdesktop/releases/download/v4.0.2/tsetup.4.0.2.tar.xz'
-  sudo tar xf /tmp/file.gz -C /opt/Telegram --strip-components=1
+  sudo tar xf /tmp/file.gz -C $DST --strip-components=1
   sudo curl -fsSL -o /usr/share/icons/telegram.png 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png'
 
   sudo tee /usr/local/share/applications/telegramdesktop.desktop << EOM
@@ -46,8 +47,8 @@ _telegram() {
 Version=1.5
 Name=Telegram Desktop
 Comment=Official desktop version of Telegram messaging app
-TryExec=/opt/Telegram/Telegram
-Exec=/opt/Telegram/Telegram -- %u
+TryExec=$DST/Telegram
+Exec=$DST/Telegram -- %u
 Icon=telegram.png
 Terminal=false
 StartupWMClass=TelegramDesktop
@@ -61,7 +62,7 @@ X-GNOME-UsesNotifications=true
 X-GNOME-SingleWindow=true
 
 [Desktop Action Quit]
-Exec=telegram-desktop -quit
+Exec=${DST}/Telegram -quit
 Name=Quit Telegram
 Icon=application-exit
 

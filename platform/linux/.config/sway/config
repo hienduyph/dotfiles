@@ -1,5 +1,7 @@
 set $mod Mod4
 
+xwayland disable
+
 # is used in the bar {} block below.
 font Liberation Sans Regular 10
 font pango:JetBrainsMono Nerd Font Regular 9
@@ -21,8 +23,6 @@ bindsym Mod1+l exec swayidle -w  \
     timeout 2 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
 
-exec --no-startup-id nm-applet
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -35,8 +35,7 @@ bindsym $mod+Shift+q kill
 # screenshot
 bindsym Mod1+Ctrl+4 exec grim -g "$(slurp)" - | swappy -f -
 
-bindsym $mod+d exec --no-startup-id rofi -monitor "XWAYLAND$(swaymsg -t get_outputs | jq '[.[].focused] | index(true)')" \
-    -show drun -show-icons -font "JetBrainsMono Nerd Font Regular 20"
+bindsym $mod+d exec --no-startup-id fuzzel
 
 # change focus
 
