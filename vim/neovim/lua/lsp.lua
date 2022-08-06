@@ -6,6 +6,8 @@ local opts = { noremap=true, silent=true }
 -- set keymaps
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
 vim.keymap.set('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, opts)
+
 vim.keymap.set('n', 'gD', '<Cmd>Lspsaga signature_help<CR>', opts)
 
 vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
