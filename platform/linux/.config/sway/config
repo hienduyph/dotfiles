@@ -17,10 +17,7 @@ exec swayidle -w \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
 
-bindsym Mod1+l exec swayidle -w  \
-    timeout 1 'swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t' \
-    timeout 2 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
+bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
