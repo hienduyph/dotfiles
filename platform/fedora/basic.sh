@@ -62,6 +62,8 @@ _pkg copr enable atim/lazygit -y
 
 _pkg copr enable vbatts/bazel -y
 
+sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+
 packages=(
   zsh
   enpass
@@ -101,6 +103,7 @@ packages=(
   golang
   ripgrep
   fd-find
+  starship
   htop
   git-delta
   telnet
@@ -109,9 +112,12 @@ packages=(
   ibus-bamboo
   rust-analyzer
   httpie
+
   helm
   kubectl
-  starship
+  terraform
+
+
   telegram
   editorconfig
   lazygit

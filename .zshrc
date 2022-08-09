@@ -28,6 +28,7 @@ znap source ohmyzsh/ohmyzsh lib/git.zsh
 znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/vi-mode
 znap source ohmyzsh/ohmyzsh plugins/colorize
+znap source ohmyzsh/ohmyzsh plugins/terraform
 znap source zsh-users/zsh-completions
 
 # start our codes
