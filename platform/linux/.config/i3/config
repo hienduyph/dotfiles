@@ -45,6 +45,7 @@ bindsym $mod+Shift+q kill
 bindsym Mod1+Ctrl+4 exec flameshot gui
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -font "JetBrainsMono Nerd Font Regular 20"
+bindsym Mod1+space exec --no-startup-id rofi -show drun -show-icons -font "JetBrainsMono Nerd Font Regular 20"
 
 # change focus
 bindsym $mod+j focus left
