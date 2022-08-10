@@ -130,7 +130,6 @@ _dots() {
   PLATFORM=$1
   dots=(
     .zshrc
-     .bashrc
     .profile
     .pylintrc
     .ideavimrc
