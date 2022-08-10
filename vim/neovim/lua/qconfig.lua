@@ -129,8 +129,8 @@ require('rust-tools').setup({})
 require('mini.base16').setup({
   palette = {
     base00 = '#ffffff',
-    base01 = '#bcbfa4',
-    base02 = '#979a7e',
+    base01 = '#f6f8eb',
+    base02 = '#dbe1ac',
     base03 = '#73765a',
     base04 = '#324490',
     base05 = '#002a83',
