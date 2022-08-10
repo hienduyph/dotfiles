@@ -14,7 +14,7 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/popup.nvim'
-
+Plug 'echasnovski/mini.nvim'
 
 Plug 'sindrets/diffview.nvim'
 
