@@ -166,6 +166,10 @@ input * {
     xkb_options caps:ctrl_modifier
 }
 
+# workaroud for chrome app
+for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
+
+
 output "*" background "~/.config/sway/screenlock.png" fill
 
 include ~/.config/sway/config.d/*

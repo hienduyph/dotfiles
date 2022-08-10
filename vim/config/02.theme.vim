@@ -1,3 +1,3 @@
 set background=light
-colorscheme github_light_default
+" colorscheme github_light_default
 
