@@ -83,6 +83,7 @@ main() {
   _jetbrains
   _rust
   _telegram
+  sudo curl -fSsLo /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.27.2/yq_linux_amd64 && sudo chmod +x /usr/local/bin/yq
 }
 
 

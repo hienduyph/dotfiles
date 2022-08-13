@@ -1,8 +1,5 @@
 # The Q dotfiles
 
-![screenshot](./images/screenshot.png)
-![shell](./images/shell.png)
-
 ## Steps
 ```bash
 # install path must be at `$HOME/dotfiles`
@@ -20,12 +17,6 @@ sudo bash basic.sh
 ### 2. Bootstrap dotfiles
 ```bash
 bash ./install.sh
-```
-
-### Gnome Terminal
-```bash
-dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
-dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
 ```
 
 # License
