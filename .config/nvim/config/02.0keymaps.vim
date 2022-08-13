@@ -13,15 +13,6 @@ xnoremap <leader>p "_dP
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 
-nnoremap <C-y> :NvimTreeToggle<CR>
-
-nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
-nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
-command! -bar -bang -nargs=* GitFiles :lua require('telescope.builtin').git_files()
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>t <cmd>lua require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })<cr>
-
 " clear search results highlight
 nnoremap <silent> <C-l> :nohl <CR>
 
@@ -31,14 +22,6 @@ nmap <leader>a: :Tabularize /:\zs <CR>
 vmap <leader>a: :Tabularize /:\zs <CR>
 nmap <leader>at :Tabularize /\|<CR>
 vmap <leader>at :Tabularize /\|<CR>
-
-" Format json
-" com! FormatJSON %!python -m json.tool
-com! FormatJSON %!jq '.'
-com! MinifyJSON %!jq -c .
-
-" delete all other buffer but this one
-command! BufOnly execute '%bdelete!|edit #|normal `"'
 
 " navigate ale fix
 nmap <silent> <leader>g[ <Plug>(ale_next_wrap)
@@ -70,9 +53,6 @@ nnoremap <silent>6gt <Cmd>BufferLineGoToBuffer 6<CR>
 nnoremap <silent>7gt <Cmd>BufferLineGoToBuffer 7<CR>
 nnoremap <silent>8gt <Cmd>BufferLineGoToBuffer 8<CR>
 nnoremap <silent>9gt <Cmd>BufferLineGoToBuffer 9<CR>
-
-" Format keymap
-nmap <silent> <leader>f :Format <CR>
 
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>

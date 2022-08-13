@@ -108,7 +108,6 @@ if has('nvim')
   let g:python3_host_prog = "~/.venv/neovim/bin/python"
 endif
 
-
 " The length colum
 highlight ColorColumn ctermbg=2
 
@@ -119,3 +118,8 @@ augroup END
 
 " highlight whitespace
 set listchars=eol:↵,trail:~,tab:>-,nbsp:␣
+
+" fold setup
+setlocal foldmethod=indent
+set nofoldenable
+set foldlevel=99
