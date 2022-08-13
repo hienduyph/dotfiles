@@ -102,6 +102,7 @@ _configs() {
     i3status
     redshift
     sway
+    fcitx5
   )
 
   for pk in "${specifics[@]}"; do

@@ -15,6 +15,8 @@ _linux() {
   tee ~/.gnupg/gpg-agent.conf << EOF
 pinentry-program $(which pinentry-curses)
 EOF
+
+  mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 }
 
 __system() {

@@ -11,7 +11,6 @@ default_floating_border pixel 1
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id ibus-daemon --xim -d -r
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -57,8 +56,8 @@ bindsym $mod+semicolon focus right
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
-bindsym $mod+[ focus left
-bindsym $mod+] focus right
+# bindsym $mod+[ focus left
+# bindsym $mod+] focus right
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 

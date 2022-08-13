@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fcitx5 fcitx5-unikey fuzzel
+sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
@@ -24,4 +24,3 @@ Exec=/usr/bin/start-sway
 Type=Application
 EOF
 
-mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
