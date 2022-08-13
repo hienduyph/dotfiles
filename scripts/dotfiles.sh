@@ -45,9 +45,6 @@ _py_cli() {
 
 _cli() {
   source $HOME/.cargo/env
-  cargo build --release
-  sudo cp target/release/json2yaml target/release/yaml2json /usr/local/bin
-
   pkgs=(
     jwt-cli
     --features vendored-openssl cargo-edit
@@ -73,7 +70,6 @@ _neovim() {
   python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
-  nvim +PlugInstall +qall
 }
 
 _shell() {
@@ -131,7 +127,6 @@ _dots() {
   for f in "${dots[@]}"; do
     ln -sf ~/dotfiles/$f $HOME/$f
   done
-
 
   locals=(
     .alacritty.yml

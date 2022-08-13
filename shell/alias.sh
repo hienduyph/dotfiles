@@ -20,8 +20,8 @@ alias pycli="source $PYCLI_HOME/bin/activate"
 
 alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 
-alias y2j="yaml2json"
-alias j2y="json2yaml"
+alias y2j="yq -o json"
+alias j2y="yq -P"
 
 
 alias kdf="kubectl diff -f"

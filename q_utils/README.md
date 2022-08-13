@@ -1,1 +1,0 @@
-# Q collections terminal utilities

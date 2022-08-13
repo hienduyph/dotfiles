@@ -36,18 +36,6 @@ py_core_setup() {
   /usr/bin/env python -m pip install black pylint ipdb wheel pynvim pip --upgrade
 }
 
-if ! command -v json2yaml >/dev/null ; then
-  json2yaml() {
-    ${PYCLI_HOME}/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'
-  };
-fi
-
-if ! command -v yaml2json >/dev/null ; then
-  yaml2json() {
-    ${PYCLI_HOME}/bin/python -c 'import sys, yaml, json; sys.stdout.write(yaml.dump(json.load(sys.stdin)))'
-  };
-fi
-
 # https://github.com/cheat/cheat
 export CHEAT_USE_FZF=true
 
