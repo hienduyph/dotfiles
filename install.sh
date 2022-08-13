@@ -30,12 +30,12 @@ __system() {
 }
 
 __users() {
-  _neovim
   _shell
   _dots $PLATFORM
   _configs $PLATFORM
   _git
   _ranger
+  _neovim
 }
 
 main() {

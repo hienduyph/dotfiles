@@ -1,4 +1,3 @@
-" Press jj to escape insert mode
 " move lines around
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
@@ -14,37 +13,14 @@ xnoremap <leader>p "_dP
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 
-
 nnoremap <C-y> :NvimTreeToggle<CR>
 
-if g:telescope == 1
-  " Telescope (Replace FZF)
-  nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
-  nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
-  command! -bar -bang -nargs=* GitFiles :lua require('telescope.builtin').git_files()
-  nnoremap <leader>b <cmd>Telescope buffers<cr>
-  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-  nnoremap <leader>t <cmd>lua require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })<cr>
-else
-  " FZF
-  nnoremap <C-g> :Rg<Cr>
-  map <C-f> :Files<CR>
-  map <leader>b :Buffers<CR>
-  " CTRL-A CTRL-Q to select all and build quickfix list
-  function! s:build_quickfix_list(lines)
-    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-    copen
-    cc
-  endfunction
-
-  " say good bye with tab for now, old value `tab split`
-  let g:fzf_action = {
-    \ 'ctrl-q': function('s:build_quickfix_list'),
-    \ 'ctrl-t': 'drop',
-    \ 'ctrl-x': 'split',
-    \ 'ctrl-v': 'vsplit' }
-  let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
-endif
+nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
+nnoremap <C-g> <cmd>lua require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })<cr>
+command! -bar -bang -nargs=* GitFiles :lua require('telescope.builtin').git_files()
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>t <cmd>lua require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })<cr>
 
 " clear search results highlight
 nnoremap <silent> <C-l> :nohl <CR>
@@ -56,28 +32,10 @@ vmap <leader>a: :Tabularize /:\zs <CR>
 nmap <leader>at :Tabularize /\|<CR>
 vmap <leader>at :Tabularize /\|<CR>
 
-
 " Format json
 " com! FormatJSON %!python -m json.tool
 com! FormatJSON %!jq '.'
 com! MinifyJSON %!jq -c .
-
-" Float windows
-command! -bar -bang -nargs=* TERM FloatermNew <args>
-command! -bar -bang -nargs=* LG FloatermNew --autoclose=1 lazygit
-command! -bar -bang -nargs=* GC FloatermNew! git commit
-command! -bar -bang -nargs=* GP FloatermNew! ggp
-command! -bar -bang -nargs=* GD FloatermNew! git diff
-
-if has('win32')
-  " do nothing
-elseif has('mac')
-  let g:floaterm_keymap_new  = "<D-o>"
-  let g:floaterm_keymap_toggle  = "<D-g>"
-elseif has('unix')
-  let g:floaterm_keymap_new  = "<M-o>"
-  let g:floaterm_keymap_toggle  = "<M-g>"
-endif
 
 " delete all other buffer but this one
 command! BufOnly execute '%bdelete!|edit #|normal `"'
@@ -118,9 +76,3 @@ nmap <silent> <leader>f :Format <CR>
 
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
-nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>

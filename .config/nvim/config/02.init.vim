@@ -4,6 +4,7 @@ if has('nvim')
   let g:loaded_ruby_provider = 0
 endif
 
+set background=light
 " Enable local vimrc
 set exrc
 set secure
@@ -115,3 +116,6 @@ augroup direnv
   au!
   autocmd BufNewFile,BufRead *.envrc set filetype=bash
 augroup END
+
+" highlight whitespace
+set listchars=eol:↵,trail:~,tab:>-,nbsp:␣
