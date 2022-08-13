@@ -73,15 +73,6 @@ _neovim() {
   python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
-
-  echo "Install neovim config"
-  rm -rf ~/.config/nvim && mkdir -p ~/.config/nvim
-
-  ln -sf ~/dotfiles/vim/nvim.vim ~/.config/nvim/init.vim
-  ln -sf ~/dotfiles/vim/coc-settings.json ~/.config/nvim/
-  ln -sf ~/dotfiles/vim/neovim/lua/ ~/.config/nvim/
-  ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim
-
   nvim +PlugInstall +qall
 }
 
@@ -101,6 +92,7 @@ _configs() {
     htop
     mpv
     ranger
+    nvim
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"

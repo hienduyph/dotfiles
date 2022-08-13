@@ -5,12 +5,18 @@ return {
   tab_max_width = 16,
   use_fancy_tab_bar=false,
   exit_behavior = "Close",
-  window_decorations = "NONE",
+  window_decorations = "TITLE",
   initial_cols = 160,
   enable_wayland = false,
   initial_rows = 48,
   window_frame = {
     font_size=10.0,
+  },
+  window_padding = {
+    left = 2,
+    right = 2,
+    top = 0,
+    bottom = 0,
   },
   keys = {
     {key="d", mods="ALT|SHIFT", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},

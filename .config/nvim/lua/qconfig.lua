@@ -44,9 +44,7 @@ vim.diagnostic.config({
 
 require("gitsigns").setup()
 
-local npairs = require("nvim-autopairs")
-
-npairs.setup({
+require("nvim-autopairs").setup({
   check_ts = true,
   ts_config = {
     lua = {"string"},-- it will not add a pair on that treesitter node
@@ -82,8 +80,7 @@ require"nvim-treesitter.configs".setup {
   },
 }
 
-require"nvim-web-devicons".setup {
-}
+require"nvim-web-devicons".setup { }
 
 require("kommentary.config").use_extended_mappings()
 
@@ -108,8 +105,6 @@ require("bufferline").setup{
   },
 }
 
-local navic = require("nvim-navic")
-
 require("lualine").setup({
   options = {
     theme = "gruvbox",
@@ -124,10 +119,6 @@ require("lualine").setup({
         "filename",
         file_status=true,
         path=1,
-      },
-      {
-        navic.get_location,
-        cond = navic.is_available,
       },
     },
     lualine_x = {"encoding", "fileformat", "filetype"},
@@ -166,3 +157,14 @@ require"nvim-tree".setup {
 
 require("rust-tools").setup({})
 
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.diagnostics.eslint_d,
+    null_ls.builtins.diagnostics.buf,
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.diagnostics.golangci_lint,
+  },
+})

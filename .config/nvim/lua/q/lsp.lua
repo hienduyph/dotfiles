@@ -2,45 +2,25 @@ local M = {}
 local nvim_lsp = require('lspconfig')
 
 local opts = { noremap=true, silent=true }
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+vim.api.nvim_set_keymap('x', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
--- set keymaps
-vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
-vim.keymap.set('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
-vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, opts)
-
-vim.keymap.set('n', 'gD', '<Cmd>Lspsaga signature_help<CR>', opts)
-
-vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-vim.keymap.set("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
-
-
--- hover docs
-vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
-local action = require("lspsaga.action")
--- scroll down hover doc or scroll in definition preview
-vim.keymap.set("n", "<C-n>", function() action.smart_scroll_with_saga(1) end, { silent = true })
--- scroll up hover doc
-vim.keymap.set("n", "<C-p>", function() action.smart_scroll_with_saga(-1) end, { silent = true })
-
-vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-vim.keymap.set('n', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.keymap.set('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-vim.keymap.set('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-vim.keymap.set('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-vim.keymap.set('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
--- vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts)
-
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-
-vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.keymap.set('n', 'g[', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
-vim.keymap.set('n', 'g]', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local navic = require("nvim-navic")
-
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -54,9 +34,6 @@ local on_attach = function(client, bufnr)
   elseif client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
-
-  -- show function signature with lsp
-  navic.attach(client, bufnr)
 end
 
 function M.setup_ls(lsp)
@@ -85,19 +62,6 @@ local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texla
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
-
-local servers_lsp = servers
-table.insert(servers_lsp, "rust_analyzer")
-table.insert(servers_lsp, "tsserver")
-table.insert(servers_lsp, "eslint")
-table.insert(servers_lsp, "gopls")
-table.insert(servers_lsp, "pyright")
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = servers_lsp,
-  automatic_installation = true,
-})
 
 -- Rust setups
 nvim_lsp.rust_analyzer.setup{
@@ -175,17 +139,6 @@ nvim_lsp.gopls.setup {
   }
 }
 
--- omnisharp setups
-local omnisharp_bin = "/opt/omnisharp/run"
-require'lspconfig'.omnisharp.setup{
-  capabilities = capabilities,
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) };
-}
-
 -- lsp import
 -- refer https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
 function lsp_organize_imports(timeout_ms)
@@ -216,18 +169,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
     }
     vim.diagnostic.open_float(nil, opts)
   end
-})
-
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga({
-  symbol_in_winbar = {
-    in_custom = false,
-  },
-  finder_action_keys = {
-    scroll_down = "<C-d>",
-    scroll_up = "<C-u>",
-  },
 })
 
 return M
