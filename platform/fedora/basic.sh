@@ -70,13 +70,11 @@ packages=(
   brave-browser
   mpv
   code
-  gnome-tweak-tool
   qbittorrent
   google-chrome-stable
   dropbox
   calibre
-  flameshot
-  ibus-bamboo
+  fcitx5 fcitx5-unikey 
 )
 
 echo 'Install all package'

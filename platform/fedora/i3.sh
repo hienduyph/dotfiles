@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo dnf install i3 xset redshift dex-autostart rofi feh -y
+sudo dnf install i3 xset redshift dex-autostart rofi feh flameshot -y
