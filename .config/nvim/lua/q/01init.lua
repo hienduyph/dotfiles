@@ -58,13 +58,10 @@ vim.opt_local.foldmethod = "indent"
 opt.foldlevel = 99
 
 vim.cmd([[
-" make delete works in macos
 augroup Markdown
   au filetype markdown set formatoptions+=ro
   au filetype markdown set comments=b:*,b:-,b:+,b:1.,n:>
 augroup END
-
-
 
 " custom function
 function! UseTabs()
@@ -138,62 +135,8 @@ augroup Make
   autocmd Filetype make setlocal shiftwidth=4
 augroup END
 
-" Flagging Unnecessary Whitespace
-highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
 augroup direnv
   au!
   autocmd BufNewFile,BufRead *.envrc set filetype=bash
 augroup END
-
-" delete without copy
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
-
-" resize pane"
-nnoremap <silent> <leader>+ :vertical resize +5<CR>
-nnoremap <silent> <leader>- :vertical resize -5<CR>
-
-" clear search results highlight
-nnoremap <silent> <C-l> :nohl <CR>
-
-nmap <leader>a= :Tabularize /= <CR>
-vmap <leader>a= :Tabularize /= <CR>
-nmap <leader>a: :Tabularize /:\zs <CR>
-vmap <leader>a: :Tabularize /:\zs <CR>
-nmap <leader>at :Tabularize /\|<CR>
-vmap <leader>at :Tabularize /\|<CR>
-
-" navigate ale fix
-nmap <silent> <leader>g[ <Plug>(ale_next_wrap)
-nmap <silent> <leader>g] <Plug>(ale_previous_wrap)
-nmap <silent> <leader>l :ALELint <CR>
-
-" Buffer navigations"
-nnoremap <silent>gb :BufferLineCycleNext<CR>
-nnoremap <silent>gB :BufferLineCyclePrev<CR>
-nnoremap <silent>gt :BufferLineCycleNext<CR>
-nnoremap <silent>gT :BufferLineCyclePrev<CR>
-nnoremap <silent>1gb <Cmd>BufferLineGoToBuffer 1<CR>
-nnoremap <silent>2gb <Cmd>BufferLineGoToBuffer 2<CR>
-nnoremap <silent>3gb <Cmd>BufferLineGoToBuffer 3<CR>
-nnoremap <silent>4gb <Cmd>BufferLineGoToBuffer 4<CR>
-nnoremap <silent>5gb <Cmd>BufferLineGoToBuffer 5<CR>
-nnoremap <silent>6gb <Cmd>BufferLineGoToBuffer 6<CR>
-nnoremap <silent>7gb <Cmd>BufferLineGoToBuffer 7<CR>
-nnoremap <silent>8gb <Cmd>BufferLineGoToBuffer 8<CR>
-nnoremap <silent>9gb <Cmd>BufferLineGoToBuffer 9<CR>
-
-" override tab behavior
-nnoremap <silent>1gt <Cmd>BufferLineGoToBuffer 1<CR>
-nnoremap <silent>2gt <Cmd>BufferLineGoToBuffer 2<CR>
-nnoremap <silent>3gt <Cmd>BufferLineGoToBuffer 3<CR>
-nnoremap <silent>4gt <Cmd>BufferLineGoToBuffer 4<CR>
-nnoremap <silent>5gt <Cmd>BufferLineGoToBuffer 5<CR>
-nnoremap <silent>6gt <Cmd>BufferLineGoToBuffer 6<CR>
-nnoremap <silent>7gt <Cmd>BufferLineGoToBuffer 7<CR>
-nnoremap <silent>8gt <Cmd>BufferLineGoToBuffer 8<CR>
-nnoremap <silent>9gt <Cmd>BufferLineGoToBuffer 9<CR>
 ]])
