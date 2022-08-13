@@ -1,0 +1,8 @@
+require("q.plugin")
+require("q.01init")
+require("q.config")
+require("q.cmd")
+require("q.keymap")
+require('q.telescope')
+require("q.lsp")
+require('q.completion')
