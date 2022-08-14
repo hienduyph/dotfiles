@@ -56,8 +56,9 @@ bindsym $mod+semicolon focus right
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
-# bindsym $mod+[ focus left
-# bindsym $mod+] focus right
+# xev -event keyboard to check key
+bindsym $mod+bracketleft focus left
+bindsym $mod+bracketright focus right
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 
