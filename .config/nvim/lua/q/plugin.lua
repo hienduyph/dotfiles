@@ -1,41 +1,104 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path })
   vim.cmd [[packadd packer.nvim]]
 end
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use {
+    'kyazdani42/nvim-web-devicons',
+    config = function()
+      require "nvim-web-devicons".setup {}
+    end
+  }
 
   use { 'echasnovski/mini.nvim', branch = 'stable' }
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
+    config = function() require('gitsigns').setup() end,
   }
+
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons',
     },
+    config = function()
+      require "nvim-tree".setup {
+        update_focused_file = {
+          enable = true,
+        },
+        filters = {
+          dotfiles = false,
+          custom = { ".git", "node_modules", ".cache", "__pycache__", ".direnv", ".ipynb_checkpoints", "vendor" },
+        },
+        actions = {
+          open_file = {
+            resize_window = true,
+            window_picker = {
+              enable = false,
+            },
+          },
+        },
+      }
+    end
   }
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup {
+        options = {
+          numbers = "ordinal",
+          diagnostics = "nvim_lsp",
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+        },
+      }
+    end
+  }
+
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'b3nj5m1n/kommentary'
-  use 'windwp/nvim-autopairs'
+  use {
+    'b3nj5m1n/kommentary',
+    config = function()
+      require("kommentary.config").use_extended_mappings()
+    end
+  }
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require("nvim-autopairs").setup({
+        check_ts = true,
+        ts_config = {
+          lua = { "string" }, -- it will not add a pair on that treesitter node
+          javascript = { "template_string" },
+          java = false, -- don"t check treesitter on java
+        }
+      })
+    end
+  }
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use 'neovim/nvim-lspconfig'
   use 'L3MON4D3/LuaSnip'
@@ -49,18 +112,33 @@ return require('packer').startup(function(use)
 
   use {
     'jose-elias-alvarez/null-ls.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.diagnostics.eslint_d,
+          null_ls.builtins.diagnostics.buf,
+          null_ls.builtins.formatting.black,
+          null_ls.builtins.formatting.prettier,
+        },
+      })
+    end
   }
 
   use {
     'simrat39/rust-tools.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    config = function()
+      require("rust-tools").setup({})
+    end
   }
 
   use({
     "kylechui/nvim-surround",
     config = function()
-      require("nvim-surround").setup({ })
+      require("nvim-surround").setup({})
     end
   })
 

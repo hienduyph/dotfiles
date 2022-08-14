@@ -13,10 +13,10 @@ g.python3_host_prog = "~/.venv/neovim/bin/python"
 
 opt.number = true
 opt.ruler = true
-opt.encoding =  "UTF-8"
-opt.tabstop =  4
-opt.softtabstop = 4
-opt.shiftwidth =  4
+opt.encoding = "UTF-8"
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.smarttab = true
 opt.expandtab = true
 opt.autoindent = true
@@ -50,93 +50,45 @@ opt.cursorline = true
 opt.termguicolors = true
 
 -- highlight whitespace
-opt.listchars = {eol = "↵", trail = "~", tab = ">-", nbsp = "␣"}
+opt.listchars = { eol = "↵", trail = "~", tab = ">-", nbsp = "␣" }
 
 -- fold setup
 vim.opt_local.foldmethod = "indent"
 -- opt.nofoldenable = true
 opt.foldlevel = 99
 
-vim.cmd([[
-augroup Markdown
-  au filetype markdown set formatoptions+=ro
-  au filetype markdown set comments=b:*,b:-,b:+,b:1.,n:>
-augroup END
 
-" custom function
-function! UseTabs()
-  set tabstop=4     " Size of a hard tabstop (ts).
-  set shiftwidth=4  " Size of an indentation (sw).
-  set noexpandtab   " Always uses tabs instead of space characters (noet).
-  set autoindent    " Copy indent from current line when starting a new line (ai).
-endfunction
+local autocmd = vim.api.nvim_create_autocmd
 
-function! UseSpaces()
-  set tabstop=2     " Size of a hard tabstop (ts).
-  set shiftwidth=2  " Size of an indentation (sw).
-  set expandtab     " Always uses spaces instead of tab characters (et).
-  set softtabstop=0 " Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
-  set autoindent    " Copy indent from current line when starting a new line.
-  set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
-endfunction
+local function use_tabs()
+  vim.opt_local.tabstop     = 4 -- Size of a hard tabstop (ts).
+  vim.opt_local.shiftwidth  = 4 -- Size of an indentation (sw).
+  vim.opt_local.noexpandtab = true -- Always uses tabs instead of space characters (noet).
+  vim.opt_local.autoindent  = true -- Copy indent from current line when starting a new line (ai).
+end
 
-function! SpaceFour()
-  set tabstop=4     " Size of a hard tabstop (ts).
-  set shiftwidth=4  " Size of an indentation (sw).
-  set expandtab     " Always uses spaces instead of tab characters (et).
-  set softtabstop=0 " Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
-  set autoindent    " Copy indent from current line when starting a new line.
-  set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
-endfunction
+local function use_spaces(size)
+  size                      = size or 2
+  vim.opt_local.tabstop     = size -- Size of a hard tabstop (ts).
+  vim.opt_local.shiftwidth  = size -- Size of an indentation (sw).
+  vim.opt_local.expandtab   = true -- Always uses spaces instead of tab characters (et).
+  vim.opt_local.softtabstop = 0 -- Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
+  vim.opt_local.autoindent  = true -- Copy indent from current line when starting a new line.
+  vim.opt_local.smarttab    = true -- Inserts blanks on a <Tab> key (as per sw, ts and sts).
+end
 
-" C and C++ indent
-augroup cpp
-  autocmd Filetype c,cpp setlocal tabstop=2
-  autocmd Filetype c,cpp setlocal softtabstop=2
-  autocmd Filetype c,cpp setlocal shiftwidth=2
-augroup END
+local function use_spaces_four()
+  use_spaces(4)
+end
 
-" Web stuff: js, ts, css, scss, html
-augroup web
-  autocmd BufReadPre,FileReadPre  *.css,*.js,*.ts,*.scss,*.html,*.json set tabstop=2
-  autocmd BufReadPre,FileReadPre  *.css,*.js,*.ts,*.scss,*.html,*.json set softtabstop=2
-  autocmd BufReadPre,BufRead,FileReadPre *.css,*.js,*.ts,*.scss,*.html,*.json set shiftwidth=2
-  autocmd BufReadPre,FileReadPre  *.css,*.js,*.ts,*.scss,*.html,*.json set autoindent
-augroup END
+autocmd("FileType", { pattern = "*Makefile", callback = use_tabs, });
 
-augroup python
-  autocmd Filetype python set tabstop=4
-  autocmd Filetype python set shiftwidth=4
-  autocmd Filetype python set softtabstop=4
-  autocmd Filetype python set shiftwidth=4
-  autocmd Filetype python set expandtab
-  autocmd Filetype python set formatoptions-=t
-augroup END
-
-augroup common
-  autocmd Filetype sh,yaml,vim,typescript,javascript,json,html,css,scss,terraform,dockerfile,markdown,xml,sql,lua,zsh,bash call UseSpaces()
-  autocmd BufNewFile,BufRead *.avsc set filetype=jsonc
-  autocmd FileType json set filetype=jsonc
-  autocmd BufNewFile,BufRead *.sol set filetype=solidity syntax=solidity
-  autocmd BufNewFile,BufRead *.carbon set syntax=rust
-  autocmd BufNewFile,BufRead Caddyfile set syntax=tf
-augroup END
-
-" Golang config
-augroup GO
-  autocmd Filetype go setlocal tabstop=4
-  autocmd Filetype go setlocal shiftwidth=4
-  autocmd FileType go set expandtab
-augroup END
-
-" make
-augroup Make
-  autocmd Filetype make setlocal tabstop=4
-  autocmd Filetype make setlocal shiftwidth=4
-augroup END
-
-augroup direnv
-  au!
-  autocmd BufNewFile,BufRead *.envrc set filetype=bash
-augroup END
-]])
+autocmd({ "BufNewFile", "BufRead" }, { pattern = ".envrc", command = [[ set filetype=bash ]], })
+autocmd("FileType", { pattern = "*.go", callback = use_tabs, })
+autocmd("FileType", { pattern = "*.py", callback = use_spaces_four, })
+autocmd({ "BufReadPre", "BufRead", "FileReadPre" },
+  { pattern = { "*.css", "*.js", "*.ts", "*.scss", "*.html", "*.json", "*.c", "*.cc", "*.cpp", "*.h" }, callback = use_spaces,
+})
+-- do not auto add comment on new line
+autocmd("FileType", { pattern = "*", command = [[ set formatoptions-=cro ]], })
+autocmd("FileType", { pattern = "*.md", command = [[set formatoptions+=ro comments=b:*,b:-,b:+,b:1.,n:>]], })
