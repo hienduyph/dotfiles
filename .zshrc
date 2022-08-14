@@ -33,6 +33,9 @@ znap source zsh-users/zsh-completions
 
 ZVM_INIT_MODE=sourcing
 znap source jeffreytse/zsh-vi-mode
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
