@@ -14,6 +14,7 @@ source $HOME/.profile
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd z)"
 
+
 ZNAPDIR=$HOME/.znap/git
 
 # Download Znap, if it's not there yet.
@@ -26,10 +27,12 @@ source ${ZNAPDIR}/znap.zsh  # Start Znap
 # load plugins
 znap source ohmyzsh/ohmyzsh lib/git.zsh
 znap source ohmyzsh/ohmyzsh plugins/git
-znap source ohmyzsh/ohmyzsh plugins/vi-mode
 znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source ohmyzsh/ohmyzsh plugins/terraform
 znap source zsh-users/zsh-completions
+
+ZVM_INIT_MODE=sourcing
+znap source jeffreytse/zsh-vi-mode
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
@@ -71,3 +74,7 @@ eval "$(direnv hook zsh)"
 
 # direnv support venv
 setopt PROMPT_SUBST
+
+source $HOME/dotfiles/shell/zsh/vi.zsh
+
+bindkey '^n' autosuggest-accept

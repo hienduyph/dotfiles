@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel
+sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel wev
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
