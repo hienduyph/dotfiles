@@ -53,6 +53,10 @@ _cli() {
     echo "[Cargo] installing $pk"
     eval "sudo cargo install --locked --root=/usr/local/ ${pk}"
   done
+  # luals
+  sudo mkdir -p /opt/LuaLS
+  curl -fSsL 'https://github.com/sumneko/lua-language-server/releases/download/3.5.3/lua-language-server-3.5.3-linux-x64.tar.gz' | sudo tar xz -C /opt/LuaLS
+  sudo ln -sf /opt/LuaLS/bin/lua-language-server /usr/local/bin/
 }
 
 _system() {

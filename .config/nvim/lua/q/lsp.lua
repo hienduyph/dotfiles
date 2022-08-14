@@ -40,7 +40,7 @@ function M.deno()
   M.setup_ls('denols')
 end
 
-local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texlab'}
+local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls'}
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
@@ -93,15 +93,6 @@ nvim_lsp.pyright.setup({
   end
 })
 
-function custom_market(config, root)
-  local gomarker = nvim_lsp.util.path.join(root, '.go2')
-  if nvim_lsp.util.path.exists(gomarker) then
-    config.cmd = {"gopls2", "serve"}
-  else
-    config.cmd = {"gopls", "serve"}
-  end
-end
-
 -- Golang setup
 nvim_lsp.gopls.setup {
   capabilities = capabilities,
@@ -109,7 +100,6 @@ nvim_lsp.gopls.setup {
   flags = {
     debounce_text_changes = 150,
   },
-  -- on_new_config = custom_market,
   settings = {
     gopls = {
       analyses = {
@@ -121,19 +111,28 @@ nvim_lsp.gopls.setup {
   }
 }
 
-vim.api.nvim_create_autocmd("CursorHold", {
-  buffer = bufnr,
-  callback = function()
-    local opts = {
-      focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-      border = 'rounded',
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
-    }
-    vim.diagnostic.open_float(nil, opts)
-  end
-})
+-- lua with nvim
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
 
 return M

@@ -42,16 +42,6 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
-require("gitsigns").setup()
-
-require("nvim-autopairs").setup({
-  check_ts = true,
-  ts_config = {
-    lua = {"string"},-- it will not add a pair on that treesitter node
-    javascript = {"template_string"},
-    java = false,-- don"t check treesitter on java
-  }
-})
 
 local parser_config = require"nvim-treesitter.parsers".get_parser_configs()
 parser_config.gotmpl = {
@@ -80,10 +70,6 @@ require"nvim-treesitter.configs".setup {
   },
 }
 
-require"nvim-web-devicons".setup { }
-
-require("kommentary.config").use_extended_mappings()
-
 require("indent_blankline").setup {
   char = "|",
   buftype_exclude = {"terminal", "dashboard"},
@@ -96,14 +82,6 @@ require("indent_blankline").setup {
 vim.cmd[[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]]
 vim.cmd[[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]]
 
-require("bufferline").setup{
-  options = {
-    numbers = "ordinal",
-    diagnostics = "nvim_lsp",
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-  },
-}
 
 require("lualine").setup({
   options = {
@@ -134,36 +112,5 @@ require("lualine").setup({
     lualine_z = {}
   },
   tabline = {
-  },
-})
-
-require"nvim-tree".setup {
-  update_focused_file = {
-    enable = true,
-  },
-  filters = {
-    dotfiles = false,
-    custom = {  ".git", "node_modules", ".cache", "__pycache__", ".direnv", ".ipynb_checkpoints", "vendor" },
-  },
-  actions = {
-    open_file = {
-      resize_window = true,
-      window_picker = {
-        enable = false,
-      },
-    },
-  },
-}
-
-require("rust-tools").setup({})
-
-local null_ls = require("null-ls")
-null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.diagnostics.buf,
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.prettier,
   },
 })

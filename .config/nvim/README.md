@@ -1,7 +1,7 @@
 # NVIM
 
 ```bash
-npm i -g tree-sitter-cli pyright prettier typescript-language-server
+npm i -g tree-sitter-cli pyright prettier typescript-language-server bash-language-server
 ```
 
 ## Historical Vim Stuff
