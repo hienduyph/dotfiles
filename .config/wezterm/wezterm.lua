@@ -44,11 +44,9 @@ if is_wayland then
   out["window_decorations"] = "NONE"
 end
 
-local high_dpi = os.getenv("HIGH_DPI")
-high_dpi = high_dpi or "0"
-if string.find(high_dpi, "1")  then
-  out["font_size"] = 9.6
+local high_dpi = os.getenv("WEZTERM_FONT_SIZE")
+if high_dpi ~= nil and high_dpi ~= "" then
+  out["font_size"] = tonumber(high_dpi)
 end
-
 
 return out
