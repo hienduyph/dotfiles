@@ -38,6 +38,8 @@ PKGS=(
   OpenBLAS lapack
   mysql8
   postgresql14
+  yq
+  lua-language-server
 )
 sudo port -N install ${PKGS[@]}
 sudo port select mysql mysql8
