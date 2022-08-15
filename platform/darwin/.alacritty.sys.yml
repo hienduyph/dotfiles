@@ -1,5 +1,10 @@
 shell:
   program: /usr/local/bin/tmux
+  args:
+    - new-session
+    - -A
+    - -s
+    - Lala
 window:
   decorations: full
 font:

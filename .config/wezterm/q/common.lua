@@ -1,11 +1,6 @@
 local M = {};
 local wezterm = require("wezterm")
 
-M.hello = function()
-  local a = 1
-end
-
-
 -- taken from https://github.com/wez/wezterm/blob/7deb215303ce1a8e64d48f65ef3e0a1d24fc2fbc/assets/colors/AtomOneLight.toml
 M.colors = {
   ["AtomOneLight"] = {
