@@ -93,6 +93,7 @@ _configs() {
     mpv
     ranger
     nvim
+    wezterm
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -142,7 +143,6 @@ _dots() {
 
   platform_dots=(
     .alacritty.sys.yml
-    .wezterm.lua
     .tmux.conf
   )
 
