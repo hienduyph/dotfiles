@@ -23,7 +23,7 @@ bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
