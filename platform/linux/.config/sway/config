@@ -171,6 +171,6 @@ input * {
 for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
 
 
-output "*" background "~/.config/sway/screenlock.png" fill
+output "*" background "~/.config/desktop.png" fill
 
 include ~/.config/sway/config.d/*
