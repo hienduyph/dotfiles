@@ -32,12 +32,12 @@ __system() {
 }
 
 __users() {
-  _shell
   _dots $PLATFORM
   _configs $PLATFORM
   _git
   _ranger
   _neovim
+  _cmp
 }
 
 main() {
