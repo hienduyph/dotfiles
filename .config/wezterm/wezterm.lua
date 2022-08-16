@@ -3,7 +3,12 @@ local q = require("q.common")
 local raw_os_name = io.popen('uname -s', 'r'):read('*l'):lower()
 
 local out = {
-  font = wezterm.font("JetBrainsMono Nerd Font"),
+  font = wezterm.font_with_fallback({
+    "JetBrainsMono Nerd Font",
+    "JetBrains Mono",
+    "PowerlineExtraSymbols",
+    "Noto Color Emoji",
+  }),
   font_size = 9,
   tab_max_width = 16,
   use_fancy_tab_bar = false,
