@@ -83,34 +83,3 @@ vim.cmd[[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]]
 vim.cmd[[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]]
 
 
-require("lualine").setup({
-  options = {
-    theme = "gruvbox",
-    always_show_bufferline=true,
-  },
-  extensions = {"quickfix", "nvim-tree", "fzf"},
-  sections = {
-    lualine_a = {"mode"},
-    lualine_b = {"branch"},
-    lualine_c = {
-      {
-        "filename",
-        file_status=true,
-        path=1,
-      },
-    },
-    lualine_x = {"encoding", "fileformat", "filetype"},
-    lualine_y = {"progress", "diff"},
-    lualine_z = {"location"}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {"filename"},
-    lualine_x = {"location"},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {
-  },
-})
