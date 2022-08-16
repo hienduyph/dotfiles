@@ -75,6 +75,8 @@ packages=(
   dropbox
   calibre
   fcitx5 fcitx5-unikey 
+
+  https://github.com/wez/wezterm/releases/download/20220807-113146-c2fee766/wezterm-20220807_113146_c2fee766-1.fedora36.x86_64.rpm
 )
 
 echo 'Install all package'
