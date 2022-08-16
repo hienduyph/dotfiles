@@ -67,22 +67,12 @@ _system() {
 
 
 # user stuff
-
 _neovim() {
   set -x
   echo "Install Neovim Host"
   python3 -m pip install virtualenv
   python3 -m virtualenv $NEOVIM_HOST
   $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
-}
-
-_shell() {
-  mkdir -p ~/.zsh
-  # zsh config
-  mkdir -p ~/.zsh/completions/
-  rustup completions zsh cargo > ~/.zsh/completions/_cargo
-  mkdir -p ~/.config
-  ln -fs ~/dotfiles/shell/starship.toml  ~/.config
 }
 
 _configs() {
@@ -94,6 +84,7 @@ _configs() {
     ranger
     nvim
     wezterm
+    starship.toml
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -164,10 +155,14 @@ _ranger() {
   git clone https://github.com/alexanderjeurissen/ranger_devicons ${PLUGIN_DIR}/ranger_devicons
 }
 
-_bash_cmp() {
+_cmp() {
   echo "Install completions"
   mkdir -p ~/.bash_completion.d/
   kubectl completion bash >> ~/.bash_completion.d/kubectl
+
+  mkdir -p ~/.zsh/completions/
+  rustup completions zsh cargo > ~/.zsh/completions/_cargo
+  kubectl completion zsh >> ~/.zsh/completions/_kubectl
 }
 
 _git() {
