@@ -1,5 +1,6 @@
 #/bin/bash
 
+source $HOME/dotfiles/shell/func.sh
 
 set -ex
 
@@ -38,9 +39,7 @@ _sccache() {
 
 _telegram() {
   DST=/opt/Telegram
-  sudo mkdir -p $DST
-  curl -fSL -o /tmp/file.gz 'https://github.com/telegramdesktop/tdesktop/releases/download/v4.0.2/tsetup.4.0.2.tar.xz'
-  sudo tar xf /tmp/file.gz -C $DST --strip-components=1
+  _linux_telegram $DST
   sudo curl -fsSL -o /usr/share/icons/telegram.png 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png'
 
   sudo tee /usr/local/share/applications/telegramdesktop.desktop << EOM
