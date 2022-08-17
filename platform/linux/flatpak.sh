@@ -7,6 +7,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 flatpaks=(
   org.gnome.Extensions
   io.dbeaver.DBeaverCommunity
+  net.cozic.joplin_desktop
 )
 for pkg in "${flatpaks[@]}";do
   flatpak install flathub ${pkg} -y
