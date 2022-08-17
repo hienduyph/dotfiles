@@ -82,4 +82,61 @@ require("indent_blankline").setup {
 vim.cmd[[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]]
 vim.cmd[[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]]
 
+require("lualine").setup({
+  options = {
+    theme = "gruvbox",
+    always_show_bufferline=true,
+  },
+  extensions = {"quickfix", "nvim-tree", "fzf"},
+  sections = {
+    lualine_a = {"mode"},
+    lualine_b = {"branch"},
+    lualine_c = {
+      {
+        "filename",
+        file_status=true,
+        path=1,
+      },
+    },
+    lualine_x = {"encoding", "fileformat", "filetype"},
+    lualine_y = {"progress", "diff"},
+    lualine_z = {"location"}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {"filename"},
+    lualine_x = {"location"},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {
+  },
+})
 
+require "nvim-tree".setup {
+  update_focused_file = {
+    enable = true,
+  },
+  filters = {
+    dotfiles = false,
+    custom = { ".git", "node_modules", ".cache", "__pycache__", ".direnv", ".ipynb_checkpoints", "vendor" },
+  },
+  actions = {
+    open_file = {
+      resize_window = true,
+      window_picker = {
+        enable = false,
+      },
+    },
+  },
+}
+
+require("bufferline").setup {
+  options = {
+    numbers = "ordinal",
+    diagnostics = "nvim_lsp",
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+  },
+}
