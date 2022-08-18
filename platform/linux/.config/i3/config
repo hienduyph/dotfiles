@@ -181,5 +181,4 @@ bar {
 # remap caplocks to ctl
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec --no-startup-id ~/.local/startup.sh
-exec --no-startup-id /usr/bin/redshift -v
 exec --no-startup-id feh --bg-scale ~/.config/wallpaper.png
