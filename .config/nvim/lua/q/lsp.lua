@@ -5,8 +5,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-  local opts = { noremap=true, silent=true }
+
+  local opts = { noremap = true, silent = true }
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -31,6 +33,7 @@ end
 function M.angularls()
   M.setup_ls('angularls')
 end
+
 function M.node()
   M.setup_ls('tsserver')
   M.setup_ls('eslint')
@@ -40,13 +43,13 @@ function M.deno()
   M.setup_ls('denols')
 end
 
-local servers = {'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls'}
+local servers = { 'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls' }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
 
 -- Rust setups
-nvim_lsp.rust_analyzer.setup{
+nvim_lsp.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   flags = {
@@ -66,12 +69,11 @@ nvim_lsp.rust_analyzer.setup{
         command = "clippy",
       },
       diagnostics = {
-        disabled = {"missing-unsafe"},
+        disabled = { "missing-unsafe" },
       },
     },
   },
 }
-
 
 -- Pyright
 local function get_python_path(workspace)
@@ -84,7 +86,9 @@ end
 
 nvim_lsp.pyright.setup({
   capabilities = capabilities,
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+  end,
   flags = {
     debounce_text_changes = 150,
   },
@@ -105,14 +109,27 @@ nvim_lsp.gopls.setup {
       analyses = {
         unusedparams = false,
       },
-      buildFlags={"-tags=integration,wireinject,unit"},
+      buildFlags = { "-tags=integration,wireinject,unit" },
       staticcheck = false,
     },
   }
 }
 
+
+local null_ls = require("null-ls")
+null_ls.setup({
+  autostart = true,
+  debug = true,
+  sources = {
+    null_ls.builtins.diagnostics.eslint_d,
+    null_ls.builtins.diagnostics.buf,
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.prettier,
+  },
+})
+
 -- lua with nvim
-require'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.sumneko_lua.setup {
   settings = {
     Lua = {
       runtime = {
@@ -121,7 +138,7 @@ require'lspconfig'.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
