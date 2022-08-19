@@ -17,9 +17,6 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
 
 echo "Add Chrome"
 sudo dnf config-manager --set-enabled google-chrome
-echo "Add Brave"
-sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 echo "Add rpm fushion non free"
 _pkg install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm

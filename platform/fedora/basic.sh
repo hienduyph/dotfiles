@@ -67,7 +67,6 @@ packages=(
   cabextract xorg-x11-font-utils fontconfig
   blueman
   keepassxc
-  brave-browser
   mpv
   code
   qbittorrent
@@ -83,7 +82,7 @@ echo 'Install all package'
 _pkg update
 _pkg install -y "${packages[@]}"
 
-sudo dnf remove PackageKit fedora-chromium-config firefox -y
+sudo dnf remove PackageKit fedora-chromium-config -y
 
 services=(
   dnscrypt-proxy
