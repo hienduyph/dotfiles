@@ -77,6 +77,7 @@ style = "green"
 
 [golang]
 format = "via [🏎💨 $version](bold cyan) "
+disabled = false
 
 [java]
 symbol = "🌟 "
@@ -96,13 +97,17 @@ use_logical_path = true
 disabled = true
 
 [docker_context]
-disabled = false
+disabled = true
 
 [lua]
-disabled = true
+disabled = false
 
 [shell]
 bash_indicator = ""
 disabled = false
 zsh_indicator = "_"
 style = "cyan bold"
+
+[git_status]
+ignore_submodules = true
+disabled = true
