@@ -61,8 +61,7 @@ require"nvim-treesitter.configs".setup {
   },
   indent = {
     enable = true,
-    -- workaround because python indent is bad!
-    disable = {"python", "yaml", "solidity", "go"},
+    disable = {"python", "solidity", "go"},
   },
   highlight = {
     enable = true,

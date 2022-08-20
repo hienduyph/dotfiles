@@ -110,4 +110,4 @@ style = "cyan bold"
 
 [git_status]
 ignore_submodules = true
-disabled = true
+disabled = false

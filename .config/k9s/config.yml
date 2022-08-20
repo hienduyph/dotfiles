@@ -14,17 +14,18 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: k3d-captain
-  currentCluster: k3d-captain
+  currentContext: default
+  currentCluster: default
   clusters:
-    k3d-captain:
+    default:
       namespace:
-        active: default
+        active: all
+        lockFavorites: false
         favorites:
         - all
         - default
       view:
-        active: pod
+        active: po
       featureGates:
         nodeShell: false
       shellPod:
