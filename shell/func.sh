@@ -75,6 +75,8 @@ _github_pks() {(
 
   sudo curl -fssLo /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/$(gh_latest_release mikefarah/yq)/yq_linux_amd64"
   sudo chmod +x /usr/local/bin/yq
+
+  curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 )}
 
 _linux_nvim_nightly() { (set -e

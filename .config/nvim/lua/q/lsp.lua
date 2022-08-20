@@ -1,6 +1,9 @@
 local M = {}
 local nvim_lsp = require('lspconfig')
 
+local flags = {
+  debounce_text_changes = 150,
+}
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
@@ -24,9 +27,7 @@ function M.setup_ls(lsp)
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
+    flags = flags,
   }
 end
 
@@ -43,7 +44,7 @@ function M.deno()
   M.setup_ls('denols')
 end
 
-local servers = { 'clangd', 'yamlls', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls' }
+local servers = { 'clangd', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls' }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
@@ -52,9 +53,7 @@ end
 nvim_lsp.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
+  flags = flags,
   settings = {
     ["rust-analyzer"] = {
       cargo = {
@@ -75,6 +74,19 @@ nvim_lsp.rust_analyzer.setup {
   },
 }
 
+nvim_lsp.yamlls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = flags,
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+      },
+    },
+  }
+}
+
 -- Pyright
 local function get_python_path(workspace)
   -- Use activated virtualenv.
@@ -89,9 +101,7 @@ nvim_lsp.pyright.setup({
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
   end,
-  flags = {
-    debounce_text_changes = 150,
-  },
+  flags = flags,
   before_init = function(_, config)
     config.settings.python.pythonPath = get_python_path(config.root_dir)
   end
@@ -101,9 +111,7 @@ nvim_lsp.pyright.setup({
 nvim_lsp.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
+  flags = flags,
   settings = {
     gopls = {
       analyses = {
@@ -130,6 +138,9 @@ null_ls.setup({
 
 -- lua with nvim
 require 'lspconfig'.sumneko_lua.setup {
+  flags = flags,
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
