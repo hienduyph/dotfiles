@@ -2,6 +2,8 @@ if [[ $ZSH_PROFILNG == "yes" ]]; then
   zmodload zsh/zprof
 fi
 
+bindkey -v
+
 export HISTFILE=$HOME/.zsh_history
 source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
@@ -31,8 +33,9 @@ znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source ohmyzsh/ohmyzsh plugins/terraform
 znap source zsh-users/zsh-completions
 
+
 ZVM_INIT_MODE=sourcing
-znap source jeffreytse/zsh-vi-mode
+# znap source jeffreytse/zsh-vi-mode
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
@@ -78,6 +81,6 @@ eval "$(direnv hook zsh)"
 # direnv support venv
 setopt PROMPT_SUBST
 
-source $HOME/dotfiles/shell/zsh/vi.zsh
+# source $HOME/dotfiles/shell/zsh/vi.zsh
 
 bindkey '^n' autosuggest-accept

@@ -111,3 +111,6 @@ style = "cyan bold"
 [git_status]
 ignore_submodules = true
 disabled = false
+
+[rust]
+disabled = false
