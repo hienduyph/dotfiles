@@ -5,8 +5,8 @@
     "height": 16, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
+    "modules-center": [],
     "modules-right": ["clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"

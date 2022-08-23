@@ -1,6 +1,6 @@
 set $mod Mod4
 
-# xwayland disable
+xwayland disable
 
 # is used in the bar {} block below.
 font Liberation Sans Regular 10
