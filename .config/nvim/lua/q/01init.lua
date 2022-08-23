@@ -68,9 +68,12 @@ local function use_tabs()
 end
 
 local function use_spaces(size)
-  size                      = size or 2
-  vim.opt_local.tabstop     = size -- Size of a hard tabstop (ts).
-  vim.opt_local.shiftwidth  = size -- Size of an indentation (sw).
+  local s = 2
+  if type(size) == "number" and size  > 0 then
+    s = size
+  end
+  vim.opt_local.tabstop     = s -- Size of a hard tabstop (ts).
+  vim.opt_local.shiftwidth  = s -- Size of an indentation (sw).
   vim.opt_local.expandtab   = true -- Always uses spaces instead of tab characters (et).
   vim.opt_local.softtabstop = 0 -- Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
   vim.opt_local.autoindent  = true -- Copy indent from current line when starting a new line.

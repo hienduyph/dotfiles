@@ -110,7 +110,10 @@ style = "cyan bold"
 
 [git_status]
 ignore_submodules = true
-disabled = false
+disabled = true
 
 [rust]
 disabled = false
+
+[nodejs]
+disabled = true
