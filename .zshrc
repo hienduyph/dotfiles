@@ -33,13 +33,6 @@ znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source ohmyzsh/ohmyzsh plugins/terraform
 znap source zsh-users/zsh-completions
 
-
-ZVM_INIT_MODE=sourcing
-# znap source jeffreytse/zsh-vi-mode
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
-
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
@@ -81,6 +74,12 @@ eval "$(direnv hook zsh)"
 # direnv support venv
 setopt PROMPT_SUBST
 
-# source $HOME/dotfiles/shell/zsh/vi.zsh
+
+# ZVM_INIT_MODE=sourcing
+# ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+# ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+# ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+# znap source jeffreytse/zsh-vi-mode
+set -o vi
 
 bindkey '^n' autosuggest-accept

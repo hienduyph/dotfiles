@@ -76,10 +76,11 @@ _github_pks() {(
   sudo curl -fssLo /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/$(gh_latest_release mikefarah/yq)/yq_linux_amd64"
   sudo chmod +x /usr/local/bin/yq
 
-  sudo rm -f /usr/local/bin/kustomize
-  curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | sudo bash - /usr/local/bin
-
   curl -fsSL "https://github.com/starship/starship/releases/download/$(gh_latest_release starship/starship)/starship-x86_64-unknown-linux-gnu.tar.gz" | sudo tar xz -C /usr/local/bin
+
+  curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash 
+  sudo mv kustomize /usr/local/bin/kustomize
+
 )}
 
 _linux_nvim_nightly() { (set -e
