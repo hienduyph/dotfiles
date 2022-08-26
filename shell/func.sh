@@ -128,3 +128,8 @@ _linux_nvim() { (set -e
 _fedora_upgrade() {
   sudo dnf update -y && sudo dnf upgrade -y && sudo dnf autoremove -y
 }
+
+_port_upgrade() {
+  sudo port selfupdate
+  sudo port upgrade outdated
+}
