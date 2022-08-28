@@ -72,5 +72,12 @@ map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
 map('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
-map('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+map('n', 'g]', vim.diagnostic.goto_next)
 map('n', '<leader>f', vim.lsp.buf.formatting_sync)
+
+vim.diagnostic.config({
+  virtual_text = false
+})
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
