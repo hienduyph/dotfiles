@@ -84,6 +84,45 @@ XMODIFIERS=@im=fcitx
 EOF
 }
 
+_ff() {
+  curl -fsL -o /tmp/ff.tar.bz2 'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US'
+  DST=/opt/firefox-dev
+  sudo rm -rf ${DST}
+  sudo mkdir -p ${DST}
+  sudo tar -xf /tmp/ff.tar.bz2 -C $DST --strip-components=1
+  sudo curl -Lo /usr/share/icons/firefox-dev.png 'https://upload.wikimedia.org/wikipedia/commons/6/68/Firefox_Developer_Edition_logo%2C_2017.png'
+
+  sudo tee /usr/local/share/applications/firefox-dev.desktop << EOM
+[Desktop Entry]
+Version=1.0
+Name=Firefox Developer
+Exec=/opt/firefox-dev/firefox %u
+Icon=firefox-dev
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;profile-manager-window;
+X-Desktop-File-Install-Version=0.26
+
+[Desktop Action new-window]
+Name=Open a New Window
+Exec=/opt/firefox-dev/firefox --new-window %u
+
+[Desktop Action new-private-window]
+Name=Open a New Private Window
+Exec=/opt/firefox-dev/firefox --private-window %u
+
+[Desktop Action profile-manager-window]
+Name=Open the Profile Manager
+Exec=/opt/firefox-dev/firefox --ProfileManager
+
+EOM
+
+}
+
 main() {
   _py
   _jetbrains

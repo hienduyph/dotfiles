@@ -8,6 +8,8 @@ flatpaks=(
   org.gnome.Extensions
   io.dbeaver.DBeaverCommunity
   net.cozic.joplin_desktop
+  com.jetbrains.IntelliJ-IDEA-Community
+  com.google.AndroidStudio
 )
 for pkg in "${flatpaks[@]}";do
   flatpak install flathub ${pkg} -y
