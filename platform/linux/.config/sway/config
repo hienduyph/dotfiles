@@ -124,34 +124,47 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+r reload
-bindsym $mod+Shift+e exit
+# bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
-    bindsym j resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym semicolon resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-    # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
+
+# Show System Power Menu
+set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+  bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"        
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+y mode "$mode_system"
 
 bar {
     position top
