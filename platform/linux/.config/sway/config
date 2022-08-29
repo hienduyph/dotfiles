@@ -1,6 +1,6 @@
 set $mod Mod4
 
-xwayland disable
+# xwayland disable
 
 # is used in the bar {} block below.
 font Liberation Sans Regular 10
@@ -187,3 +187,5 @@ for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
 output "*" background "~/.config/desktop.png" fill
 
 include ~/.config/sway/config.d/*
+
+exec --no-startup-id nm-applet --indicator
