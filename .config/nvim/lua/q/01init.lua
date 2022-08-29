@@ -100,4 +100,4 @@ autocmd({ "BufReadPre", "BufRead", "FileReadPre", "FileType" },
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" },
   { pattern = "*.md", command = [[set formatoptions+=ro comments=b:*,b:-,b:+,b:1.,n:>]], })
 
-autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*", command = [[ set formatoptions-=cro ]] })
+-- autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*", command = [[ set formatoptions-=cro ]] })

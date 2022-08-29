@@ -1,9 +1,9 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 12px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
@@ -11,8 +11,9 @@ window#waybar {
   color: #e5e9f0;
 }
 
-#workspaces button{
+#workspaces button {
   padding: 5px 4px;
+  margin-right: 6px;
   border-bottom: 1px solid #000000;
 }
 

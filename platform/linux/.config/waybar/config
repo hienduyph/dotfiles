@@ -1,64 +1,102 @@
 // vim: set ft=jsonc:
 {
-    "layer": "top",
-    "position": "top",
-    "height": 16, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
-    "modules-center": [],
-    "modules-right": ["clock", "tray"],
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+  "layer": "top",
+  "position": "top",
+  "height": 20, // Waybar height (to be removed for auto height)
+  "spacing": 8, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "custom/media",
+    "sway/window"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio",
+    "clock",
+    "tray"
+  ],
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+      "on": " "
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+    "repeat-icons": {
+      "on": " "
     },
-    "tray": {
-        "spacing": 10
+    "single-icons": {
+      "on": "1 "
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M}",
-        "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
-        "calendar-weeks-pos": "right",
-        "format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
-        "format-calendar-weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
-        "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>"
+    "state-icons": {
+      "paused": "",
+      "playing": ""
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
     }
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%Y-%m-%d %H:%M}",
+    "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
+    "calendar-weeks-pos": "right",
+    "format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
+    "format-calendar-weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+    "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>"
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  }
 }
