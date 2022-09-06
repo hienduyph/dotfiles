@@ -22,8 +22,8 @@ bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec wezterm
+# start a terminal : wezterm or alacritty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -182,7 +182,7 @@ input * {
 
 # workaroud for chrome app
 for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
-
+for_window [shell="xwayland"] title_format "%title [XWayland]"
 
 output "*" background "~/.config/desktop.png" fill
 

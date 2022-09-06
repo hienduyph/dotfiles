@@ -5,3 +5,9 @@ font:
     style: Light
 key_bindings:
   - { key: N,     mods: Option,       action: SpawnNewInstance }
+shell:
+  program: /usr/bin/bash
+  args:
+    - -l
+    - -c
+    - eval "tmux $(tmux ls | grep -vq attached && echo "attach -d")"
