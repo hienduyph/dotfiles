@@ -90,11 +90,10 @@ _linux_nvim_nightly() { (set -e
   echo "Downloading"
   curl -fsSL https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz | tar xz -C $TMP_DIR --strip-components=1
   DST_DIR=/opt/neovim-nightly
-  if [ ! -d $DST_DIR ]; then
-    echo "Creating nvim nightly folder"
-    sudo mkdir -p ${DST_DIR}
-    sudo chown -R $(whoami) ${DST_DIR}
+  if [ -d $DST_DIR ]; then
+    sudo rm -r ${DST_DIR}
   fi
+  sudo mkdir -p ${DST_DIR}
   echo "Extrating"
   sudo rm -rf ${DST_DIR}/*
   sudo mv $TMP_DIR/* ${DST_DIR}/
@@ -110,13 +109,10 @@ _linux_nvim() { (set -e
   echo "Downloading"
   curl -fsSL "https://github.com/neovim/neovim/releases/download/${VERSION}/nvim-linux64.tar.gz" | tar xz -C $TMP_DIR --strip-components=1
   DST_DIR=/opt/neovim
-  if [ ! -d ${DST_DIR} ]; then
-    echo "Create folder first"
-    sudo mkdir -p ${DST_DIR}
-    sudo chown -R $(whoami) ${DST_DIR}
-  else
-    sudo rm -rf "${DST_DIR}/*" || true
+  if [ -d ${DST_DIR} ]; then
+    sudo rm -r "${DST_DIR}"
   fi
+  sudo mkdir -p ${DST_DIR}
 
   echo "Extrating to ${DST_DIR}"
   sudo mv $TMP_DIR/* ${DST_DIR}/
@@ -132,4 +128,12 @@ _fedora_upgrade() {
 _port_upgrade() {
   sudo port selfupdate
   sudo port upgrade outdated
+}
+
+fedora_maintenance() {
+  _fedora_upgrade
+  _fedora_wezterm
+  _github_pks
+  _linux_nvim
+  _linux_nvim_nightly
 }
