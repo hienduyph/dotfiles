@@ -94,8 +94,6 @@ _linux_nvim_nightly() { (set -e
     sudo rm -r ${DST_DIR}
   fi
   sudo mkdir -p ${DST_DIR}
-  echo "Extrating"
-  sudo rm -rf ${DST_DIR}/*
   sudo mv $TMP_DIR/* ${DST_DIR}/
   sudo ln -sf ${DST_DIR}/bin/nvim /usr/local/bin/vv
   echo "Done!"
