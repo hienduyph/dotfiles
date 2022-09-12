@@ -64,6 +64,9 @@ _fedora_wezterm() {
   fname="$(echo $wezterm_ver | sed 's/-/_/g')"
   echo "Install WezTerm ${wezterm_ver}"
   sudo dnf install -y "https://github.com/wez/wezterm/releases/download/${wezterm_ver}/wezterm-${fname}-1.fedora36.x86_64.rpm"
+
+  RCLONE_V="$(gh_latest_release rclone/rclone)"
+  sudo dnf install -y "https://github.com/rclone/rclone/releases/download/${RCLONE_V}/rclone-${RCLONE_V}-linux-amd64.rpm"
 }
 
 _github_pks() {(
