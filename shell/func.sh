@@ -126,7 +126,7 @@ _fedora_upgrade() {
   sudo dnf update -y && sudo dnf upgrade -y && sudo dnf autoremove -y
 }
 
-_port_upgrade() {
+mac_maintenance() {
   sudo port selfupdate
   sudo port upgrade outdated
 }
@@ -137,4 +137,6 @@ fedora_maintenance() {
   _github_pks
   _linux_nvim
   _linux_nvim_nightly
+  flatpak update -y
+  flatpak uninstall --unused -y
 }
