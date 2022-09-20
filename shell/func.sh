@@ -137,6 +137,7 @@ fedora_maintenance() {
   _github_pks
   _linux_nvim
   _linux_nvim_nightly
+  _linux_telegram
   flatpak update -y
   flatpak uninstall --unused -y
 }
