@@ -17,3 +17,5 @@ require('telescope').setup {
   }
 }
 require('telescope').load_extension('fzf')
+
+vim.api.nvim_create_user_command('GitFiles ', require('telescope.builtin').git_files, { nargs = 0 })

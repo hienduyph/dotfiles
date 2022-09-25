@@ -1,7 +1,6 @@
 vim.api.nvim_create_user_command('GD', 'DiffviewOpen', { nargs = 0 })
 vim.api.nvim_create_user_command('GDC', 'DiffviewClose', { nargs = 0 })
 
-vim.api.nvim_create_user_command('GitFiles ', require('telescope.builtin').git_files, { nargs = 0 })
 vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting, { nargs = 0 })
 
 -- lsp import
