@@ -114,6 +114,9 @@ require("lualine").setup({
 })
 
 require "nvim-tree".setup {
+  view = {
+    width = 60,
+  },
   update_focused_file = {
     enable = true,
   },
@@ -123,7 +126,7 @@ require "nvim-tree".setup {
   },
   actions = {
     open_file = {
-      resize_window = true,
+      resize_window = false,
       window_picker = {
         enable = false,
       },
