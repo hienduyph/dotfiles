@@ -78,6 +78,8 @@ packages=(
   https://github.com/wez/wezterm/releases/download/20220807-113146-c2fee766/wezterm-20220807_113146_c2fee766-1.fedora36.x86_64.rpm
 
   maven
+  cronie cronie-anacron
+  libheif gimp-heif-plugin qt-heif-image-plugin
 )
 
 echo 'Install all package'
