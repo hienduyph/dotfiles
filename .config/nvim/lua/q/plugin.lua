@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
   if vim.g.fzf then
     use { 'ibhagwan/fzf-lua',
       -- optional for icon support
-      requires = { 'kyazdani42/nvim-web-devicons' }
+      requires = { 'kyazdani42/nvim-web-devicons' },
     }
   else
     use {
