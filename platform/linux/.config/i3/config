@@ -36,7 +36,8 @@ floating_modifier $mod
 
 # start a terminal
 # alacritty
-bindsym $mod+Return exec wezterm
+# wezterm
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
