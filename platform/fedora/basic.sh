@@ -80,6 +80,10 @@ packages=(
   maven
   cronie cronie-anacron
   libheif gimp-heif-plugin qt-heif-image-plugin
+
+  wl-clipboard 
+  gocryptfs
+  flameshot
 )
 
 echo 'Install all package'
