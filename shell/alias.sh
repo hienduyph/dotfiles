@@ -58,3 +58,10 @@ alias la="tmux new-session -A -s Lala"
 alias q="tmux new-session -A -s q"
 alias tm="tmux new-session -A -s"
 alias f="ranger" # f=file
+
+fetch_git_ignore() {
+  langs=$1
+  curl https://www.toptal.com/developers/gitignore/api/linux,macos,${langs} >> .gitignore
+}
+
+alias pipr="python -m pip install -r requirements.txt"
