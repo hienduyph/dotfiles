@@ -1,3 +1,17 @@
+KUBECONFIG=""
+export KUBEDIR=$HOME/.k8s
+if [[ -d $KUBEDIR ]]; then
+  for filename in $KUBEDIR/*.yaml; do
+    if [[ "$KUBECONFIG" == "" ]]; then
+      KUBECONFIG=$filename
+    else
+      KUBECONFIG=$KUBECONFIG:$filename
+    fi
+  done
+fi
+
+export KUBECONFIG=$KUBECONFIG
+
 if [ $commands[kubectl] ]; then
   # Placeholder 'kubectl' shell function:
   # Will only be executed on the first call to 'kubectl'

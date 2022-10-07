@@ -41,6 +41,18 @@ source $HOME/dotfiles/shell/zsh/kubectl.zsh
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 [ -f ${PORT_PREFIX}/share/fzf/shell/key-bindings.zsh ] && source ${PORT_PREFIX}/share/fzf/shell/key-bindings.zsh
 
+if [ $XDG_SESSION_TYPE = "wayland" ]; then
+  source $HOME/dotfiles/shell/system/wayland.sh
+elif [ $XDG_SESSION_TYPE = "x11" ]; then
+  source $HOME/dotfiles/shell/system/x11.sh
+fi
+
+if [ $PLATFORM = "linux" ]; then
+  source $HOME/dotfiles/shell/system/linux_common.sh
+elif [ $PLATFORM = "mac" ]; then
+  source $HOME/dotfiles/shell/system/mac.sh
+fi
+
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
 znap source zdharma-continuum/fast-syntax-highlighting
