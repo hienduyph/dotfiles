@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+VERSION=${VERSION:-0.89.4}
+DST=$HOME/.local/bin
+echo "Install hugo ${VERSION} into ${DST}"
+
+curl -fsSL https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz | tar xz -C ${DST}
+echo "Done!"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+VERSION=${VERSION:-1.0.0-rc8}
+DST=$HOME/.local/bin/buf
+echo "Install buf version ${VERSION} to ${DST}"
+
+curl -fsLo ${DST} https://github.com/bufbuild/buf/releases/download/v${VERSION}/buf-Linux-x86_64
+chmod +x ${DST}
+echo "Done!"

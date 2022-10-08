@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -x
+
+VERSION=$1
+VERSION=${VERSION:-2.8.1}
+
+DST="/opt/flutter"
+sudo rm -rf $DST
+sudo mkdir -p $DST
+sudo chown -R $(whoami) $DST
+
+TMPDILE=/tmp/flutter.tar.xz
+rm -f ${TMPDILE}
+curl -fSL -o $TMPDILE https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${VERSION}-stable.tar.xz
+tar -xf $TMPDILE --strip-components=1 -C $DST
+
+sudo ln -sf $DST/bin/flutter /usr/local/bin
+rm -f $TMPDILE
