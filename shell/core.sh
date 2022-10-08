@@ -5,6 +5,7 @@ PREPEND=(
   "/usr/local/sbin"
   "$HOME/.bin"
   "$GOPATH/bin"
+  "$HOME/dotfiles/shell/bins"
 )
 _CUS_PATH=(
   "$HOME/.local/google-cloud-sdk/bin"

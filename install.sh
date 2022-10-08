@@ -11,12 +11,19 @@ _mac() {
 }
 
 _linux() {
-  mkdir -p ~/.gnupg
-  tee ~/.gnupg/gpg-agent.conf << EOF
-pinentry-program $(which pinentry-curses)
-EOF
+  sudo tee /etc/systemd/resolved.conf << EOM
+[Resolve]
+DNS=127.0.0.1
+FallbackDNS=8.8.8.8
+EOM
+  sudo mkdir -p /etc/dnscrypt-proxy
+  sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /etc/dnscrypt-proxy/
+  sudo touch /etc/dnscrypt-proxy/forwarding-rules.txt
 
-  mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+  sleep 5
+
+  sudo systemctl restart systemd-resolved
+  sudo systemctl restart dnscrypt-proxy
 }
 
 __system() {
@@ -31,6 +38,14 @@ __system() {
   fi
 }
 
+_linux_user() {
+  mkdir -p ~/.gnupg
+  tee ~/.gnupg/gpg-agent.conf << EOF
+pinentry-program $(which pinentry-curses)
+EOF
+
+  mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+}
 __users() {
   _dots $PLATFORM
   _configs $PLATFORM
@@ -38,6 +53,11 @@ __users() {
   _ranger
   _neovim
   _cmp
+  if [ ${PLATFORM} == "darwin" ]; then
+    _mac
+  elif [ ${PLATFORM} == "linux" ]; then
+    _linux_user
+  fi
 }
 
 main() {
