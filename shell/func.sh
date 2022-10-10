@@ -1,3 +1,5 @@
+export APP_HOME=$HOME/Apps
+
 fkill() {
   ps aux | grep  $1 | awk {'print $2'} | xargs kill -9
 }
@@ -74,6 +76,13 @@ _github_pks() {(
   curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash 
   sudo mv kustomize /usr/local/bin/kustomize
 
+  GOCRYPTFS="$(gh_latest_release rfjakob/gocryptfs)"
+  curl -fsSL "https://github.com/rfjakob/gocryptfs/releases/download/${GOCRYPTFS}/gocryptfs_${GOCRYPTFS}_linux-static_amd64.tar.gz" | sudo tar xz /usr/local/bin
+
+  HELIX_VER="$(gh_latest_release helix-editor/helix)"
+  sudo mkdir /opt/Helix
+  curl -fsSL "https://github.com/helix-editor/helix/releases/download/${HELIX_VER}/helix-${HELIX_VER}-x86_64-linux.tar.xz" | sudo tar x -J -C /opt/Helix --strip-components=1
+  sudo ln -sf /opt/Helix/hx /usr/local/bin
 )}
 
 _linux_nvim_nightly() { (set -e

@@ -39,13 +39,41 @@ __system() {
   fi
 }
 
-_linux_user() {
+_telegram() {
   TELE_VERSION="$(gh_latest_release telegramdesktop/tdesktop)"
   TELE_VERSION=${TELE_VERSION#v}
-  curl -fSLs "https://github.com/telegramdesktop/tdesktop/releases/download/v${TELE_VERSION}/tsetup.${TELE_VERSION}.tar.xz" | tar x -J -C $HOME/.local/bin --strip-components=1
+  DST=$APP_HOME/Telegram
+  mkdir -p $DST
+  curl -fSL "https://github.com/telegramdesktop/tdesktop/releases/download/v${TELE_VERSION}/tsetup.${TELE_VERSION}.tar.xz" | tar x -J -C $APP_HOME/Telegram --strip-components=1
+  ln -sf $APP_HOME/Telegram/Telegram $HOME/.local/bin
+}
 
-  GOCRYPTFS="$(gh_latest_release rfjakob/gocryptfs)"
-  curl -fsSL "https://github.com/rfjakob/gocryptfs/releases/download/${GOCRYPTFS}/gocryptfs_${GOCRYPTFS}_linux-static_amd64.tar.gz" | tar xz $HOME/.local/bin
+_firefox_dev() {
+  DST=$APP_HOME/firefox-developer
+  mkdir -p $DST
+  curl -fL -o /tmp/ff.tar.bz2 'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US'
+  tar -xf /tmp/ff.tar.bz2  -C $DST --strip-components=1
+  curl -Lo $HOME/.local/share/icons/firefox-dev.png 'https://upload.wikimedia.org/wikipedia/commons/6/68/Firefox_Developer_Edition_logo%2C_2017.png'
+  rm /tmp/ff.tar.bz2
+
+  tee $HOME/.local/share/applications/firefox-dev.desktop << EOM
+[Desktop Entry]
+Version=1.0
+Name=Firefox Developer
+Exec=$DST/firefox-bin %u
+Icon=firefox-dev
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+Categories=Network;WebBrowser;
+EOM
+}
+
+
+_linux_user() {
+  mkdir -p $HOME/.local/share/icons/
+  mkdir -p $APP_HOME
+  _telegram
+  _firefox_dev
 
   mkdir -p ~/.gnupg
   tee ~/.gnupg/gpg-agent.conf << EOF
