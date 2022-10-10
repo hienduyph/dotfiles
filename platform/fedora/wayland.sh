@@ -26,3 +26,13 @@ Exec=$DST
 Type=Application
 EOF
 
+tee $HOME/.local/share/applications/swappy.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Swappy
+Comment=Annonate image from clipboard
+Exec=wl-paste | swappy -f -
+Icon=org.gnome.Screenshot
+Type=Application
+Categories=Office;
+EOF

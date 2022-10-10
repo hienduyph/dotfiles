@@ -49,16 +49,6 @@ _pkg() {
 	sudo dnf "$@"
 }
 
-_linux_telegram() {
-  DST=$1
-  DST=${DST:-/opt/Telegram}
-  VERSION="$(gh_latest_release telegramdesktop/tdesktop)"
-  VERSION=${VERSION#v}
-  sudo mkdir -p $DST
-  curl -fSL -o /tmp/file.gz "https://github.com/telegramdesktop/tdesktop/releases/download/v${VERSION}/tsetup.${VERSION}.tar.xz"
-  sudo tar xf /tmp/file.gz -C $DST --strip-components=1
-}
-
 _fedora_wezterm() {
   wezterm_ver="$(gh_latest_release wez/wezterm)"
   fname="$(echo $wezterm_ver | sed 's/-/_/g')"
@@ -133,11 +123,13 @@ mac_maintenance() {
 
 fedora_maintenance() {
   _fedora_upgrade
+
+  flatpak update -y
+  flatpak uninstall --unused -y
+
   _fedora_wezterm
   _github_pks
   _linux_nvim
   _linux_nvim_nightly
-  _linux_telegram
-  flatpak update -y
-  flatpak uninstall --unused -y
 }
+
