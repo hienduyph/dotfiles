@@ -66,7 +66,7 @@ packages=(
   # ui stuff
   cabextract xorg-x11-font-utils fontconfig
   blueman
-  keepassxc
+  keepassxc libsecret-tools
   mpv
   code
   qbittorrent

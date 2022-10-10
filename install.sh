@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -x
 
-source ./scripts/dotfiles.sh
+source $HOME/dotfiles/scripts/dotfiles.sh
+source $HOME/dotfiles/shell/func.sh
 
 PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
@@ -39,12 +40,17 @@ __system() {
 }
 
 _linux_user() {
+  TELE_VERSION="$(gh_latest_release telegramdesktop/tdesktop)"
+  TELE_VERSION=${TELE_VERSION#v}
+  curl -fSLs "https://github.com/telegramdesktop/tdesktop/releases/download/v${TELE_VERSION}/tsetup.${TELE_VERSION}.tar.xz" | tar x -J -C $HOME/.local/bin --strip-components=1
+
+  GOCRYPTFS="$(gh_latest_release rfjakob/gocryptfs)"
+  curl -fsSL "https://github.com/rfjakob/gocryptfs/releases/download/${GOCRYPTFS}/gocryptfs_${GOCRYPTFS}_linux-static_amd64.tar.gz" | tar xz $HOME/.local/bin
+
   mkdir -p ~/.gnupg
   tee ~/.gnupg/gpg-agent.conf << EOF
 pinentry-program $(which pinentry-curses)
 EOF
-
-  mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 }
 __users() {
   _dots $PLATFORM
