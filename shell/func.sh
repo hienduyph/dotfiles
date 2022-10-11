@@ -77,7 +77,7 @@ _github_pks() {(
   sudo mv kustomize /usr/local/bin/kustomize
 
   GOCRYPTFS="$(gh_latest_release rfjakob/gocryptfs)"
-  curl -fsSL "https://github.com/rfjakob/gocryptfs/releases/download/${GOCRYPTFS}/gocryptfs_${GOCRYPTFS}_linux-static_amd64.tar.gz" | sudo tar xz /usr/local/bin
+  curl -fsSL "https://github.com/rfjakob/gocryptfs/releases/download/${GOCRYPTFS}/gocryptfs_${GOCRYPTFS}_linux-static_amd64.tar.gz" | sudo tar xz -C /usr/local/bin
 
   HELIX_VER="$(gh_latest_release helix-editor/helix)"
   sudo mkdir /opt/Helix

@@ -85,6 +85,7 @@ _configs() {
     nvim
     wezterm
     starship.toml
+    helix
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
