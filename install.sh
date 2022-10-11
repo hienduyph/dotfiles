@@ -61,10 +61,11 @@ _firefox_dev() {
 Version=1.0
 Name=Firefox Developer
 Exec=$DST/firefox-bin %u
-Icon=firefox-dev
+Icon=firefox-developer-edition
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
 Categories=Network;WebBrowser;
+StartupWMClass=firefox-aurora
 EOM
 }
 
