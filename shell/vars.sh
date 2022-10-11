@@ -8,7 +8,7 @@ export GOPATH="$HOME/.go"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export BASHMAN_DIR=$HOME/.config/bashman
-
+export ANDROID_HOME=$HOME/Android/Sdk
 
 LINUX_BREW=/home/linuxbrew/.linuxbrew
 HOMEBREW_PREFIX=/opt/homebrew
@@ -51,3 +51,5 @@ export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 # ranger bat style
 export BAT_THEME=GitHub
+
+addToPATH $ANDROID_HOME/cmdline-tools/latest/bin
