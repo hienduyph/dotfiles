@@ -62,6 +62,7 @@ Version=1.0
 Name=Firefox Developer
 Exec=$DST/firefox-bin %u
 Icon=firefox-developer-edition
+Comment=Firefox Browser Developer Edition
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
 Categories=Network;WebBrowser;
