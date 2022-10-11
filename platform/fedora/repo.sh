@@ -4,10 +4,6 @@ set -ex
 
 _pkg update -y && _pkg install -y curl wget python3 python3-pip python3-devel liberation-fonts dnf-plugins-core
 
-echo 'Add Enpass Repo'
-_pkg config-manager --add-repo  https://yum.enpass.io/enpass-yum.repo
-
-
 echo "Add ibus"
 _pkg config-manager --add-repo https://download.opensuse.org/repositories/home:lamlng/Fedora_$(rpm -E %fedora)/home:lamlng.repo
 
@@ -25,8 +21,6 @@ _pkg install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-r
 echo "Add albert"
 sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
 _pkg config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_$(rpm -E %fedora)/home:manuelschneid3r.repo
-
-_pkg copr enable robot/rust-analyzer -y
 
 sudo rpm --import https://packages.cloud.google.com/yum/doc/yum-key.gpg
 sudo rpm --import https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
