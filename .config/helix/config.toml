@@ -1,5 +1,9 @@
 theme = "base16-gruvbox-material-light-medium"
 
+[editor.file-picker]
+hidden = false
+
+
 # vim keybindgs from https://github.com/LGUG2Z/helix-vim/blob/master/config.toml
 [keys.normal]
 # Quick iteration on config changes
