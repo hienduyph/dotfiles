@@ -55,13 +55,12 @@ parser_config.gotmpl = {
 
 -- use tree sitter
 require"nvim-treesitter.configs".setup {
-  ignore_install = {"norg"},
+  ensure_installed = { "c", "lua", "rust", "bash", "go", "python", "yaml", "dart" },
   autopairs = {
     enable = true,
   },
   indent = {
     enable = true,
-    disable = {"python", "solidity", "go"},
   },
   highlight = {
     enable = true,

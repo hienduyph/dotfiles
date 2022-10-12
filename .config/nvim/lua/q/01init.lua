@@ -94,7 +94,7 @@ autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*.g
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" },
   { pattern = { "*.py", "*.rs" }, callback = use_spaces_four, })
 autocmd({ "BufReadPre", "BufRead", "FileReadPre", "FileType" },
-  { pattern = { "*.css", "*.js", "*.ts", "*.scss", "*.html", "*.json", "*.c", "*.cc", "*.cpp", "*.h", "*.sh", "*.bash" },
+  { pattern = { "*.css", "*.js", "*.ts", "*.scss", "*.html", "*.json", "*.c", "*.cc", "*.cpp", "*.h", "*.sh", "*.bash", "*.dart" },
     callback = use_spaces,
   })
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" },

@@ -108,6 +108,8 @@ return require('packer').startup(function(use)
     end
   })
 
+  -- use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

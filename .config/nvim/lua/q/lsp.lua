@@ -44,6 +44,7 @@ function M.deno()
   M.setup_ls('denols')
 end
 
+
 local servers = { 'clangd', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls' }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
