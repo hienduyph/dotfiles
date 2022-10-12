@@ -1,7 +1,7 @@
 vim.api.nvim_create_user_command('GD', 'DiffviewOpen', { nargs = 0 })
 vim.api.nvim_create_user_command('GDC', 'DiffviewClose', { nargs = 0 })
 
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting, { nargs = 0 })
+vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format { async = true } end, { nargs = 0 })
 
 -- lsp import
 -- refer https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
