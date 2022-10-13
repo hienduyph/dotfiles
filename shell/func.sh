@@ -42,12 +42,7 @@ git_large_file() {
 }
 
 gh_latest_release() {
-  prerelease="$(curl -s "https://api.github.com/repos/$1/releases" | jq -r 'map(select(.prerelease)) | first | .tag_name')"
-  if [[ "$prerelease" == null ]]; then
-    echo "$(curl -s "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name')"
-  else
-    echo "$prerelease"
-  fi
+  curl -s "https://api.github.com/repos/$1/releases" | jq -r 'first | .tag_name'
 }
 
 _pkg() {

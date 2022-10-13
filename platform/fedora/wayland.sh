@@ -12,7 +12,7 @@ export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export GDK_BACKEND=wayland
 export CLUTTER_BACKEND=wayland
-export QT_SCALE_FACTOR=1.5
+export QT_WAYLAND_DECORATION=material
 
 exec gnome-session
 EOF
