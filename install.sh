@@ -70,6 +70,29 @@ StartupWMClass=firefox-aurora
 EOM
 }
 
+_ibus() {
+  tee $HOME/.config/autostart/ibus-daemon.desktop << EOF
+[Desktop Entry]
+Type=Application
+Name=IBus Daemon
+Exec=ibus-daemon --xim -d -r
+
+EOF
+}
+
+_shot() {
+  tee $HOME/.local/share/applications/swappy.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Swappy
+Comment=Annonate image from clipboard
+Exec=wl-paste | swappy -f -
+Icon=org.gnome.Screenshot
+Type=Application
+Categories=Office;
+EOF
+}
+
 
 _linux_user() {
   mkdir -p $HOME/.local/share/icons/
