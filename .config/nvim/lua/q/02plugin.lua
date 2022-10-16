@@ -78,7 +78,13 @@ return require('packer').startup(function(use)
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   end
 
-  use 'neovim/nvim-lspconfig'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
