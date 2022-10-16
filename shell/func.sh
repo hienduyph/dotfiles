@@ -135,9 +135,6 @@ mac_maintenance() {
 fedora_maintenance() {
   _fedora_upgrade
 
-  flatpak update -y
-  flatpak uninstall --unused -y
-
   _fedora_wezterm
   _github_pks
   _linux_nvim
