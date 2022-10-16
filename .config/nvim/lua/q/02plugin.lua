@@ -101,12 +101,7 @@ return require('packer').startup(function(use)
     end
   }
 
-  use({
-    "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup({})
-    end
-  })
+  use "kylechui/nvim-surround"
 
   -- use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
@@ -116,3 +111,4 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
