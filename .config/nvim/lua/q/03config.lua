@@ -142,3 +142,5 @@ require("bufferline").setup {
   },
 }
 
+require("nvim-surround").setup({
+})

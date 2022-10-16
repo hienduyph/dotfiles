@@ -45,6 +45,10 @@ gh_latest_release() {
   curl -s "https://api.github.com/repos/$1/releases" | jq -r 'first | .tag_name'
 }
 
+gh_stable_release() {
+  curl -s "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name'
+}
+
 _pkg() {
 	sudo dnf "$@"
 }
@@ -100,7 +104,7 @@ _linux_nvim_nightly() { (set -e
 )}
 
 _linux_nvim() { (set -e
-  VERSION=$(gh_latest_release neovim/neovim)
+  VERSION=$(gh_stable_release neovim/neovim)
   echo "Install latest stable nvim: ${VERSION}"
   TMP_DIR=/tmp/neovim
   rm -rf $TMP_DIR && mkdir -p ${TMP_DIR}

@@ -39,6 +39,19 @@ jetbrain_toolbox_install() {
   curl -fsSL ${TOOLBOX_URL} | tar xz --directory=${HOME}/.local/bin --strip-components=1
 }
 
+_starship(){
+  curl -fsSL "https://github.com/starship/starship/releases/download/$(gh_latest_release starship/starship)/starship-x86_64-unknown-linux-gnu.tar.gz" | tar xz -C $HOME/.local/bin
+}
+
+_lua_ls() {
+  DST=$HOME/.local/opt/LuaLS
+  mkdir -p $DST
+  VERSION="$(gh_latest_release sumneko/lua-language-server)"
+  curl -fSsL "https://github.com/sumneko/lua-language-server/releases/download/${VERSION}/lua-language-server-${VERSION}-linux-x64.tar.gz" | tar xz -C "$DST"
+  ln -sf $DST/bin/lua-language-server $HOME/.local/bin/
+}
+
+
 u() {
   if command -v rustup > /dev/null; then
     rustup self update

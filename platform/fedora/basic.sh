@@ -67,9 +67,7 @@ packages=(
   cabextract xorg-x11-font-utils fontconfig
   keepassxc libsecret-tools
   mpv
-  code
   qbittorrent
-  google-chrome-stable
   dropbox
   calibre
 
@@ -80,7 +78,6 @@ packages=(
   libheif gimp-heif-plugin qt-heif-image-plugin
 
   gocryptfs
-  flameshot
   swappy
 )
 
