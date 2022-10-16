@@ -116,6 +116,10 @@ EOF
   fi
 }
 
+_brew() {
+  mkdir ${BREW_PREFIX} && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C $BREW_PREFIX
+}
+
 main() {
   _dots $PLATFORM
   _configs $PLATFORM
