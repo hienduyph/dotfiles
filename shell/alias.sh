@@ -47,10 +47,7 @@ alias gcdd='git checkout dev'
 alias gdf="forgit::diff"
 alias se="sudoedit"
 alias bytes="numfmt --to=iec-i"
-alias sc='sudo SYSTEMD_EDITOR=nvim /usr/bin/systemctl'
 alias df="duf"
-alias du="ncdu --color off"
-
 
 alias yt-mp3="yt-dlp --extract-audio --audio-format mp3"
 

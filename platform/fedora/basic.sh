@@ -28,7 +28,6 @@ packages=(
   lazygit
   tokei
   unrar
-  ncdu
   ranger
   cheat
 
@@ -39,7 +38,6 @@ packages=(
   golang
   python3.9
   python3.10
-  rust-analyzer
   g++ libstdc++-devel libstdc++
   java-11-openjdk
   java-11-openjdk-devel
@@ -48,6 +46,7 @@ packages=(
   llvm lld
   cmake
   bazel5
+  maven
 
   # db stuff
   mysql-devel
@@ -60,9 +59,6 @@ packages=(
   podman-compose
   podman
 
-  # cloud platform
-  google-cloud-cli
-
   # ui stuff
   cabextract xorg-x11-font-utils fontconfig
   keepassxc libsecret-tools
@@ -71,9 +67,8 @@ packages=(
   dropbox
   calibre
 
-  https://github.com/wez/wezterm/releases/download/20220807-113146-c2fee766/wezterm-20220807_113146_c2fee766-1.fedora36.x86_64.rpm
+  alacritty
 
-  maven
   cronie cronie-anacron
   libheif gimp-heif-plugin qt-heif-image-plugin
 
@@ -86,11 +81,3 @@ _pkg update
 _pkg install -y "${packages[@]}"
 
 sudo dnf remove PackageKit fedora-chromium-config -y
-
-services=(
-  dnscrypt-proxy
-)
-
-for pkg in "${services[@]}"; do
-  sudo systemctl enable --now $pkg
-done
