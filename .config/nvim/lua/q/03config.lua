@@ -144,3 +144,8 @@ require("bufferline").setup {
 
 require("nvim-surround").setup({
 })
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+  automatic_installation = { exclude = {} },
+})
