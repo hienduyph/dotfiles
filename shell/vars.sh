@@ -10,20 +10,7 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export BASHMAN_DIR=$HOME/.config/bashman
 export ANDROID_HOME=$HOME/Android/Sdk
 
-LINUX_BREW=/home/linuxbrew/.linuxbrew
-HOMEBREW_PREFIX=/opt/homebrew
-
-# set brew prefix
-BREW_PREFIX=""
-if [[ -f "${LINUX_BREW}/bin/brew" ]]; then
-  BREW_PREFIX=$LINUX_BREW
-elif [[ -f "${HOMEBREW_PREFIX}/bin/brew" ]]; then
-  BREW_PREFIX=$HOMEBREW_PREFIX
-elif [ -x "$(command -v brew)" ]; then
-  BREW_PREFIX="$(brew --prefix)"
-fi
-
-export BREW_PREFIX=${BREW_PREFIX}
+export BREW_PREFIX=$HOME/.local/brew
 export PORT_PREFIX=/opt/local
 
 prependToPATH() {
