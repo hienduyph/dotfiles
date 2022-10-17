@@ -95,3 +95,4 @@ setopt PROMPT_SUBST
 set -o vi
 
 bindkey '^n' autosuggest-accept
+

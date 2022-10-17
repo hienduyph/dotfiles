@@ -4,8 +4,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 
-cask "temurin11"
-
-# cask "dropbox"
-# cask "visual-studio-code"
-# cask "google-chrome"
+cask "alacritty"
+cask "intellij-idea-ce"
+cask "dropbox"
+cask "visual-studio-code"
+cask "google-chrome"

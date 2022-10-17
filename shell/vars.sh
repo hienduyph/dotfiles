@@ -13,8 +13,8 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export BREW_PREFIX=$HOME/.local/brew
 export HOMEBREW_PREFIX=$BREW_PREFIX
 export HOMEBREW_CELLAR=$BREW_PREFIX/Cellar
-export HOMEBREW_RELOCATE_BUILD_PREFIX=1
-export HOMEBREW_BUILD_FROM_SOURCE=1
+export HOMEBREW_BUILD_FROM_SOURCE=0
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
 export PORT_PREFIX=/opt/local
 
