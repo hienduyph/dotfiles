@@ -1,7 +1,5 @@
 import:
   - ~/.alacritty.common.yml
-shell:
-  program: /usr/local/bin/tmux
 font:
   size: 13
 key_bindings:

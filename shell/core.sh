@@ -1,4 +1,6 @@
 PREPEND=(
+  "${BREW_PREFIX}/bin"
+  "${BREW_PREFIX}/sbin"
   "${NPM_CONFIG_PREFIX}/bin"
   "$HOME/.cargo/bin"
   "$HOME/.local/bin"
@@ -13,16 +15,9 @@ _CUS_PATH=(
   "$HOME/.pub-cache/bin"
   "$HOME/.krew/bin"
   "${PYCLI_HOME}/bin"
-  "/opt/Telegram/"
+  $ANDROID_HOME/cmdline-tools/latest/bin
 )
 
-if [[ -f "${BREW_PREFIX}/bin/brew" ]]; then
-  _CUS_PATH+=("${BREW_PREFIX}/bin" "${BREW_PREFIX}/sbin")
-fi
-
-if [[ -f "${PORT_PREFIX}/bin/port" ]]; then
-  _CUS_PATH+=("${PORT_PREFIX}/bin" "${PORT_PREFIX}/sbin")
-fi
 
 _before_path=$(IFS=:; echo "${PREPEND[*]}")
 _after_path=$(IFS=:; echo "${_CUS_PATH[*]}")
