@@ -4,10 +4,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 
-cask "adoptopenjdk"
-cask "adoptopenjdk11"
-cask "adoptopenjdk/openjdk/adoptopenjdk8"
-tap "AdoptOpenJDK/openjdk"
+cask "temurin11"
+
 # cask "dropbox"
 # cask "visual-studio-code"
 # cask "google-chrome"
