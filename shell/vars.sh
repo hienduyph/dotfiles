@@ -11,6 +11,11 @@ export BASHMAN_DIR=$HOME/.config/bashman
 export ANDROID_HOME=$HOME/Android/Sdk
 
 export BREW_PREFIX=$HOME/.local/brew
+export HOMEBREW_PREFIX=$BREW_PREFIX
+export HOMEBREW_CELLAR=$BREW_PREFIX/Cellar
+export HOMEBREW_RELOCATE_BUILD_PREFIX=1
+export HOMEBREW_BUILD_FROM_SOURCE=1
+
 export PORT_PREFIX=/opt/local
 
 prependToPATH() {
@@ -39,4 +44,3 @@ export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 # ranger bat style
 export BAT_THEME=GitHub
 
-addToPATH $ANDROID_HOME/cmdline-tools/latest/bin
