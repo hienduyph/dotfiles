@@ -18,7 +18,13 @@ return require('packer').startup(function(use)
   }
 
   use { 'echasnovski/mini.nvim', branch = 'stable' }
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = function() require("nvim-treesitter.install").update { with_sync = true } end,
+  }
+  use {
+    "nvim-treesitter/nvim-treesitter-context",
+  }
 
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },

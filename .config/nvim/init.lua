@@ -11,7 +11,7 @@ else
   require("q.cmd")
   require("q.keymap")
 
-  if vim.g.fzf == False then
+  if vim.g.fzf == false then
     require("q.telescope")
   else
     require'fzf-lua'.setup {
