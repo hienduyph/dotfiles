@@ -1,9 +1,3 @@
-shell:
-  program: /bin/sh
-  args:
-    - -c
-    - -l
-    - "tmux new-session -A -s Lala"
 window:
   decorations: full
 font:
