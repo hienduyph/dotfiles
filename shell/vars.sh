@@ -15,6 +15,7 @@ export HOMEBREW_PREFIX=$BREW_PREFIX
 export HOMEBREW_CELLAR=$BREW_PREFIX/Cellar
 export HOMEBREW_BUILD_FROM_SOURCE=0
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+export NIX_HOME=$HOME/.nix
 
 export PORT_PREFIX=/opt/local
 
