@@ -27,6 +27,8 @@ packages=(
   swappy
   gnome-tweaks
   xlsclients
+  ibus-qt
+  ibus-gtk
 )
 
 echo 'Install all package'

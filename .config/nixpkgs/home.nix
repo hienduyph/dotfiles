@@ -10,15 +10,6 @@
   home.homeDirectory = "/home/hienduyph";
 
 
-  programs.bat.enable = true;
-  programs.fzf.enable = true;
-  programs.fzf.enableZshIntegration = true;
-
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-  };
-
   home.packages = with pkgs; [
     jq
     fzf
@@ -71,4 +62,22 @@
 
     gocryptfs
   ];
+
+  programs.zsh = {
+    enable = false;
+    shellAliases = {
+      cat = "bat";
+      ls = "exa";
+    };
+  };
+
+  programs.bat.enable = true;
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+  };
 }
