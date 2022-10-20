@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install i3 xset redshift dex-autostart rofi feh xev polybar -y
+sudo dnf install i3 xset redshift dex-autostart rofi feh xev polybar xclip -y
 
 DST=/usr/bin/start-i3
 

@@ -5,6 +5,19 @@ fi
 bindkey -v
 
 export HISTFILE=$HOME/.zsh_history
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+  source $HOME/dotfiles/shell/system/wayland.sh
+elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+  source $HOME/dotfiles/shell/system/x11.sh
+fi
+
+if [[ "$PLATFORM" == "linux" ]]; then
+  source $HOME/dotfiles/shell/system/linux_common.sh
+elif [[ "$PLATFORM" == "darwin" ]]; then
+  source $HOME/dotfiles/shell/system/mac.sh
+fi
+
 source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
@@ -38,20 +51,12 @@ source $HOME/dotfiles/shell/zsh/completion.zsh
 source $HOME/dotfiles/shell/zsh/keys.zsh
 source $HOME/dotfiles/shell/zsh/kubectl.zsh
 
-[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
+
 [ -f ${PORT_PREFIX}/share/fzf/shell/key-bindings.zsh ] && source ${PORT_PREFIX}/share/fzf/shell/key-bindings.zsh
-
-if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
-  source $HOME/dotfiles/shell/system/wayland.sh
-elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
-  source $HOME/dotfiles/shell/system/x11.sh
-fi
-
-if [[ "$PLATFORM" == "linux" ]]; then
-  source $HOME/dotfiles/shell/system/linux_common.sh
-elif [[ "$PLATFORM" == "darwin" ]]; then
-  source $HOME/dotfiles/shell/system/mac.sh
-fi
 
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
@@ -86,12 +91,6 @@ eval "$(direnv hook zsh)"
 # direnv support venv
 setopt PROMPT_SUBST
 
-
-# ZVM_INIT_MODE=sourcing
-# ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-# ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-# ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
-# znap source jeffreytse/zsh-vi-mode
 set -o vi
 
 bindkey '^n' autosuggest-accept

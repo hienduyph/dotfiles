@@ -6,3 +6,7 @@ chmod +x $HOME/.local/bin/nix-user-chroot
 
 nix-user-chroot $NIX_HOME zsh
 ```
+
+```bash
+nix-env -iA nixpkgs.zsh
+```
