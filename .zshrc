@@ -5,6 +5,7 @@ fi
 bindkey -v
 
 export HISTFILE=$HOME/.zsh_history
+source $HOME/dotfiles/shell/vars.sh
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
   source $HOME/dotfiles/shell/system/wayland.sh
@@ -18,7 +19,6 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
   source $HOME/dotfiles/shell/system/mac.sh
 fi
 
-source $HOME/dotfiles/shell/vars.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/core.sh
 source $HOME/dotfiles/shell/func.sh
