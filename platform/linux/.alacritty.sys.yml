@@ -10,4 +10,4 @@ shell:
   args:
     - -l
     - -c
-    - eval "tmux $(tmux ls | grep -vq attached && echo "attach -d")"
+    - eval "tmux $(tmux ls | grep -vq attached && echo 'attach -d')"
