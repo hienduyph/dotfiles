@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-sudo dnf install wl-clipboard 
+
+sudo dnf install wl-clipboard  -y
 
 DST=/usr/bin/start-gdm-wayland
 sudo tee $DST << EOF

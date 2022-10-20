@@ -28,6 +28,7 @@ _configs() {
     wezterm
     starship.toml
     helix
+    nixpkgs
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -102,6 +103,23 @@ _ranger() {
   git clone https://github.com/alexanderjeurissen/ranger_devicons ${PLUGIN_DIR}/ranger_devicons
 }
 
+_nix() {{
+  set -x
+  if [ ! -d /nix ]; then
+    echo "/nix path does not exist. Create it first and grant permission for $USER. Sudo is required."
+    sudo install -d -m755 -o $(id -u) -g $(id -g) /nix
+  fi
+
+  curl -L https://nixos.org/nix/install | sh
+
+  # install home manager
+  source $HOME/.nix-profile/etc/profile.d/nix.sh
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+  export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/$USER/channels${NIX_PATH:+:$NIX_PATH}
+  nix-shell '<home-manager>' -A install
+}}
+
 
 _mac() {
   echo "Setting mac links"
@@ -116,20 +134,16 @@ EOF
   fi
 }
 
-_brew() {
-  mkdir ${BREW_PREFIX} && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C $BREW_PREFIX
-}
-
 main() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
-  _ranger
   _neovim
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
     _linux
+    _nix
   fi
 }
 

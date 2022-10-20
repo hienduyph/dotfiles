@@ -1,4 +1,4 @@
-joplin_install() {{
+Joplin_install() {{
   set -e
   VERSION="$(gh_latest_release laurent22/joplin)"
   VERSION=${VERSION#v}

@@ -25,11 +25,6 @@ source $HOME/dotfiles/shell/func.sh
 source $HOME/dotfiles/shell/zsh/common.zsh
 source $HOME/.profile
 
-# load default shell
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh --cmd z)"
-
-
 ZNAPDIR=$HOME/.znap/git
 
 # Download Znap, if it's not there yet.
@@ -85,8 +80,17 @@ add-zsh-hook preexec set-title-preexec
 
 export GPG_TTY=${TTY}
 
-## 3third plugins
-eval "$(direnv hook zsh)"
+if [ -n "${commands[direnv]}" ]; then
+  eval "$(direnv hook zsh)"
+fi
+
+if [ -n "${commands[starship]}" ]; then
+  eval "$(starship init zsh)"
+fi
+
+if [ -n "${commands[zoxide]}" ]; then
+  eval "$(zoxide init zsh --cmd z)"
+fi
 
 # direnv support venv
 setopt PROMPT_SUBST
@@ -94,4 +98,3 @@ setopt PROMPT_SUBST
 set -o vi
 
 bindkey '^n' autosuggest-accept
-

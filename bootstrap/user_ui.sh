@@ -1,34 +1,31 @@
 #!/usr/bin/env bash
 
-_telegram() {
-  TELE_VERSION="$(gh_latest_release telegramdesktop/tdesktop)"
-  TELE_VERSION=${TELE_VERSION#v}
-  DST=$APP_HOME/Telegram
-  mkdir -p $DST
-  curl -fSL "https://github.com/telegramdesktop/tdesktop/releases/download/v${TELE_VERSION}/tsetup.${TELE_VERSION}.tar.xz" | tar x -J -C $APP_HOME/Telegram --strip-components=1
-  ln -sf $APP_HOME/Telegram/Telegram $HOME/.local/bin
-}
+APP_ROOT="$(dirname "$(dirname "$(readlink -fm "$0")")")"
 
-_firefox_dev() {
-  DST=$APP_HOME/firefox-developer
-  mkdir -p $DST
-  curl -fL -o /tmp/ff.tar.bz2 'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US'
-  tar -xf /tmp/ff.tar.bz2  -C $DST --strip-components=1
-  curl -Lo $HOME/.local/share/icons/firefox-dev.png 'https://upload.wikimedia.org/wikipedia/commons/6/68/Firefox_Developer_Edition_logo%2C_2017.png'
-  rm /tmp/ff.tar.bz2
+source $APP_ROOT/shell/vars.sh
 
-  tee $HOME/.local/share/applications/firefox-dev.desktop << EOM
-[Desktop Entry]
-Version=1.0
-Name=Firefox Developer
-Exec=$DST/firefox-bin %u
-Icon=firefox-developer-edition
-Comment=Firefox Browser Developer Edition
-Type=Application
-MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
-Categories=Network;WebBrowser;
-StartupWMClass=firefox-aurora
-EOM
+_fonts() {
+  FONT_DIR=""
+  case "$1" in
+    darwin)
+      FONT_DIR="$HOME/Library/Fonts"
+      ;;
+    linux)
+      FONT_DIR="$HOME/.local/share/fonts"
+      ;;
+    *)
+      echo "Unsupport platform $1"
+      exit;
+  esac
+
+  echo "Install fonts to ${FONT_DIR}"
+  mkdir -p ${FONT_DIR}
+  cd ${FONT_DIR} && {
+    BASE=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures
+    curl -Lo 'JetBrains Mono Light Nerd Font Complete.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf"
+    curl -Lo 'JetBrains Mono Light Nerd Font Complete Mono.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete%20Mono.ttf"
+    curl -Lo 'JetBrains Mono ExtraLight Nerd Font Complete Mono.ttf' "${BASE}/ExtraLight/complete/JetBrains%20Mono%20ExtraLight%20Nerd%20Font%20Complete%20Mono.ttf"
+  cd -; }
 }
 
 _ibus() {
@@ -54,11 +51,27 @@ Categories=Office;
 EOF
 }
 
+_apps() {
+  cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
+  tee $HOME/.local/share/applications/dropbox.desktop << EOF
+[Desktop Entry]
+Name=Dropbox
+Comment=Dropbox Daemon
+Exec=/home/$USER/.dropbox-dist/dropboxd
+Icon=dropbox
+Type=Application
+Categories=Office;
+EOF
+
+  ln -sf $HOME/.local/share/applications/dropbox.desktop  $HOME/.config/autostart/
+}
+
+
 
 main() {
-  mkdir -p $HOME/.local/share/icons/
-  mkdir -p $APP_HOME
-
+  mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
+  _fonts $PLATFORM
   _shot
   _ibus
 }

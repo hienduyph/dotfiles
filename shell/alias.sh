@@ -1,25 +1,9 @@
 alias vi="vim"
 alias vim="nvim"
-alias cat="bat --theme GitHub"
-alias ls="exa"
-
-alias plz="sudo"
-alias v="vim"
-alias tn="tmux new-session -A -s"
-alias lala="tmux new -A -s Lala"
-alias awm="aws --endpoint-url http://localhost:9000"
-alias py="python"
-alias ipy="ipython"
 alias gurl="grpcurl"
-alias c="cheat"
-
-alias pycli="source $PYCLI_HOME/bin/activate"
-
-alias rr="echo 'Reload ~/.profile' && source ~/.profile"
 
 alias y2j="yq -o json"
 alias j2y="yq -P"
-
 
 alias kdf="kubectl diff -f"
 alias kdfs="kubectl diff -f -"

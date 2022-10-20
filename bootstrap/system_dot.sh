@@ -8,9 +8,9 @@ _env() {
 
 # system stuff
 _py_cli() {
-  sudo python3.9 -m ensurepip
-  sudo python3.9 -m pip install virtualenv
-  sudo python3.9 -m virtualenv $PYCLI_HOME
+  sudo python3 -m ensurepip
+  sudo python3 -m pip install virtualenv
+  sudo python3 -m virtualenv $PYCLI_HOME
   sudo chown -R $(whoami) $PYCLI_HOME
   $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli pyyaml awscli ansible black darker
   bins=(
@@ -31,6 +31,7 @@ EOM
   sudo mkdir -p /etc/dnscrypt-proxy
   sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /etc/dnscrypt-proxy/
   sudo touch /etc/dnscrypt-proxy/forwarding-rules.txt
+  sudo chown -R $(whoami) /etc/dnscrypt-proxy/forwarding-rules.txt
 
   sleep 5
 
@@ -38,12 +39,13 @@ EOM
   sudo systemctl restart dnscrypt-proxy
 }
 
-_mac() {}
+_mac() {
+  echo "Setup mac systej"
+}
 
 __system() {
   _env
   _py_cli
-  _cli
   if [ ${PLATFORM} == "darwin" ]; then
     _mac
   elif [ ${PLATFORM} == "linux" ]; then
@@ -51,4 +53,4 @@ __system() {
   fi
 }
 
-_system
+__system
