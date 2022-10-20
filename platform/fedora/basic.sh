@@ -4,6 +4,8 @@ source $HOME/dotfiles/shell/func.sh
 
 packages=(
   dnscrypt-proxy
+  zsh
+  albert
   git-lfs
   git
   git-subtree
@@ -18,13 +20,13 @@ packages=(
   podman-compose
   podman
 
-  libsecret-tools
-
   alacritty
 
   libheif gimp-heif-plugin qt-heif-image-plugin
 
   swappy
+  gnome-tweaks
+  xlsclients
 )
 
 echo 'Install all package'

@@ -111,7 +111,7 @@ log_level = 3
 
 # use_syslog = true
 
-fallback_resolvers = ['1.1.1.1:53', '8.8.8.8:53','10.101.0.90:53' ,'10.20.40.21:53', '10.20.40.31:53', '9.9.9.9:53']
+fallback_resolvers = ['1.1.1.1:53', '8.8.8.8:53', '9.9.9.9:53']
 
 
 ## Always use the fallback resolver before the system DNS settings.

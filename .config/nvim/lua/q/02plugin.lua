@@ -23,10 +23,6 @@ return require('packer').startup(function(use)
     run = function() require("nvim-treesitter.install").update { with_sync = true } end,
   }
   use {
-    "nvim-treesitter/nvim-treesitter-context",
-  }
-
-  use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end,
   }

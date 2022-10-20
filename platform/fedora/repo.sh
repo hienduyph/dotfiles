@@ -1,6 +1,9 @@
-#!bin/bash
+#!/usr/bin/env bash
 
 set -ex
+_pkg() {
+	sudo dnf $@
+}
 
 _pkg update -y && _pkg install -y curl wget python3 python3-pip python3-devel liberation-fonts dnf-plugins-core
 
@@ -10,22 +13,4 @@ _pkg install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-r
 
 echo "Add albert"
 sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_$(rpm -E %fedora)/home:manuelschneid3r.repo
-
-sudo rpm --import https://packages.cloud.google.com/yum/doc/yum-key.gpg
-sudo rpm --import https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOF
-
-_pkg copr enable atim/lazygit -y
-
-_pkg copr enable vbatts/bazel -y
-
-sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+_pkg config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo

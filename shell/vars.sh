@@ -9,6 +9,7 @@ export GOPATH="$HOME/.go"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export BASHMAN_DIR=$HOME/.config/bashman
 export ANDROID_HOME=$HOME/Android/Sdk
+export APP_HOME=$HOME/Applications
 
 prependToPATH() {
   case ":$PATH:" in
