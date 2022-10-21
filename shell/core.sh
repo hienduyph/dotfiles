@@ -1,6 +1,6 @@
 PREPEND=(
-  "${BREW_PREFIX}/bin"
-  "${BREW_PREFIX}/sbin"
+  "${HOMEBREW_PREFIX}/bin"
+  "${HOMEBREW_PREFIX}/sbin"
   "${NPM_CONFIG_PREFIX}/bin"
   "$HOME/.cargo/bin"
   "$HOME/.local/bin"
