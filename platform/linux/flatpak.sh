@@ -21,3 +21,5 @@ done
 cp /usr/share/icons ~/.icons -r
 
 flatpak --user override --filesystem=/home/$USER/.icons/:ro
+flatpak --user override --env=QT_WAYLAND_DECORATION=material
+flatpak --user override --env=GTK_IM_MODULE=ibus
