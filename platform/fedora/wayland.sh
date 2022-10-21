@@ -19,6 +19,8 @@ export CLUTTER_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DECORATION=material
 
+export GTK_IM_MODULE=ibus
+
 exec gnome-session
 EOF
 
