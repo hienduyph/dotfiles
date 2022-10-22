@@ -1,4 +1,3 @@
-alias vi="vim"
 alias vim="nvim"
 alias gurl="grpcurl"
 alias ls="exa"
@@ -15,29 +14,9 @@ alias ktx="kubectl ctx"
 alias kns="kubectl ns"
 alias ktz="kustomize"
 
-alias dk="docker"
-alias dkm="docker-compose"
-alias pm="podman"
-alias pmm="podman-compose"
-alias spm="sudo podman"
-alias sdkm="sudo podman-compose"
-
-# git plugins
-
-alias gpm="git pull origin master"
-alias lgit="lazygit"
-alias gcdd='git checkout dev'
-alias gdf="forgit::diff"
 alias se="sudoedit"
 alias bytes="numfmt --to=iec-i"
-alias df="duf"
-
 alias yt-mp3="yt-dlp --extract-audio --audio-format mp3"
-
-alias la="tmux new-session -A -s Lala"
-alias q="tmux new-session -A -s q"
-alias tm="tmux new-session -A -s"
-alias f="ranger" # f=file
 
 fetch_git_ignore() {
   langs=$1

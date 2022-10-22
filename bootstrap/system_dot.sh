@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 _env() {
-  sudo mkdir -p /etc/profile.d/
-  sudo cp $HOME/dotfiles/shell/system.sh /etc/profile.d/
   sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
 }
 
@@ -21,6 +19,13 @@ EOM
 
   sudo systemctl restart systemd-resolved
   sudo systemctl restart dnscrypt-proxy
+  sudo tee /etc/environment << EOF
+EDITOR=nvim
+VISUAL=nvim
+SYSTEMD_EDITOR=nvim
+KUBE_EDITOR=nvim
+EOF
+
 }
 
 _mac() {
