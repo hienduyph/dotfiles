@@ -1,0 +1,11 @@
+qemu-kvm
+libvirt
+virt-install
+bridge-utils
+libvirt-devel
+libguestfs-tools-c
+libvirt
+libxml2-devel
+libxslt-devel
+flex
+bison 
