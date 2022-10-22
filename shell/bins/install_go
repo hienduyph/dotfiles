@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-set -ex
-
-VERSION=$1
-VERSION=${VERSION:-1.18.3}
-go install golang.org/dl/go${VERSION}@latest
-go${VERSION} download
-ln -sf $HOME/sdk/go${VERSION}/bin/go $HOME/.local/bin/go

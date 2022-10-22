@@ -43,8 +43,6 @@ znap source zsh-users/zsh-completions
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
-source $HOME/dotfiles/shell/zsh/keys.zsh
-source $HOME/dotfiles/shell/zsh/kubectl.zsh
 
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"

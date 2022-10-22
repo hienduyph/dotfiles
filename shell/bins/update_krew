@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-KR="krew-linux_amd64"
-curl -fsSL "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KR}.tar.gz" | tar -xz -C /tmp/
-/tmp/${KR} install krew
-
-kubectl krew install ctx
-kubectl krew install ns

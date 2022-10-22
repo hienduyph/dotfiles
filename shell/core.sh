@@ -43,6 +43,3 @@ if [[ -d $PROFILE_EXTRA_DIRS ]]; then
     source ${filename}
   done
 fi
-
-
-
