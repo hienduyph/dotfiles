@@ -1,6 +1,8 @@
 alias vi="vim"
 alias vim="nvim"
 alias gurl="grpcurl"
+alias ls="exa"
+alias cat="bat"
 
 alias y2j="yq -o json"
 alias j2y="yq -P"

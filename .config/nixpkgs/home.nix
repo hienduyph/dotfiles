@@ -16,7 +16,7 @@
     ripgrep
     tree
     zsh
-    gcc
+    clang
     curl
 
     inetutils
@@ -79,5 +79,10 @@
   programs.neovim = {
     enable = true;
     vimAlias = true;
+  };
+
+  programs.java = {
+    enable = true;
+    package = pkgs.openjdk11;
   };
 }
