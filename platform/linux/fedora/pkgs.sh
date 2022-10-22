@@ -5,6 +5,8 @@ source $HOME/dotfiles/shell/func.sh
 packages=(
   dnscrypt-proxy
   zsh
+  jq
+  wget
   albert
   git-lfs
   git
@@ -29,6 +31,7 @@ packages=(
   xlsclients
   ibus-qt
   ibus-gtk
+  onedrive
 )
 
 echo 'Install all package'

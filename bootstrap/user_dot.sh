@@ -8,15 +8,6 @@ source $APP_ROOT/scripts/dotfiles.sh
 source $APP_ROOT/shell/func.sh
 source $APP_ROOT/shell/vars.sh
 
-# user stuff
-_neovim() {
-  set -x
-  echo "Install Neovim Host"
-  python3 -m pip install virtualenv
-  python3 -m virtualenv $NEOVIM_HOST
-  $NEOVIM_HOST/bin/pip install pylint black flake8 mypy pydocstyle pynvim ranger-fm neovim-remote
-}
-
 _configs() {
   mkdir -p $HOME/.config/
   PLATFORM=$1
@@ -103,8 +94,7 @@ _ranger() {
   git clone https://github.com/alexanderjeurissen/ranger_devicons ${PLUGIN_DIR}/ranger_devicons
 }
 
-_nix() {{
-  set -x
+_nix() {
   if [ ! -d /nix ]; then
     echo "/nix path does not exist. Create it first and grant permission for $USER. Sudo is required."
     sudo install -d -m755 -o $(id -u) -g $(id -g) /nix
@@ -118,7 +108,7 @@ _nix() {{
   nix-channel --update
   export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/$USER/channels${NIX_PATH:+:$NIX_PATH}
   nix-shell '<home-manager>' -A install
-}}
+}
 
 
 _mac() {
@@ -138,7 +128,6 @@ main() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
-  _neovim
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then

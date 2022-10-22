@@ -16,7 +16,7 @@
     ripgrep
     tree
     zsh
-    clang
+    gcc
     curl
 
     inetutils

@@ -1,0 +1,59 @@
+[org/gnome/desktop/calendar]
+show-weekdate=true
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+mru-sources=[('xkb', 'us'), ('ibus', 'm17n:vi:telex')]
+per-window=true
+sources=[('xkb', 'us'), ('ibus', 'm17n:vi:telex')]
+xkb-options=['caps:ctrl_modifier']
+
+[org/gnome/desktop/interface]
+clock-show-seconds=false
+document-font-name='Liberation Sans 11'
+enable-hot-corners=false
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='Liberation Sans 11'
+monospace-font-name='JetBrainsMono Nerd Font Light 10'
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=true
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/wm/keybindings]
+activate-window-menu=@as []
+switch-applications=@as []
+switch-applications-backward=@as []
+switch-input-source=['<Control>space']
+switch-input-source-backward=['<Shift><Control>space']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+
+[org/gnome/desktop/wm/preferences]
+button-layout='close,maximize:appmenu'
+resize-with-right-button=true
+titlebar-font='Liberation Sans 11'
+
+[org/gnome/mutter]
+center-new-windows=true
+experimental-features=['scale-monitor-framebuffer']
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-schedule-automatic=false
+night-light-schedule-from=18.0
+night-light-temperature=uint32 4210
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Alt>space'
+command='albert show'
+name='Shot'
+
+[org/gnome/shell/keybindings]
+show-screenshot-ui=['<Control><Alt>4']
