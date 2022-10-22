@@ -17,6 +17,7 @@ flatpaks=(
   com.github.tchx84.Flatseal 
   com.visualstudio.code
   org.keepassxc.KeePassXC
+  net.cozic.joplin_desktop
 )
 for pkg in "${flatpaks[@]}";do
   _fp install flathub ${pkg} -y

@@ -1,7 +1,11 @@
 # Bootstrap Linux Machine
 
 ## Steps
+
 ```bash
-sudo bash ./basic.sh
-sudo bash ./flatpak.sh
+# by default flatpak install in userspace
+./flatpak.sh
+
+# restore gnome confs
+./gnome.sh
 ```

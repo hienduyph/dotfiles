@@ -6,22 +6,6 @@ _env() {
   sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
 }
 
-# system stuff
-_py_cli() {
-  sudo python3 -m ensurepip
-  sudo python3 -m pip install virtualenv
-  sudo python3 -m virtualenv $PYCLI_HOME
-  sudo chown -R $(whoami) $PYCLI_HOME
-  $PYCLI_HOME/bin/pip install --upgrade pip mycli pgcli pyyaml awscli ansible black darker
-  bins=(
-    mycli
-    pgcli
-  )
-  for b in ${bins[@]}; do
-    ln -sf $PYCLI_HOME/bin/$b $HOME/.local/bin
-  done
-}
-
 _linux() {
   sudo tee /etc/systemd/resolved.conf << EOM
 [Resolve]
@@ -45,10 +29,9 @@ _mac() {
 
 __system() {
   _env
-  _py_cli
-  if [ ${PLATFORM} == "darwin" ]; then
+  if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
-  elif [ ${PLATFORM} == "linux" ]; then
+  elif [[ ${PLATFORM} == "linux" ]]; then
     _linux
   fi
 }

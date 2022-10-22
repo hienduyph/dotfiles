@@ -74,6 +74,7 @@ main() {
   _fonts $PLATFORM
   _shot
   _ibus
+  _apps
 }
 
-main
+_apps
