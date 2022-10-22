@@ -1,4 +1,14 @@
--- custom fonts
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+require "nvim-web-devicons".setup {}
+require("kommentary.config").use_extended_mappings()
+
 require("mini.base16").setup({
   palette = {
     base00 = "#ffffff",
@@ -41,17 +51,6 @@ require("mini.base16").setup({
 vim.diagnostic.config({
   virtual_text = false
 })
-
-
-local parser_config = require"nvim-treesitter.parsers".get_parser_configs()
-parser_config.gotmpl = {
-  install_info = {
-    url = "https://github.com/ngalaiko/tree-sitter-go-template",
-    files = {"src/parser.c"}
-  },
-  filetype = "gotmpl",
-  used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl", "yaml"}
-}
 
 -- use tree sitter
 require"nvim-treesitter.configs".setup {
@@ -142,10 +141,29 @@ require("bufferline").setup {
   },
 }
 
-require("nvim-surround").setup({
-})
+require("nvim-surround").setup({ })
 
 require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_installation = { exclude = {} },
 })
+
+require'fzf-lua'.setup {
+  winopts = {
+    preview = {
+      delay = 60,
+    },
+  },
+}
+require('gitsigns').setup()
+
+require("nvim-autopairs").setup({
+  check_ts = true,
+  ts_config = {
+    lua = { "string" }, -- it will not add a pair on that treesitter node
+    javascript = { "template_string" },
+    java = false, -- don"t check treesitter on java
+  }
+})
+
+require("rust-tools").setup({})

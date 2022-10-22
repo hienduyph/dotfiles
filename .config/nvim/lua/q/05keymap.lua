@@ -33,38 +33,10 @@ map("n", "gt", function() require("bufferline").cycle(1) end)
 map("n", "gB", function() require("bufferline").cycle(1) end)
 map("n", "gT", function() require("bufferline").cycle(-1) end)
 
+-- fuzzy & tree stuff
 map("n", "<C-y>", require"nvim-tree".toggle)
-
-if vim.g.fzf then
-  map("n", "<C-f>", function()
-    require('fzf-lua').files()
-  end);
-
-  map("n", "<C-g>", function()
-    require('fzf-lua').live_grep()
-  end);
-else
-  -- telescope
-  map("n", "<C-f>", function()
-    require('telescope.builtin').find_files({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })
-  end);
-
-  map("n", "<C-g>", function()
-    require('telescope.builtin').live_grep({ hidden=true, file_ignore_patterns = { 'node_modules', '.git/.*', '.direnv', 'vendor' } })
-  end);
-
-  map("n", "<leader>t", function()
-    require('telescope.builtin').file_browser({ cwd = require'telescope.utils'.buffer_dir(), hidden=true })
-  end);
-
-  map("n", "<leader>b", function()
-    require('telescope.builtin').buffers()
-  end);
-
-  map("n", "<leader>fh", function()
-    require('telescope.builtin').help_tags()
-  end);
-end
+map("n", "<C-f>", require('fzf-lua').files);
+map("n", "<C-g>", require('fzf-lua').live_grep);
 
 -- lsp stuff
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
@@ -85,10 +57,3 @@ map('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 map('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 map('n', '<leader>f', function() vim.lsp.buf.format { async = true } end)
 
-vim.diagnostic.config({
-  virtual_text = false
-})
-
--- Show line diagnostics automatically in hover window
-vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
