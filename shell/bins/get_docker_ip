@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-echo "$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1)"
