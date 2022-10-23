@@ -31,10 +31,6 @@ export FZF_ALT_C_COMMAND="fd -t d"
 py_core_setup() {
   /usr/bin/env python -m pip install black pylint ipdb wheel pynvim pip --upgrade
 }
-
-# https://github.com/cheat/cheat
-export CHEAT_USE_FZF=true
-
 export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 

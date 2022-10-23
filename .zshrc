@@ -38,7 +38,6 @@ source ${ZNAPDIR}/znap.zsh  # Start Znap
 znap source ohmyzsh/ohmyzsh lib/git.zsh
 znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/colorize
-znap source ohmyzsh/ohmyzsh plugins/terraform
 znap source zsh-users/zsh-completions
 
 # start our codes
@@ -48,8 +47,6 @@ if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"
   source "$(fzf-share)/completion.zsh"
 fi
-
-[ -f ${PORT_PREFIX}/share/fzf/shell/key-bindings.zsh ] && source ${PORT_PREFIX}/share/fzf/shell/key-bindings.zsh
 
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
@@ -77,18 +74,9 @@ add-zsh-hook precmd set-title-precmd
 add-zsh-hook preexec set-title-preexec
 
 export GPG_TTY=${TTY}
-
-if [ -n "${commands[direnv]}" ]; then
-  eval "$(direnv hook zsh)"
-fi
-
-if [ -n "${commands[starship]}" ]; then
-  eval "$(starship init zsh)"
-fi
-
-if [ -n "${commands[zoxide]}" ]; then
-  eval "$(zoxide init zsh --cmd z)"
-fi
+command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
+command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
+command -v zoxide > /dev/null 2>&1 eval "$(zoxide init zsh --cmd z)"
 
 # direnv support venv
 setopt PROMPT_SUBST
