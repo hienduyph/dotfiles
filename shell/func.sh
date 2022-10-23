@@ -1,4 +1,3 @@
-export APP_HOME=$HOME/Applications
 
 fkill() {
   ps aux | grep  $1 | awk {'print $2'} | xargs kill -9

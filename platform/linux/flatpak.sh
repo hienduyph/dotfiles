@@ -1,29 +1,10 @@
 #!/bin/bash
-
-set -ex
-
-_fp() {
-  flatpak --user $@
-}
-
-_fp remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-flatpaks=(
-  com.google.Chrome
-  org.gnome.Extensions
-  io.dbeaver.DBeaverCommunity
-  org.mozilla.firefox
-  org.telegram.desktop
-  com.github.tchx84.Flatseal 
-  com.visualstudio.code
-  org.keepassxc.KeePassXC
-  net.cozic.joplin_desktop
-)
-for pkg in "${flatpaks[@]}";do
-  _fp install flathub ${pkg} -y
-done
-
+local APP_ROOT="$(dirname "$(readlink -fm "$0")")"
+flatpak -user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 cp /usr/share/icons ~/.icons -r
+flatpak --user override --filesystem=/home/$USER/.icons/:ro
+flatpak -user  override --env=QT_WAYLAND_DECORATION=material
 
-_fp override --filesystem=/home/$USER/.icons/:ro
-_fp override --env=QT_WAYLAND_DECORATION=material
+while IFS= read -r line; do
+  flatpak --user install -y $line
+done < $APP_ROOT/apps.txt
