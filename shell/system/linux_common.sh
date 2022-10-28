@@ -8,4 +8,5 @@ u() {
     flatpak --user uninstall --unused -y
   fi
   nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+  nvim --headless -c 'TSUpdateSync' -c 'quitall'
 }

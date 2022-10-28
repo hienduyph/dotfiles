@@ -7,3 +7,4 @@ com.visualstudio.code
 org.keepassxc.KeePassXC
 net.cozic.joplin_desktop
 com.calibre_ebook.calibre
+org.kde.KStyle.Kvantu

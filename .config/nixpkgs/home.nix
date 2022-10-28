@@ -53,12 +53,14 @@
     python310
     go
     nodejs
+    yarn
 
     fd
     grpcurl
     gitui
     procs
     zoxide
+    tokei
 
     gocryptfs
   ];
