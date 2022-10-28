@@ -92,6 +92,7 @@ brew "zoxide"
 brew "mysql-client"
 
 brew "podman"
+brew "mas"
 
 cask "alacritty"
 cask "intellij-idea-ce"
@@ -101,3 +102,5 @@ cask "google-chrome"
 cask "telegram"
 cask "slack"
 cask "notion"
+cask "firefox"
+mas "Blackmagic Disk Speed Test", id: 425264550
