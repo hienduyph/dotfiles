@@ -41,4 +41,5 @@ flags=(
 --ignore-gpu-blocklist
 --enable-gpu-rasterization
 --gtk-version=4
+--enable-features=WaylandWindowDecorations
 ```
