@@ -1,7 +1,8 @@
 alias vim="nvim"
 alias gurl="grpcurl"
 alias ls="exa"
-alias cat="bat"
+alias cat="bat --paging=never"
+alias less="bat"
 
 alias y2j="yq -o json"
 alias j2y="yq -P"
