@@ -77,4 +77,4 @@ main() {
   _apps
 }
 
-_apps
+_fonts $PLATFORM
