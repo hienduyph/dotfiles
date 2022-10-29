@@ -2,7 +2,8 @@
 
 set -x
 
-APP_ROOT="$(dirname "$(dirname "$(readlink -fm "$0")")")"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+APP_ROOT="$(dirname "$SCRIPT_DIR")"
 
 source $APP_ROOT/scripts/dotfiles.sh
 source $APP_ROOT/shell/func.sh
