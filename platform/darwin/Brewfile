@@ -103,4 +103,5 @@ cask "telegram"
 cask "slack"
 cask "notion"
 cask "firefox"
+cask "keepassxc"
 mas "Blackmagic Disk Speed Test", id: 425264550
