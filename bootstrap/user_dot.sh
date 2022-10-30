@@ -84,6 +84,13 @@ _dots() {
 }
 
 _git() {
+  if command -v pinentry-curses; then
+    mkdir -p ~/.gnupg
+    tee ~/.gnupg/gpg-agent.conf << EOF
+pinentry-program $(which pinentry-curses)
+EOF
+  fi
+
   command -v git && git config --global init.defaultBranch main
 }
 
@@ -117,12 +124,7 @@ _mac() {
 }
 
 _linux() {
-  if command -v pinentry-curses; then
-    mkdir -p ~/.gnupg
-    tee ~/.gnupg/gpg-agent.conf << EOF
-pinentry-program $(which pinentry-curses)
-EOF
-  fi
+  echo "Linux"
 }
 
 main() {
