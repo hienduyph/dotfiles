@@ -5,6 +5,8 @@ cp /usr/share/icons ~/.icons -r
 flatpak --user override --filesystem=/home/$USER/.icons/:ro
 flatpak -user  override --env=QT_WAYLAND_DECORATION=material
 flatpak run --env=QT_STYLE_OVERRIDE=kvantum --filesystem=xdg-config/Kvantum:ro
+flatpak override --env GTK_THEME=Adwaita-dark
+flatpak override --filesystem=/usr/share/themes/
 
 while IFS= read -r line; do
   flatpak --user install -y $line

@@ -63,6 +63,9 @@
     tokei
 
     gocryptfs
+
+    rustc
+    cargo
   ];
 
   programs.zsh = {

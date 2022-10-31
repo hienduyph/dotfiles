@@ -48,6 +48,7 @@ _configs() {
 }
 
 _dots() {
+  mkdir $HOME/.zsh/completions
   PLATFORM=$1
   dots=(
     .zshrc

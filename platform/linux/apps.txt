@@ -8,3 +8,4 @@ org.keepassxc.KeePassXC
 net.cozic.joplin_desktop
 com.calibre_ebook.calibre
 org.kde.KStyle.Kvantu
+org.gtk.Gtk3theme.Adwaita-dark

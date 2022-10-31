@@ -3,6 +3,8 @@ alias gurl="grpcurl"
 alias ls="exa"
 alias cat="bat --paging=never"
 alias less="bat"
+alias fp="flatpak --user"
+alias k="kubectl"
 
 alias y2j="yq -o json"
 alias j2y="yq -P"
