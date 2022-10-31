@@ -7,6 +7,13 @@ u() {
     flatpak --user update -y
     flatpak --user uninstall --unused -y
   fi
+
   nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   nvim --headless -c 'TSUpdateSync' -c 'quitall'
+
+  if command -v nix-channel > /dev/null; then
+    nix-channel --update
+    home-manager build
+    home-manager switch
+  fi
 }

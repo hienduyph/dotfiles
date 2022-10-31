@@ -1,22 +1,30 @@
-[org/gnome/shell]
-enabled-extensions=['bluetooth-quick-connect@bjarosze.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'appindicatorsupport@rgcjonas.gmail.com', 'logomenu@aryan_k', 'dash-to-dock@micxgx.gmail.com']
-
-[org/gnome/shell/extensions/Logo-menu]
+[Logo-menu]
 menu-button-icon-image=1
 show-power-options=true
 
-[org/gnome/shell/extensions/dash-to-dock]
+[dash-to-dock]
 apply-custom-theme=true
 background-opacity=0.80000000000000004
 custom-theme-shrink=true
-dash-max-icon-size=24
+dash-max-icon-size=32
 disable-overview-on-startup=true
 dock-position='BOTTOM'
 height-fraction=0.90000000000000002
 preferred-monitor=-2
 preferred-monitor-by-connector='DP-2'
+show-mounts=false
 
-[org/gnome/shell/extensions/unite]
+[freon]
+hot-sensors=['edge', 'Tctl', 'Composite']
+
+[gtile]
+grid-sizes='2x2'
+moveresize-enabled=true
+resize1='2x2 1:2 2:1'
+target-presets-to-monitor-of-mouse=false
+theme='Default'
+
+[unite]
 desktop-name-text='hienph.dev'
 hide-activities-button='always'
-window-buttons-theme='yaru'
+window-buttons-theme='adwaita'
