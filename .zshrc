@@ -43,10 +43,6 @@ znap source zsh-users/zsh-completions
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
 
-if [ -n "${commands[fzf-share]}" ]; then
-  source "$(fzf-share)/key-bindings.zsh"
-  source "$(fzf-share)/completion.zsh"
-fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 znap source Aloxaf/fzf-tab
@@ -77,7 +73,7 @@ add-zsh-hook preexec set-title-preexec
 export GPG_TTY=${TTY}
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
-command -v zoxide > /dev/null 2>&1 eval "$(zoxide init zsh --cmd z)"
+command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
 
 # direnv support venv
 setopt PROMPT_SUBST

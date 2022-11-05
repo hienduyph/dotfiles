@@ -21,3 +21,4 @@ addToPATH() {
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 export BAT_THEME=GitHub
+export HOMEBREW_INSTALL_FROM_API=1

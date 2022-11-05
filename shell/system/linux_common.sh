@@ -1,3 +1,7 @@
+export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+alias open="xdg-open"
+alias br="sudo -Hu brew $HOMEBREW_PREFIX/bin/brew"
+
 u() {
   if command -v rustup > /dev/null; then
     rustup self update
