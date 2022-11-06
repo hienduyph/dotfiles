@@ -128,6 +128,10 @@ _linux() {
   echo "Linux"
 }
 
+_rust() {
+  rustup-init --default-toolchain none --no-modify-path --profile default -y
+}
+
 main() {
   _dots $PLATFORM
   _configs $PLATFORM
@@ -138,6 +142,7 @@ main() {
     _linux
     _nix
   fi
+  _rust
 }
 
 main
