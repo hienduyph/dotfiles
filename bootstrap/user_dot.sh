@@ -132,6 +132,11 @@ _rust() {
   rustup-init --default-toolchain none --no-modify-path --profile default -y
 }
 
+_java() {
+  curl -s "https://get.sdkman.io" | bash
+  sdk install java 11.0.16.1-tem
+}
+
 main() {
   _dots $PLATFORM
   _configs $PLATFORM
@@ -140,9 +145,9 @@ main() {
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
     _linux
-    _nix
   fi
   _rust
+  _java
 }
 
 main
