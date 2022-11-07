@@ -20,4 +20,9 @@ u() {
     home-manager build
     home-manager switch
   fi
+
+  if command -v br > /dev/null; then
+    local CUR="$(pwd)"
+    cd /tmp; br update && br upgrade && br cleaup; cd ${CUR}
+  fi
 }
