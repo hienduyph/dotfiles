@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "mike-engel/homebrew-jwt-cli"
 
 tap "homebrew/bundle"
 tap "hashicorp/tap"
@@ -15,6 +16,8 @@ brew "gnu-sed"
 
 brew "podman"
 brew "mas"
+
+brew "mike-engel/homebrew-jwt-cli/jwt-cli"
 
 cask "alacritty"
 cask "intellij-idea-ce"
