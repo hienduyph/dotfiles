@@ -4,7 +4,6 @@ alias br="sudo -Hu brew $HOMEBREW_PREFIX/bin/brew"
 
 u() {
   if command -v rustup > /dev/null; then
-    rustup self update
     rustup update
   fi
   if command -v flatpak > /dev/null; then
@@ -23,6 +22,6 @@ u() {
 
   if command -v br > /dev/null; then
     local CUR="$(pwd)"
-    cd /tmp; br update && br upgrade && br cleaup; cd ${CUR}
+    cd /tmp; br update && br upgrade && br cleanup; cd ${CUR}
   fi
 }

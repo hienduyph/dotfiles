@@ -47,14 +47,11 @@ require("mini.base16").setup({
     base0F = 31,
   },
 });
-
-vim.diagnostic.config({
-  virtual_text = false
-})
+require('mini.align').setup()
 
 -- use tree sitter
-require"nvim-treesitter.configs".setup {
-  ensure_installed = { "c", "lua", "rust", "bash", "go", "python", "yaml", "dart" , "nix"},
+require "nvim-treesitter.configs".setup {
+  ensure_installed = { "c", "lua", "rust", "bash", "go", "python", "yaml", "dart", "nix" },
   autopairs = {
     enable = true,
   },
@@ -69,41 +66,41 @@ require"nvim-treesitter.configs".setup {
 
 require("indent_blankline").setup {
   char = "|",
-  buftype_exclude = {"terminal", "dashboard"},
-  space_char_blankline=" ",
-  use_treesitter=true,
-  char_list={"|", "¦", "┆", "┊"},
+  buftype_exclude = { "terminal", "dashboard" },
+  space_char_blankline = " ",
+  use_treesitter = true,
+  char_list = { "|", "¦", "┆", "┊" },
   show_current_context = true,
   show_current_context_start = true,
 }
-vim.cmd[[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]]
-vim.cmd[[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]]
 
 require("lualine").setup({
   options = {
     theme = "gruvbox",
-    always_show_bufferline=true,
+    always_show_bufferline = true,
   },
-  extensions = {"quickfix", "nvim-tree", "fzf"},
+  extensions = { "quickfix", "nvim-tree", "fzf" },
   sections = {
-    lualine_a = {"mode"},
-    lualine_b = {"branch"},
+    lualine_a = { "mode" },
+    lualine_b = { "branch" },
     lualine_c = {
       {
         "filename",
-        file_status=true,
-        path=1,
+        file_status = true,
+        path = 1,
       },
     },
-    lualine_x = {"encoding", "fileformat", "filetype"},
-    lualine_y = {"progress", "diff"},
-    lualine_z = {"location"}
+    lualine_x = { "encoding", "fileformat", "filetype" },
+    lualine_y = { "progress", "diff" },
+    lualine_z = { "location" }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {"filename"},
-    lualine_x = {"location"},
+    lualine_c = { "filename" },
+    lualine_x = { "location" },
     lualine_y = {},
     lualine_z = {}
   },
@@ -141,14 +138,14 @@ require("bufferline").setup {
   },
 }
 
-require("nvim-surround").setup({ })
+require("nvim-surround").setup({})
 
 require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_installation = { exclude = {} },
 })
 
-require'fzf-lua'.setup {
+require 'fzf-lua'.setup {
   winopts = {
     preview = {
       delay = 60,

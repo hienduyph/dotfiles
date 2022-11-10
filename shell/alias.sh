@@ -1,4 +1,5 @@
 alias vim="nvim"
+alias vi="nvim"
 alias gurl="grpcurl"
 alias ls="exa"
 alias cat="bat --paging=never"
