@@ -30,13 +30,16 @@ EDITOR=nvim
 VISUAL=nvim
 SYSTEMD_EDITOR=nvim
 KUBE_EDITOR=nvim
+HOMEBREW_INSTALL_FROM_API=1
 EOF
 
   u=$USER
   sudo chown -R brew:brew /home/linuxbrew/.linuxbrew
-  sudo tee  /etc/sudoers.d/brew <<< EOF
+  sudo tee  /etc/sudoers.d/brew << EOF
   $u ALL= (ALL) NOPASSWD: /home/linuxbrew/.linuxbrew/bin/brew
 EOF
+
+$(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/opt/fzf/install --no-update-rc --key-bindings --completion
 }
 
 _mac() {
