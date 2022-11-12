@@ -138,17 +138,25 @@ _java() {
   sdk install java 11.0.16.1-tem
 }
 
+_brew() {
+  cp $APP_ROOT/Brewfile /tmp
+  CURR=$(pwd)
+  cd /tmp && brew bundle && cd $CURR
+  $($HOMEBREW_PREFIX/bin/brew --prefix)/opt/fzf/install --no-update-rc --key-bindings --completion
+}
+
 main() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
+  _java
+  _ranger
+  _brew
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
     _linux
   fi
-  _rust
-  _java
 }
 
 main
