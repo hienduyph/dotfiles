@@ -10,12 +10,17 @@ xkb-options=['caps:ctrl_modifier']
 
 [org/gnome/desktop/interface]
 clock-show-seconds=false
+color-scheme='prefer-dark'
 document-font-name='Liberation Sans 11'
 enable-hot-corners=false
 font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Liberation Sans 11'
+gtk-theme='Adwaita-dark'
+icon-theme='WhiteSur-dark'
 monospace-font-name='JetBrainsMono Nerd Font Light 10'
+toolkit-accessibility=false
+
 
 [org/gnome/desktop/peripherals/mouse]
 natural-scroll=true
@@ -33,13 +38,14 @@ switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
 
 [org/gnome/desktop/wm/preferences]
-button-layout='close,maximize:appmenu'
+button-layout='close,minimize,maximize:appmenu'
 resize-with-right-button=true
 titlebar-font='Liberation Sans 11'
 
 [org/gnome/mutter]
 center-new-windows=true
 experimental-features=['scale-monitor-framebuffer']
+overlay-key='Super_R'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
@@ -54,6 +60,13 @@ custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybin
 binding='<Alt>space'
 command='albert show'
 name='Shot'
+
+[org/gnome/shell]
+disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com']
+enabled-extensions=['bluetooth-quick-connect@bjarosze.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'logomenu@aryan_k', 'dash-to-dock@micxgx.gmail.com', 'gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com', 'freon@UshakovVasilii_Github.yahoo.com', 'gTile@vibou']
+favorite-apps=['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'org.mozilla.firefox.desktop', 'chrome-agimnkijcaahngcdmfeangaknmldooml-Default.desktop', 'chrome-cnmnfnkedfekfidgojcdmndbcipagogc-Default.desktop', 'org.keepassxc.KeePassXC.desktop', 'google-chrome.desktop', 'net.cozic.joplin_desktop.desktop', 'com.visualstudio.code.desktop', 'com.calibre_ebook.calibre.desktop', 'chrome-edcmabgkbicempmpgmniellhbjopafjh-Default.desktop', 'org.telegram.desktop.desktop']
+had-bluetooth-devices-setup=true
+welcome-dialog-last-shown-version='43.0'
 
 [org/gnome/shell/keybindings]
 show-screenshot-ui=['<Control><Alt>4']

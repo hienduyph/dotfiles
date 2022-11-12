@@ -11,15 +11,17 @@ _brew() {
 }
 
 _linux() {
+  ACTOR=$USER
+
   sudo tee /etc/systemd/resolved.conf << EOM
 [Resolve]
 DNS=127.0.0.1
 FallbackDNS=8.8.8.8
 EOM
   sudo mkdir -p /etc/dnscrypt-proxy
-  sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /etc/dnscrypt-proxy/
+  sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
   sudo touch /etc/dnscrypt-proxy/forwarding-rules.txt
-  sudo chown -R $(whoami) /etc/dnscrypt-proxy/forwarding-rules.txt
+  sudo chown -R $ACTOR /etc/dnscrypt-proxy/forwarding-rules.txt
 
   sleep 5
 
@@ -32,10 +34,9 @@ SYSTEMD_EDITOR=nvim
 KUBE_EDITOR=nvim
 EOF
 
-  u=$USER
   sudo chown -R brew:brew /home/linuxbrew/.linuxbrew
   sudo tee  /etc/sudoers.d/brew <<< EOF
-  $u ALL= (ALL) NOPASSWD: /home/linuxbrew/.linuxbrew/bin/brew
+  $ACTOR ALL= (ALL) NOPASSWD: /home/linuxbrew/.linuxbrew/bin/brew
 EOF
 }
 
