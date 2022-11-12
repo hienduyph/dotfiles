@@ -52,6 +52,7 @@ EOF
 }
 
 _apps() {
+  CURR=$(pwd)
   cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
   tee $HOME/.local/share/applications/dropbox.desktop << EOF
@@ -65,15 +66,13 @@ Categories=Office;
 EOF
 
   ln -sf $HOME/.local/share/applications/dropbox.desktop  $HOME/.config/autostart/
+  cd $CURR
 }
-
-
 
 main() {
   mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
   _fonts $PLATFORM
   _shot
-  _ibus
   _apps
 }
 

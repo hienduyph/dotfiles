@@ -22,3 +22,14 @@ export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 export BAT_THEME=GitHub
 export HOMEBREW_INSTALL_FROM_API=1
+
+
+if [[ "$PLATFORM" == "linux" ]]; then
+  export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+  brew() {
+    sudo -Hu brew $HOMEBREW_PREFIX/bin/brew $@
+  }
+elif [[ "$PLATFORM" == "darwin" ]]; then
+  # mac intel, no no
+  export HOMEBREW_PREFIX=/opt/homebrew
+fi

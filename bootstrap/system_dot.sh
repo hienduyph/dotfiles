@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+APP_ROOT="$(dirname "$SCRIPT_DIR")"
+
+source $APP_ROOT/shell/vars.sh
+
 _env() {
   sudo cp $HOME/dotfiles/shell/system/locale /etc/default/locale
 }
@@ -12,8 +17,6 @@ _brew() {
 
 _linux() {
   ACTOR=$USER
-  LINUXBR=/home/linuxbrew/.linuxbrew
-
   sudo tee /etc/systemd/resolved.conf << EOM
 [Resolve]
 DNS=127.0.0.1
@@ -36,12 +39,10 @@ KUBE_EDITOR=nvim
 HOMEBREW_INSTALL_FROM_API=1
 EOF
 
-  sudo chown -R brew:brew $LINUXBR
+  sudo chown -R brew:brew $HOMEBREW_PREFIX
   sudo tee  /etc/sudoers.d/brew << EOF
-  $ACTOR ALL= (ALL) NOPASSWD: $LINUXBR/bin/brew
+  $ACTOR ALL= (ALL) NOPASSWD: $HOMEBREW_PREFIX/bin/brew
 EOF
-
-  $($LINUXBR/bin/brew --prefix)/opt/fzf/install --no-update-rc --key-bindings --completion
 }
 
 _mac() {
