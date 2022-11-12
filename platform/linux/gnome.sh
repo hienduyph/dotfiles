@@ -3,6 +3,14 @@
 # https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions
 APP_ROOT="$(dirname "$(readlink -fm "$0")")"
 
+_theme() {
+  local workdir=/tmp/theme
+  mkdir $workdir
+  git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git $workdir
+  $workdir/install.sh -t default -a -b --black
+  rm -rf $workdir
+}
+
 exts=(
   https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
   https://extensions.gnome.org/extension/307/dash-to-dock/
@@ -36,6 +44,8 @@ echo "Installing Extensions"
 for url in "${exts[@]}"; do
   _install_ext $url
 done
+
+_theme
 
 
 echo "Restore configs"
