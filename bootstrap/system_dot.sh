@@ -12,7 +12,6 @@ _env() {
 _brew() {
   export HOMEBREW_INSTALL_FROM_API=1
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  sudo useradd brew
 }
 
 _linux() {
@@ -39,6 +38,8 @@ KUBE_EDITOR=nvim
 HOMEBREW_INSTALL_FROM_API=1
 EOF
 
+
+  sudo useradd brew
   sudo chown -R brew:brew $HOMEBREW_PREFIX
   sudo tee  /etc/sudoers.d/brew << EOF
   $ACTOR ALL= (ALL) NOPASSWD: $HOMEBREW_PREFIX/bin/brew
