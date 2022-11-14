@@ -138,11 +138,20 @@ _java() {
   sdk install java 11.0.16.1-tem
 }
 
-_brew() {
-  cp $APP_ROOT/Brewfile /tmp
+_brew_bundle() {
+  if [ -f $1 ]; then
+  cp $1 /tmp
   CURR=$(pwd)
-  cd /tmp && brew bundle && cd $CURR
+  cd /tmp && $HOMEBREW_PREFIX/bin/brew bundle && cd $CURR
+  fi
+}
+
+_brew() {
+  _brew_bundle "$APP_ROOT/platform/${PLATFORM}/Brewfile"
+  _brew_bundle "$APP_ROOT/Brewfile"
+
   $($HOMEBREW_PREFIX/bin/brew --prefix)/opt/fzf/install --no-update-rc --key-bindings --completion
+
 }
 
 main() {
@@ -159,4 +168,4 @@ main() {
   fi
 }
 
-main
+_brew

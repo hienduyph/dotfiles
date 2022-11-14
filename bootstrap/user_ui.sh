@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-APP_ROOT="$(dirname "$(dirname "$(readlink -fm "$0")")")"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+APP_ROOT="$(dirname "$SCRIPT_DIR")"
 
 source $APP_ROOT/shell/vars.sh
 
@@ -70,10 +71,16 @@ EOF
 }
 
 main() {
-  mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
   _fonts $PLATFORM
-  _shot
-  _apps
+
+  if [[ ${PLATFORM} == "darwin" ]]; then
+    echo "macsetup"
+  elif [[ ${PLATFORM} == "linux" ]]; then
+    mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
+    _shot
+    _apps
+  fi
+
 }
 
 main
