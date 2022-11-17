@@ -18,8 +18,8 @@ u() {
     home-manager switch
   fi
 
-  if command -v br > /dev/null; then
+  if command -v brew > /dev/null; then
     local CUR="$(pwd)"
-    cd /tmp; br update && br upgrade && br cleanup; cd ${CUR}
+    cd /tmp; brew update && brew upgrade && brew cleanup; cd ${CUR}
   fi
 }
