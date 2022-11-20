@@ -2,6 +2,18 @@
 
 ## Wayland/Nvidia GPU
 
+**Common Electron Params**
+```
+--enable-features=UseOzonePlatform --ozone-platform=wayland
+```
+
+Notes: Prefer clone the desktop file and modified it.
+```
+/usr/share/applications/
+~/.local/share/flatpak/exports/share/applications
+~/.local/share/applications
+```
+
 ```bash
 #!/usr/bin/env bash
 
