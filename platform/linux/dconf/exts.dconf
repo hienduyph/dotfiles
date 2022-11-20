@@ -6,12 +6,12 @@ show-power-options=true
 apply-custom-theme=true
 background-opacity=0.80000000000000004
 custom-theme-shrink=true
-dash-max-icon-size=32
+dash-max-icon-size=24
 disable-overview-on-startup=true
-dock-position='BOTTOM'
+dock-fixed=true
+dock-position='LEFT'
 height-fraction=0.90000000000000002
 preferred-monitor=-2
-preferred-monitor-by-connector='DP-2'
 show-mounts=false
 
 [freon]
@@ -23,6 +23,11 @@ moveresize-enabled=true
 resize1='2x2 1:2 2:1'
 target-presets-to-monitor-of-mouse=false
 theme='Default'
+
+[rounded-window-corners]
+custom-rounded-corner-settings=@a{sv} {}
+global-rounded-corner-settings={'padding': <{'left': <uint32 1>, 'right': <uint32 1>, 'top': <uint32 1>, 'bottom': <uint32 1>}>, 'keep_rounded_corners': <{'maximized': <false>, 'fullscreen': <false>}>, 'border_radius': <uint32 12>, 'smoothing': <uint32 0>}
+settings-version=uint32 5
 
 [unite]
 desktop-name-text='hienph.dev'

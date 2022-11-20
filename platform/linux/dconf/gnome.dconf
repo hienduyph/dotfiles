@@ -32,10 +32,13 @@ two-finger-scrolling-enabled=true
 activate-window-menu=@as []
 switch-applications=@as []
 switch-applications-backward=@as []
+switch-group=@as []
+switch-group-backward=@as []
 switch-input-source=['<Control>space']
 switch-input-source-backward=['<Shift><Control>space']
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
+toggle-fullscreen=['<Control><Alt>f']
 
 [org/gnome/desktop/wm/preferences]
 button-layout='close,minimize,maximize:appmenu'
@@ -63,8 +66,8 @@ name='Shot'
 
 [org/gnome/shell]
 disabled-extensions=['appindicatorsupport@rgcjonas.gmail.com']
-enabled-extensions=['bluetooth-quick-connect@bjarosze.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'logomenu@aryan_k', 'dash-to-dock@micxgx.gmail.com', 'gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com', 'freon@UshakovVasilii_Github.yahoo.com', 'gTile@vibou']
-favorite-apps=['org.gnome.Nautilus.desktop', 'Alacritty.desktop', 'org.mozilla.firefox.desktop', 'chrome-agimnkijcaahngcdmfeangaknmldooml-Default.desktop', 'chrome-cnmnfnkedfekfidgojcdmndbcipagogc-Default.desktop', 'org.keepassxc.KeePassXC.desktop', 'google-chrome.desktop', 'net.cozic.joplin_desktop.desktop', 'com.visualstudio.code.desktop', 'com.calibre_ebook.calibre.desktop', 'chrome-edcmabgkbicempmpgmniellhbjopafjh-Default.desktop', 'org.telegram.desktop.desktop']
+enabled-extensions=['bluetooth-quick-connect@bjarosze.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'logomenu@aryan_k', 'dash-to-dock@micxgx.gmail.com', 'gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com', 'freon@UshakovVasilii_Github.yahoo.com', 'gTile@vibou', 'rounded-window-corners@yilozt']
+favorite-apps=['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'Alacritty.desktop', 'org.mozilla.firefox.desktop', 'org.keepassxc.KeePassXC.desktop', 'net.cozic.joplin_desktop.desktop', 'com.visualstudio.code.desktop', 'com.calibre_ebook.calibre.desktop', 'org.telegram.desktop.desktop']
 had-bluetooth-devices-setup=true
 welcome-dialog-last-shown-version='43.0'
 
