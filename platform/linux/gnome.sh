@@ -19,6 +19,7 @@ exts=(
   https://extensions.gnome.org/extension/19/user-themes/
   https://extensions.gnome.org/extension/841/freon/
   https://extensions.gnome.org/extension/28/gtile/
+  https://extensions.gnome.org/extension/5237/rounded-window-corners/
 )
 
 _install_ext() {

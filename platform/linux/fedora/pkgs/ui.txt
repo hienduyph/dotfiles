@@ -1,1 +1,2 @@
 gnome-tweak-tool
+gnome-extension-app

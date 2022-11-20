@@ -13,6 +13,8 @@ tap "bufbuild/buf"
 
 brew "telnet"
 brew "gnu-sed"
+brew "procs"
+brew "htop"
 
 brew "podman"
 brew "mas"
@@ -30,3 +32,4 @@ cask "notion"
 cask "firefox"
 cask "keepassxc"
 mas "Blackmagic Disk Speed Test", id: 425264550
+
