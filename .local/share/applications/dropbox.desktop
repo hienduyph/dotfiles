@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Dropbox
+Comment=Dropbox Daemon
+Exec=/home/$USER/.dropbox-dist/dropboxd
+Icon=dropbox
+Type=Application
+Categories=Office;
+EOF

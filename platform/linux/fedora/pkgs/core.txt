@@ -1,33 +1,20 @@
 dnscrypt-proxy
 zsh
 jq
-wget
 albert
-git-lfs
-git
-git-subtree
-icu
 neovim
 htop
-telnet
 cronie cronie-anacron
-
-java-11-openjdk
+curl
 
 podman-compose
 podman
 
 alacritty
 
-libheif
-gimp-heif-plugin
-qt-heif-image-plugin
-
 swappy
 gnome-tweaks
-xlsclients
-ibus-qt
-ibus-gtk
 onedrive
+google-chrome-stable
 
 lm_sensors
