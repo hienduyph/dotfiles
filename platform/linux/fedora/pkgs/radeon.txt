@@ -2,3 +2,4 @@ rocm-smi
 rocm-runtime
 rocm-runtime-devel
 rocminfo 
+radeontop

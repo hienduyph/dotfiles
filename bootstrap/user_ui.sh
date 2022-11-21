@@ -39,19 +39,6 @@ Exec=ibus-daemon --xim -d -r
 EOF
 }
 
-_shot() {
-  tee $HOME/.local/share/applications/swappy.desktop << EOF
-[Desktop Entry]
-Encoding=UTF-8
-Name=Swappy
-Comment=Annonate image from clipboard
-Exec=wl-paste | swappy -f -
-Icon=org.gnome.Screenshot
-Type=Application
-Categories=Office;
-EOF
-}
-
 _apps() {
   CURR=$(pwd) && cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - && cd $CURR
   cp $APP_ROOT/.local/share/applications/* $HOME/.local/share/applications/
@@ -65,7 +52,6 @@ main() {
     echo "macsetup"
   elif [[ ${PLATFORM} == "linux" ]]; then
     mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
-    _shot
     _apps
   fi
 

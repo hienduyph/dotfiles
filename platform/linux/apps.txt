@@ -6,3 +6,4 @@ org.keepassxc.KeePassXC
 net.cozic.joplin_desktop
 com.calibre_ebook.calibre
 org.gtk.Gtk3theme.Adwaita-dark
+org.freedesktop.Platform.ffmpeg-full/x86_64/22.08

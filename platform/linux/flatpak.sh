@@ -14,7 +14,14 @@ while IFS= read -r line; do
 done < $APP_ROOT/apps.txt
 
 cp -r /usr/share/icons ~/.icons
-fp override --filesystem=/home/$USER/.icons/:ro
-fp override --env=QT_WAYLAND_DECORATION=material
-fp override --env=GTK_THEME=Adwaita-dark
-fp override --filesystem=/usr/share/themes/
+
+fp override --filesystem=/home/$USER/.icons/:ro \
+  --env=QT_WAYLAND_DECORATION=material \
+  --env=GTK_THEME=Adwaita-dark \
+  --filesystem=/usr/share/themes/ \
+  --socket=wayland\
+  --nosocket=x11 \
+  --nosocket=fallback-x11\
+  --device=dri
+
+fp override --env=MOZ_DISABLE_RDD_SANDBOX=1 org.mozilla.firefox
