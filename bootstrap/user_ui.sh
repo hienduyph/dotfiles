@@ -29,30 +29,13 @@ _fonts() {
   cd -; }
 }
 
-_ibus() {
-  tee $HOME/.config/autostart/ibus-daemon.desktop << EOF
-[Desktop Entry]
-Type=Application
-Name=IBus Daemon
-Exec=ibus-daemon --xim -d -r
-
-EOF
-}
-
-_apps() {
-  CURR=$(pwd) && cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - && cd $CURR
-  cp $APP_ROOT/.local/share/applications/* $HOME/.local/share/applications/
-  ln -sf $HOME/.local/share/applications/dropbox.desktop  $HOME/.config/autostart/
-}
-
 main() {
   _fonts $PLATFORM
 
   if [[ ${PLATFORM} == "darwin" ]]; then
     echo "macsetup"
   elif [[ ${PLATFORM} == "linux" ]]; then
-    mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
-    _apps
+    echo "linux UI"
   fi
 
 }
