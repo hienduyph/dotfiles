@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Dropbox
-Comment=Dropbox Daemon
-Exec=/bin/bash -c "~/.dropbox-dist/dropboxd"
-Icon=dropbox
-Type=Application
-Categories=Office;
-EOF

@@ -15,6 +15,5 @@ alacritty
 swappy
 gnome-tweaks
 onedrive
-google-chrome-stable
 
 lm_sensors

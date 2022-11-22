@@ -7,8 +7,8 @@ sudo tee $DST << EOF
 #!/bin/bash
 
 export SDL_VIDEODRIVER=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
 export MOZ_ENABLE_WAYLAND=1
+export MOZ_DISABLE_RDD_SANDBOX=1
 export XDG_SESSION_TYPE=wayland
 
 # GTK
@@ -18,8 +18,6 @@ export CLUTTER_BACKEND=wayland
 # qt stuff
 export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DECORATION=material
-
-export GTK_IM_MODULE=ibus
 
 exec gnome-session
 EOF

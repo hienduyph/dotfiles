@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Ibus Restart
-Comment=Restart the Ibus Engine
-Exec=ibus-daemon --xim -d -r
-Type=Application
-Icon=input-touchpad
