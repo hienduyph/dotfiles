@@ -60,7 +60,7 @@ cmp.setup {
 }
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
 local M = {}
 local nvim_lsp = require('lspconfig')
@@ -68,7 +68,7 @@ local nvim_lsp = require('lspconfig')
 local flags = {
   debounce_text_changes = 150,
 }
-local capabilities = require('cmp_nvim_lsp').default_capabilities (vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -108,8 +108,7 @@ function M.deno()
   M.setup_ls('denols')
 end
 
-
-local servers = { 'clangd', 'solang', 'jsonls', 'html', 'cssls', 'texlab', 'bashls' }
+local servers = { 'clangd', 'jsonls', 'html', 'cssls', 'bashls' }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end

@@ -35,3 +35,9 @@ brew "node"
 brew "rustup-init"
 brew "gcc@12"
 brew "cmake"
+
+# code dev
+brew "prettier"
+brew "eslint"
+brew "black"
+brew "bufbuild/buf/buf"
