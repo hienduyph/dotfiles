@@ -142,7 +142,7 @@ _brew_bundle() {
   if [ -f $1 ]; then
   cp $1 /tmp
   CURR=$(pwd)
-  cd /tmp && brew bundle && cd $CURR
+  cd /tmp && $HOMEBREW_PREFIX/bin/brew bundle && cd $CURR
   fi
 }
 
@@ -158,14 +158,15 @@ main() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
-  _java
   _ranger
-  _brew
+
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
     _linux
   fi
+  _java
+  _brew
 }
 
 main
