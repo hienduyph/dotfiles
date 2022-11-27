@@ -164,3 +164,7 @@ require("nvim-autopairs").setup({
 })
 
 require("rust-tools").setup({})
+
+require('glow').setup({
+  style = "light",
+})
