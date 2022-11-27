@@ -52,6 +52,9 @@ return require('packer').startup(function(use)
   use "kylechui/nvim-surround"
   use "gpanders/editorconfig.nvim"
 
+  use { "ellisonleao/glow.nvim" }
+
+
   if packer_bootstrap then
     require('packer').sync()
   end
