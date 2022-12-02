@@ -6,6 +6,7 @@ k9s:
   logoless: false
   crumbsless: false
   readOnly: false
+  noExitOnCtrlC: false
   noIcons: false
   logger:
     tail: 100
@@ -14,22 +15,21 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: default
-  currentCluster: default
+  currentContext: k3d-captain
+  currentCluster: k3d-captain
   clusters:
-    default:
+    k3d-captain:
       namespace:
         active: all
         lockFavorites: false
         favorites:
-        - all
         - default
       view:
         active: po
       featureGates:
         nodeShell: false
       shellPod:
-        image: busybox:1.31
+        image: busybox:1.35.0
         command: []
         args: []
         namespace: default
