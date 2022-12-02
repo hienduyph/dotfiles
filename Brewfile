@@ -27,6 +27,7 @@ brew "helm"
 brew "kubernetes-cli"
 brew "kustomize"
 brew "krew"
+brew "k9s"
 
 # langluage
 brew "python@3.11"

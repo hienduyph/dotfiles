@@ -17,10 +17,8 @@ _configs() {
     mpv
     ranger
     nvim
-    wezterm
     starship.toml
-    helix
-    nixpkgs
+    k9s
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
