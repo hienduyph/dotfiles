@@ -108,7 +108,7 @@ function M.deno()
   M.setup_ls('denols')
 end
 
-local servers = { 'clangd', 'jsonls', 'html', 'cssls', 'bashls' }
+local servers = { 'clangd', 'jsonls', 'html', 'cssls', 'bashls', 'kotlin_language_server' }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
@@ -186,19 +186,6 @@ nvim_lsp.gopls.setup {
     },
   }
 }
-
-
-local null_ls = require("null-ls")
-null_ls.setup({
-  autostart = true,
-  debug = true,
-  sources = {
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.diagnostics.buf,
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.prettier,
-  },
-})
 
 -- lua with nvim
 require 'lspconfig'.sumneko_lua.setup {
