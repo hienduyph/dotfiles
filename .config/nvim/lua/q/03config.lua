@@ -51,13 +51,14 @@ require('mini.align').setup()
 
 -- use tree sitter
 require "nvim-treesitter.configs".setup {
-  ensure_installed = { "c", "lua", "rust", "bash", "go", "python", "yaml", "dart", "nix" },
+  ensure_installed = { "c", "lua", "rust", "bash", "go", "python", "yaml", "dart", "nix", "java", "kotlin", "typescript",
+    "javascript" },
   autopairs = {
     enable = true,
   },
   indent = {
-    enable = true,
-    disable = { "yaml", "python" },
+    enable = false,
+    disable = { "yaml", "python", "kotlin" },
   },
   highlight = {
     enable = true,
@@ -168,4 +169,13 @@ require("rust-tools").setup({})
 
 require('glow').setup({
   style = "light",
+})
+
+require("exrc").setup({
+  files = {
+    ".nvimrc.lua",
+    ".nvimrc",
+    ".exrc.lua",
+    ".exrc",
+  },
 })

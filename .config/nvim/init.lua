@@ -7,5 +7,5 @@ else
   require("q.03config")
   require("q.04cmd")
   require("q.05keymap")
-  require("q.06completion")
+  require("q.completion")
 end

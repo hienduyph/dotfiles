@@ -45,7 +45,6 @@ return require('packer').startup(function(use)
     'hrsh7th/cmp-path',
     'saadparwaiz1/cmp_luasnip',
     'rafamadriz/friendly-snippets',
-    'jose-elias-alvarez/null-ls.nvim',
   }
   use 'simrat39/rust-tools.nvim'
 
@@ -53,6 +52,10 @@ return require('packer').startup(function(use)
   use "gpanders/editorconfig.nvim"
 
   use { "ellisonleao/glow.nvim" }
+  use {
+    "MunifTanjim/nui.nvim",
+    "MunifTanjim/exrc.nvim"
+  }
 
 
   if packer_bootstrap then
