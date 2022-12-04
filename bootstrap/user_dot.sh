@@ -127,7 +127,7 @@ _linux() {
 }
 
 _rust() {
-  rustup-init --default-toolchain none --no-modify-path --profile default -y
+  rustup-init --default-toolchain stable --no-modify-path --profile default -y
 }
 
 _java() {
@@ -165,6 +165,7 @@ main() {
   fi
   _java
   _brew
+  _rust
 }
 
 main

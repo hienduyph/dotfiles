@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
- -- enable filetype.lua
+-- enable filetype.lua
 g.do_filetype_lua = 1
 g.do_legacy_filetype = 0
 
@@ -25,8 +25,7 @@ opt.showmatch = true
 
 -- This option forces Vim to source .vimrc file if it present in working directory,
 -- thus providing a place to store project-specific configuration.
-opt.exrc = true
-opt.secure = true
+opt.exrc = false
 
 opt.clipboard = "unnamedplus"
 
@@ -79,9 +78,10 @@ autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" },
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = ".envrc", command = [[ set filetype=bash ]] })
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*.go", callback = use_tabs, })
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" },
-  { pattern = { "*.py", "*.rs" }, callback = use_spaces_four, })
+  { pattern = { "*.py", "*.rs", "*.kt" }, callback = use_spaces_four, })
 autocmd({ "BufReadPre", "BufRead", "FileReadPre", "FileType" },
-  { pattern = { "*.css", "*.js", "*.ts", "*.scss", "*.html", "*.json", "*.c", "*.cc", "*.cpp", "*.h", "*.sh", "*.bash", "*.dart" },
+  { pattern = { "*.css", "*.js", "*.ts", "*.scss", "*.html", "*.json", "*.c", "*.cc", "*.cpp", "*.h", "*.sh", "*.bash",
+    "*.dart" },
     callback = use_spaces,
   })
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" },
