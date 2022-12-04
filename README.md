@@ -1,5 +1,7 @@
 # The Q dotfiles
 
+I've come from the dark to the heaven.
+
 ## XDG-Configs
 
 Most configs are located under [.config](.config) directory. You could simply copy or symlink.
