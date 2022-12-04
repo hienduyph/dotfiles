@@ -3,7 +3,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "mike-engel/homebrew-jwt-cli"
 
 tap "homebrew/bundle"
 tap "hashicorp/tap"
@@ -16,20 +15,14 @@ brew "gnu-sed"
 brew "procs"
 brew "htop"
 
-brew "podman"
 brew "mas"
 
-brew "mike-engel/homebrew-jwt-cli/jwt-cli"
-
 cask "alacritty"
-cask "intellij-idea-ce"
 cask "dropbox"
-cask "visual-studio-code"
 cask "google-chrome"
 cask "telegram"
-cask "slack"
-cask "notion"
 cask "firefox"
 cask "keepassxc"
-mas "Blackmagic Disk Speed Test", id: 425264550
+cask "eqmac"
 
+mas "Blackmagic Disk Speed Test", id: 425264550
