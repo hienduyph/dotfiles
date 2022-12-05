@@ -34,3 +34,5 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
   # mac intel, no no
   export HOMEBREW_PREFIX=/opt/homebrew
 fi
+
+export GIT_EDITOR=nvim
