@@ -7,3 +7,6 @@ sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/publi
 sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
 sudo dnf remove PackageKit fedora-chromium-config -y
+
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo

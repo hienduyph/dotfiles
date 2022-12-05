@@ -18,3 +18,4 @@ gnome-tweaks
 onedrive
 
 lm_sensors
+sublime-text
