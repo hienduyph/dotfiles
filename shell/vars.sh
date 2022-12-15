@@ -4,6 +4,7 @@ export BASHMAN_DIR=$HOME/.config/bashman
 export ANDROID_HOME=$HOME/Android/Sdk
 export APP_HOME=$HOME/Applications
 
+
 prependToPATH() {
   case ":$PATH:" in
     *":$1:"*) :;; # already there
@@ -36,3 +37,4 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
 fi
 
 export GIT_EDITOR=nvim
+export KUBE_EDITOR=nvim
