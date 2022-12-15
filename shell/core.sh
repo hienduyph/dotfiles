@@ -29,7 +29,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d"
 
 py_core_setup() {
-  /usr/bin/env python -m pip install black pylint ipdb wheel pynvim pip --upgrade
+  /usr/bin/env python -m pip install wheel pip --upgrade
+  /usr/bin/env python -m pip install black pylint ipdb pynvim   --upgrade
 }
 export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
