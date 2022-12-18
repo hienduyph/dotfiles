@@ -18,8 +18,7 @@ Notes: Prefer clone the desktop file and modified it.
 #!/usr/bin/env bash
 
 flags=(
-  --enable-features=UseOzonePlatform
-  --ozone-platform=wayland
+  --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland
   --gtk-version=4
   --use-gl=egl
   --enable-zero-copy

@@ -18,7 +18,6 @@ _configs() {
     ranger
     nvim
     starship.toml
-    k9s
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -43,6 +42,10 @@ _configs() {
       ln -sf ${fullpath} $HOME/.config/${pk}
     fi
   done
+
+  # k9s
+  mkdir -p $HOME/.config/k9s/
+  ln -sf $HOME/.config/k9s/skin.yml  $HOME/.config/k9s/
 }
 
 _dots() {
@@ -127,7 +130,7 @@ _linux() {
 }
 
 _rust() {
-  rustup-init --default-toolchain stable --no-modify-path --profile default -y
+  $($HOMEBREW_PREFIX/bin/rustup-init --default-toolchain stable --no-modify-path --profile default -y
 }
 
 _java() {
@@ -157,6 +160,7 @@ main() {
   _configs $PLATFORM
   _git
   _ranger
+  _brew
 
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
@@ -164,7 +168,6 @@ main() {
     _linux
   fi
   _java
-  _brew
   _rust
 }
 

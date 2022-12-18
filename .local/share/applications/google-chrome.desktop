@@ -3,7 +3,7 @@ Version=1.0
 Name=Google Chrome
 GenericName=Web Browser
 Comment=Access the Internet
-Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-gl=egl --enable-zero-copy --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder --enable-features=VaapiVideoEncoder --enable-accelerated-2d-canvas --disable-features=UseChromeOSDirectVideoDecoder --disable-gpu-driver-workarounds --disable-gpu-driver-bug-workarounds --ignore-gpu-blocklist --enable-gpu-rasterization %U
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/chrome com.google.Chrome --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-gl=egl --enable-zero-copy --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder --enable-features=VaapiVideoEncoder --enable-accelerated-2d-canvas --disable-features=UseChromeOSDirectVideoDecoder --disable-gpu-driver-workarounds --disable-gpu-driver-bug-workarounds --ignore-gpu-blocklist --enable-gpu-rasterization %U
 StartupNotify=true
 Terminal=false
 Icon=google-chrome
@@ -13,9 +13,9 @@ Actions=new-window;new-private-window;
 
 [Desktop Action new-window]
 Name=New Window
-Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-gl=egl --enable-zero-copy --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder --enable-features=VaapiVideoEncoder --enable-accelerated-2d-canvas --disable-features=UseChromeOSDirectVideoDecoder --disable-gpu-driver-workarounds --disable-gpu-driver-bug-workarounds --ignore-gpu-blocklist --enable-gpu-rasterization
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/chrome com.google.Chrome --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-gl=egl --enable-zero-copy --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder --enable-features=VaapiVideoEncoder --enable-accelerated-2d-canvas --disable-features=UseChromeOSDirectVideoDecoder --disable-gpu-driver-workarounds --disable-gpu-driver-bug-workarounds --ignore-gpu-blocklist --enable-gpu-rasterization
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
-Exec=/usr/bin/google-chrome-stable --incognito --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-gl=egl --enable-zero-copy --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder --enable-features=VaapiVideoEncoder --enable-accelerated-2d-canvas --disable-features=UseChromeOSDirectVideoDecoder --disable-gpu-driver-workarounds --disable-gpu-driver-bug-workarounds --ignore-gpu-blocklist --enable-gpu-rasterization
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/chrome com.google.Chrome --incognito --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4 --use-gl=egl --enable-zero-copy --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder --enable-features=VaapiVideoEncoder --enable-accelerated-2d-canvas --disable-features=UseChromeOSDirectVideoDecoder --disable-gpu-driver-workarounds --disable-gpu-driver-bug-workarounds --ignore-gpu-blocklist --enable-gpu-rasterization
 MimeType=x-scheme-handler/unknown;x-scheme-handler/about;application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
