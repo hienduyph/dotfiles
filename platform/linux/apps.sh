@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+APP_ROOT="$(dirname "$SCRIPT_DIR")"
+APP_ROOT="$(dirname "$APP_ROOT")"
+
 _dropbox() {
   CURR=$(pwd) && cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - && cd $CURR
   tee $HOME/.local/share/applications/dropbox.desktop  << EOF

@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 
   use {
     "nvim-treesitter/nvim-treesitter",
+    "yioneko/nvim-yati",
     run = function() require("nvim-treesitter.install").update { with_sync = true } end,
   }
   use { 'echasnovski/mini.nvim', branch = 'main' }
