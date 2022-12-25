@@ -1,0 +1,4 @@
+[/]
+center-new-windows=true
+experimental-features=['scale-monitor-framebuffer']
+overlay-key='Super_R'

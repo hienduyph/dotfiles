@@ -1,0 +1,13 @@
+[plugins/color]
+night-light-enabled=true
+night-light-schedule-automatic=false
+night-light-schedule-from=18.0
+night-light-temperature=uint32 4145
+
+[plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[plugins/media-keys/custom-keybindings/custom0]
+binding='<Alt>space'
+command='albert show'
+name='Shot'
