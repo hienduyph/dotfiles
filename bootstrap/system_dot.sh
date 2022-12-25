@@ -19,7 +19,7 @@ _linux() {
   sudo tee /etc/systemd/resolved.conf << EOM
 [Resolve]
 DNS=127.0.0.1
-FallbackDNS=8.8.8.8
+Domains=~.
 EOM
   sudo mkdir -p /etc/dnscrypt-proxy
   sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
