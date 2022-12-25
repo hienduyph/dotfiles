@@ -1,3 +1,22 @@
+[app-folders]
+folder-children=['Utilities', 'YaST']
+
+[app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[background]
+picture-options='zoom'
+picture-uri='/home/hienduyph/.config/background'
+picture-uri-dark='/home/hienduyph/.config/background'
+
 [calendar]
 show-weekdate=true
 
@@ -19,13 +38,42 @@ font-name='Liberation Sans 11'
 gtk-theme='Adwaita-dark'
 icon-theme='WhiteSur-dark'
 monospace-font-name='JetBrainsMono Nerd Font Light 10'
+text-scaling-factor=1.0
 toolkit-accessibility=false
+
+[notifications]
+application-children=['org-freedesktop-problems-applet', 'org-freedesktop-gnomeabrt', 'org-mozilla-firefox', 'org-gnome-settings', 'org-gnome-extensions-desktop', 'net-cozic-joplin-desktop', 'org-telegram-desktop']
+
+[notifications/application/net-cozic-joplin-desktop]
+application-id='net.cozic.joplin_desktop.desktop'
+
+[notifications/application/org-freedesktop-gnomeabrt]
+application-id='org.freedesktop.GnomeAbrt.desktop'
+
+[notifications/application/org-freedesktop-problems-applet]
+application-id='org.freedesktop.problems.applet.desktop'
+
+[notifications/application/org-gnome-extensions-desktop]
+application-id='org.gnome.Extensions.desktop.desktop'
+
+[notifications/application/org-gnome-settings]
+application-id='org.gnome.Settings.desktop'
+
+[notifications/application/org-mozilla-firefox]
+application-id='org.mozilla.firefox.desktop'
+
+[notifications/application/org-telegram-desktop]
+application-id='org.telegram.desktop.desktop'
 
 [peripherals/mouse]
 natural-scroll=true
 
 [peripherals/touchpad]
 two-finger-scrolling-enabled=true
+
+[sound]
+event-sounds=true
+theme-name='__custom'
 
 [wm/keybindings]
 activate-window-menu=@as []
