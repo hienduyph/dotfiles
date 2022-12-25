@@ -32,4 +32,7 @@ if [[ $1 == "load" ]]; then
   _load
 elif [[ $1 == "dump" ]]; then
   _dump
+else
+  echo "Require load or dump"
+  exit 1
 fi
