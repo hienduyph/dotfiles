@@ -1,0 +1,45 @@
+[calendar]
+show-weekdate=true
+
+[input-sources]
+current=uint32 0
+mru-sources=[('xkb', 'us'), ('ibus', 'm17n:vi:telex')]
+per-window=true
+sources=[('xkb', 'us'), ('ibus', 'm17n:vi:telex')]
+xkb-options=['caps:ctrl_modifier']
+
+[interface]
+clock-show-seconds=false
+color-scheme='prefer-dark'
+document-font-name='Liberation Sans 11'
+enable-hot-corners=false
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='Liberation Sans 11'
+gtk-theme='Adwaita-dark'
+icon-theme='WhiteSur-dark'
+monospace-font-name='JetBrainsMono Nerd Font Light 10'
+toolkit-accessibility=false
+
+[peripherals/mouse]
+natural-scroll=true
+
+[peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[wm/keybindings]
+activate-window-menu=@as []
+switch-applications=@as []
+switch-applications-backward=@as []
+switch-group=@as []
+switch-group-backward=@as []
+switch-input-source=['<Control>space']
+switch-input-source-backward=['<Shift><Control>space']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+toggle-fullscreen=['<Control><Alt>f']
+
+[wm/preferences]
+button-layout='close,minimize,maximize:appmenu'
+resize-with-right-button=true
+titlebar-font='Liberation Sans 11'
