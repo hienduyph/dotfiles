@@ -25,3 +25,4 @@ fp override --filesystem=/home/$USER/.icons/:ro \
   --device=dri
 
 fp override --env=MOZ_DISABLE_RDD_SANDBOX=1 org.mozilla.firefox
+fp override --user --filesystem=~/.local/share/applications:create --filesystem=~/.local/share/icons:create com.google.Chrome
