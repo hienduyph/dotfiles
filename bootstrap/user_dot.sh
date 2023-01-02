@@ -123,12 +123,12 @@ _nix() {
 
 _mac() {
   mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages"
-  ln -sf ~/dotfiles/.config/sublime-text/Users "$HOME/Library/Application Support/Sublime Text/Packages/"
+  ln -sf ~/dotfiles/.config/sublime-text/User "$HOME/Library/Application Support/Sublime Text/Packages/"
 }
 
 _linux() {
   mkdir -p $HOME/.config/sublime-text-3/Packages/
-  ln -sf ~/dotfiles/.config/sublime-text/Users $HOME/.config/sublime-text-3/Packages/
+  ln -sf ~/dotfiles/.config/sublime-text/User $HOME/.config/sublime-text-3/Packages/
 }
 
 _rust() {
