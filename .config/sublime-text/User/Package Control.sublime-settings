@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"GitHub Theme",
+		"LSP",
 		"Package Control",
 	],
 }
