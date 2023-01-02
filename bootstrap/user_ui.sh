@@ -30,6 +30,8 @@ _fonts() {
     curl -sLo 'JetBrains Mono Light Nerd Font Complete.ttf' "${BASE}/Light/complete/JetBrains%20Mono%20Light%20Nerd%20Font%20Complete.ttf"
     curl -sLo 'JetBrains Mono ExtraLight Nerd Font Complete.ttf' "${BASE}/ExtraLight/complete/JetBrains%20Mono%20ExtraLight%20Nerd%20Font%20Complete.ttf"
     curl -sLo 'Blex Mono Light Nerd Font Complete.ttf' 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/IBMPlexMono/Mono/complete/Blex%20Mono%20Light%20Nerd%20Font%20Complete.ttf'
+    curl -slo /tmp/font.zip 'https://fonts.google.com/download?family=Roboto'
+    unzip -d ${FONT_DIR} /tmp/font.zip
   cd -; }
 }
 

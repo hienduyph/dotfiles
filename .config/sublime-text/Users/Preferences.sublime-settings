@@ -1,0 +1,8 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "GitHub Dark.sublime-theme",
+	"color_scheme": "GitHub Light.sublime-color-scheme",
+}
