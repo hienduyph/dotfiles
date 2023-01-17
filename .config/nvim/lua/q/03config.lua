@@ -133,7 +133,7 @@ require "nvim-tree".setup {
   },
   filters = {
     dotfiles = false,
-    custom = { "^\\.git", "node_modules", "^\\.cache", "__pycache__", "\\.direnv", "\\.ipynb_checkpoints", "vendor" },
+    custom = { "^\\.git$", "node_modules", "^\\.cache", "__pycache__", "\\.direnv", "\\.ipynb_checkpoints", "vendor" },
   },
   actions = {
     open_file = {
