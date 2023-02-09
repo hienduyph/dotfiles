@@ -41,6 +41,7 @@ znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source zsh-users/zsh-completions
 
+
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
 
@@ -86,3 +87,5 @@ bindkey '^n' autosuggest-accept
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
