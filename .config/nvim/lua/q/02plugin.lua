@@ -11,6 +11,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local opts = {
+  checker = {
+    -- automatically check for plugin updates
+    enabled = true,
+    notify = false,
+  },
+};
+
 require("lazy").setup({
   -- core libs
   "nvim-lua/plenary.nvim",
@@ -226,4 +234,4 @@ require("lazy").setup({
       })
     end
   },
-})
+}, opts)
