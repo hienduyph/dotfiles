@@ -188,7 +188,7 @@ nvim_lsp.gopls.setup {
 }
 
 -- lua with nvim
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
   flags = flags,
   on_attach = on_attach,
   capabilities = capabilities,
