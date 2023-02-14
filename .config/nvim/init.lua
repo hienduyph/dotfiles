@@ -4,7 +4,6 @@ if vim.g.vscode then
 
 else
   require("q.02plugin")
-  require("q.03config")
   require("q.04cmd")
   require("q.05keymap")
   require("q.completion")
