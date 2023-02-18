@@ -13,3 +13,27 @@
 - Python: black (`pip install black`)
 - Lua:  https://github.com/JohnnyMorganz/StyLua (`brew install stylua`)
 
+
+```lua
+
+{
+  "ibhagwan/fzf-lua",
+  config = function()
+    require 'fzf-lua'.setup {
+      fzf_colors = {
+        ["fg"] = { "fg", "Normal" },
+        ["bg"] = { "bg", "Normal" },
+        ["gutter"] = { "bg", "Normal" },
+      },
+      winopts = {
+        preview = {
+          delay = 60,
+        },
+      },
+    }
+    vim.keymap.set("n", "<C-f>", require('fzf-lua').files, { noremap = true, silent = true })
+    vim.keymap.set("n", "<C-g>", require('fzf-lua').live_grep, { noremap = true, silent = true })
+  end
+};
+
+```
