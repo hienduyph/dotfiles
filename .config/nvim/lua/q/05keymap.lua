@@ -7,9 +7,9 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- delete without copy
-map("n", '<leader>d' , '"_d')
-map("x", '<leader>d' , '"_d')
-map("x", '<leader>p' , '"_dP')
+map("n", '<leader>d', '"_d')
+map("x", '<leader>d', '"_d')
+map("x", '<leader>p', '"_dP')
 
 -- resize pane
 map("n", "<leader>+", "<Cmd>vertical resize +5<CR>")
@@ -34,9 +34,7 @@ map("n", "gB", function() require("bufferline").cycle(1) end)
 map("n", "gT", function() require("bufferline").cycle(-1) end)
 
 -- fuzzy & tree stuff
-map("n", "<C-y>", require"nvim-tree".toggle)
-map("n", "<C-f>", require('fzf-lua').files);
-map("n", "<C-g>", require('fzf-lua').live_grep);
+map("n", "<C-y>", require "nvim-tree".toggle)
 
 -- lsp stuff
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
@@ -56,4 +54,3 @@ map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
 map('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 map('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 map('n', '<leader>f', function() vim.lsp.buf.format { async = true } end)
-

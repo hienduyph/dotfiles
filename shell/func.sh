@@ -37,5 +37,5 @@ fedora_maintenance() {
 }
 
 get_docker_ip() {
-  echo "$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1)"
+  echo "$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' $1)"
 }

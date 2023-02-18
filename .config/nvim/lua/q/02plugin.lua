@@ -208,24 +208,24 @@ require("lazy").setup({
     end
   },
 
-  {
-    "ibhagwan/fzf-lua",
-    config = function()
 
-      require 'fzf-lua'.setup {
-        fzf_colors = {
-          ["fg"] = { "fg", "Normal" },
-          ["bg"] = { "bg", "Normal" },
-          ["gutter"] = { "bg", "Normal" },
-        },
-        winopts = {
-          preview = {
-            delay = 60,
-          },
-        },
-      }
-    end
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      local tele = require('telescope');
+      tele.setup {
+      };
+      tele.load_extension('fzf')
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<C-f>', builtin.find_files, { noremap = true, silent = true })
+      vim.keymap.set('n', '<C-g>', builtin.live_grep, { noremap = true, silent = true })
+    end,
+    dependencies = {
+      'nvim-telescope/telescope-fzf-native.nvim',
+    }
   },
+
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   {
     'hrsh7th/nvim-cmp',
