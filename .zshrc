@@ -45,7 +45,6 @@ znap source zsh-users/zsh-completions
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions

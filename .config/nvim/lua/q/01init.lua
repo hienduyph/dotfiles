@@ -52,9 +52,12 @@ opt.cursorline = true
 opt.termguicolors = true
 
 -- fold setup
-vim.opt_local.foldmethod = "indent"
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- opt.nofoldenable = true
 opt.foldlevel = 99
+-- https://github.com/nvim-telescope/telescope.nvim/issues/699#issuecomment-1159637962
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx", })
 
 local autocmd = vim.api.nvim_create_autocmd
 
