@@ -33,9 +33,7 @@ require("lazy").setup({
     build = function() require("nvim-treesitter.install").update { with_sync = true } end,
     config = function()
       require "nvim-treesitter.configs".setup {
-        ensure_installed = { "c", "lua", "rust", "bash", "go", "python", "yaml", "dart", "nix", "java", "kotlin",
-          "typescript",
-          "javascript" },
+        ensure_installed = "all",
         autopairs = {
           enable = true,
         },
@@ -52,7 +50,7 @@ require("lazy").setup({
           default_lazy = true,
           default_fallback = "auto"
         },
-      }
+      };
     end
   },
 
@@ -106,6 +104,7 @@ require("lazy").setup({
     "kyazdani42/nvim-tree.lua",
     config = function()
       require "nvim-tree".setup {
+        git = { enable = false },
         view = {
           width = 40,
         },

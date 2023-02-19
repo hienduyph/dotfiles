@@ -23,3 +23,5 @@ u() {
     cd /tmp; brew update && brew upgrade && brew cleanup; cd ${CUR}
   fi
 }
+
+[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh

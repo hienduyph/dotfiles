@@ -118,6 +118,18 @@ disabled = false
 [nodejs]
 disabled = true
 
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)[@](purple)[$hostname](bold cyan) '
+disabled = false
+
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[$user](dimmed green)'
+disabled = false
+show_always = true
+
 [env_var.1]
 variable="GSD_REMOTE"
 format="[$env_value ](#cccccc bold)"
@@ -130,3 +142,4 @@ format="[$env_value ]()"
 [env_var.4]
 variable="GSD_NOT_REPO"
 format="[ ]()"
+

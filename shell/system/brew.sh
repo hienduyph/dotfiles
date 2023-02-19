@@ -14,3 +14,4 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${C_PKG_CONFIG_PATH}"
 
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:$HOMEBREW_PREFIX/lib:${C_LD}"
 export LIBRARY_PATH=${LD_LIBRARY_PATH}:${LIBRARY_PATH}
+[ -f $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh ] && source $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh

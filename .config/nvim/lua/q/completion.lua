@@ -113,6 +113,8 @@ for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
 
+M.node()
+
 -- Rust setups
 nvim_lsp.rust_analyzer.setup {
   capabilities = capabilities,
@@ -205,6 +207,7 @@ require 'lspconfig'.lua_ls.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false, -- disable 3rd check
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
