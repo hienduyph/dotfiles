@@ -33,7 +33,13 @@ require("lazy").setup({
     build = function() require("nvim-treesitter.install").update { with_sync = true } end,
     config = function()
       require "nvim-treesitter.configs".setup {
-        ensure_installed = "all",
+        ensure_installed = {
+          "lua", "bash", "python", "php",
+          "c", "rust", "go", "cpp", "dart",
+          "yaml", "json", "terraform",
+          "java", "kotlin",
+          "typescript", "javascript", "html", "css", "scss",
+        },
         autopairs = {
           enable = true,
         },
