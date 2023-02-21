@@ -34,7 +34,7 @@ require("lazy").setup({
     config = function()
       require "nvim-treesitter.configs".setup {
         ensure_installed = {
-          "lua", "bash", "python", "php",
+          "vim", "lua", "bash", "python", "php",
           "c", "rust", "go", "cpp", "dart",
           "yaml", "json", "terraform",
           "java", "kotlin",

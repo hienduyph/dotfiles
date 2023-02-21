@@ -59,8 +59,12 @@ opt.foldlevel = 99
 -- https://github.com/nvim-telescope/telescope.nvim/issues/699#issuecomment-1159637962
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx", })
 
-local autocmd = vim.api.nvim_create_autocmd
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
 
+local autocmd = vim.api.nvim_create_autocmd
 local function use_tabs()
   vim.opt_local.tabstop    = 4 -- Size of a hard tabstop (ts).
   vim.opt_local.shiftwidth = 4 -- Size of an indentation (sw).
