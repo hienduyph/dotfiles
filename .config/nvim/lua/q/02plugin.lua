@@ -17,28 +17,60 @@ local opts = {
     enabled = true,
     notify = false,
   },
-};
+}
 
 require("lazy").setup({
   -- core libs
   "nvim-lua/plenary.nvim",
   "MunifTanjim/nui.nvim",
-  { 'kyazdani42/nvim-web-devicons', config = true },
+  { "kyazdani42/nvim-web-devicons", config = true },
 
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "yioneko/nvim-yati",
     },
-    build = function() require("nvim-treesitter.install").update { with_sync = true } end,
+    build = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
     config = function()
-      require "nvim-treesitter.configs".setup {
+      require("nvim-treesitter.configs").setup({
         ensure_installed = {
-          "vim", "lua", "bash", "python", "php",
-          "c", "rust", "go", "cpp", "dart",
-          "yaml", "json", "terraform",
-          "java", "kotlin",
-          "typescript", "javascript", "html", "css", "scss",
+          "vim",
+          "lua",
+          "bash",
+          "ruby",
+          "python",
+          "php",
+          "c",
+          "rust",
+          "go",
+          "gomod",
+          "gosum",
+          "gitignore",
+          "dockerfile",
+          "cpp",
+          "dart",
+          "yaml",
+          "json",
+          "jsonc",
+          "json5",
+          "terraform",
+          "java",
+          "kotlin",
+          "typescript",
+          "javascript",
+          "html",
+          "toml",
+          "markdown",
+          "markdown_inline",
+          "css",
+          "scss",
+          "sql",
+          "proto",
+          "make",
+          "cmake",
+          "latex",
         },
         autopairs = {
           enable = true,
@@ -54,14 +86,16 @@ require("lazy").setup({
           enable = true,
           disable = { "python" },
           default_lazy = true,
-          default_fallback = "auto"
+          default_fallback = "auto",
         },
-      };
-    end
+      })
+    end,
   },
 
   {
-    'echasnovski/mini.nvim', branch = 'main', config = function()
+    "echasnovski/mini.nvim",
+    branch = "main",
+    config = function()
       require("mini.base16").setup({
         palette = {
           base00 = "#ffffff",
@@ -99,17 +133,17 @@ require("lazy").setup({
           base0E = 90,
           base0F = 31,
         },
-      });
-      require('mini.align').setup()
-    end
+      })
+      require("mini.align").setup()
+    end,
   },
-  { 'numToStr/Comment.nvim', config = true },
-  { 'lewis6991/gitsigns.nvim', config = true },
+  { "numToStr/Comment.nvim",        config = true },
+  { "lewis6991/gitsigns.nvim",      config = true },
   "sindrets/diffview.nvim",
   {
     "kyazdani42/nvim-tree.lua",
     config = function()
-      require "nvim-tree".setup {
+      require("nvim-tree").setup({
         git = { enable = false },
         view = {
           width = 40,
@@ -119,8 +153,15 @@ require("lazy").setup({
         },
         filters = {
           dotfiles = false,
-          custom = { "^\\.git$", "node_modules", "^\\.cache", "__pycache__", "\\.direnv", "\\.ipynb_checkpoints",
-            "vendor" },
+          custom = {
+            "^\\.git$",
+            "node_modules",
+            "^\\.cache",
+            "__pycache__",
+            "\\.direnv",
+            "\\.ipynb_checkpoints",
+            "vendor",
+          },
         },
         actions = {
           open_file = {
@@ -130,8 +171,8 @@ require("lazy").setup({
             },
           },
         },
-      }
-    end
+      })
+    end,
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -154,7 +195,7 @@ require("lazy").setup({
           },
           lualine_x = { "encoding", "fileformat", "filetype" },
           lualine_y = { "progress", "diff" },
-          lualine_z = { "location" }
+          lualine_z = { "location" },
         },
         inactive_sections = {
           lualine_a = {},
@@ -162,30 +203,29 @@ require("lazy").setup({
           lualine_c = { "filename" },
           lualine_x = { "location" },
           lualine_y = {},
-          lualine_z = {}
+          lualine_z = {},
         },
-        tabline = {
-        },
+        tabline = {},
       })
-    end
+    end,
   },
   {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     config = function()
-      require("bufferline").setup {
+      require("bufferline").setup({
         options = {
           numbers = "ordinal",
           diagnostics = "nvim_lsp",
           show_buffer_close_icons = false,
           show_close_icon = false,
         },
-      }
-    end
+      })
+    end,
   },
   {
-    'lukas-reineke/indent-blankline.nvim',
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("indent_blankline").setup {
+      require("indent_blankline").setup({
         char = "|",
         buftype_exclude = { "terminal", "dashboard" },
         space_char_blankline = " ",
@@ -193,14 +233,14 @@ require("lazy").setup({
         char_list = { "|", "¦", "┆", "┊" },
         show_current_context = true,
         show_current_context_start = true,
-      }
-      vim.cmd [[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]]
-    end
+      })
+      vim.cmd([[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]])
+      vim.cmd([[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]])
+    end,
   },
 
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({
         check_ts = true,
@@ -208,18 +248,17 @@ require("lazy").setup({
           lua = { "string" }, -- it will not add a pair on that treesitter node
           javascript = { "template_string" },
           java = false, -- don"t check treesitter on java
-        }
+        },
       })
-    end
+    end,
   },
 
-
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   {
     "nvim-telescope/telescope.nvim",
     config = function()
-      local tele = require('telescope');
-      tele.setup {
+      local tele = require("telescope")
+      tele.setup({
         defaults = {
           file_ignore_patterns = { "^.git/" },
           selection_strategy = "reset",
@@ -237,54 +276,55 @@ require("lazy").setup({
             width = 0.87,
             height = 0.80,
             preview_cutoff = 120,
-          }
+          },
         },
-      };
-      tele.load_extension('fzf');
+      })
+      tele.load_extension("fzf")
 
-      vim.keymap.set('n', '<C-f>', function()
-        require('telescope.builtin').find_files({ hidden = true });
-      end, { noremap = true, silent = true });
-      vim.keymap.set('n', '<C-g>', function()
-        require('telescope.builtin').live_grep({ hidden = true });
-      end, { noremap = true, silent = true });
+      vim.keymap.set("n", "<C-f>", function()
+        require("telescope.builtin").find_files({ hidden = true })
+      end, { noremap = true, silent = true })
+      vim.keymap.set("n", "<C-g>", function()
+        require("telescope.builtin").live_grep({ hidden = true })
+      end, { noremap = true, silent = true })
     end,
     dependencies = {
-      'nvim-telescope/telescope-fzf-native.nvim',
-    }
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
   },
 
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
       "neovim/nvim-lspconfig",
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
-      'rafamadriz/friendly-snippets',
-    }
+      "L3MON4D3/LuaSnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
   },
 
-  { "williamboman/mason.nvim", config = true },
-  { "williamboman/mason-lspconfig.nvim", config = true },
+  { "simrat39/rust-tools.nvim",                 config = true },
 
-  { 'simrat39/rust-tools.nvim', config = true },
-
-  { "kylechui/nvim-surround", config = true },
+  { "kylechui/nvim-surround",                   config = true },
   "gpanders/editorconfig.nvim",
 
   -- markdown preview
-  { "ellisonleao/glow.nvim", config = function()
-    require('glow').setup({
-      style = "light",
-    })
-  end },
-
+  {
+    "ellisonleao/glow.nvim",
+    config = function()
+      require("glow").setup({
+        style = "light",
+      })
+    end,
+  },
 
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -295,11 +335,12 @@ require("lazy").setup({
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.buf,
           null_ls.builtins.formatting.jq,
+          null_ls.builtins.formatting.stylua,
           null_ls.builtins.diagnostics.sqlfluff.with({
             extra_args = { "--dialect", "postgres" }, -- change to your dialect
           }),
         },
       })
-    end
+    end,
   },
 }, opts)

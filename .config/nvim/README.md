@@ -10,12 +10,14 @@
 
 
 ## Formatter
-- Python: black (`pip install black`)
+- Python: black (`brew install black`)
 - Lua:  https://github.com/JohnnyMorganz/StyLua (`brew install stylua`)
+- Protobuf: https://github.com/bufbuild/buf `brew install bufbuild/buf/buf`
+- Json: jq (`brew install jq`)
+- SQL: https://github.com/sqlfluff/sqlfluff (`pip install sqlfluff`)
 
 
 ```lua
-
 {
   "ibhagwan/fzf-lua",
   config = function()
