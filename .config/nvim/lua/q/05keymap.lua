@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.keymap.set(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- delete without copy
@@ -20,43 +20,43 @@ map("n", "<C-l>", "<Cmd>nohl <CR>")
 
 -- buffers
 map("n", "1gt", function()
-	require("bufferline").go_to_buffer(1, true)
+  require("bufferline").go_to_buffer(1, true)
 end)
 map("n", "2gt", function()
-	require("bufferline").go_to_buffer(2, true)
+  require("bufferline").go_to_buffer(2, true)
 end)
 map("n", "3gt", function()
-	require("bufferline").go_to_buffer(3, true)
+  require("bufferline").go_to_buffer(3, true)
 end)
 map("n", "4gt", function()
-	require("bufferline").go_to_buffer(4, true)
+  require("bufferline").go_to_buffer(4, true)
 end)
 map("n", "5gt", function()
-	require("bufferline").go_to_buffer(5, true)
+  require("bufferline").go_to_buffer(5, true)
 end)
 map("n", "6gt", function()
-	require("bufferline").go_to_buffer(6, true)
+  require("bufferline").go_to_buffer(6, true)
 end)
 map("n", "7gt", function()
-	require("bufferline").go_to_buffer(7, true)
+  require("bufferline").go_to_buffer(7, true)
 end)
 map("n", "8gt", function()
-	require("bufferline").go_to_buffer(8, true)
+  require("bufferline").go_to_buffer(8, true)
 end)
 map("n", "9gt", function()
-	require("bufferline").go_to_buffer(9, true)
+  require("bufferline").go_to_buffer(9, true)
 end)
 map("n", "gb", function()
-	require("bufferline").cycle(-1)
+  require("bufferline").cycle( -1)
 end)
 map("n", "gt", function()
-	require("bufferline").cycle(1)
+  require("bufferline").cycle(1)
 end)
 map("n", "gB", function()
-	require("bufferline").cycle(1)
+  require("bufferline").cycle(1)
 end)
 map("n", "gT", function()
-	require("bufferline").cycle(-1)
+  require("bufferline").cycle( -1)
 end)
 
 -- fuzzy & tree stuff
@@ -80,5 +80,29 @@ map("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 map("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 map("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 map("n", "<leader>f", function()
-	vim.lsp.buf.format({ async = true })
+  vim.lsp.buf.format({ async = true })
+end)
+
+
+-- Terminal stuff
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  direction = "float",
+  float_opts = {
+    border = "double",
+  },
+  -- function to run on opening the terminal
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+  end,
+  -- function to run on closing the terminal
+  on_close = function(term)
+    vim.cmd("startinsert!")
+  end,
+})
+
+map("n", "<leader>g", function()
+  lazygit:toggle()
 end)

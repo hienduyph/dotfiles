@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Joplin
+Comment=Joplin for Desktop
+Exec=/home/hienduyph/Applications/Joplin-2.10.6.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland @@u %u @@
+Icon=joplin
+StartupWMClass=@joplin/app-desktop
+Type=Application
+Categories=Office;
+MimeType=x-scheme-handler/joplin;
+X-GNOME-SingleWindow=true
+X-SingleMainWindow=true

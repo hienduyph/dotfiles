@@ -6,4 +6,3 @@ Exec=wl-paste | swappy -f -
 Icon=org.gnome.Screenshot
 Type=Application
 Categories=Office;
-EOF
