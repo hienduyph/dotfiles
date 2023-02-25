@@ -16,6 +16,7 @@ alias ktz="kustomize"
 
 alias se="sudoedit"
 alias yt-mp3="yt-dlp --extract-audio --audio-format mp3"
+alias yt-lossless="yt-dlp --extract-audio --audio-format best"
 
 fetch_git_ignore() {
   langs=$1
