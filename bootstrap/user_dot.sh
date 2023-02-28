@@ -46,6 +46,9 @@ _configs() {
   # k9s
   mkdir -p $HOME/.config/k9s/
   ln -sf $HOME/.config/k9s/skin.yml  $HOME/.config/k9s/
+
+  mkdir -p $HOME/.config/lazygit
+  ln -sf $HOME/.config/lazygit/config.yml  $HOME/.config/lazygit
 }
 
 _dots() {

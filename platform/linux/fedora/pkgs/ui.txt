@@ -3,3 +3,5 @@ gnome-extension-app
 google-chrome-stable
 keepassxc
 firefox
+code
+calibre

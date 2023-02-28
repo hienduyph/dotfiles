@@ -24,9 +24,6 @@ setopt histignorealldups         # trim all duplicates
 
 # completions source
 CF_PATH=$HOME/.zsh/completions:/usr/share/zsh/vendor-completions:/usr/share/zsh/site-functions
-if [[ -f ${HOMEBREW_PREFIX}/bin/brew ]]; then
-  CF_PATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${CF_PATH}"
-fi
 export FPATH=$FPATH:${CF_PATH}
 
 # case insensitive completion

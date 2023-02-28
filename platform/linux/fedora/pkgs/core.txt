@@ -3,13 +3,13 @@ zsh
 jq
 albert
 neovim
+starship
 htop
 cronie cronie-anacron
 curl
+ripgrep
 
-podman-compose
 podman
-podman-docker
 
 alacritty
 
@@ -19,3 +19,33 @@ onedrive
 
 lm_sensors
 sublime-text
+
+exa
+bat
+fd-find
+jq
+fzf
+git
+git-lfs
+gnupg
+tmux
+git-delta
+direnv
+starship
+zoxide
+lazygit
+make
+cmake
+ansible
+
+gcc
+gcc-g++
+kubectl
+helm
+
+python3
+python3-pip
+python3-devel
+python3-virtualenv
+go
+nodejs
