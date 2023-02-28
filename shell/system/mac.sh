@@ -1,5 +1,9 @@
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
+if [[ -f ${HOMEBREW_PREFIX}/bin/brew ]]; then
+  export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+fi
+
 u() {
   brew update && brew upgrade && brew cleanup
   # nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
@@ -25,3 +29,4 @@ xcode_dl() {
 
   xip -x ~/Downloads/Xcode_${VERSION}
 }
+

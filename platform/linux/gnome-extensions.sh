@@ -19,6 +19,7 @@ exts=(
   https://extensions.gnome.org/extension/841/freon/
   https://extensions.gnome.org/extension/28/gtile/
   https://extensions.gnome.org/extension/5237/rounded-window-corners/
+  https://extensions.gnome.org/extension/615/appindicator-support/
 )
 
 _install_ext() {

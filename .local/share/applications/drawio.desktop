@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=DrawIO
+Exec=/home/hienduyph/Applications/drawio-x86_64-20.8.16.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland %F
+Icon=drawio
+Type=Application
+StartupNotify=false
+StartupWMClass=draw.io
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
