@@ -115,7 +115,7 @@ function M.deno()
   M.setup_ls("denols")
 end
 
-local servers = { "clangd", "jsonls", "html", "cssls", "bashls" }
+local servers = { "jsonls", "html", "cssls", "bashls" }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
@@ -194,6 +194,13 @@ nvim_lsp.gopls.setup({
       staticcheck = false,
     },
   },
+})
+
+nvim_lsp.clangd.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = flags,
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 })
 
 -- lua with nvim

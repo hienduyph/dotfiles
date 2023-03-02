@@ -127,6 +127,10 @@ _nix() {
 _mac() {
   mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages"
   ln -sf ~/dotfiles/.config/sublime-text/User "$HOME/Library/Application Support/Sublime Text/Packages/"
+
+  mkdir -m 0700 ~/.gnupg
+  echo "pinentry-program $($HOMEBREW_PREFIX/bin/brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
+  pkill -TERM gpg-agent
 }
 
 _linux() {

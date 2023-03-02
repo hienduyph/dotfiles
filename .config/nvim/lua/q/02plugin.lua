@@ -334,8 +334,8 @@ require("lazy").setup({
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.buf,
           null_ls.builtins.formatting.jq,
-          null_ls.builtins.diagnostics.sqlfluff.with({
-            extra_args = { "--dialect", "postgres" }, -- change to your dialect
+          null_ls.builtins.formatting.sqlfluff.with({
+            extra_args = { "--dialect", "postgres" },
           }),
         },
       })
