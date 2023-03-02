@@ -17,6 +17,11 @@ brew "htop"
 
 brew "mas"
 
+brew "gpg"
+brew "gpg2"
+brew "pinentry-mac"
+brew "keychain"
+
 cask "alacritty"
 cask "dropbox"
 cask "google-chrome"
@@ -26,3 +31,4 @@ cask "keepassxc"
 cask "eqmac"
 
 mas "Blackmagic Disk Speed Test", id: 425264550
+

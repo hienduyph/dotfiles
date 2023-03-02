@@ -49,6 +49,12 @@ EOF
 _mac() {
   echo "Setup mac syste"
   sudo chown -R brew:brew /opt/homebrew
+
+  sudo mkdir -p /opt/homebrew/etc/
+  sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /opt/homebrew/etc/dnscrypt-proxy.toml
+  sudo mkdir -p /etc/dnscrypt-proxy/
+  sudo touch /etc/dnscrypt-proxy/forwarding-rules.txt
+  sudo chown -R $ACTOR /etc/dnscrypt-proxy/forwarding-rules.txt
 }
 
 __system() {

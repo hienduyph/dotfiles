@@ -2,7 +2,7 @@ vim.api.nvim_create_user_command("GD", "DiffviewOpen", { nargs = 0 })
 vim.api.nvim_create_user_command("GDC", "DiffviewClose", { nargs = 0 })
 
 vim.api.nvim_create_user_command("Format", function()
-  vim.lsp.buf.format({ async = true })
+  vim.lsp.buf.format({ async = false, timeout_ms = 30000 })
 end, { nargs = 0 })
 
 -- lsp import
@@ -33,4 +33,15 @@ vim.api.nvim_create_user_command("MinifyJSON", "%!jq -c .", { nargs = 0 })
 vim.api.nvim_create_user_command("BufOnly", '%bdelete!|edit #|normal `"', { nargs = 0 })
 vim.api.nvim_create_user_command("Black", "!black %", { nargs = 0 })
 
--- vim.cmd([[ autocmd BufWritePre * lua vim.lsp.buf.format { async = true } ]])
+vim.cmd([[ autocmd BufWritePre *.go lua vim.lsp.buf.format { async = true } ]])
+
+vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+  pattern = {
+    "*.go",
+    "*.md",
+    "*.lua",
+  },
+  callback = function ()
+    vim.lsp.buf.format { async = true }
+  end,
+})
