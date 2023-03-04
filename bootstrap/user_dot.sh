@@ -139,7 +139,7 @@ _linux() {
 }
 
 _rust() {
-  $($HOMEBREW_PREFIX/bin/rustup-init --default-toolchain stable --no-modify-path --profile default -y
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable --no-modify-path --profile default -y
 }
 
 _java() {
