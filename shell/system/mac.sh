@@ -7,6 +7,7 @@ fi
 u() {
   brew update && brew upgrade && brew cleanup
   # nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+  nvim --headless "+Lazy! update" +qa
   nvim --headless -c 'TSUpdateSync' -c 'quitall'
 }
 
