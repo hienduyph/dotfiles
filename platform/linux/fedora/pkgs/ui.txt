@@ -1,5 +1,5 @@
 gnome-tweak-tool
-gnome-extension-app
+gnome-extensions-app
 google-chrome-stable
 keepassxc
 firefox

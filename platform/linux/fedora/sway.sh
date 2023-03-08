@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel wev
+sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel wev \
+  fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
@@ -10,6 +11,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 exec sway --unsupported-gpu
 EOF

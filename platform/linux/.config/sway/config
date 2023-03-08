@@ -7,8 +7,8 @@ font Liberation Sans Regular 10
 font pango:JetBrainsMono Nerd Font 9
 
 # border
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 0
+default_floating_border pixel 0
 
 exec --no-startup-id dex-autostart --autostart --environment sway
 
@@ -156,7 +156,7 @@ bindsym $mod+r mode "resize"
 set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"        
+  bindsym e exec --no-startup-id sway exit, mode "default"        
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -183,9 +183,12 @@ input * {
 # workaroud for chrome app
 for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
 for_window [shell="xwayland"] title_format "%title [XWayland]"
+default_border none
+default_floating_border none
 
 output "*" background "~/.config/desktop.png" fill
 
 include ~/.config/sway/config.d/*
 
 exec --no-startup-id nm-applet --indicator
+exec --no-startup-id fcitx5 -d
