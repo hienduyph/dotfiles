@@ -39,3 +39,10 @@ fedora_maintenance() {
 get_docker_ip() {
   echo "$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' $1)"
 }
+
+_gocryptfs() {
+  VERSION=$(gh_latest_release rfjakob/gocryptfs)
+  echo "Install ${VERSION}"
+  mkdir $HOME/.local/bin
+  curl -fsSL https://github.com/rfjakob/gocryptfs/releases/download/${VERSION}/gocryptfs_${VERSION}_linux-static_amd64.tar.gz | tar xz -C $HOME/.local/bin
+}

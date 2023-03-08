@@ -192,4 +192,3 @@ include ~/.config/sway/config.d/*
 
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
-exec --no-startup-id ~/.config/sway/sshagent.sh
