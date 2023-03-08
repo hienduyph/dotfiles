@@ -32,10 +32,10 @@ bindsym Mod1+space exec --no-startup-id fuzzel
 
 # change focus
 
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -57,10 +57,10 @@ bindsym $mod+Shift+Right move right
 
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -191,6 +191,7 @@ include ~/.config/sway/config.d/*
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
+exec --no-startup-id command -v sworkstyle && sworkstyle -d -l info &> /tmp/sworkstyle.log
 
 exec_always {
   gsettings set org.gnome.desktop.interface font-name "Liberation Sans 11"
