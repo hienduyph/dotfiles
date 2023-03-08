@@ -3,8 +3,8 @@ set $mod Mod4
 # xwayland disable
 
 # is used in the bar {} block below.
-font Liberation Sans Regular 10
-font pango:JetBrainsMono Nerd Font 9
+font JetBrainsMono Nerd Font 10
+font pango:JetBrainsMono Nerd Font 10
 
 # border
 default_border pixel 0
@@ -13,14 +13,14 @@ default_floating_border pixel 0
 exec --no-startup-id dex-autostart --autostart --environment sway
 
 exec swayidle -w \
-    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t' \
-    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t' \
+    timeout 301 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 000000'
 
-bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+bindsym Mod1+l exec swayidle -w  \
+	timeout 1 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
+	timeout 2 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
 
 # start a terminal : wezterm or alacritty
 bindsym $mod+Return exec alacritty
@@ -192,3 +192,4 @@ include ~/.config/sway/config.d/*
 
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
+exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
