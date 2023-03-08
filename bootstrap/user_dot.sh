@@ -31,6 +31,7 @@ _configs() {
     i3status
     redshift
     sway
+    waybar
     fcitx5
   )
 
@@ -45,10 +46,10 @@ _configs() {
 
   # k9s
   mkdir -p $HOME/.config/k9s/
-  ln -sf $HOME/.config/k9s/skin.yml  $HOME/.config/k9s/
+  ln -sf $HOME/dotfiles/.config/k9s/skin.yml  $HOME/.config/k9s/
 
   mkdir -p $HOME/.config/lazygit
-  ln -sf $HOME/.config/lazygit/config.yml  $HOME/.config/lazygit
+  ln -sf $HOME/dotfiles/.config/lazygit/config.yml  $HOME/.config/lazygit
 }
 
 _dots() {
@@ -89,13 +90,6 @@ _dots() {
 }
 
 _git() {
-  if command -v pinentry-curses; then
-    mkdir -p ~/.gnupg
-    tee ~/.gnupg/gpg-agent.conf << EOF
-pinentry-program $(which pinentry-curses)
-EOF
-  fi
-
   command -v git && git config --global init.defaultBranch main
 }
 
