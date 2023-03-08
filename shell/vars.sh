@@ -27,10 +27,10 @@ export BAT_THEME=GitHub
 
 if [[ "$PLATFORM" == "linux" ]]; then
   export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-  brew() {
-    CURR=$(pwd)
-    cd /tmp; sudo -Hu brew $HOMEBREW_PREFIX/bin/brew $@; cd ${CUR}
-  }
+  # brew() {
+  #   CURR=$(pwd)
+  #   cd /tmp; sudo -Hu brew $HOMEBREW_PREFIX/bin/brew $@; cd ${CUR}
+  # }
 elif [[ "$PLATFORM" == "darwin" ]]; then
   # mac intel, no no
   export HOMEBREW_PREFIX=/opt/homebrew

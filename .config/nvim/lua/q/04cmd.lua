@@ -33,13 +33,12 @@ vim.api.nvim_create_user_command("MinifyJSON", "%!jq -c .", { nargs = 0 })
 vim.api.nvim_create_user_command("BufOnly", '%bdelete!|edit #|normal `"', { nargs = 0 })
 vim.api.nvim_create_user_command("Black", "!black %", { nargs = 0 })
 
-vim.cmd([[ autocmd BufWritePre *.go lua vim.lsp.buf.format { async = true } ]])
-
-vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = {
     "*.go",
     "*.md",
     "*.lua",
+    "*.py",
   },
   callback = function ()
     vim.lsp.buf.format { async = true }
