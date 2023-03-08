@@ -5,10 +5,3 @@ font:
     style: Light
 key_bindings:
   - { key: N,     mods: Option,       action: SpawnNewInstance }
-shell:
-  program: /usr/bin/tmux
-  args:
-    - new-session
-    - -A
-    - -s
-    - Lala
