@@ -6,10 +6,6 @@ set $mod Mod4
 font JetBrainsMono Nerd Font 10
 font pango:JetBrainsMono Nerd Font 10
 
-# border
-default_border pixel 0
-default_floating_border pixel 0
-
 exec --no-startup-id dex-autostart --autostart --environment sway
 
 exec swayidle -w \
@@ -183,8 +179,10 @@ input * {
 # workaroud for chrome app
 for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
 for_window [shell="xwayland"] title_format "%title [XWayland]"
-default_border none
-default_floating_border none
+
+# default_floating_border pixel 0
+default_border pixel 1
+client.focused "#9f1209" "#9f1209" "#ffffff" "#9f1209"
 
 output "*" background "~/.config/desktop.png" fill
 
@@ -193,3 +191,8 @@ include ~/.config/sway/config.d/*
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
+
+exec_always {
+  gsettings set org.gnome.desktop.interface font-name "Liberation Sans 11"
+  gsettings set org.gnome.desktop.wm.preferences button-layout :
+}
