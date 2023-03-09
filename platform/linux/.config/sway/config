@@ -8,15 +8,16 @@ font pango:JetBrainsMono Nerd Font 10
 
 exec --no-startup-id dex-autostart --autostart --environment sway
 
+# timeout 301 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -c 000000'
 exec swayidle -w \
-    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
-    timeout 301 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -c 000000'
+    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' 
 
-bindsym Mod1+l exec swayidle -w  \
-	timeout 1 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
-	timeout 2 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
+# bindsym Mod1+l exec swayidle -w  \
+# 	timeout 1 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
+# 	timeout 2 'swaymsg "output * dpms off"' \
+# 	resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
+
+bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill
 
 # start a terminal : wezterm or alacritty
 bindsym $mod+Return exec alacritty
@@ -194,6 +195,8 @@ exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
 exec --no-startup-id command -v sworkstyle && sworkstyle -d -l info &> /tmp/sworkstyle.log
 
 exec_always {
-  gsettings set org.gnome.desktop.interface font-name "Liberation Sans 11"
+  gsettings set org.gnome.desktop.interface font-name "Liberation Sans 10"
+  gsettings set org.gnome.desktop.interface document-font-name "Liberation Sans 10"
+  gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font Light 10'
   gsettings set org.gnome.desktop.wm.preferences button-layout :
 }
