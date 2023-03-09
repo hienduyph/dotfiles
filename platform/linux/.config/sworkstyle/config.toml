@@ -32,5 +32,6 @@ fallback = ''
 'Alacritty' = ''
 'org.keepassxc.KeePassXC'=""
 '/.*Telegram.*/'=''
-'/.*Notion.*/'='N'
+'/.*Notion.*/'=''
 '/.*Slack.*/'=''
+'evince' = ''
