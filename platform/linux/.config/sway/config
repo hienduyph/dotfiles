@@ -192,7 +192,8 @@ include ~/.config/sway/config.d/*
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
-exec --no-startup-id command -v sworkstyle && sworkstyle -d -l info &> /tmp/sworkstyle.log
+exec --no-startup-id /opt/local/bin/sworkstyle -d -l info &> /tmp/sworkstyle.log
+exec --no-startup-id mako
 
 exec_always {
   gsettings set org.gnome.desktop.interface font-name "Liberation Sans 10"

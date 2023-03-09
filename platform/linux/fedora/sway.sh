@@ -8,7 +8,7 @@ done
 # https://github.com/fairyglade/ly/issues/228#issuecomment-756742472
 #
 sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel wev \
-  fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman
+  fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
