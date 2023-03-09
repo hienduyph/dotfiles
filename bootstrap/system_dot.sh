@@ -35,7 +35,6 @@ EDITOR=nvim
 VISUAL=nvim
 SYSTEMD_EDITOR=nvim
 KUBE_EDITOR=nvim
-HOMEBREW_INSTALL_FROM_API=1
 EOF
 
 
@@ -58,13 +57,16 @@ _mac() {
 }
 
 __system() {
+  ACTOR=$1
+  sudo mkdir -p /opt/local/bin/
+  sudo chown -R $ACTOR -p /opt/local/bin/
   _env
   _brew
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
-    _linux
+    _linux $ACTOR
   fi
 }
 
-__system
+__system $@
