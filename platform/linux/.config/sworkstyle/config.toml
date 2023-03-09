@@ -31,5 +31,6 @@ fallback = ''
 '/yarn/' = ''
 'Alacritty' = ''
 'org.keepassxc.KeePassXC'=""
-'org.telegram.desktop'=''
+'/.*Telegram.*/'=''
 '/.*Notion.*/'='N'
+'/.*Slack.*/'=''

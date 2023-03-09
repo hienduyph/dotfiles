@@ -9,7 +9,7 @@ font pango:JetBrainsMono Nerd Font 10
 exec --no-startup-id dex-autostart --autostart --environment sway
 
 exec swayidle -w \
-    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t' \
+    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
     timeout 301 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 000000'
 
@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 # Show System Power Menu
 set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-  bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t, mode "default"
+  bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t, mode "default"
   bindsym e exec --no-startup-id sway exit, mode "default"        
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
@@ -182,7 +182,7 @@ for_window [shell="xwayland"] title_format "%title [XWayland]"
 
 # default_floating_border pixel 0
 default_border pixel 1
-client.focused "#9f1209" "#9f1209" "#ffffff" "#9f1209"
+client.focused "#860066" "#860066" "#ffffff" "#860066"
 
 output "*" background "~/.config/desktop.png" fill
 
