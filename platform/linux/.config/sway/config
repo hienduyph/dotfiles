@@ -8,17 +8,6 @@ font pango:JetBrainsMono Nerd Font 10
 
 exec --no-startup-id dex-autostart --autostart --environment sway
 
-# timeout 301 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -c 000000'
-exec swayidle -w \
-    timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' 
-
-# bindsym Mod1+l exec swayidle -w  \
-# 	timeout 1 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
-# 	timeout 2 'swaymsg "output * dpms off"' \
-# 	resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
-
-bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill
-
 # start a terminal : wezterm or alacritty
 bindsym $mod+Return exec alacritty
 
@@ -192,7 +181,7 @@ include ~/.config/sway/config.d/*
 exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
-exec --no-startup-id /opt/local/bin/sworkstyle -d -l info &> /tmp/sworkstyle.log
+exec --no-startup-id sworkstyle -d -l info &> /tmp/sworkstyle.log
 exec --no-startup-id mako
 
 exec_always {
