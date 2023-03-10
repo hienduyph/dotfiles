@@ -62,8 +62,8 @@
 
 
 window#waybar {
-    border-bottom-style: inset;
-    border-bottom: 1px solid #689d6a;
+    /*border-bottom-style: inset;
+    border-bottom: 1px solid #689d6a; */
     background: #1d2021;
 }
 
