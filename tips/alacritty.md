@@ -7,7 +7,7 @@ shell:
   args:
     - -l
     - -c
-    - eval "tmux $(tmux ls | grep -vq attached && echo 'attach -d')"
+    - eval "tmux $(tmux ls 2>/dev/null | grep -vq attached && echo 'attach -d')"
 ```
 
 ## Fixed tmux
@@ -19,4 +19,10 @@ shell:
     - -A
     - -s
     - Lala
+```
+With zellij
+
+```yaml
+shell:
+  program: /opt/local/bin/zellij
 ```

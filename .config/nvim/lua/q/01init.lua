@@ -99,6 +99,11 @@ autocmd(
   { "BufNewFile", "BufRead", "FileReadPre", "FileType" },
   { pattern = ".envrc", command = [[ set filetype=bash ]] }
 )
+autocmd(
+  { "BufNewFile", "BufRead", "FileReadPre", "FileType" },
+  { pattern = "*.kdl", command = [[ set filetype=kdl ]] }
+)
+
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*.go", callback = use_tabs })
 autocmd(
   { "BufNewFile", "BufRead", "FileReadPre", "FileType" },
