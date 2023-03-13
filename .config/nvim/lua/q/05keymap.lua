@@ -60,7 +60,7 @@ map("n", "gT", function()
 end)
 
 -- fuzzy & tree stuff
-map("n", "<C-y>", require("nvim-tree").toggle)
+map("n", "<C-y>", "<cmd>NvimTreeToggle<CR>")
 
 -- lsp stuff
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")

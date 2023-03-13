@@ -71,6 +71,7 @@ require("lazy").setup({
           "make",
           "cmake",
           "latex",
+          "kdl",
         },
         autopairs = {
           enable = true,
