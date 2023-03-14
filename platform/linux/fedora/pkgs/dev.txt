@@ -1,2 +1,4 @@
 mysql-devel
 libpq
+snappy-devel
+gh

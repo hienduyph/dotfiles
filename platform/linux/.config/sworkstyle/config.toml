@@ -39,4 +39,4 @@ fallback = ''
 '/.*Joplin.*/'='J'
 '/.*calibre.*/'=''
 '/.*Bluetooth.*/' = ''
-
+'/.*Visual Studio.*/' = ''
