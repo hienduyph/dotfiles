@@ -8,7 +8,8 @@ done
 # https://github.com/fairyglade/ly/issues/228#issuecomment-756742472
 #
 sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wlr-randr sway dex-autostart waybar fuzzel wev \
-  fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako flameshot
+  fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako flameshot \
+  kvantum
 
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
@@ -25,7 +26,7 @@ export CLUTTER_BACKEND=wayland
 
 # qt stuff
 export QT_QPA_PLATFORM=wayland
-export QT_WAYLAND_DECORATION=material
+export QT_STYLE_OVERRIDE=kvantum
 
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
