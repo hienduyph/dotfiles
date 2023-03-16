@@ -1,9 +1,1 @@
-font=JetBrainsMono Nerd Font 10
-background-color=#151718
-text-color=#ffffff
-border-color=#151718
-ignore-timeout = 1
-default-timeout = 5000
-
-[urgency=high]
-text-color=#ffffff
+default-timeout=5000
