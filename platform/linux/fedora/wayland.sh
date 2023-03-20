@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo dnf install wl-clipboard  -y
+sudo dnf install -y  wl-clipboard xlsclients swappy
 
 DST=/usr/bin/start-gdm-wayland
 sudo tee $DST << EOF
