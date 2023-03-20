@@ -335,6 +335,7 @@ require("lazy").setup({
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.buf,
           null_ls.builtins.formatting.jq,
+          null_ls.builtins.diagnostics.golangci_lint,
           null_ls.builtins.formatting.sqlfluff.with({
             extra_args = { "--dialect", "postgres" },
           }),
@@ -347,4 +348,13 @@ require("lazy").setup({
     version = "*",
     opts = {},
   },
+  {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+      }
+    end
+  },
+
 }, opts)
