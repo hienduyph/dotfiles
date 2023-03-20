@@ -30,7 +30,8 @@ vim.api.nvim_create_user_command("List", vim.diagnostic.setloclist, { nargs = 0 
 vim.api.nvim_create_user_command("FormatJSON", "%!jq .", { nargs = 0 })
 vim.api.nvim_create_user_command("MinifyJSON", "%!jq -c .", { nargs = 0 })
 
-vim.api.nvim_create_user_command("BufOnly", '%bdelete!|edit #|normal `"', { nargs = 0 })
+vim.api.nvim_create_user_command("BufOnly", '%bd|e#|bd#', { nargs = 0 })
+
 vim.api.nvim_create_user_command("Black", "!black %", { nargs = 0 })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -40,7 +41,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     "*.lua",
     "*.py",
   },
-  callback = function ()
+  callback = function()
     vim.lsp.buf.format { async = true }
   end,
 })
