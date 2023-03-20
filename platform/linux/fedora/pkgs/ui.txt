@@ -1,6 +1,7 @@
 gnome-tweak-tool
 gnome-extensions-app
 google-chrome-stable
+microsoft-edge-stable
 keepassxc
 firefox
 code

@@ -1,4 +1,19 @@
+<<<<<<< Updated upstream
+||||||| Stash base
+
+dnscrypt-proxy
+=======
+dnscrypt-proxy
+>>>>>>> Stashed changes
 albert
+<<<<<<< Updated upstream
+||||||| Stash base
+podman
+=======
+podman
+container-selinux
+podman-compose
+>>>>>>> Stashed changes
 alacritty
 gnome-tweaks
 onedrive
