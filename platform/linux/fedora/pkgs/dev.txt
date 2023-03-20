@@ -2,3 +2,14 @@ mysql-devel
 libpq
 snappy-devel
 gh
+sqlite-devel
+podman
+podman-compose
+
+kubectl
+helm
+
+python3
+python3-pip
+python3-devel
+python3-virtualenv

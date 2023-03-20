@@ -1,11 +1,6 @@
-
-dnscrypt-proxy
 albert
-podman
 alacritty
-swappy
 gnome-tweaks
 onedrive
 lm_sensors
 sublime-text
-
