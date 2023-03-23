@@ -130,6 +130,10 @@ _mac() {
 _linux() {
   mkdir -p $HOME/.config/sublime-text-3/Packages/
   ln -sf ~/dotfiles/.config/sublime-text/User $HOME/.config/sublime-text-3/Packages/
+
+  mkdir -m 0700 ~/.gnupg
+  echo "pinentry-program /usr/bin/pinentry-curses" | tee ~/.gnupg/gpg-agent.conf
+  pkill -TERM gpg-agent
 }
 
 _rust() {

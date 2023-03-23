@@ -6,6 +6,11 @@ set $mod Mod4
 font JetBrainsMono Nerd Font 10
 font pango:JetBrainsMono Nerd Font 10
 
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY SWAYSOCK
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 exec --no-startup-id dex-autostart --autostart --environment sway
 
 # start a terminal : wezterm or alacritty
