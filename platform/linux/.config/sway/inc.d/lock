@@ -1,7 +1,7 @@
 # vim: syntax=swayconfig
 
 exec swayidle -w \
-  timeout 300 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' 
+  timeout 600 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' 
 
 bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill
 
