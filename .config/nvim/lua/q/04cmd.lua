@@ -7,22 +7,8 @@ end, { nargs = 0 })
 
 -- lsp import
 -- refer https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
-local function lsp_organize_imports(timeout_ms)
-  local params = vim.lsp.util.make_range_params()
-  params.context = { only = { "source.organizeImports" } }
-  local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
-  for _, res in ipairs(result or {}) do
-    for _, r in ipairs(res.result or {}) do
-      if r.edit then
-        vim.lsp.util.apply_workspace_edit(r.edit, "UTF-8")
-      else
-        vim.lsp.buf.execute_command(r.command)
-      end
-    end
-  end
-end
 vim.api.nvim_create_user_command("OR", function()
-  lsp_organize_imports(5000)
+  vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("List", vim.diagnostic.setloclist, { nargs = 0 })
