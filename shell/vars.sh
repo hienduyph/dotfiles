@@ -2,7 +2,7 @@ export NPM_CONFIG_PREFIX="${HOME}/.npm-packages"
 export GOPATH="$HOME/.go"
 export BASHMAN_DIR=$HOME/.config/bashman
 export ANDROID_HOME=$HOME/Android/Sdk
-export APP_HOME=$HOME/Applications
+export APP_HOME=/opt/apps
 
 
 prependToPATH() {

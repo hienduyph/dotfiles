@@ -9,10 +9,6 @@ fp() {
 
 fp remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-while IFS= read -r line; do
-  fp install -y $line
-done < $APP_ROOT/apps.txt
-
 cp -r /usr/share/icons ~/.icons
 
 fp override --filesystem=/home/$USER/.icons/:ro \
@@ -24,5 +20,12 @@ fp override --filesystem=/home/$USER/.icons/:ro \
   --nosocket=fallback-x11\
   --device=dri
 
-fp override --env=MOZ_DISABLE_RDD_SANDBOX=1 org.mozilla.firefox
-fp override --user --filesystem=~/.local/share/applications:create --filesystem=~/.local/share/icons:create com.google.Chrome
+# fp override --env=MOZ_DISABLE_RDD_SANDBOX=1 org.mozilla.firefox
+# fp override --user --filesystem=~/.local/share/applications:create --filesystem=~/.local/share/icons:create com.google.Chrome
+
+_all() {
+while IFS= read -r line; do
+  fp install -y $line
+done < $APP_ROOT/apps.txt
+}
+
