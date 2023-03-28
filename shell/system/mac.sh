@@ -5,7 +5,7 @@ if [[ -f ${HOMEBREW_PREFIX}/bin/brew ]]; then
 fi
 
 u() {
-  brew update && brew upgrade && brew cleanup
+  brew update && brew upgrade && brew upgrade --cask  --greedy && brew cleanup
   # nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   nvim --headless "+Lazy! update" +qa
   nvim --headless -c 'TSUpdateSync' -c 'quitall'
