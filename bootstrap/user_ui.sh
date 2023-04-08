@@ -31,6 +31,7 @@ _fonts() {
     curl -sLO 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf'
     curl -slo /tmp/font.zip 'https://fonts.google.com/download?family=Roboto'
     unzip -d ${FONT_DIR} /tmp/font.zip
+    fc-cache -fv
   cd -; }
 }
 

@@ -132,3 +132,7 @@ autocmd(
   { "BufNewFile", "BufRead", "FileReadPre", "FileType" },
   { pattern = "*.md", command = [[set formatoptions+=ro comments=b:*,b:-,b:+,b:1.,n:>]] }
 )
+
+autocmd({ "BufRead", "BufNewFile", },
+  { pattern = { "*/playbooks/*.yml", "*/playbooks/*.yaml" }, command = [[ set filetype=yaml.ansible ]] }
+)

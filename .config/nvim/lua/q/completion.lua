@@ -115,7 +115,7 @@ function M.deno()
   M.setup_ls("denols")
 end
 
-local servers = { "jsonls", "html", "cssls", "bashls" }
+local servers = { "jsonls", "html", "cssls", "bashls", "ansiblels" }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
