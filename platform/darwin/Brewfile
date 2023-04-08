@@ -1,3 +1,5 @@
+# ft=ruby
+
 cask_args appdir: "~/Applications"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -29,6 +31,8 @@ cask "telegram"
 cask "firefox"
 cask "keepassxc"
 cask "eqmac"
+cask "obsidian"
+cask "amethyst"
 
 mas "Blackmagic Disk Speed Test", id: 425264550
 
