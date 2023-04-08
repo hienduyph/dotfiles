@@ -19,10 +19,9 @@ u() {
     home-manager switch
   fi
 
-  # if command -v brew > /dev/null; then
-  #   local CUR="$(pwd)"
-  #   cd /tmp; brew update && brew upgrade && brew cleanup; cd ${CUR}
-  # fi
+  if command -v brew > /dev/null; then
+    brew update && brew upgrade && brew cleanup
+  fi
 }
 
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
