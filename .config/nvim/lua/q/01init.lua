@@ -3,6 +3,7 @@ local g = vim.g
 
 vim.o.exrc = true
 
+
 vim.diagnostic.config({
   virtual_text = false,
 })
@@ -16,6 +17,8 @@ vim.cmd([[
 -- enable filetype.lua
 g.do_filetype_lua = 1
 g.do_legacy_filetype = 0
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 opt.number = true
 opt.ruler = true
