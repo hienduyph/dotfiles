@@ -248,7 +248,7 @@ require("lazy").setup({
         ts_config = {
           lua = { "string" }, -- it will not add a pair on that treesitter node
           javascript = { "template_string" },
-          java = false,       -- don"t check treesitter on java
+          java = false, -- don"t check treesitter on java
         },
       })
     end,
@@ -287,6 +287,9 @@ require("lazy").setup({
       end, { noremap = true, silent = true })
       vim.keymap.set("n", "<C-g>", function()
         require("telescope.builtin").live_grep({ hidden = true })
+      end, { noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fb", function()
+        require("telescope.builtin").buffers()
       end, { noremap = true, silent = true })
     end,
     dependencies = {
