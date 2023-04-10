@@ -5,13 +5,10 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-
 tap "homebrew/bundle"
 tap "hashicorp/tap"
 
 tap "derailed/k9s"
-tap "bufbuild/buf"
-
 brew "telnet"
 brew "gnu-sed"
 brew "procs"
