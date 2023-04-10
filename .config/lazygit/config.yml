@@ -1,3 +1,7 @@
 gui:
   theme:
     lightTheme: true
+git:
+  paging:
+    colorArg: always
+    pager: delta --light --paging=never --side-by-side

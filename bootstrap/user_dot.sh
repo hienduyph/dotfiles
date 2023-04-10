@@ -18,6 +18,7 @@ _configs() {
     ranger
     nvim
     starship.toml
+    lazygit
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -30,8 +31,11 @@ _configs() {
     i3
     i3status
     redshift
+    mako
     sway
     waybar
+    sworkstyle
+    fuzzel
     fcitx5
   )
 
