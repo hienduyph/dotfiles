@@ -194,7 +194,7 @@ require("lazy").setup({
               path = 1,
             },
           },
-          lualine_x = { "encoding", "fileformat", "filetype" },
+          lualine_x = { "encoding", "filetype" },
           lualine_y = { "progress", "diff" },
           lualine_z = { "location" },
         },
@@ -248,7 +248,7 @@ require("lazy").setup({
         ts_config = {
           lua = { "string" }, -- it will not add a pair on that treesitter node
           javascript = { "template_string" },
-          java = false, -- don"t check treesitter on java
+          java = false,       -- don"t check treesitter on java
         },
       })
     end,
