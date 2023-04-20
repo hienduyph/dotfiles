@@ -1,0 +1,5 @@
+node_modules
+.direnv
+.git
+.pytest_cache
+__pycache__
