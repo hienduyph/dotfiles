@@ -32,6 +32,7 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 
 export GTK_IM_MODULE=fcitx
+export GTK_THEME=Adwaita:light
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export CALIBRE_USE_DARK_PALETTE=1
