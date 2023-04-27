@@ -6,6 +6,10 @@ sudo dnf install -y curl wget python3 python3-pip python3-devel liberation-fonts
 sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
 sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
+sudo dnf install fedora-workstation-repositories -y
+
+sudo dnf config-manager --set-enabled google-chrome
+
 sudo dnf remove PackageKit fedora-chromium-config -y
 
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg

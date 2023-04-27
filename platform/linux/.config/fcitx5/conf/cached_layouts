@@ -338,6 +338,16 @@ Description="Keyboard - Russian - Russian (typewriter)"
 Language=ru
 Label="ru (typewriter)"
 
+[keyboard-ru-ruchey_ru]
+Description="Keyboard - Russian - Russian (engineering, RU)"
+Language=ru
+Label="ru (ruchey_ru)"
+
+[keyboard-ru-ruchey_en]
+Description="Keyboard - Russian - Russian (engineering, EN)"
+Language=ru
+Label="en (ruchey_en)"
+
 [keyboard-ru-legacy]
 Description="Keyboard - Russian - Russian (legacy)"
 Language=ru
@@ -483,15 +493,15 @@ Description="Keyboard - Russian - Russian (Polyglot and Reactionary)"
 Language=ru
 Label="ru (prxn)"
 
-[keyboard-ru-ruchey_cyrillic]
-Description="Keyboard - Russian - Russian (Engineering, Cyrillic)"
+[keyboard-ru-winkeys-p]
+Description="Keyboard - Russian - Russian (Programmer)"
 Language=ru
-Label="ru (ruchey_cyrillic)"
+Label=winkeys-p
 
-[keyboard-ru-ruchey_latin]
-Description="Keyboard - Russian - Russian (Engineering, Latin)"
+[keyboard-ru-typo]
+Description="Keyboard - Russian - Russian (typographic)"
 Language=ru
-Label="us (ruchey_latin)"
+Label="ru (typo)"
 
 [keyboard-trans]
 Description="Keyboard - International Phonetic Alphabet"
@@ -512,6 +522,11 @@ Label=fa
 Description="Keyboard - Persian - Persian (with Persian keypad)"
 Language=fa
 Label="ir (pes_keypad)"
+
+[keyboard-ir-azb]
+Description="Keyboard - Persian - Azerbaijani (Iran)"
+Language=azb
+Label=azb
 
 [keyboard-ir-ku]
 Description="Keyboard - Persian - Kurdish (Iran, Latin Q)"
@@ -897,6 +912,11 @@ Label="us (colemak_dh)"
 Description="Keyboard - English (US) - English (Colemak-DH ISO)"
 Language=en
 Label="us (colemak_dh_iso)"
+
+[keyboard-us-colemak_dh_ortho]
+Description="Keyboard - English (US) - English (Colemak-DH Ortholinear)"
+Language=en
+Label="us (colemak_dh_ortho)"
 
 [keyboard-us-dvorak]
 Description="Keyboard - English (US) - English (Dvorak)"
@@ -1813,6 +1833,11 @@ Description="Keyboard - Belarusian - Belarusian (intl.)"
 Language=be
 Label="by (intl)"
 
+[keyboard-by-phonetic]
+Description="Keyboard - Belarusian - Belarusian (phonetic)"
+Language=be
+Label="by (phonetic)"
+
 [keyboard-br]
 Description="Keyboard - Portuguese (Brazil)"
 Language=pt
@@ -1898,6 +1923,11 @@ Description="Keyboard - Indian - Gujarati"
 Language=gu
 Label="gu (guj)"
 
+[keyboard-in-guj-kagapa]
+Description="Keyboard - Indian - Gujarati (KaGaPa, phonetic)"
+Language=gu
+Label="guj (guj-kagapa)"
+
 [keyboard-in-guru]
 Description="Keyboard - Indian - Punjabi (Gurmukhi)"
 Language=pa
@@ -1953,30 +1983,35 @@ Description="Keyboard - Indian - Ol Chiki"
 Language=sat
 Label="sat (olck)"
 
-[keyboard-in-tam_tamilnet]
+[keyboard-in-tamilnet]
 Description="Keyboard - Indian - Tamil (TamilNet '99)"
 Language=ta
-Label="ta (tam_tamilnet)"
+Label="ta (tamilnet)"
 
-[keyboard-in-tam_tamilnet_with_tam_nums]
+[keyboard-in-tamilnet_tamilnumbers]
 Description="Keyboard - Indian - Tamil (TamilNet '99 with Tamil numerals)"
 Language=ta
-Label="ta (tam_tamilnet_with_tam_nums)"
+Label="ta (tamilnet_tamilnumbers)"
 
-[keyboard-in-tam_tamilnet_TAB]
+[keyboard-in-tamilnet_TAB]
 Description="Keyboard - Indian - Tamil (TamilNet '99, TAB encoding)"
 Language=ta
-Label="ta (tam_tamilnet_TAB)"
+Label="ta (tamilnet_TAB)"
 
-[keyboard-in-tam_tamilnet_TSCII]
+[keyboard-in-tamilnet_TSCII]
 Description="Keyboard - Indian - Tamil (TamilNet '99, TSCII encoding)"
 Language=ta
-Label="ta (tam_tamilnet_TSCII)"
+Label="ta (tamilnet_TSCII)"
 
 [keyboard-in-tam]
-Description="Keyboard - Indian - Tamil (InScript)"
+Description="Keyboard - Indian - Tamil (InScript, with Arabic numerals)"
 Language=ta
 Label="ta (tam)"
+
+[keyboard-in-tam_tamilnumbers]
+Description="Keyboard - Indian - Tamil (InScript, with Tamil numerals)"
+Language=ta
+Label="ta (tam_tamilnumbers)"
 
 [keyboard-in-tel]
 Description="Keyboard - Indian - Telugu"
@@ -2154,9 +2189,14 @@ Language=lv
 Label="lv (fkey)"
 
 [keyboard-lv-modern]
-Description="Keyboard - Latvian - Latvian (modern)"
+Description="Keyboard - Latvian - Latvian (Modern Latin)"
 Language=lv
 Label="lv (modern)"
+
+[keyboard-lv-modern-cyr]
+Description="Keyboard - Latvian - Latvian (Modern Cyrillic)"
+Language=lv
+Label="lv (modern-cyr)"
 
 [keyboard-lv-ergonomic]
 Description="Keyboard - Latvian - Latvian (ergonomic, ŪGJRMV)"
@@ -2464,19 +2504,9 @@ Language=fr
 Label="fr (fr-legacy)"
 
 [keyboard-ca-multix]
-Description="Keyboard - French (Canada) - Canadian (intl.)"
+Description="Keyboard - French (Canada) - Canadian (CSA)"
 Language=fr
 Label="ca (multix)"
-
-[keyboard-ca-multi]
-Description="Keyboard - French (Canada) - Canadian (intl., 1st part)"
-Language=fr
-Label="ca (multi)"
-
-[keyboard-ca-multi-2gr]
-Description="Keyboard - French (Canada) - Canadian (intl., 2nd part)"
-Language=fr
-Label="ca (multi-2gr)"
 
 [keyboard-ca-ike]
 Description="Keyboard - French (Canada) - Inuktitut"
@@ -2828,15 +2858,20 @@ Description="Keyboard - Indonesian (Latin) - Javanese"
 Language=jax
 Label="id (javanese)"
 
-[keyboard-id-phonetic]
+[keyboard-id-melayu-phonetic]
+Description="Keyboard - Indonesian (Latin) - Indonesian (Arab Melayu, phonetic)"
+Language=id
+Label="id (melayu-phonetic)"
+
+[keyboard-id-melayu-phoneticx]
+Description="Keyboard - Indonesian (Latin) - Indonesian (Arab Melayu, extended phonetic)"
+Language=id
+Label="id (melayu-phoneticx)"
+
+[keyboard-id-pegon-phonetic]
 Description="Keyboard - Indonesian (Latin) - Indonesian (Arab Pegon, phonetic)"
 Language=id
-Label="id (phonetic)"
-
-[keyboard-id-phoneticx]
-Description="Keyboard - Indonesian (Latin) - Indonesian (Arab Pegon, extended phonetic)"
-Language=id
-Label="id (phoneticx)"
+Label="id (pegon-phonetic)"
 
 [keyboard-de]
 Description="Keyboard - German"
@@ -3402,11 +3437,6 @@ Label="latam (dvorak)"
 Description="Keyboard - Spanish (Latin American) - Spanish (Latin American, Colemak)"
 Language=es
 Label="latam (colemak)"
-
-[keyboard-latam-colemak-gaming]
-Description="Keyboard - Spanish (Latin American) - Spanish (Latin American, Colemak for gaming)"
-Language=es
-Label="latam (colemak-gaming)"
 
 [keyboard-mt]
 Description="Keyboard - Maltese"

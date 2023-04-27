@@ -37,7 +37,8 @@ SYSTEMD_EDITOR=nvim
 KUBE_EDITOR=nvim
 EOF
 
-
+}
+_brew_linux_share() {
   sudo useradd brew
   sudo chown -R brew:brew $HOMEBREW_PREFIX
   sudo tee  /etc/sudoers.d/brew << EOF
@@ -59,7 +60,7 @@ _mac() {
 __system() {
   ACTOR=$1
   sudo mkdir -p /opt/local/bin/
-  sudo chown -R $ACTOR -p /opt/local/bin/
+  sudo chown -R $ACTOR /opt/local/bin/
   _env
   _brew
   if [[ ${PLATFORM} == "darwin" ]]; then
@@ -69,4 +70,4 @@ __system() {
   fi
 }
 
-__system $@
+__system $(whoami)
