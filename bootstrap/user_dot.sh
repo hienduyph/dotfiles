@@ -171,9 +171,9 @@ main() {
   _configs $PLATFORM
   _git
   _ranger
-  _brew
 
   if [[ ${PLATFORM} == "darwin" ]]; then
+    _brew
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
     _linux

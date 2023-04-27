@@ -29,6 +29,7 @@
         "memory",
         "battery",
         "temperature",
+        "custom/nvme-temper",
 
         // connecting
         "network",
@@ -145,8 +146,14 @@
         "interval": 5,
         "format": "{icon} {temperatureC}°",
         "format-icons": ["", "", ""],
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "tooltip": false,
         "on-click": "swaymsg exec \"\\$term_float watch sensors\""
+    },
+    "custom/nvme-temper": {
+      "exec": "sensors nvme-pci-0100 | awk '/Composite:/ {print $2}'",
+      "format": " {}",
+      "interval": 5
     },
 
     "tray": {
