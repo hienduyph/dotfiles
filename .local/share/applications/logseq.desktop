@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LoqSeq
+Exec=/home/hienduyph/Applications/Logseq-linux-x64-0.8.18.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland @@u %u @@
+Icon=logseq
+StartupWMClass=Logseq
+Type=Application
+Categories=Office;
+X-GNOME-SingleWindow=true
+X-SingleMainWindow=true
