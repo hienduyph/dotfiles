@@ -11,6 +11,11 @@ sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wf-recorder s
   fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako \
   kvantum swappy
 
+if [ -f $HOME/.cargo/bin/cargo ]; then
+  $HOME/.cargo/bin/cargo install sworkstyle
+  sudo cp $HOME/.cargo/bin/sworkstyle /usr/local/bin
+fi
+
 sudo tee /usr/bin/start-sway << EOF
 #!/bin/bash
 

@@ -30,6 +30,7 @@
         "battery",
         "temperature",
         "custom/nvme-temper",
+        "custom/gpu-temper",
 
         // connecting
         "network",
@@ -151,11 +152,16 @@
         "on-click": "swaymsg exec \"\\$term_float watch sensors\""
     },
     "custom/nvme-temper": {
-      "exec": "sensors nvme-pci-0100 | awk '/Composite:/ {print $2}'",
-      "format": " {}",
+      "exec": "sensors nvme-pci-0100 | awk '/Composite:/ {print $2}'| grep -Eo '[0-9]+([.][0-9])+?'",
+      "format": " 󰋊 {}° ",
       "interval": 5
     },
 
+    "custom/gpu-temper": {
+      "exec": "sensors amdgpu-pci-2600 | awk '/edge:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+?'",
+      "format": " 󰢮 {}° ",
+      "interval": 5
+    },
     "tray": {
         "icon-size": 21,
         "spacing": 5
