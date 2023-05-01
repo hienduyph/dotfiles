@@ -45,4 +45,39 @@ _gocryptfs() {
   echo "Install ${VERSION}"
   mkdir $HOME/.local/bin
   curl -fsSL https://github.com/rfjakob/gocryptfs/releases/download/${VERSION}/gocryptfs_${VERSION}_linux-static_amd64.tar.gz | tar xz -C $HOME/.local/bin
+  sudo cp $HOME/.local/bin/gocryptfs /usr/local/bin
+}
+
+_obsidianmd() {
+  VERSION=$(gh_latest_release obsidianmd/obsidian-releases)
+  VERSION=${VERSION#v}
+  DST=$HOME/Applications/Obsidian.AppImage
+  echo "Install obsidianmd version ${VERSION} to $DST"
+  curl -Lo $DST "https://github.com/obsidianmd/obsidian-releases/releases/download/v${VERSION}/Obsidian-${VERSION}.AppImage"
+  chmod +x $DST
+  tee $HOME/.local/share/applications/obsidian.desktop << EOF
+[Desktop Entry]
+Name=Obsidian
+Exec=$DST --ozone-platform=wayland @@u %u @@
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=obsidian
+Comment=Obsidian
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
+EOF
+
+  tee $HOME/.local/share/applications/obsidian-x11.desktop << EOF
+[Desktop Entry]
+Name=Obsidian X11
+Exec=$DST --ozone-platform=x11 @@u %u @@
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=obsidian
+Comment=Obsidian
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
+EOF
 }
