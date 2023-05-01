@@ -41,6 +41,7 @@ EOF
 
 sudo dnf copr enable atim/starship -y
 sudo dnf copr enable atim/lazygit -y
+sudo dnf copr enable pgaskin/zotero -y
 
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -62,4 +63,4 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-
+sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
