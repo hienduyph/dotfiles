@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
+local navic = require("nvim-navic")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -92,6 +93,9 @@ local on_attach = function(client, bufnr)
   elseif client.server_capabilities.document_range_formatting then
     buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
+  end
 end
 
 function M.setup_ls(lsp)
@@ -115,7 +119,7 @@ function M.deno()
   M.setup_ls("denols")
 end
 
-local servers = { "jsonls", "html", "cssls", "bashls", "ansiblels" }
+local servers = { "html", "cssls", "bashls", "ansiblels" }
 for _, lsp in ipairs(servers) do
   M.setup_ls(lsp)
 end
@@ -147,18 +151,28 @@ nvim_lsp.rust_analyzer.setup({
   },
 })
 
-nvim_lsp.yamlls.setup({
+nvim_lsp.jsonls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = flags,
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
+nvim_lsp.yamlls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   flags = flags,
   settings = {
     yaml = {
-      schemas = {
-        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.0-standalone-strict/all.json"] = "/*.k8s.yaml",
-      },
+      schemas = require('schemastore').yaml.schemas(),
     },
   },
-})
+}
+
 
 -- Pyright
 local function get_python_path(workspace)

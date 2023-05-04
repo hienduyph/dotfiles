@@ -24,6 +24,7 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "MunifTanjim/nui.nvim",
   { "kyazdani42/nvim-web-devicons", config = true },
+  { "RRethy/vim-illuminate" },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -138,8 +139,8 @@ require("lazy").setup({
       require("mini.align").setup()
     end,
   },
-  { "numToStr/Comment.nvim",        config = true },
-  { "lewis6991/gitsigns.nvim",      config = true },
+  { "numToStr/Comment.nvim",   config = true },
+  { "lewis6991/gitsigns.nvim", config = true },
   "sindrets/diffview.nvim",
   {
     "kyazdani42/nvim-tree.lua",
@@ -248,7 +249,7 @@ require("lazy").setup({
         ts_config = {
           lua = { "string" }, -- it will not add a pair on that treesitter node
           javascript = { "template_string" },
-          java = false,       -- don"t check treesitter on java
+          java = false, -- don"t check treesitter on java
         },
       })
     end,
@@ -288,7 +289,7 @@ require("lazy").setup({
       vim.keymap.set("n", "<C-g>", function()
         require("telescope.builtin").live_grep({ hidden = true })
       end, { noremap = true, silent = true })
-      vim.keymap.set("n", "<leader>fb", function()
+      vim.keymap.set("n", "<C-i>", function()
         require("telescope.builtin").buffers()
       end, { noremap = true, silent = true })
     end,
@@ -302,17 +303,22 @@ require("lazy").setup({
     event = "InsertEnter",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "L3MON4D3/LuaSnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "SmiteshP/nvim-navic",
     },
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    }
   },
 
   { "simrat39/rust-tools.nvim",                 config = true },
@@ -359,5 +365,5 @@ require("lazy").setup({
       }
     end
   },
-
+  { "b0o/schemastore.nvim" },
 }, opts)

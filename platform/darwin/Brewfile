@@ -33,3 +33,4 @@ cask "amethyst"
 
 mas "Blackmagic Disk Speed Test", id: 425264550
 
+brew "bensadeh/despell/despell"

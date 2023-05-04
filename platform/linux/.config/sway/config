@@ -147,7 +147,7 @@ bindsym $mod+r mode "resize"
 set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t, mode "default"
-  bindsym e exec --no-startup-id sway exit, mode "default"        
+  bindsym e exec --no-startup-id swaymsg exit, mode "default"        
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 

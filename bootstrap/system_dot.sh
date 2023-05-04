@@ -37,6 +37,8 @@ SYSTEMD_EDITOR=nvim
 KUBE_EDITOR=nvim
 EOF
 
+ curl -LO 'https://github.com/bensadeh/despell/releases/download/0.9/despell_0.9_Linux_64-bit.tar.gz' | sudo tar xz -C /usr/local/bin
+
 }
 _brew_linux_share() {
   sudo useradd brew
