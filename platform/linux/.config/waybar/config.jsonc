@@ -36,7 +36,6 @@
 
         // connecting
         "network",
-        "bluetooth",
 
         // media
         "custom/playerctl",
@@ -181,15 +180,6 @@
         "on-click": "swaymsg exec \\$menu",
         "tooltip": false
     },
-
-    "bluetooth": {
-        "format": "",
-        "format-disabled": "",
-        "on-click": "blueman-manager",
-        "on-click-right": "rfkill toggle bluetooth",
-        "tooltip-format": "{}"
-    },
-
     "sway/language": {
         "format": " {}",
         "min-length": 5,
