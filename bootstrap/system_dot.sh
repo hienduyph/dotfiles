@@ -50,8 +50,6 @@ EOF
 
 _mac() {
   echo "Setup mac syste"
-  sudo chown -R brew:brew /opt/homebrew
-
   sudo mkdir -p /opt/homebrew/etc/
   sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /opt/homebrew/etc/dnscrypt-proxy.toml
   sudo mkdir -p /etc/dnscrypt-proxy/
@@ -64,7 +62,7 @@ __system() {
   sudo mkdir -p /opt/local/bin/
   sudo chown -R $ACTOR /opt/local/bin/
   _env
-  _brew
+  # _brew
   if [[ ${PLATFORM} == "darwin" ]]; then
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then

@@ -2,14 +2,19 @@
 
 cask_args appdir: "~/Applications"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "homebrew/services"
 tap "homebrew/bundle"
-tap "bensadeh/despell"
+tap "hashicorp/tap"
 
+tap "derailed/k9s"
 brew "telnet"
 brew "gnu-sed"
 brew "procs"
 brew "htop"
+
+brew "mas"
 
 brew "gpg"
 brew "gpg2"
@@ -20,10 +25,12 @@ cask "alacritty"
 cask "dropbox"
 cask "google-chrome"
 cask "telegram"
+cask "firefox"
 cask "keepassxc"
+cask "eqmac"
 cask "obsidian"
-cask "cloudflare-warp"
+cask "amethyst"
 
-brew "despell"
-brew "wireguard-tools"
-📋
+mas "Blackmagic Disk Speed Test", id: 425264550
+
+brew "bensadeh/despell/despell"
