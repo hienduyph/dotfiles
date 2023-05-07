@@ -81,3 +81,30 @@ MimeType=x-scheme-handler/obsidian;
 Categories=Office;
 EOF
 }
+
+_lapce() {
+  VERSION=$(gh_stable_release lapce/lapce)
+  VERSION=${VERSION#v}
+  DST=$HOME/Applications
+  echo "Install Lapce Editor ${VERSION} to $DST"
+  curl -fsSL "https://github.com/lapce/lapce/releases/download/v${VERSION}/Lapce-linux.tar.gz" | tar xz -C $DST --strip-components=1
+
+  ICON_DIR=$HOME/.local/share/icons/hicolor/256x256/apps
+  mkdir -p $ICON_DIR
+  curl -Lo $ICON_DIR/lapce.png "https://raw.githubusercontent.com/lapce/lapce/master/extra/images/logo.png"
+  tee $HOME/.local/share/applications/lapce.desktop << EOF
+[Desktop Entry]
+Name=Lapce
+Exec=$DST/lapce %U
+Terminal=false
+Type=Application
+Icon=lapce
+StartupWMClass=obsidian
+Comment=Text Editor
+MimeType=text/plain;application/x-zerosize;
+Keywords=write;notepad;
+DBusActivatable=true
+Categories=Utility;TextEditor;
+EOF
+}
+

@@ -1,0 +1,12 @@
+
+[core]
+color-theme = "Github light"
+modal = true
+icon-theme = "Material Icons"
+
+[ui]
+font-family = "Roboto"
+
+[editor]
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 12
