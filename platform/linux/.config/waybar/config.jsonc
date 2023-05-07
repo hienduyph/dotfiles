@@ -77,7 +77,7 @@
     },
 
     "cpu": {
-        "interval": 5,
+        "interval": 1,
         "format": "﬙ {usage}%",
         "states": {
             "warning": 70,
@@ -176,7 +176,7 @@
     },
 
     "custom/menu": {
-        "format": "",
+        "format": "", // 
         "on-click": "swaymsg exec \\$menu",
         "tooltip": false
     },
