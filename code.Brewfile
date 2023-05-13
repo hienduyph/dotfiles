@@ -26,3 +26,7 @@ brew "eslint"
 brew "black"
 brew "rs/tap/curlie"
 brew "parquet-cli"
+
+# core lib
+snappy
+zlib
