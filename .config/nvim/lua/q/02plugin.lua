@@ -365,14 +365,8 @@ require("lazy").setup({
       }
     end
   },
-<<<<<<< Updated upstream
   { "b0o/schemastore.nvim" },
-||||||| Stash base
-
-=======
   {
     'mg979/vim-visual-multi',
   }
-
->>>>>>> Stashed changes
 }, opts)
