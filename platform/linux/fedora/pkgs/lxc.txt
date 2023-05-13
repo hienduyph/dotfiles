@@ -1,0 +1,7 @@
+lxc
+lxc-templates
+lxc-extra
+debootstrap
+libvirt
+perl
+gpg

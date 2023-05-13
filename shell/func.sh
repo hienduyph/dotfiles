@@ -108,3 +108,18 @@ Categories=Utility;TextEditor;
 EOF
 }
 
+optimize_png_dir() {
+  # directory containing images
+  input_dir="$1"
+
+  if [[ -z "$input_dir" ]]; then
+    echo "Please specify an input directory."
+    exit 1
+  fi
+
+  find $input_dir -type f -iname "*.png" -print0 | while read -d $'\0' img
+  do
+    echo "Working on ${img}"
+    optipng "${img}"
+  done
+}
