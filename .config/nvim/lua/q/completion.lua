@@ -188,6 +188,7 @@ nvim_lsp.pyright.setup({
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
   end,
+  root_dir = nvim_lsp.util.root_pattern(unpack({ "pyproject.toml" })),
   flags = flags,
   before_init = function(_, config)
     config.settings.python.pythonPath = get_python_path(config.root_dir)
