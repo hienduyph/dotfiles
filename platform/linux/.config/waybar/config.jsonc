@@ -22,16 +22,16 @@
     "modules-right": [
         // informational
         // "sway/language",
-        "custom/github",
-        "custom/clipboard",
+        // "custom/github",
+        // "custom/clipboard",
         // "custom/zeit",
         "cpu",
-        "memory",
-        "battery",
-        "temperature",
-        "custom/nvme-temper",
-        "custom/gpu-temper",
-        "custom/gpu-power",
+        // "memory",
+        // "battery",
+        // "temperature",
+        // "custom/nvme-temper",
+        // "custom/gpu-temper",
+        // "custom/gpu-power",
 
 
         // connecting
@@ -40,7 +40,7 @@
         // media
         "custom/playerctl",
         "pulseaudio",
-        "backlight",
+        // "backlight",
 
         // system
         "custom/dnd",
