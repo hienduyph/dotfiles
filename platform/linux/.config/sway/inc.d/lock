@@ -3,5 +3,9 @@
 exec swayidle -w \
   timeout 600 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' 
 
-bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill
+# bindsym Mod1+l exec swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill
 
+bindsym Mod1+Shift+l exec swayidle -w  \
+	timeout 1 'swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t -s fill' \
+	timeout 1 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"; pkill -nx swayidle'

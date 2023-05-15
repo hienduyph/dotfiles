@@ -43,7 +43,7 @@ get_docker_ip() {
 _gocryptfs() {
   VERSION=$(gh_latest_release rfjakob/gocryptfs)
   echo "Install ${VERSION}"
-  mkdir $HOME/.local/bin
+  mkdir -p $HOME/.local/bin
   curl -fsSL https://github.com/rfjakob/gocryptfs/releases/download/${VERSION}/gocryptfs_${VERSION}_linux-static_amd64.tar.gz | tar xz -C $HOME/.local/bin
   sudo cp $HOME/.local/bin/gocryptfs /usr/local/bin
 }
