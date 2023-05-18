@@ -31,7 +31,7 @@
         // "temperature",
         // "custom/nvme-temper",
         // "custom/gpu-temper",
-        // "custom/gpu-power",
+        "custom/gpu-power",
 
 
         // connecting
