@@ -32,10 +32,12 @@
         // "custom/nvme-temper",
         // "custom/gpu-temper",
         "custom/gpu-power",
+        "custom/nvidia",
+        "custom/nvidia-mem",
 
 
         // connecting
-        "network",
+        // "network",
 
         // media
         "custom/playerctl",
@@ -165,8 +167,20 @@
     },
 
     "custom/gpu-power": {
-      "exec": "sensors amdgpu-pci-2600 | awk '/PPT:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+W?' | xargs printf '%.0f'",
+      "exec": "sensors amdgpu-pci-2900 | awk '/PPT:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+W?' | xargs printf '%.0f'",
       "format": " 󰢮 {}W ",
+      "interval": 2
+    },
+
+    "custom/nvidia": {
+      "exec": "nvidia-smi --query-gpu utilization.memory --format=csv,noheader",
+      "format": " 󰢮 {} ",
+      "interval": 2
+    },
+
+    "custom/nvidia-mem": {
+      "exec": "nvidia-smi --query-gpu utilization.memory --format=csv,noheader",
+      "format": " 󰢮 {} ",
       "interval": 2
     },
  

@@ -9,7 +9,7 @@ done
 #
 sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wf-recorder slurp wlr-randr sway dex-autostart waybar rofi-wayland wev \
   fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako \
-  kvantum swappy
+  kvantum swappy network-manager-applet
 
 if [ -f $HOME/.cargo/bin/cargo ]; then
   $HOME/.cargo/bin/cargo install sworkstyle
