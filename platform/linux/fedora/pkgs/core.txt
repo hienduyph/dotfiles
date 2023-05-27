@@ -7,3 +7,4 @@ gnome-tweaks
 onedrive
 lm_sensors
 pam_mount
+joshuto

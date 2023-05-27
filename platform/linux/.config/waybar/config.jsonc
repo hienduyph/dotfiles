@@ -45,8 +45,8 @@
         // "backlight",
 
         // system
-        "custom/dnd",
-        "idle_inhibitor",
+        // "custom/dnd",
+        // "idle_inhibitor",
         "custom/sunset",
         // "custom/pacman",
 
@@ -173,14 +173,14 @@
     },
 
     "custom/nvidia": {
-      "exec": "nvidia-smi --query-gpu utilization.memory --format=csv,noheader",
-      "format": " 󰢮 {} ",
+      "exec": "nvidia-smi --query-gpu utilization.memory --format=csv,noheader | sed 's/ //g'",
+      "format": " 󰻠 {} ",
       "interval": 2
     },
 
     "custom/nvidia-mem": {
-      "exec": "nvidia-smi --query-gpu utilization.memory --format=csv,noheader",
-      "format": " 󰢮 {} ",
+      "exec": "nvidia-smi --query-gpu utilization.memory --format=csv,noheader | sed 's/ //g'",
+      "format": " 󰍛 {} ",
       "interval": 2
     },
  
