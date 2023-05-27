@@ -26,3 +26,15 @@ exec_always {
   gsettings set org.gnome.desktop.interface font-name "Liberation Sans 11"
 }
 ```
+
+## On multi devices
+
+```bash
+export WLR_DRM_DEVICES=/dev/dri/card0 
+exec sway --unsupported-gpu
+```
+
+```bash
+# makesure checking the device correctly
+udevadm info -a -n /dev/dri/card0
+```

@@ -64,3 +64,5 @@ EOM
 
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+
+sudo dnf copr enable atim/joshuto -y
