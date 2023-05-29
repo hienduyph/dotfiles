@@ -9,7 +9,7 @@ local out = {
     "PowerlineExtraSymbols",
     "Noto Color Emoji",
   }),
-  font_size = 9,
+  font_size = 10,
   tab_max_width = 16,
   use_fancy_tab_bar = false,
   exit_behavior = "Close",
@@ -33,7 +33,7 @@ if string.find(raw_os_name, "linux") ~= nil then
   out["keys"] = q.linux_keys
 else
   out["keys"] = q.mac_keys
-  out["font_size"] = 12
+  out["font_size"] = 13
   out["native_macos_fullscreen_mode"] = true
   out["window_decorations"] = "TITLE | RESIZE"
 end
