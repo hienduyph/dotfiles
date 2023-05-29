@@ -121,6 +121,7 @@ modified = '📝'
 staged = '[++\($count\)](green)'
 renamed = '👅'
 deleted = '🗑'
+style	= 'bold purple'
 
 [rust]
 disabled = false
