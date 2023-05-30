@@ -3,3 +3,4 @@ rocm-runtime
 rocm-runtime-devel
 rocminfo 
 radeontop
+libva-utils

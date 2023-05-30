@@ -19,6 +19,7 @@ _configs() {
     nvim
     starship.toml
     lazygit
+    despell
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -66,6 +67,7 @@ _dots() {
     .ideavimrc
     .tmux.common.conf
     .alacritty.common.yml
+    .gitconfig
   )
   for f in "${dots[@]}"; do
     ln -sf $APP_ROOT/$f $HOME/$f
