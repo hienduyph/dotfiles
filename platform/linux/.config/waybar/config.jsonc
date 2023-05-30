@@ -32,12 +32,11 @@
         // "custom/nvme-temper",
         // "custom/gpu-temper",
         "custom/gpu-power",
-        "custom/nvidia",
-        "custom/nvidia-mem",
-
+        // "custom/nvidia",
+        // "custom/nvidia-mem",
 
         // connecting
-        // "network",
+        "network",
 
         // media
         "custom/playerctl",
@@ -80,7 +79,7 @@
 
     "cpu": {
         "interval": 1,
-        "format": "﬙ {usage}%",
+        "format": "󰘚 {usage}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -90,7 +89,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%",
+        "format": "󰍛 {}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -101,8 +100,8 @@
     "network": {
         "interval": 5,
         "format-wifi": " ",
-        "format-ethernet": "",
-        "format-disconnected": "睊",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰌙 ",
         "tooltip-format": "{ifname} ({essid}): {ipaddr}",
         "on-click": "swaymsg exec \\$term_float nmtui"
     },
@@ -127,22 +126,24 @@
         "on-scroll-down": "swaymsg exec \\$brightness_down"
     },
 
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}%{format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-source": "",
-        "format-source-muted": " ",
+  "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "headset": "",
-            "default": ["奄", "奔", "墳"]
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
         },
-        "tooltip-format": "{icon} {volume}% {format_source}",
-        "on-click": "pavucontrol",
-        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl -- set-sink-volume 0 +10%",
-        "on-scroll-down": "pactl -- set-sink-volume 0 -10%"
+        "on-click": "pavucontrol"
     },
 
     "temperature": {
@@ -167,7 +168,7 @@
     },
 
     "custom/gpu-power": {
-      "exec": "sensors amdgpu-pci-2900 | awk '/PPT:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+W?' | xargs printf '%.0f'",
+      "exec": "sensors amdgpu-pci-0100 | awk '/PPT:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+W?' | xargs printf '%.0f'",
       "format": " 󰢮 {}W ",
       "interval": 2
     },
@@ -257,8 +258,8 @@
         "return-type": "json",
         "format": "{icon}",
         "format-icons": {
-            "Playing": "",
-            "Paused": "奈"
+            "Playing": "",
+            "Paused": ""
         },
         "exec": "playerctl metadata --format '{\"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}:  {{markup_escape(title)}} - {{markup_escape(artist)}}\" }'",
         "on-click": "playerctl play-pause; pkill -RTMIN+5 waybar",
