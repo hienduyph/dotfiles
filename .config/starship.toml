@@ -140,3 +140,6 @@ style_root = 'black bold'
 format = '[$user](dimmed green)'
 disabled = false
 show_always = true
+
+[cmake]
+disabled=true
