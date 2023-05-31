@@ -72,3 +72,4 @@ fallback = ''
 "disk usage" = ""
 ".pdf" = ""
 "rhythmbox"=""
+"/.*Cryptomator.*/" = "󱇱"

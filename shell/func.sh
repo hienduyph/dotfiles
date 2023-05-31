@@ -48,10 +48,14 @@ _gocryptfs() {
   sudo cp $HOME/.local/bin/gocryptfs /usr/local/bin
 }
 
+LINUX_ICON_DIR=$HOME/.local/share/icons/hicolor/256x256/apps
+
 _obsidianmd() {
   VERSION=$(gh_latest_release obsidianmd/obsidian-releases)
   VERSION=${VERSION#v}
   DST=$HOME/Applications/Obsidian.AppImage
+  mkdir -p $LINUX_ICON_DIR
+  cp $HOME/dotfiles/images/obsidian.png $LINUX_ICON_DIR/
   echo "Install obsidianmd version ${VERSION} to $DST"
   curl -Lo $DST "https://github.com/obsidianmd/obsidian-releases/releases/download/v${VERSION}/Obsidian-${VERSION}.AppImage"
   chmod +x $DST
@@ -82,6 +86,29 @@ Categories=Office;
 EOF
 }
 
+
+_cryptomator() {
+  VERSION=$(gh_latest_release cryptomator/cryptomator)
+  VERSION=${VERSION#v}
+  DST=$HOME/Applications/Cryptomator.AppImage
+  echo "Install cryptomator version ${VERSION} to $DST"
+  curl -Lo $DST "https://github.com/cryptomator/cryptomator/releases/download/${VERSION}/cryptomator-${VERSION}-x86_64.AppImage"
+  chmod +x $DST
+  mkdir -p LINUX_ICON_DIR
+  curl -Lo $LINUX_ICON_DIR/cryptomator.svg "https://cryptomator.org/img/logo.svg"
+  tee $HOME/.local/share/applications/cryptomator.desktop << EOF
+[Desktop Entry]
+Name=Cryptomator
+Exec=$DST @@u %u @@
+Terminal=false
+Type=Application
+Icon=cryptomator
+StartupWMClass=cryptomator
+Comment=Cryptomator Encryption
+EOF
+}
+
+
 _lapce() {
   VERSION=$(gh_stable_release lapce/lapce)
   VERSION=${VERSION#v}
@@ -89,9 +116,8 @@ _lapce() {
   echo "Install Lapce Editor ${VERSION} to $DST"
   curl -fsSL "https://github.com/lapce/lapce/releases/download/v${VERSION}/Lapce-linux.tar.gz" | tar xz -C $DST --strip-components=1
 
-  ICON_DIR=$HOME/.local/share/icons/hicolor/256x256/apps
-  mkdir -p $ICON_DIR
-  curl -Lo $ICON_DIR/lapce.png "https://raw.githubusercontent.com/lapce/lapce/master/extra/images/logo.png"
+  mkdir -p $LINUX_ICON_DIR
+  curl -Lo $LINUX_ICON_DIR/lapce.png "https://raw.githubusercontent.com/lapce/lapce/master/extra/images/logo.png"
   tee $HOME/.local/share/applications/lapce.desktop << EOF
 [Desktop Entry]
 Name=Lapce
