@@ -3,5 +3,10 @@
     "Icon": "",
     "Color": "red",
     "Emoji": "🌐"
+  },
+  "docker": {
+    "Icon": "",
+    "Color": "red",
+    "Emoji": "🌐"
   }
 }

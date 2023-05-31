@@ -1,94 +1,22 @@
 # ft=ruby
-<<<<<<< Updated upstream
-
-cask_args appdir: "~/Applications"
-tap "homebrew/cask"
-||||||| Stash base
 
 cask_args appdir: "~/Applications"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-=======
->>>>>>> Stashed changes
 tap "homebrew/core"
 tap "homebrew/bundle"
-<<<<<<< Updated upstream
 tap "bensadeh/despell"
-||||||| Stash base
 tap "hashicorp/tap"
-=======
->>>>>>> Stashed changes
-
-brew "telnet"
-brew "gnu-sed"
-brew "procs"
-brew "htop"
-<<<<<<< Updated upstream
-
-||||||| Stash base
+tap "macos-fuse-t/homebrew-cask"
 
 brew "mas"
-
-=======
->>>>>>> Stashed changes
-brew "gpg"
-brew "gpg2"
-brew "pinentry-mac"
-brew "keychain"
-
-<<<<<<< Updated upstream
-cask "alacritty"
-cask "dropbox"
-cask "google-chrome"
-cask "telegram"
-cask "keepassxc"
-cask "obsidian"
+# cask "dropbox"
+# cask "telegram"
 cask "cloudflare-warp"
-||||||| Stash base
 cask "alacritty"
-cask "dropbox"
-cask "google-chrome"
-cask "telegram"
+# cask "google-chrome"
 cask "firefox"
 cask "keepassxc"
-cask "eqmac"
 cask "obsidian"
-cask "amethyst"
-
-mas "Blackmagic Disk Speed Test", id: 425264550
-=======
-# core utils
-brew "coreutils"
-brew "ripgrep"
-brew "exa"
-brew "bat"
-brew "fd"
-brew "jq"
-brew "yq"
-brew "fzf"
-brew "git"
-brew "git-lfs"
-
-# terminal
-brew "gnupg"
-brew "neovim"
-brew "tmux"
-brew "zsh"
-brew "git-delta"
-brew "direnv"
-brew "starship"
-brew "curl"
-brew "zoxide"
-brew "lazygit"
->>>>>>> Stashed changes
-
-<<<<<<< Updated upstream
-brew "despell"
-brew "wireguard-tools"
-📋
-||||||| Stash base
-=======
-brew "zlib"
-brew "snappy"
-brew "mysql-client"
->>>>>>> Stashed changes
+cask "cryptomator"
+# mas "Blackmagic Disk Speed Test", id: 425264550
