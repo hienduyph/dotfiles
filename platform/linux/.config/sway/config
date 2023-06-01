@@ -23,7 +23,7 @@ bindsym $mod+Shift+q kill
 bindsym Mod1+Ctrl+4 exec grim -g "$(slurp)" - | swappy -f -
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
-bindsym Mod1+space exec --no-startup-id rofi -show drun -show-icons
+bindsym Mod1+space exec --no-startup-id rofi -show combi -combi-modes "run,drun" -modes combi -show-icons
 
 # change focus
 

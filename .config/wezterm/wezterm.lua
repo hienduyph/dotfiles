@@ -51,4 +51,9 @@ if high_dpi ~= nil and high_dpi ~= "" then
   out["font_size"] = tonumber(high_dpi)
 end
 
+local _, mod = pcall(require, "q.custom")
+if mod then
+  out.ssh_domains = mod.ssh_domains
+end
+
 return out
