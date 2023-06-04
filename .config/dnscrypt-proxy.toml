@@ -1,6 +1,6 @@
 
 # also listen on docker address, the last is docker endpoint
-listen_addresses = ['127.0.0.1:53', '[::1]:53', '172.17.0.1:53']
+listen_addresses = ['127.0.0.1:53', '[::1]:53']
 
 
 ## Maximum number of simultaneous client connections to accept

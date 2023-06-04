@@ -50,6 +50,8 @@ brew "zlib"
 brew "snappy"
 brew "mysql-client"
 brew "grpcurl"
+brew "python@3.10"
+brew "node@18"
 
 cask "fuse-t"
 cask "fuse-t-sshfs"

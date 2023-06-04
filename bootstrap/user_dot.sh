@@ -18,7 +18,6 @@ _configs() {
     ranger
     nvim
     starship.toml
-    lazygit
     despell
   )
   for pk in "${pkgs[@]}"; do
@@ -175,7 +174,7 @@ main() {
   _ranger
 
   if [[ ${PLATFORM} == "darwin" ]]; then
-    _brew
+    # _brew
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
     _linux
