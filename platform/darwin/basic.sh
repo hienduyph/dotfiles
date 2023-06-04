@@ -7,6 +7,7 @@ set -ex
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew bundle
+brew bundle --file code.Brewfile
 
 $(brew --prefix)/opt/fzf/install --no-update-rc --key-bindings --completion
 

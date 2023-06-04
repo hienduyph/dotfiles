@@ -10,13 +10,14 @@ tap "hashicorp/tap"
 tap "macos-fuse-t/homebrew-cask"
 
 brew "mas"
-# cask "dropbox"
-# cask "telegram"
 cask "cloudflare-warp"
 cask "alacritty"
 # cask "google-chrome"
+# cask "dropbox"
+# cask "telegram"
 cask "firefox"
 cask "keepassxc"
 cask "obsidian"
 cask "cryptomator"
 # mas "Blackmagic Disk Speed Test", id: 425264550
+brew 'stats'
