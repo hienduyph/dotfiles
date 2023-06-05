@@ -146,7 +146,7 @@ bindsym $mod+r mode "resize"
 # Show System Power Menu
 set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-  bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/lockscreen.png -t, mode "default"
+  bindsym l exec --no-startup-id swaylock -e -f -c 000000 -i ~/.config/sway/screenlock.png -t, mode "default"
   bindsym e exec --no-startup-id swaymsg exit, mode "default"        
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
@@ -179,7 +179,7 @@ for_window [shell="xwayland"] title_format "%title [XWayland]"
 default_border pixel 1
 client.focused "#860066" "#860066" "#ffffff" "#860066"
 
-output "*" background "~/.config/desktop.png" fill
+output "*" background "~/.config/sway/desktop.png" fill
 
 include ~/.config/sway/config.d/*
 
