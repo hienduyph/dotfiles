@@ -31,5 +31,5 @@ _apps() {
   ln -sf $HOME/.local/share/applications/dropbox.desktop  $HOME/.config/autostart/
 }
 
-mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME
+mkdir -p $HOME/.local/share/icons/ $HOME/.config/autostart/ $APP_HOME /home/hienduyph/.local/share/applications/
 _apps

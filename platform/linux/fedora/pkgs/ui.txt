@@ -4,3 +4,4 @@ firefox
 code
 calibre
 zotero
+flatpak

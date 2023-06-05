@@ -94,7 +94,7 @@ _cryptomator() {
   echo "Install cryptomator version ${VERSION} to $DST"
   curl -Lo $DST "https://github.com/cryptomator/cryptomator/releases/download/${VERSION}/cryptomator-${VERSION}-x86_64.AppImage"
   chmod +x $DST
-  mkdir -p LINUX_ICON_DIR
+  mkdir -p $LINUX_ICON_DIR
   curl -Lo $LINUX_ICON_DIR/cryptomator.svg "https://cryptomator.org/img/logo.svg"
   tee $HOME/.local/share/applications/cryptomator.desktop << EOF
 [Desktop Entry]
