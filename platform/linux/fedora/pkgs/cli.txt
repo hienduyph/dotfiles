@@ -30,3 +30,4 @@ gcc-g++
 
 go
 nodejs
+kernel-tools
