@@ -28,10 +28,22 @@ _dump() {
   done
 }
 
+
+_theme() {
+  local workdir=/tmp/theme
+  mkdir $workdir
+  git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git $workdir
+  $workdir/install.sh -t default -a -b --black
+  rm -rf $workdir
+}
+
+
 if [[ $1 == "load" ]]; then
   _load
 elif [[ $1 == "dump" ]]; then
   _dump
+elif [[ $1 == "theme" ]]; then
+  _theme
 else
   echo "Require load or dump"
   exit 1
