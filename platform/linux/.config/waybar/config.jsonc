@@ -36,7 +36,7 @@
         // "custom/nvidia-mem",
 
         // connecting
-        "network",
+        // "network",
 
         // media
         "custom/playerctl",
