@@ -29,13 +29,13 @@ xkb-options=['caps:ctrl_modifier']
 
 [interface]
 clock-show-seconds=false
-color-scheme='prefer-dark'
+color-scheme='prefer-light'
 document-font-name='Liberation Sans 11'
 enable-hot-corners=false
 font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Liberation Sans 11'
-gtk-theme='Adwaita-dark'
+gtk-theme='Adwaita-light'
 icon-theme='WhiteSur-dark'
 monospace-font-name='JetBrainsMono Nerd Font Light 10'
 text-scaling-factor=1.0
