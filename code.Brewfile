@@ -28,5 +28,5 @@ brew "rs/tap/curlie"
 brew "parquet-cli"
 
 # core lib
-snappy
-zlib
+brew "snappy"
+brew "zlib"

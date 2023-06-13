@@ -87,4 +87,4 @@ bindkey '^n' autosuggest-accept
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
+source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
