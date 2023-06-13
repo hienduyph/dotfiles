@@ -53,16 +53,16 @@ function __gitstatus_prompt_update () {
   local    RED='196'
   local  WHITE='195'
 
-  local      ahead="" #	⇡
-  local     behind="" # ⇣
+  local      ahead="󰄿" #	⇡
+  local     behind="󰄼" # ⇣
   local   diverged="" # ⇕
   local conflicted=""
-  local up_to_date="﫠"	#
+  local up_to_date="﫠"	#
   local  untracked=""	# ?
   local   modified=""	# !
   local     staged=""	# +
   local    renamed="" #	»
-  local    deleted="" # ✘
+  local    deleted="󰗩" # ✘
 
   if [[ $VCS_STATUS_COMMITS_AHEAD -gt 0 ]]; then
     if [[ $VCS_STATUS_COMMITS_BEHIND -gt 0 ]]; then
@@ -124,10 +124,10 @@ function __gitstatus_prompt_update () {
       REMOTE=""
       ;;
     *@github.com*)
-      REMOTE=""
+      REMOTE=""
       ;;
     "")
-      REMOTE="" # local-only
+      REMOTE="" # local-only
       ;;
   esac
 
