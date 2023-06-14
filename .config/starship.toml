@@ -10,6 +10,7 @@ $env_var\
 $hg_branch\
 $shlvl\
 $kubernetes\
+$docker_context\
 $package\
 $cmake\
 $dart\
@@ -56,6 +57,7 @@ add_newline = false
 command_timeout = 5000
 
 [kubernetes]
+
 format = '[⛵ $context](dimmed green) '
 disabled = false
 
@@ -98,7 +100,8 @@ use_logical_path = true
 disabled = true
 
 [docker_context]
-disabled = true
+disabled = false
+format = ' [  $context ](blue bold) '
 
 [lua]
 disabled = false
