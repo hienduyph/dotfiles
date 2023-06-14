@@ -366,7 +366,4 @@ require("lazy").setup({
     end
   },
   { "b0o/schemastore.nvim" },
-  {
-    'mg979/vim-visual-multi',
-  }
 }, opts)

@@ -52,13 +52,15 @@ function __gitstatus_prompt_update () {
   local   BLUE='39'
   local    RED='196'
   local  WHITE='195'
+  local  BLACK='0'
+
 
   local      ahead="󰄿" #	⇡
   local     behind="󰄼" # ⇣
   local   diverged="" # ⇕
   local conflicted=""
-  local up_to_date="﫠"	#
-  local  untracked=""	# ?
+  local up_to_date=""	#
+  local  untracked=""	# ?
   local   modified=""	# !
   local     staged=""	# +
   local    renamed="" #	»
@@ -66,21 +68,21 @@ function __gitstatus_prompt_update () {
 
   if [[ $VCS_STATUS_COMMITS_AHEAD -gt 0 ]]; then
     if [[ $VCS_STATUS_COMMITS_BEHIND -gt 0 ]]; then
-      BRANCH_STATUS="$(chalk $YELLOW $diverged)"
+      BRANCH_STATUS="$(chalk $BLACK $diverged)"
       HINT="git sync needed"
     else
-      BRANCH_STATUS="$(chalk $YELLOW $ahead)"
+      BRANCH_STATUS="$(chalk $BLACK $ahead)"
       # HINT="git push changes"
       # HINT_CMD="git push"
       # TODO: figure out a smarter hint that takes into account branch/flows for various repos
     fi
   else
     if [[ $VCS_STATUS_COMMITS_BEHIND -gt 0 ]]; then
-      BRANCH_STATUS="$(chalk $YELLOW $behind)"
+      BRANCH_STATUS="$(chalk $BLACK $behind)"
       HINT="git rebase"
       HINT_CMD="git fast-forward"
     else
-      BRANCH_STATUS="$(chalk $WHITE $up_to_date)"
+      BRANCH_STATUS="$(chalk $BLACK $up_to_date)"
     fi
   fi
 
