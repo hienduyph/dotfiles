@@ -1,0 +1,18 @@
+output DP-2 {
+	scale 1.5
+}
+
+output DP-1 {
+  transform 270
+}
+
+output DP-2 pos 0 0
+output DP-1 pos 2560 0
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+
+workspace 7 output DP-1
+workspace 8 output DP-1
+workspace 9 output DP-1
+workspace 10 output DP-1
