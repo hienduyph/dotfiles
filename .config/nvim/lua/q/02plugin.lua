@@ -24,13 +24,9 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "MunifTanjim/nui.nvim",
   { "nvim-tree/nvim-web-devicons", config = true },
-  { "RRethy/vim-illuminate" },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "yioneko/nvim-yati",
-    },
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
@@ -78,17 +74,11 @@ require("lazy").setup({
           enable = true,
         },
         indent = {
-          enable = false,
+          enable = true,
         },
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
-        },
-        yati = {
-          enable = true,
-          disable = { "python" },
-          default_lazy = true,
-          default_fallback = "auto",
         },
       })
     end,
@@ -139,11 +129,10 @@ require("lazy").setup({
       require("mini.align").setup()
     end,
   },
-  { "numToStr/Comment.nvim",   config = true },
-  { "lewis6991/gitsigns.nvim", config = true },
-  "sindrets/diffview.nvim",
+  { "numToStr/Comment.nvim",       config = true },
+  { "lewis6991/gitsigns.nvim",     config = true },
   {
-    "kyazdani42/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",
     config = function()
       require("nvim-tree").setup({
         git = { enable = false },
@@ -281,12 +270,17 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
+
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+
       "SmiteshP/nvim-navic",
     },
   },
+
+  { "b0o/schemastore.nvim" },
+
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
@@ -297,17 +291,6 @@ require("lazy").setup({
   { "simrat39/rust-tools.nvim", config = true },
   { "kylechui/nvim-surround",   config = true },
   "gpanders/editorconfig.nvim",
-
-  -- markdown preview
-  {
-    "ellisonleao/glow.nvim",
-    config = function()
-      require("glow").setup({
-        style = "light",
-      })
-    end,
-  },
-
   {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
@@ -338,5 +321,4 @@ require("lazy").setup({
       }
     end
   },
-  { "b0o/schemastore.nvim" },
 }, opts)
