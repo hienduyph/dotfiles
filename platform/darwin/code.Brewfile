@@ -10,6 +10,7 @@ tap "macos-fuse-t/homebrew-cask"
 tap "mike-engel/homebrew-jwt-cli"
 tap "bufbuild/buf"
 
+brew "chezmoi"
 brew "jwt-cli"
 brew "gpg"
 brew "gpg2"

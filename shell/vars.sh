@@ -1,3 +1,8 @@
+export EDITOR=nvim
+export VISUAL=nvim
+export SYSTEMD_EDITOR=nvim
+export KUBE_EDITOR=nvim
+
 export NPM_CONFIG_PREFIX="${HOME}/.npm-packages"
 export GOPATH="$HOME/.go"
 export BASHMAN_DIR=$HOME/.config/bashman
