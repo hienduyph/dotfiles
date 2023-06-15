@@ -23,7 +23,7 @@ require("lazy").setup({
   -- core libs
   "nvim-lua/plenary.nvim",
   "MunifTanjim/nui.nvim",
-  { "kyazdani42/nvim-web-devicons", config = true },
+  { "nvim-tree/nvim-web-devicons", config = true },
   { "RRethy/vim-illuminate" },
 
   {
@@ -249,53 +249,26 @@ require("lazy").setup({
         ts_config = {
           lua = { "string" }, -- it will not add a pair on that treesitter node
           javascript = { "template_string" },
-          java = false, -- don"t check treesitter on java
+          java = false,       -- don"t check treesitter on java
         },
       })
     end,
   },
 
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   {
-    "nvim-telescope/telescope.nvim",
+    'ibhagwan/fzf-lua',
     config = function()
-      local tele = require("telescope")
-      tele.setup({
-        defaults = {
-          file_ignore_patterns = { "^.git/" },
-          selection_strategy = "reset",
-          sorting_strategy = "ascending",
-          layout_strategy = "horizontal",
-          layout_config = {
-            horizontal = {
-              prompt_position = "top",
-              preview_width = 0.55,
-              results_width = 0.8,
-            },
-            vertical = {
-              mirror = false,
-            },
-            width = 0.87,
-            height = 0.80,
-            preview_cutoff = 120,
-          },
-        },
-      })
-      tele.load_extension("fzf")
-
       vim.keymap.set("n", "<C-f>", function()
-        require("telescope.builtin").find_files({ hidden = true })
+        require('fzf-lua').files()
       end, { noremap = true, silent = true })
       vim.keymap.set("n", "<C-g>", function()
-        require("telescope.builtin").live_grep({ hidden = true })
+        require('fzf-lua').live_grep()
       end, { noremap = true, silent = true })
       vim.keymap.set("n", "<C-i>", function()
-        require("telescope.builtin").buffers()
+        require('fzf-lua').buffers()
       end, { noremap = true, silent = true })
     end,
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-    },
+    requires = { 'nvim-tree/nvim-web-devicons' },
   },
 
   {
@@ -321,8 +294,8 @@ require("lazy").setup({
     }
   },
 
-  { "simrat39/rust-tools.nvim",                 config = true },
-  { "kylechui/nvim-surround",                   config = true },
+  { "simrat39/rust-tools.nvim", config = true },
+  { "kylechui/nvim-surround",   config = true },
   "gpanders/editorconfig.nvim",
 
   -- markdown preview
