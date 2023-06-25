@@ -1,6 +1,6 @@
 
 [core]
-color-theme = "Github light"
+color-theme = "Lapce Light"
 modal = true
 icon-theme = "Material Icons"
 
@@ -8,5 +8,8 @@ icon-theme = "Material Icons"
 font-family = "Roboto"
 
 [editor]
-font-family = "JetBrainsMono Nerd Font Mono"
-font-size = 12
+font-family = "JetBrainsMono NFM Light"
+font-size = 14
+
+[terminal]
+font-family = "JetBrainsMono NFM Light"
