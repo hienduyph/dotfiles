@@ -16,10 +16,10 @@ scrolling:
 font:
   size: 9
   normal:
-    family: JetBrainsMono NFM Light
+    family: JetBrainsMono Nerd Font
     style: ExtraLight
   bold:
-    family: JetBrainsMono NFM Light
+    family: JetBrainsMono Nerd Font
     style: Light
   offset:
     x: 0
