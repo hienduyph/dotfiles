@@ -1,8 +1,6 @@
 # vim: ft=ruby
 cask_args appdir: "~/Applications"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "homebrew/bundle"
 tap "bensadeh/despell"
 tap "hashicorp/tap"
@@ -52,9 +50,22 @@ brew "zlib"
 brew "snappy"
 brew "mysql-client"
 brew "grpcurl"
-brew "python@3.10"
-brew "node@18"
 brew "buf"
+
+# langluage
+brew "go"
+brew "node@18"
+brew "python@3.10"
+
+# cloud tools
+brew "helm"
+brew "kubernetes-cli"
+brew "kustomize"
+brew "krew"
+brew "k9s"
+brew "ansible"
 
 cask "fuse-t"
 cask "fuse-t-sshfs"
+
+brew "black"

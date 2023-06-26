@@ -2,22 +2,23 @@
 
 cask_args appdir: "~/Applications"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "homebrew/bundle"
 tap "bensadeh/despell"
 tap "hashicorp/tap"
 tap "macos-fuse-t/homebrew-cask"
 
-brew "mas"
-cask "cloudflare-warp"
-cask "alacritty"
+# these cask should be install from official distribution
 # cask "google-chrome"
 # cask "dropbox"
 # cask "telegram"
+
+brew "mas"
+cask "cloudflare-warp"
+cask "alacritty"
 cask "firefox"
 cask "keepassxc"
 cask "obsidian"
 cask "cryptomator"
 # mas "Blackmagic Disk Speed Test", id: 425264550
-brew 'stats'
+cask 'stats'
+cask "openkey"
