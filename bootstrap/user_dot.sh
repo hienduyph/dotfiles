@@ -148,7 +148,7 @@ _rust() {
 _java() {
   curl -s "https://get.sdkman.io" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
-  sdk install java 11.0.16.1-tem
+  sdk install java 11.0.19-tem
 }
 
 _brew_bundle() {
@@ -161,7 +161,7 @@ _brew_bundle() {
 
 _brew() {
   _brew_bundle "$APP_ROOT/platform/${PLATFORM}/Brewfile"
-  _brew_bundle "$APP_ROOT/Brewfile"
+  _brew_bundle "$APP_ROOT/platform/${PLATFORM}/code.Brewfile"
 
   $($HOMEBREW_PREFIX/bin/brew --prefix)/opt/fzf/install --no-update-rc --key-bindings --completion
 
