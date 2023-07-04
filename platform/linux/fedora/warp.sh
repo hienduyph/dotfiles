@@ -2,9 +2,8 @@
 
 set -e
 
-sudo dnf config-manager --add-repo https://pkg.cloudflare.com/cloudflared-ascii.repo
-
-sudo dnf install cloudflare-warp -y
+curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo
+sudo yum install cloudflare-warp -y
 
 sudo systemctl enable --now warp-svc
 
