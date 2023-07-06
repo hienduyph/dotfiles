@@ -75,6 +75,7 @@ require("lazy").setup({
         },
         indent = {
           enable = true,
+          disable = { "yaml", "python" },
         },
         highlight = {
           enable = true,
