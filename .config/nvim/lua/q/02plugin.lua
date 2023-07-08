@@ -322,4 +322,10 @@ require("lazy").setup({
       }
     end
   },
+
+  -- support multi cursor
+  {
+    "mg979/vim-visual-multi",
+  },
+
 }, opts)
