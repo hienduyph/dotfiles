@@ -16,6 +16,7 @@ brew "pinentry-mac"
 brew "keychain"
 brew "colima"
 brew "docker"
+brew "connect" # ssh proxy connect
 
 # core utils
 brew "telnet"
