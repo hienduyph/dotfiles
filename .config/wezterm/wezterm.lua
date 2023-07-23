@@ -5,12 +5,8 @@ local q = require("q.common")
 local raw_os_name = io.popen('uname -s', 'r'):read('*l'):lower()
 
 local out = {
-  font = wezterm.font_with_fallback({
-    "JetBrainsMono Nerd Font",
-    "JetBrains Mono",
-    "PowerlineExtraSymbols",
-    "Noto Color Emoji",
-  }),
+  font = wezterm.font("VictorMono Nerd Font", { weight = "Medium" }),
+  -- font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
   font_size = 10,
   tab_max_width = 16,
   use_fancy_tab_bar = false,
@@ -28,6 +24,7 @@ local out = {
   },
   color_scheme = "AtomOneLight",
   color_schemes = q.colors,
+  front_end = "WebGpu",
 }
 
 if string.find(raw_os_name, "linux") ~= nil then
@@ -35,9 +32,10 @@ if string.find(raw_os_name, "linux") ~= nil then
   out["window_decorations"] = "TITLE"
 else
   out["keys"] = q.mac_keys
-  out["font_size"] = 12
+  out["font_size"] = 13
   out["native_macos_fullscreen_mode"] = true
   out["window_decorations"] = "RESIZE"
+  --out["freetype_load_target"] = "Light"
 end
 
 local wayland_env = os.getenv("WAYLAND_DISPLAY")
