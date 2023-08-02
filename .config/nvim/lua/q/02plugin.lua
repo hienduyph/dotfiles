@@ -19,7 +19,68 @@ local opts = {
   },
 }
 
-require("lazy").setup({
+local fzf = { {
+  'ibhagwan/fzf-lua',
+  config = function()
+    vim.keymap.set("n", "<C-f>", function()
+      require('fzf-lua').files()
+    end, { noremap = true, silent = true })
+    vim.keymap.set("n", "<C-g>", function()
+      require('fzf-lua').live_grep()
+    end, { noremap = true, silent = true })
+    vim.keymap.set("n", "<C-i>", function()
+      require('fzf-lua').buffers()
+    end, { noremap = true, silent = true })
+  end,
+  requires = { 'nvim-tree/nvim-web-devicons' },
+} }
+
+local telescope = {
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      local tele = require("telescope")
+      tele.setup({
+        defaults = {
+          file_ignore_patterns = { "^.git/" },
+          selection_strategy = "reset",
+          sorting_strategy = "ascending",
+          layout_strategy = "horizontal",
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.55,
+              results_width = 0.8,
+            },
+            vertical = {
+              mirror = false,
+            },
+            width = 0.87,
+            height = 0.80,
+            preview_cutoff = 120,
+          },
+        },
+      })
+      tele.load_extension("fzf")
+
+      vim.keymap.set("n", "<C-f>", function()
+        require("telescope.builtin").find_files({ hidden = true })
+      end, { noremap = true, silent = true })
+      vim.keymap.set("n", "<C-g>", function()
+        require("telescope.builtin").live_grep({ hidden = true })
+      end, { noremap = true, silent = true })
+      vim.keymap.set("n", "<C-i>", function()
+        require("telescope.builtin").buffers()
+      end, { noremap = true, silent = true })
+    end,
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
+  },
+}
+
+local plugins = {
   -- core libs
   "nvim-lua/plenary.nvim",
   "MunifTanjim/nui.nvim",
@@ -245,21 +306,6 @@ require("lazy").setup({
     end,
   },
 
-  {
-    'ibhagwan/fzf-lua',
-    config = function()
-      vim.keymap.set("n", "<C-f>", function()
-        require('fzf-lua').files()
-      end, { noremap = true, silent = true })
-      vim.keymap.set("n", "<C-g>", function()
-        require('fzf-lua').live_grep()
-      end, { noremap = true, silent = true })
-      vim.keymap.set("n", "<C-i>", function()
-        require('fzf-lua').buffers()
-      end, { noremap = true, silent = true })
-    end,
-    requires = { 'nvim-tree/nvim-web-devicons' },
-  },
 
   {
     "hrsh7th/nvim-cmp",
@@ -278,6 +324,14 @@ require("lazy").setup({
 
       "SmiteshP/nvim-navic",
     },
+  },
+  {
+    'mfussenegger/nvim-dap',
+  },
+
+  -- specific language
+  {
+    "scalameta/nvim-metals",
   },
 
   { "b0o/schemastore.nvim" },
@@ -326,5 +380,7 @@ require("lazy").setup({
   {
     "mg979/vim-visual-multi",
   },
+}
 
-}, opts)
+table.insert(plugins, telescope)
+require("lazy").setup(plugins, opts)

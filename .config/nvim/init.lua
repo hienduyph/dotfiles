@@ -12,4 +12,5 @@ else
   require("q.04cmd")
   require("q.05keymap")
   require("q.completion")
+  require("q.specific_lang")
 end
