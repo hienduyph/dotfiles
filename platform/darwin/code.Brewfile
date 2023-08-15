@@ -7,6 +7,7 @@ tap "hashicorp/tap"
 tap "macos-fuse-t/homebrew-cask"
 tap "mike-engel/homebrew-jwt-cli"
 tap "bufbuild/buf"
+tap "cantino/mcfly"
 
 brew "chezmoi"
 brew "jwt-cli"
@@ -70,3 +71,4 @@ cask "fuse-t"
 cask "fuse-t-sshfs"
 
 brew "black"
+brew "mcfly"

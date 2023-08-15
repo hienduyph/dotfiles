@@ -73,6 +73,11 @@ add-zsh-hook preexec set-title-preexec
 
 export GPG_TTY=${TTY}
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
+# command -v mcfly > /dev/null 2>&1 && eval "$(mcfly init zsh)"
+export MCFLY_LIGHT=TRUE
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_FUZZY=2
+
 command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
 command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
 
