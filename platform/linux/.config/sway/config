@@ -166,9 +166,11 @@ input * {
     natural_scroll enable
 }
 
-# remap caplocks to ctl
-input * {
-    xkb_options caps:ctrl_modifier
+input "type:keyboard" {
+  # ctrl_modifier
+  xkb_options caps:escape
+  repeat_delay 300
+  repeat_rate 30
 }
 
 # workaroud for chrome app
