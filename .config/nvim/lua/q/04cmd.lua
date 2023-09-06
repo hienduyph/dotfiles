@@ -2,7 +2,8 @@ vim.api.nvim_create_user_command("GD", "DiffviewOpen", { nargs = 0 })
 vim.api.nvim_create_user_command("GDC", "DiffviewClose", { nargs = 0 })
 
 vim.api.nvim_create_user_command("Format", function()
-  vim.lsp.buf.format({ async = false, timeout_ms = 30000 })
+  -- vim.lsp.buf.format({ async = false, timeout_ms = 30000 })
+  require('guard.format').do_fmt()
 end, { nargs = 0 })
 
 -- lsp import
@@ -28,6 +29,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     -- "*.py",
   },
   callback = function()
-    vim.lsp.buf.format { async = true }
+    -- vim.lsp.buf.format { async = true }
+    require('guard.format').do_fmt()
   end,
 })

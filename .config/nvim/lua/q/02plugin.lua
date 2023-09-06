@@ -347,20 +347,21 @@ local plugins = {
   { "kylechui/nvim-surround",   config = true },
   "gpanders/editorconfig.nvim",
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimdev/guard.nvim",
     config = function()
-      local null_ls = require("null-ls")
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.black,
-          null_ls.builtins.formatting.buf,
-          null_ls.builtins.formatting.jq,
-          null_ls.builtins.formatting.sqlfluff.with({
-            extra_args = { "--dialect", "postgres" },
-          }),
-        },
+      local ft = require('guard.filetype')
+      ft('python'):fmt('black')
+      ft('lua'):fmt('stylua')
+      ft('json'):fmt({
+        cmd = 'jq',
+        stdin = true
       })
-    end,
+
+      require('guard').setup({
+        fmt_on_save = false, -- only enable for some filetype
+        lsp_as_default_formatter = true,
+      })
+    end
   },
   {
     "akinsho/toggleterm.nvim",

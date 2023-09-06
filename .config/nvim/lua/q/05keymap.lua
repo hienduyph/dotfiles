@@ -80,7 +80,8 @@ map("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 map("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 map("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 map("n", "<leader>f", function()
-  vim.lsp.buf.format({ async = true })
+  -- vim.lsp.buf.format({ async = true })
+  require('guard.format').do_fmt()
 end)
 
 
