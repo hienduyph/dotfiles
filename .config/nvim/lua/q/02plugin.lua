@@ -356,6 +356,7 @@ local plugins = {
         cmd = 'jq',
         stdin = true
       })
+      ft('typescript,javascript,typescriptreact,markdown'):fmt('prettier')
 
       require('guard').setup({
         fmt_on_save = false, -- only enable for some filetype
