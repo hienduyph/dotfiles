@@ -353,19 +353,15 @@ local plugins = {
 			local ft = require("guard.filetype")
 			ft("python"):fmt("black")
 			ft("lua"):fmt("stylua")
-			ft("json"):fmt({
-				cmd = "jq",
-				stdin = true,
-			})
 			ft("proto,c,cpp"):fmt("clang-format")
 			ft("typescript,javascript,typescriptreact,markdown,html,css,yaml"):fmt("prettier")
-			ft("rust"):fmt({
-				cmd = "rustfmt",
-				args = { "--edition", "2021", "--emit", "stdout" },
-				stdin = true,
-			})
+			ft("rust"):fmt("rustfmt")
 			ft("sh"):fmt({
 				cmd = "shfmt",
+				stdin = true,
+			})
+			ft("json"):fmt({
+				cmd = "jq",
 				stdin = true,
 			})
 			require("guard").setup({
@@ -373,6 +369,7 @@ local plugins = {
 				lsp_as_default_formatter = true,
 			})
 		end,
+    dependencies = {"nvimdev/guard-collection"},
 	},
 	{
 		"akinsho/toggleterm.nvim",
