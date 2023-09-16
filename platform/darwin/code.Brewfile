@@ -72,3 +72,5 @@ cask "fuse-t-sshfs"
 
 brew "black"
 brew "mcfly"
+cask 'intellij-idea-ce'
+cask 'visual-studio-code'
