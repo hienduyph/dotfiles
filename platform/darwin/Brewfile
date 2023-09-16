@@ -22,3 +22,4 @@ cask "cryptomator"
 # mas "Blackmagic Disk Speed Test", id: 425264550
 cask 'stats'
 cask "openkey"
+cask 'joplin'
