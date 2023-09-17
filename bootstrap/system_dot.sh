@@ -55,6 +55,9 @@ _mac() {
   sudo mkdir -p /etc/dnscrypt-proxy/
   sudo touch /etc/dnscrypt-proxy/forwarding-rules.txt
   sudo chown -R $ACTOR /etc/dnscrypt-proxy/forwarding-rules.txt
+  sudo mkdir -p /var/log/dnscrypt-proxy
+  # enable dnscrypt on start
+  sudo brew services start dnscrypt-proxy
 }
 
 __system() {

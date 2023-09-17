@@ -74,3 +74,5 @@ brew "black"
 brew "mcfly"
 cask 'intellij-idea-ce'
 cask 'visual-studio-code'
+cask "tableplus"
+cask "dbeaver-community"
