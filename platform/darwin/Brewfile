@@ -11,7 +11,7 @@ tap "macos-fuse-t/homebrew-cask"
 # cask "google-chrome"
 # cask "dropbox"
 # cask "telegram"
-
+brew "dnscrypt-proxy"
 brew "mas"
 cask "cloudflare-warp"
 cask "alacritty"
