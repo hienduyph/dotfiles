@@ -8,6 +8,7 @@ alias cat="bat --paging=never"
 alias less="bat"
 alias fp="flatpak --user"
 alias k="kubectl"
+alias czm="chezmoi"
 
 alias y2j="yq -o json"
 alias j2y="yq -P"

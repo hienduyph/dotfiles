@@ -1,6 +1,5 @@
 # vim: ft=ruby
 cask_args appdir: "~/Applications"
-tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "bensadeh/despell"
 tap "hashicorp/tap"
@@ -8,6 +7,7 @@ tap "macos-fuse-t/homebrew-cask"
 tap "mike-engel/homebrew-jwt-cli"
 tap "bufbuild/buf"
 tap "cantino/mcfly"
+tap "MisterTea/et"
 
 brew "chezmoi"
 brew "jwt-cli"
@@ -66,6 +66,8 @@ brew "kustomize"
 brew "krew"
 brew "k9s"
 brew "ansible"
+brew "mosh"
+brew "MisterTea/et/et"
 
 cask "fuse-t"
 cask "fuse-t-sshfs"
@@ -76,3 +78,4 @@ cask 'intellij-idea-ce'
 cask 'visual-studio-code'
 cask "tableplus"
 cask "dbeaver-community"
+cask "sublime-text"

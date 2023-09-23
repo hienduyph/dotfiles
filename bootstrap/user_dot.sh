@@ -19,6 +19,7 @@ _configs() {
     nvim
     starship.toml
     despell
+    lapce-stable
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
