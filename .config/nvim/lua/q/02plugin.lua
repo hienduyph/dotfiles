@@ -280,17 +280,32 @@ local plugins = {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-			require("indent_blankline").setup({
-				char = "|",
-				buftype_exclude = { "terminal", "dashboard" },
-				space_char_blankline = " ",
-				use_treesitter = true,
-				char_list = { "|", "¦", "┆", "┊" },
-				show_current_context = true,
-				show_current_context_start = true,
+			local highlight = {
+				"RainbowRed",
+				"RainbowYellow",
+			}
+
+			local hooks = require("ibl.hooks")
+			-- create the highlight groups in the highlight setup hook, so they are reset
+			-- every time the colorscheme changes
+			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+				vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#dedede" })
+				vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#cfcccc" })
+			end)
+
+			require("ibl").setup({
+				indent = {
+					char = { "|", "¦", "┆", "┊" },
+					smart_indent_cap = false,
+					highlight = highlight,
+				},
+				scope = {
+					enabled = true,
+					char = "│",
+					highlight = highlight,
+				},
+				whitespace = { highlight = { "Whitespace", "NonText" } },
 			})
-			vim.cmd([[highlight IndentBlanklineChar guifg=#dedede gui=nocombine]])
-			vim.cmd([[highlight IndentBlanklineContextChar guifg=#cfcccc gui=nocombine]])
 		end,
 	},
 
@@ -369,7 +384,7 @@ local plugins = {
 				lsp_as_default_formatter = true,
 			})
 		end,
-    dependencies = {"nvimdev/guard-collection"},
+		dependencies = { "nvimdev/guard-collection" },
 	},
 	{
 		"akinsho/toggleterm.nvim",
@@ -382,11 +397,6 @@ local plugins = {
 		config = function()
 			require("trouble").setup({})
 		end,
-	},
-
-	-- support multi cursor
-	{
-		"mg979/vim-visual-multi",
 	},
 }
 
