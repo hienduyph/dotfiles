@@ -58,7 +58,7 @@ command_timeout = 5000
 
 [kubernetes]
 
-format = '[⛵ $context](dimmed green) '
+format = '[ ⛵$context](dimmed green) '
 disabled = false
 
 [kubernetes.context_aliases]
@@ -100,8 +100,8 @@ use_logical_path = true
 disabled = true
 
 [docker_context]
-disabled = false
-format = ' [  $context ](blue bold) '
+format = ' [ $context](blue bold) '
+only_with_files = false
 
 [lua]
 disabled = false
