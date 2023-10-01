@@ -65,6 +65,9 @@ brew "kustomize"
 brew "krew"
 brew "k9s"
 brew "ansible"
+brew "age"
+brew "sops"
+
 brew "mosh"
 brew "MisterTea/et/et"
 
