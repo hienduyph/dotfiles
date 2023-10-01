@@ -1,10 +1,13 @@
 vim.api.nvim_create_user_command("GD", "DiffviewOpen", { nargs = 0 })
 vim.api.nvim_create_user_command("GDC", "DiffviewClose", { nargs = 0 })
 
-vim.api.nvim_create_user_command("Format", function()
+local codefmt = function()
 	-- vim.lsp.buf.format({ async = false, timeout_ms = 30000 })
-	require("guard.format").do_fmt()
-end, { nargs = 0 })
+	-- require("guard.format").do_fmt()
+	require("conform").format()
+end
+
+vim.api.nvim_create_user_command("Format", codefmt, { nargs = 0 })
 
 -- lsp import
 -- refer https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
@@ -38,8 +41,5 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		-- "*.yaml",
 		-- "*.yml",
 	},
-	callback = function()
-		-- vim.lsp.buf.format { async = true }
-		require("guard.format").do_fmt()
-	end,
+	callback = codefmt,
 })

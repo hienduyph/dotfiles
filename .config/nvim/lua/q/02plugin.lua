@@ -19,69 +19,6 @@ local opts = {
 	},
 }
 
-local fzf = {
-	{
-		"ibhagwan/fzf-lua",
-		config = function()
-			vim.keymap.set("n", "<C-f>", function()
-				require("fzf-lua").files()
-			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-g>", function()
-				require("fzf-lua").live_grep()
-			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-i>", function()
-				require("fzf-lua").buffers()
-			end, { noremap = true, silent = true })
-		end,
-		requires = { "nvim-tree/nvim-web-devicons" },
-	},
-}
-
-local telescope = {
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	{
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			local tele = require("telescope")
-			tele.setup({
-				defaults = {
-					file_ignore_patterns = { "^.git/" },
-					selection_strategy = "reset",
-					sorting_strategy = "ascending",
-					layout_strategy = "horizontal",
-					layout_config = {
-						horizontal = {
-							prompt_position = "top",
-							preview_width = 0.55,
-							results_width = 0.8,
-						},
-						vertical = {
-							mirror = false,
-						},
-						width = 0.87,
-						height = 0.80,
-						preview_cutoff = 120,
-					},
-				},
-			})
-			tele.load_extension("fzf")
-
-			vim.keymap.set("n", "<C-f>", function()
-				require("telescope.builtin").find_files({ hidden = true })
-			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-g>", function()
-				require("telescope.builtin").live_grep({ hidden = true })
-			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-i>", function()
-				require("telescope.builtin").buffers()
-			end, { noremap = true, silent = true })
-		end,
-		dependencies = {
-			"nvim-telescope/telescope-fzf-native.nvim",
-		},
-	},
-}
-
 local plugins = {
 	-- core libs
 	"nvim-lua/plenary.nvim",
@@ -95,6 +32,9 @@ local plugins = {
 		end,
 		config = function()
 			require("nvim-treesitter.configs").setup({
+				auto_install = true,
+				sync_install = false,
+				ignore_install = {},
 				ensure_installed = {
 					"vim",
 					"lua",
@@ -363,30 +303,6 @@ local plugins = {
 	{ "kylechui/nvim-surround", config = true },
 	"gpanders/editorconfig.nvim",
 	{
-		"nvimdev/guard.nvim",
-		config = function()
-			local ft = require("guard.filetype")
-			ft("python"):fmt("black")
-			ft("lua"):fmt("stylua")
-			ft("proto,c,cpp"):fmt("clang-format")
-			ft("typescript,javascript,typescriptreact,markdown,html,css,yaml"):fmt("prettier")
-			ft("rust"):fmt("rustfmt")
-			ft("sh"):fmt({
-				cmd = "shfmt",
-				stdin = true,
-			})
-			ft("json"):fmt({
-				cmd = "jq",
-				stdin = true,
-			})
-			require("guard").setup({
-				fmt_on_save = false, -- only enable for some filetype
-				lsp_as_default_formatter = true,
-			})
-		end,
-		dependencies = { "nvimdev/guard-collection" },
-	},
-	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
 		opts = {},
@@ -400,5 +316,124 @@ local plugins = {
 	},
 }
 
+local guard = {
+	"nvimdev/guard.nvim",
+	config = function()
+		local ft = require("guard.filetype")
+		ft("python"):fmt("black")
+		ft("lua"):fmt("stylua")
+		ft("proto,c,cpp"):fmt("clang-format")
+		ft("typescript,javascript,typescriptreact,markdown,html,css,yaml"):fmt("prettier")
+		ft("rust"):fmt("rustfmt")
+		ft("sh"):fmt({
+			cmd = "shfmt",
+			stdin = true,
+		})
+		ft("json"):fmt({
+			cmd = "jq",
+			stdin = true,
+		})
+		require("guard").setup({
+			fmt_on_save = false, -- only enable for some filetype
+			lsp_as_default_formatter = true,
+		})
+	end,
+	dependencies = { "nvimdev/guard-collection" },
+}
+
+local conform = {
+	"stevearc/conform.nvim",
+	config = function()
+		require("conform").setup({
+			format_after_save = {
+				lsp_fallback = true,
+			},
+
+			formatters_by_ft = {
+				lua = { "stylua" },
+				-- Conform will run multiple formatters sequentially
+				python = { "isort", "black" },
+				-- Use a sub-list to run only the first available formatter
+				javascript = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
+				markdown = { { "prettierd", "prettier" } },
+				html = { { "prettierd", "prettier" } },
+				css = { { "prettierd", "prettier" } },
+				yaml = { { "prettierd", "prettier" } },
+				json = { "jq" },
+				proto = { "clang_format" },
+				c = { "clang_format" },
+				cpp = { "clang_format" },
+				rust = { "rustfmt" },
+				sh = { "shfmt" },
+			},
+		})
+	end,
+}
+
+local fzf = {
+	{
+		"ibhagwan/fzf-lua",
+		config = function()
+			vim.keymap.set("n", "<C-f>", function()
+				require("fzf-lua").files()
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-g>", function()
+				require("fzf-lua").live_grep()
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-i>", function()
+				require("fzf-lua").buffers()
+			end, { noremap = true, silent = true })
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
+	},
+}
+
+local telescope = {
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{
+		"nvim-telescope/telescope.nvim",
+		config = function()
+			local tele = require("telescope")
+			tele.setup({
+				defaults = {
+					file_ignore_patterns = { "^.git/" },
+					selection_strategy = "reset",
+					sorting_strategy = "ascending",
+					layout_strategy = "horizontal",
+					layout_config = {
+						horizontal = {
+							prompt_position = "top",
+							preview_width = 0.55,
+							results_width = 0.8,
+						},
+						vertical = {
+							mirror = false,
+						},
+						width = 0.87,
+						height = 0.80,
+						preview_cutoff = 120,
+					},
+				},
+			})
+			tele.load_extension("fzf")
+
+			vim.keymap.set("n", "<C-f>", function()
+				require("telescope.builtin").find_files({ hidden = true })
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-g>", function()
+				require("telescope.builtin").live_grep({ hidden = true })
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-i>", function()
+				require("telescope.builtin").buffers()
+			end, { noremap = true, silent = true })
+		end,
+		dependencies = {
+			"nvim-telescope/telescope-fzf-native.nvim",
+		},
+	},
+}
+
 table.insert(plugins, telescope)
+table.insert(plugins, conform)
 require("lazy").setup(plugins, opts)
