@@ -53,11 +53,12 @@ LINUX_ICON_DIR=$HOME/.local/share/icons/hicolor/256x256/apps
 _obsidianmd() {
   VERSION=$(gh_latest_release obsidianmd/obsidian-releases)
   VERSION=${VERSION#v}
-  DST=$HOME/Applications/Obsidian.AppImage
+  DST=$APP_HOME/Obsidian.AppImage
   mkdir -p $LINUX_ICON_DIR
   cp $HOME/dotfiles/images/obsidian.png $LINUX_ICON_DIR/
-  echo "Install obsidianmd version ${VERSION} to $DST"
-  curl -Lo $DST "https://github.com/obsidianmd/obsidian-releases/releases/download/v${VERSION}/Obsidian-${VERSION}.AppImage"
+  uri="https://github.com/obsidianmd/obsidian-releases/releases/download/v${VERSION}/Obsidian-${VERSION}.AppImage"
+  echo "Install obsidianmd version ${VERSION} to $DST, uri: ${uri}"
+  curl -Lo $DST  $uri
   chmod +x $DST
   tee $HOME/.local/share/applications/obsidian.desktop << EOF
 [Desktop Entry]
@@ -112,7 +113,7 @@ EOF
 _lapce() {
   VERSION=$(gh_stable_release lapce/lapce)
   VERSION=${VERSION#v}
-  DST=$HOME/Applications
+  DST=$APP_HOME
   echo "Install Lapce Editor ${VERSION} to $DST"
   curl -fsSL "https://github.com/lapce/lapce/releases/download/v${VERSION}/Lapce-linux.tar.gz" | tar xz -C $DST --strip-components=1
 

@@ -3,5 +3,4 @@ keepassxc
 firefox
 code
 calibre
-zotero
 flatpak

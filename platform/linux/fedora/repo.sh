@@ -11,10 +11,6 @@ sudo dnf remove PackageKit fedora-chromium-config -y
 _install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 _install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# albert for gnome
-sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_38/home:manuelschneid3r.repo
-
 sudo dnf config-manager --set-enabled google-chrome
 
 sudo dnf copr enable atim/joshuto -y
@@ -61,13 +57,4 @@ gpgcheck=1
 repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
-
-sudo tee /etc/yum.repos.d/google-chrome.repo << EOF
-[google-chrome]
-name=google-chrome
-baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
-enabled=1
-gpgcheck=1
-gpgkey=https://dl.google.com/linux/linux_signing_key.pub
-EOF
 
