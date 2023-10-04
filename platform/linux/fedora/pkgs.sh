@@ -1,3 +1,3 @@
 #/bin/bash
 
-sudo dnf5 install -y $(< $1)
+sudo dnf install -y $(< $1)

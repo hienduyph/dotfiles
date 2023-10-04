@@ -33,7 +33,7 @@ _theme() {
   local workdir=/tmp/theme
   mkdir $workdir
   git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git $workdir
-  $workdir/install.sh -t default -a -b --black
+  $workdir/install.sh -t default -a -b
   rm -rf $workdir
 }
 

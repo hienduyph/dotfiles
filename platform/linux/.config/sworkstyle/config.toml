@@ -74,4 +74,6 @@ fallback = ''
 ".pdf" = ""
 "rhythmbox"=""
 "/.*Cryptomator.*/" = "󱇱"
+"/.*Microsoft Teams.*/" = "󰊻"
 "org.wezfurlong.wezterm" = "" 
+"/.*DBeaver.*/" = ""

@@ -19,7 +19,7 @@ _install_ext() {
   EXTENSION_ID=$(curl -s $URL| grep -oP 'data-uuid="\K[^"]+')
   echo "Install ${URL} with id ${EXTENSION_ID}"
   VERSION_TAG=$(curl -Lfs "https://extensions.gnome.org/extension-query/?search=$EXTENSION_ID" | jq '.extensions[0] | .shell_version_map | map(.pk) | max')
-  wget -O ${EXTENSION_ID}.zip "https://extensions.gnome.org/download-extension/${EXTENSION_ID}.shell-extension.zip?version_tag=$VERSION_TAG"
+  curl -Lo ${EXTENSION_ID}.zip "https://extensions.gnome.org/download-extension/${EXTENSION_ID}.shell-extension.zip?version_tag=$VERSION_TAG"
   gnome-extensions install --force -q ${EXTENSION_ID}.zip
   rm ${EXTENSION_ID}.zip
 }

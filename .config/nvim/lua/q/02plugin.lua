@@ -241,7 +241,6 @@ local plugins = {
 				},
 				scope = {
 					enabled = true,
-					char = "│",
 					highlight = highlight,
 				},
 				whitespace = { highlight = { "Whitespace", "NonText" } },

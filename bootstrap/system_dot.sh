@@ -17,11 +17,6 @@ _brew() {
 _linux() {
  curl -fsSL 'https://github.com/bensadeh/despell/releases/download/0.9/despell_0.9_Linux_64-bit.tar.gz' | sudo tar xz -C /usr/local/bin
   ACTOR=$USER
-  sudo tee /etc/systemd/resolved.conf << EOM
-[Resolve]
-DNS=127.0.0.1
-Domains=~.
-EOM
   sudo mkdir -p /etc/dnscrypt-proxy
   sudo cp $HOME/dotfiles/.config/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
   sudo touch /etc/dnscrypt-proxy/forwarding-rules.txt
