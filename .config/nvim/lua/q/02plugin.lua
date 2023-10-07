@@ -287,6 +287,12 @@ local plugins = {
 	},
 	{
 		"mfussenegger/nvim-dap",
+		dependencies = {
+			"leoluz/nvim-dap-go",
+			"mfussenegger/nvim-dap-python",
+			"rcarriga/nvim-dap-ui",
+			"theHamsta/nvim-dap-virtual-text",
+		},
 	},
 
 	-- specific language
@@ -489,6 +495,15 @@ local telescope = {
 			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<C-i>", function()
 				require("telescope.builtin").buffers()
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-i>", function()
+				require("telescope.builtin").buffers()
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-k>", function()
+				require("telescope.builtin").commands()
+			end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-h>", function()
+				require("telescope.builtin").command_history()
 			end, { noremap = true, silent = true })
 		end,
 		dependencies = {
