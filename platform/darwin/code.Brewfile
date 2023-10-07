@@ -57,6 +57,8 @@ brew "buf"
 brew "go"
 brew "node@18"
 brew "python@3.10"
+brew "tokei"
+brew "delve"
 
 # cloud tools
 brew "helm"

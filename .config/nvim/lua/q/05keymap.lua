@@ -71,7 +71,7 @@ map("x", "<leader>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>")
 map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
 map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+map("n", "<leader>k", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 map("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
 map("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
 map("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
@@ -123,3 +123,30 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+
+-- nvim dap config
+-- https://www.reddit.com/r/neovim/comments/silikv/debugging_in_neovim/
+map("n", "<F4>", ":lua require('dapui').toggle()<CR>")
+map("n", "<F5>", ":lua require('dap').toggle_breakpoint()<CR>")
+map("n", "<F9>", ":lua require('dap').continue()<CR>")
+
+map("n", "<F1>", ":lua require('dap').step_over()<CR>")
+map("n", "<F2>", ":lua require('dap').step_into()<CR>")
+map("n", "<F3>", ":lua require('dap').step_out()<CR>")
+
+map("n", "<Leader>dsc", ":lua require('dap').continue()<CR>")
+map("n", "<Leader>dsv", ":lua require('dap').step_over()<CR>")
+map("n", "<Leader>dsi", ":lua require('dap').step_into()<CR>")
+map("n", "<Leader>dso", ":lua require('dap').step_out()<CR>")
+
+map("n", "<Leader>duh", ":lua require('dap.ui.widgets').hover()<CR>")
+map("n", "<Leader>duf", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>")
+
+map("n", "<Leader>dro", ":lua require('dap').repl.open()<CR>")
+map("n", "<Leader>drl", ":lua require('dap').repl.run_last()<CR>")
+
+map("n", "<Leader>dbc", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+map("n", "<Leader>dbm", ":lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>")
+map("n", "<Leader>dbt", ":lua require('dap').toggle_breakpoint()<CR>")
+
+map("n", "<Leader>di", ":lua require('dapui').toggle()<CR>")
