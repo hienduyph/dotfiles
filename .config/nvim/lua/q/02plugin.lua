@@ -58,6 +58,7 @@ local plugins = {
 					"json5",
 					"terraform",
 					"java",
+					"scala",
 					"kotlin",
 					"typescript",
 					"javascript",
@@ -146,6 +147,9 @@ local plugins = {
 				},
 				update_focused_file = {
 					enable = true,
+				},
+				renderer = {
+					group_empty = true,
 				},
 				filters = {
 					dotfiles = false,
