@@ -468,6 +468,15 @@ local telescope = {
 						height = 0.80,
 						preview_cutoff = 120,
 					},
+					vimgrep_arguments = {
+						"rg",
+						"--color=never",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--smart-case",
+					},
 				},
 			})
 			tele.load_extension("fzf")

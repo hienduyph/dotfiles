@@ -6,6 +6,8 @@ local function map(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, options)
 end
 
+map("n", "<leader>sv", "<cmd>source $MYVIMRC<CR>")
+
 -- delete without copy
 map("n", "<leader>d", '"_d')
 map("x", "<leader>d", '"_d')
@@ -79,6 +81,11 @@ map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 map("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 map("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+
+-- quickfix
+-- learn keymap from https://github.com/tpope/vim-unimpaired
+map("n", "]q", "<cmd>cn<CR>")
+map("n", "[q", "<cmd>cp<CR>")
 
 -- Terminal stuff
 local Terminal = require("toggleterm.terminal").Terminal
