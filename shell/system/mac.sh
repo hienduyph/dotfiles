@@ -30,4 +30,5 @@ xcode_dl() {
 
   xip -x ~/Downloads/Xcode_${VERSION}
 }
-
+addToPATH $HOMEBREW_PREFIX/opt/libpq/bin
+addToPATH $HOMEBREW_PREFIX/opt/mysql-client/bin

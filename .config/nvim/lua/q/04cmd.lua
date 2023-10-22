@@ -3,8 +3,8 @@ vim.api.nvim_create_user_command("GDC", "DiffviewClose", { nargs = 0 })
 
 local codefmt = function()
 	-- vim.lsp.buf.format({ async = false, timeout_ms = 30000 })
-	-- require("guard.format").do_fmt()
-	require("conform").format({ timeout_ms = 30000, async = false })
+	require("guard.format").do_fmt()
+	-- require("conform").format({ timeout_ms = 30000, async = false })
 end
 
 vim.api.nvim_create_user_command("Format", codefmt, { nargs = 0 })

@@ -52,6 +52,7 @@ brew "snappy"
 brew "mysql-client"
 brew "grpcurl"
 brew "buf"
+brew "libpq"
 
 # langluage
 brew "go"
@@ -80,3 +81,4 @@ cask 'visual-studio-code'
 cask "tableplus"
 cask "dbeaver-community"
 cask "sublime-text"
+

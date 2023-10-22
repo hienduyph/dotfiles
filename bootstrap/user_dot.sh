@@ -67,7 +67,6 @@ _dots() {
     .ideavimrc
     .tmux.common.conf
     .alacritty.common.yml
-    .gitconfig
   )
   for f in "${dots[@]}"; do
     ln -sf $APP_ROOT/$f $HOME/$f
@@ -75,6 +74,7 @@ _dots() {
 
   locals=(
     .alacritty.yml
+    .gitconfig
   )
   for f in "${locals[@]}"; do
     cp $APP_ROOT/$f $HOME
