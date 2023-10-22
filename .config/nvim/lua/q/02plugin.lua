@@ -513,5 +513,5 @@ local telescope = {
 }
 
 table.insert(plugins, telescope)
-table.insert(plugins, conform)
+table.insert(plugins, guard)
 require("lazy").setup(plugins, opts)

@@ -18,11 +18,7 @@
 [init]
 	defaultBranch = main
 [filter "lfs"]
+	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean -- %f
-[user]
-	signingkey = FE05D976CB714EE8
-	name = Hien Pham
-	email = hienpd9@fpt.com
