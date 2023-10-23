@@ -435,7 +435,7 @@ local fzf = {
 	{
 		"ibhagwan/fzf-lua",
 		config = function()
-			vim.keymap.set("n", "<C-f>", function()
+			vim.keymap.set("n", "<C-p>", function()
 				require("fzf-lua").files()
 			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<C-g>", function()
@@ -487,7 +487,7 @@ local telescope = {
 			})
 			tele.load_extension("fzf")
 
-			vim.keymap.set("n", "<C-f>", function()
+			vim.keymap.set("n", "<C-p>", function()
 				require("telescope.builtin").find_files({ hidden = true })
 			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<C-g>", function()
