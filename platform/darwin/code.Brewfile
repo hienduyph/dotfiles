@@ -53,6 +53,7 @@ brew "mysql-client"
 brew "grpcurl"
 brew "buf"
 brew "libpq"
+brew "yazi"
 
 # langluage
 brew "go"
