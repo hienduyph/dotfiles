@@ -93,6 +93,10 @@ local on_attach = function(client, bufnr)
 	elseif client.server_capabilities.document_range_formatting then
 		buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 	end
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint(bufnr, true)
+	end
+
 	if client.server_capabilities.documentSymbolProvider then
 		navic.attach(client, bufnr)
 	end
