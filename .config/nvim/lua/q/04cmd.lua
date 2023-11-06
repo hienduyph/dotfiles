@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		"*.tsx",
 		"*.html",
 		"*.proto",
-		-- "*.py",
+		"*.py",
 		-- "*.yaml",
 		-- "*.yml",
 	},

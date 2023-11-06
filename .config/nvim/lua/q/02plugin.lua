@@ -380,7 +380,7 @@ local guard = {
 	"nvimdev/guard.nvim",
 	config = function()
 		local ft = require("guard.filetype")
-		ft("python"):fmt("black")
+		ft("python"):fmt("ruff"):lint("ruff")
 		ft("lua"):fmt("stylua")
 		ft("proto,c,cpp"):fmt("clang-format")
 		ft("typescript,javascript,typescriptreact,markdown,html,css,yaml"):fmt("prettier")
