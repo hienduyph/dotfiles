@@ -94,44 +94,6 @@ local plugins = {
 		"echasnovski/mini.nvim",
 		branch = "main",
 		config = function()
-			require("mini.base16").setup({
-				palette = {
-					base00 = "#ffffff",
-					base01 = "#f6f8eb",
-					base02 = "#dbe1ac",
-					base03 = "#73765a",
-					base04 = "#324490",
-					base05 = "#002a83",
-					base06 = "#0000e4",
-					base07 = "#080500",
-					base08 = "#5e2200",
-					base09 = "#a86400",
-					base0A = "#008818",
-					base0B = "#004500",
-					base0C = "#b34aad",
-					base0D = "#004b76",
-					base0E = "#7d0077",
-					base0F = "#0086ae",
-				},
-				use_cterm = {
-					base00 = 254,
-					base01 = 250,
-					base02 = 246,
-					base03 = 243,
-					base04 = 60,
-					base05 = 18,
-					base06 = 4,
-					base07 = 232,
-					base08 = 52,
-					base09 = 130,
-					base0A = 28,
-					base0B = 22,
-					base0C = 133,
-					base0D = 24,
-					base0E = 90,
-					base0F = 31,
-				},
-			})
 			require("mini.align").setup()
 		end,
 	},
@@ -245,7 +207,7 @@ local plugins = {
 					highlight = highlight,
 				},
 				scope = {
-					enabled = true,
+					enabled = false,
 					highlight = highlight,
 				},
 				whitespace = { highlight = { "Whitespace", "NonText" } },
@@ -339,6 +301,22 @@ local plugins = {
 					"fugitive",
 					"NvimTree",
 				},
+			})
+
+			-- https://ansidev.xyz/posts/2023-04-25-how-to-change-the-highlight-style-using-vim-illuminate
+			-- change the highlight style
+			vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+			vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+			vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+
+			--- auto update the highlight style on colorscheme change
+			vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+				pattern = { "*" },
+				callback = function(ev)
+					vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+					vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+					vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+				end,
 			})
 		end,
 	},
@@ -533,3 +511,5 @@ local telescope = {
 table.insert(plugins, telescope)
 table.insert(plugins, guard)
 require("lazy").setup(plugins, opts)
+
+vim.cmd([[colorscheme Mini16]])
