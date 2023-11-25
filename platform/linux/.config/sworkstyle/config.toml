@@ -78,4 +78,4 @@ fallback = ''
 "org.wezfurlong.wezterm" = "" 
 "/.*DBeaver.*/" = ""
 "/.*Outlook.*/" = "󰴢"
-
+"sublime_text"=""
