@@ -379,7 +379,14 @@ local guard = {
 		ft("python"):fmt("ruff"):lint("ruff")
 		ft("lua"):fmt("stylua")
 		ft("proto,c,cpp"):fmt("clang-format")
-		ft("typescript,javascript,typescriptreact,markdown,html,css,yaml"):fmt("prettier")
+		ft("markdown,html,css,yaml"):fmt("prettier")
+		ft("typescript,javascript,typescriptreact"):fmt({
+			cmd = "prettier-eslint",
+			args = { "--stdin", "--stdin-filepath" },
+			fname = true,
+			stdin = true,
+		})
+
 		ft("rust"):fmt("rustfmt")
 		ft("sh"):fmt({
 			cmd = "shfmt",
