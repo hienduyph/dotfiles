@@ -325,6 +325,24 @@ local plugins = {
 		end,
 	},
 	{
+		"RRethy/vim-illuminate",
+		config = function()
+			require("illuminate").configure({
+				providers = {
+					"lsp",
+					"treesitter",
+					"regex",
+				},
+				filetypes_denylist = {
+					"dirbuf",
+					"dirvish",
+					"fugitive",
+					"NvimTree",
+				},
+			})
+		end,
+	},
+	{
 		"rest-nvim/rest.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()

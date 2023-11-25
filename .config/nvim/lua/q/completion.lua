@@ -202,6 +202,14 @@ nvim_lsp.pyright.setup({
 	before_init = function(_, config)
 		config.settings.python.pythonPath = get_python_path(config.root_dir)
 	end,
+	settings = {
+		python = {
+			analysis = {
+				executionEnvironments = { { root = "./" } },
+				autoImportCompletions = true,
+			},
+		},
+	},
 })
 
 -- Golang setup
