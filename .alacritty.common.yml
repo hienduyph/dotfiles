@@ -17,7 +17,7 @@ font:
   size: 9
   normal:
     family: JetBrainsMono NF
-    style: ExtraLight
+    style: Light
   bold:
     family: JetBrainsMono NF
     style: Regular

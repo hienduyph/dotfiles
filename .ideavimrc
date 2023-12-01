@@ -64,14 +64,14 @@ map g] <Action>(GotoPreviousError)
 set incsearch
 map <c-/> <Action>(FindInPath)
 map <c-a> <Action>(GotoAction)
-map <c-f> <Action>(GotoFile)
+map <c-p> <Action>(GotoFile)
 
 map <leader>u <Action>(FindUsages)
 map <leader>s <Action>(GotoRelated)
 map <leader>h <Action>(CallHierarchy)
 map <leader>b <Action>(ShowNavBar)
 map <c-s> <Action>(FileStructurePopup)
-map <c-o> <Action>(GotoSymbol)
+" map <c-o> <Action>(GotoSymbol)
 map <leader>gc <Action>(GotoClass)
 map gi <Action>(GotoImplementation)
 " map gd <Action>(GotToDeclaration)
@@ -81,7 +81,7 @@ map gb <Action>(Back)
 map gf <Action>(Forward)
 
 """ Tool windows
-map <c-p> <Action>(JumpToLastWindow)
+" map <c-p> <Action>(JumpToLastWindow)
 map <c-x> <Action>(HideAllWindows)
 """ Running and Debugging
 map ,r <Action>(ContextRun)
