@@ -262,6 +262,11 @@ local plugins = {
 		"scalameta/nvim-metals",
 	},
 
+	-- java
+	{
+		"mfussenegger/nvim-jdtls",
+	},
+
 	{ "b0o/schemastore.nvim" },
 
 	{

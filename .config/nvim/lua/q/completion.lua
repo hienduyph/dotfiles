@@ -3,6 +3,7 @@ vim.o.completeopt = "menuone,noselect"
 require("mason").setup()
 require("mason-lspconfig").setup({
 	automatic_installation = true,
+	ensure_installed = { "jdtls" },
 })
 
 local navic = require("nvim-navic")
