@@ -63,8 +63,8 @@ map g] <Action>(GotoPreviousError)
 """ Searching and Source Code Navigation
 set incsearch
 map <c-/> <Action>(FindInPath)
-map <c-a> <Action>(GotoAction)
-map <c-f> <Action>(GotoFile)
+nmap <c-k> <Action>(GotoAction)
+map <c-p> <Action>(GotoFile)
 
 map <leader>u <Action>(FindUsages)
 map <leader>s <Action>(GotoRelated)
@@ -81,7 +81,7 @@ map gb <Action>(Back)
 map gf <Action>(Forward)
 
 """ Tool windows
-map <c-p> <Action>(JumpToLastWindow)
+" map <c-p> <Action>(JumpToLastWindow)
 map <c-x> <Action>(HideAllWindows)
 """ Running and Debugging
 map ,r <Action>(ContextRun)
