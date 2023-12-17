@@ -63,6 +63,7 @@ end)
 
 -- fuzzy & tree stuff
 map("n", "<C-y>", "<cmd>NvimTreeToggle<CR>")
+map("n", "<leader>t", "<cmd>NvimTreeFocus<CR>")
 
 -- lsp stuff
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")

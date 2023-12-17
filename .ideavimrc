@@ -22,8 +22,8 @@ xnoremap <Leader>p "_dP
 
 " format
 command Format <Action>(ReformatCode)
-command T NERDTreeFocus
 noremap <C-y> :NERDTreeToggle<CR>
+noremap <leader>t :NERDTreeFocus<CR>
 map <leader>r <Action>(IdeaVim.ReloadVimRc.reload)
 
 map <leader>d <Action>(Debug)
@@ -71,7 +71,7 @@ map <leader>s <Action>(GotoRelated)
 map <leader>h <Action>(CallHierarchy)
 map <leader>b <Action>(ShowNavBar)
 map <c-s> <Action>(FileStructurePopup)
-map <c-o> <Action>(GotoSymbol)
+" nmap <c-o> <Action>(GotoSymbol)
 map <leader>gc <Action>(GotoClass)
 map gi <Action>(GotoImplementation)
 " map gd <Action>(GotToDeclaration)
