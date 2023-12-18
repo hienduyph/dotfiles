@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo dnf install -y  wl-clipboard xlsclients swappy
+sudo dnf install -y  wl-clipboard xlsclients swappy flameshot
 
 DST=/usr/bin/start-gdm-wayland
 sudo tee $DST << EOF
@@ -19,14 +19,18 @@ export CLUTTER_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DECORATION=material
 
-exec gnome-session
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
+exec /usr/bin/gnome-session
 EOF
 
 sudo chmod +x $DST
 
 sudo tee /usr/share/wayland-sessions/gdm-wayland.desktop  << EOF
 [Desktop Entry]
-Name=Secured Gnome
+Name=HienGnome
 Comment=Force GNOME runs wayland for everything
 Exec=$DST
 Type=Application
