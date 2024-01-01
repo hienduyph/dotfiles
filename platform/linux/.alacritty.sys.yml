@@ -1,7 +1,0 @@
-font:
-  size: 9
-  normal:
-    family: JetBrainsMono NF
-    style: Light
-key_bindings:
-  - { key: N,     mods: Option,       action: SpawnNewInstance }
