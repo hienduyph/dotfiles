@@ -66,14 +66,14 @@ _dots() {
     .pylintrc
     .ideavimrc
     .tmux.common.conf
-    .alacritty.common.yml
+    .alacritty.common.toml
   )
   for f in "${dots[@]}"; do
     ln -sf $APP_ROOT/$f $HOME/$f
   done
 
   locals=(
-    .alacritty.yml
+    .alacritty.toml
     .gitconfig
   )
   for f in "${locals[@]}"; do
@@ -81,7 +81,7 @@ _dots() {
   done
 
   platform_dots=(
-    .alacritty.sys.yml
+    .alacritty.sys.toml
     .tmux.conf
   )
 

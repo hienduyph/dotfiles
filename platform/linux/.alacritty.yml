@@ -1,9 +1,0 @@
-import:
-- ~/.alacritty.common.yml
-font:
-  size: 9.6
-  normal:
-    family: JetBrainsMono NF
-    style: Light
-key_bindings:
-  - { key: N,     mods: Option,       action: SpawnNewInstance }

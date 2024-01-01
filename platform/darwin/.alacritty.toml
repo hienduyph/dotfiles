@@ -1,0 +1,124 @@
+import = ["/Users/hienduyph/.alacritty.common.toml"]
+
+[font]
+size = 13
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002v"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002s"
+key = "D"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002h"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002j"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002k"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002l"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002H"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002J"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002K"
+key = "Up"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002L"
+key = "Right"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002h"
+key = "LBracket"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002l"
+key = "RBracket"
+mods = "Command"
