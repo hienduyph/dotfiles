@@ -9,7 +9,7 @@ alias less="bat"
 alias fm="yazi"
 alias fp="flatpak --user"
 alias k="kubectl"
-alias czm="chezmoi"
+alias cm="chezmoi"
 
 alias y2j="yq -o json"
 alias j2y="yq -P"
