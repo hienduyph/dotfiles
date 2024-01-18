@@ -137,3 +137,10 @@ autocmd(
 	{ "BufRead", "BufNewFile" },
 	{ pattern = { "*/playbooks/*.yml", "*/playbooks/*.yaml" }, command = [[ set filetype=yaml.ansible ]] }
 )
+
+autocmd({ "BufWritePost" }, {
+	pattern = "*.go",
+	callback = function()
+		require("lint").try_lint()
+	end,
+})

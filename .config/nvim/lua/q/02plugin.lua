@@ -256,6 +256,15 @@ local plugins = {
 			"theHamsta/nvim-dap-virtual-text",
 		},
 	},
+	-- code linter
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("lint").linters_by_ft = {
+				go = { "golangcilint" },
+			}
+		end,
+	},
 
 	-- specific language
 	{
@@ -396,10 +405,11 @@ local guard = {
 	"nvimdev/guard.nvim",
 	config = function()
 		local ft = require("guard.filetype")
-		ft("python"):fmt("ruff"):lint("ruff")
+		ft("python"):fmt("ruff") -- :lint("ruff")
 		ft("lua"):fmt("stylua")
 		ft("proto,c,cpp"):fmt("clang-format")
 		ft("markdown,html,css,yaml"):fmt("prettier")
+		-- ft("go"):lint("golangci_lint")
 		ft("typescript,javascript,typescriptreact"):fmt({
 			cmd = "prettier-eslint",
 			args = { "--stdin", "--stdin-filepath" },
