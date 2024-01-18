@@ -23,6 +23,9 @@ vim.api.nvim_create_user_command("MinifyJSON", "%!jq -c .", { nargs = 0 })
 vim.api.nvim_create_user_command("BufOnly", "%bd|e#|bd#", { nargs = 0 })
 
 vim.api.nvim_create_user_command("Black", "!black %", { nargs = 0 })
+vim.api.nvim_create_user_command("Lint", "lua require('lint').try_lint()", { nargs = 0 })
+
+
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = {
