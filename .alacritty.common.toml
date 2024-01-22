@@ -77,13 +77,10 @@ history = 10000
 multiplier = 3
 
 [window]
-decorations = "none"
+decorations = "None"
 dynamic_padding = false
-startup_mode = "Maximized"
-
-[window.dimensions]
-columns = 0
-lines = 0
+# startup_mode = "Maximized"
+dimensions = { columns = 300, lines = 100}
 
 [window.padding]
 x = 0

@@ -16,7 +16,8 @@
   "modules-left": [
     "custom/menu",
     "sway/workspaces",
-    "custom/scratchpad"
+    "custom/scratchpad",
+    "sway/window",
   ],
   "modules-center": [
     "custom/wf-recorder",
