@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		"*.html",
 		"*.proto",
 		"*.py",
-		"*.scala",
+		-- "*.scala",
 		-- "*.yaml",
 		-- "*.yml",
 	},
