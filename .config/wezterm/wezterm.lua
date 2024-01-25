@@ -25,7 +25,7 @@ local out = {
 	color_schemes = q.colors,
 	-- color_scheme = "Github (base16)",
 	-- color_scheme = "Github (Gogh)",
-	front_end = "WebGpu",
+	bold_brightens_ansi_colors = true,
 }
 
 if string.find(raw_os_name, "linux") ~= nil then
