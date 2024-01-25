@@ -21,7 +21,7 @@ local out = {
 		top = 0,
 		bottom = 0,
 	},
-	color_scheme = "AtomOneLight",
+	color_scheme = "Flexoki",
 	color_schemes = q.colors,
 	-- color_scheme = "Github (base16)",
 	-- color_scheme = "Github (Gogh)",
