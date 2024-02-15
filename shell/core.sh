@@ -1,12 +1,12 @@
 PREPEND=(
+	"$HOME/.local/bin"
+	"$HOME/.cargo/bin"
+	"$GOPATH/bin"
 	"${HOMEBREW_PREFIX}/bin"
 	"${HOMEBREW_PREFIX}/sbin"
 	"${NPM_CONFIG_PREFIX}/bin"
-	"$HOME/.cargo/bin"
-	"$HOME/.local/bin"
 	"/usr/local/sbin"
 	"$HOME/.bin"
-	"$GOPATH/bin"
 	"$HOME/dotfiles/shell/bins"
 )
 _CUS_PATH=(
