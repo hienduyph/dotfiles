@@ -9,7 +9,8 @@ cronie-anacron
 curl
 ripgrep
 telnet
-exa
+eza
+lsd
 bat
 fd-find
 jq

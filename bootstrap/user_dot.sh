@@ -20,6 +20,8 @@ _configs() {
     starship.toml
     despell
     lapce-stable
+    k9s
+    lsd
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
