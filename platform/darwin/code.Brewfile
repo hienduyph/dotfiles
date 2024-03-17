@@ -58,8 +58,9 @@ brew "yazi"
 
 # langluage
 brew "go"
-brew "node@18"
-brew "python@3.10"
+brew "node@20"
+brew "python@3.11"
+brew "uv"
 brew "tokei"
 brew "delve"
 
