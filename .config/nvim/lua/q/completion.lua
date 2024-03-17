@@ -236,6 +236,13 @@ nvim_lsp.clangd.setup({
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 })
 
+require("java").setup()
+require("lspconfig").jdtls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = flags,
+})
+
 -- lua with nvim
 require("lspconfig").lua_ls.setup({
 	flags = flags,
