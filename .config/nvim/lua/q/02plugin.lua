@@ -373,7 +373,19 @@ local guard = {
 		ft("python"):fmt("ruff") -- :lint("ruff")
 		ft("lua"):fmt("stylua")
 		ft("proto,c,cpp"):fmt("clang-format")
-		ft("markdown,html,css,yaml"):fmt("prettier")
+		ft("markdown,html,css"):fmt("prettier")
+		ft("yaml"):fmt({
+			cmd = "yq",
+			args = { "--input-format", "yaml", "--output-format", "yaml", "--indent", "2" },
+			stdin = true,
+			fname = true,
+		})
+		ft("xml"):fmt({
+			cmd = "yq",
+			args = { "--input-format", "xml", "--output-format", "xml", "--indent", "2" },
+			stdin = true,
+			fname = true,
+		})
 		-- ft("go"):lint("golangci_lint")
 		ft("typescript,javascript,typescriptreact"):fmt({
 			cmd = "prettier-eslint",
