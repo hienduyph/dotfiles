@@ -34,6 +34,7 @@ brew "yq"
 brew "fzf"
 brew "git"
 brew "git-lfs"
+brew 'difftastic'
 
 # terminal
 brew "gnupg"
