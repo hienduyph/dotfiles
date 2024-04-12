@@ -1,4 +1,5 @@
-set clipboard+=unnamed
+" set clipboard+=unnamed
+set clipboard^=unnamedplus
 
 " https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md
 set surround
