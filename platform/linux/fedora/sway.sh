@@ -6,10 +6,10 @@ for kv in $(echo $1 | tr " " "\n"); do
 done
 
 # https://github.com/fairyglade/ly/issues/228#issuecomment-756742472
-#
+sudo dnf copr enable erikreider/SwayNotificationCenter
 sudo dnf install -y xdg-desktop-portal xdg-desktop-portal-wlr grim wf-recorder slurp wlr-randr sway dex-autostart waybar rofi-wayland wev \
   fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako \
-  kvantum swappy network-manager-applet eog nautilus
+  kvantum swappy network-manager-applet eog nautilus SwayNotificationCenter
 
 if [ -f $HOME/.cargo/bin/cargo ]; then
   $HOME/.cargo/bin/cargo install sworkstyle
