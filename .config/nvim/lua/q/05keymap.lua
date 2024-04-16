@@ -64,6 +64,7 @@ end)
 -- fuzzy & tree stuff
 map("n", "<C-y>", "<cmd>NvimTreeToggle<CR>")
 map("n", "<leader>t", "<cmd>NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>fb", "<cmd>NnnExplorer<CR>")
 
 -- lsp stuff
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
