@@ -127,20 +127,14 @@ _nix() {
 
 
 _mac() {
-  mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages"
-  ln -sf ~/dotfiles/.config/sublime-text/User "$HOME/Library/Application Support/Sublime Text/Packages/"
-
   mkdir -m 0700 ~/.gnupg
   echo "pinentry-program $($HOMEBREW_PREFIX/bin/brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
   pkill -TERM gpg-agent
 }
 
 _linux() {
-  mkdir -p $HOME/.config/sublime-text-3/Packages/
-  ln -sf ~/dotfiles/.config/sublime-text/User $HOME/.config/sublime-text-3/Packages/
-
   mkdir -m 0700 ~/.gnupg
-  echo "pinentry-program /usr/bin/pinentry-curses" | tee ~/.gnupg/gpg-agent.conf
+  echo "pinentry-program /usr/bin/pinentry" | tee ~/.gnupg/gpg-agent.conf
   pkill -TERM gpg-agent
 }
 
@@ -151,7 +145,7 @@ _rust() {
 _java() {
   curl -s "https://get.sdkman.io" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
-  sdk install java 11.0.19-tem
+  sdk install java 21.0.2-tem
 }
 
 _brew_bundle() {
@@ -174,7 +168,7 @@ main() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
-  _ranger
+  # _ranger
 
   if [[ ${PLATFORM} == "darwin" ]]; then
     # _brew
@@ -183,7 +177,7 @@ main() {
     _linux
   fi
   _java
-  _rust
+  # _rust
 }
 
 main

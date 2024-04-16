@@ -14,7 +14,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec --no-startup-id dex-autostart --autostart --environment sway
 
 # start a terminal : wezterm or alacritty
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec alacritty
 
 # Notification Daemon
 exec --no-startup-id  swaync
