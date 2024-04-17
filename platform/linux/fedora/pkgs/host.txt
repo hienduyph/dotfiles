@@ -7,3 +7,5 @@ pam_mount
 mscore-fonts-all
 mpv
 liberation-fonts
+google-roboto-mono-fonts
+google-roboto-fonts
