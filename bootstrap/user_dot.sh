@@ -128,7 +128,7 @@ _nix() {
 
 _mac() {
   mkdir -m 0700 ~/.gnupg
-  echo "pinentry-program $($HOMEBREW_PREFIX/bin/brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
+  echo "pinentry-program $($HOMEBREW_PREFIX/bin/brew --prefix)/bin/pinentry-curses" | tee ~/.gnupg/gpg-agent.conf
   pkill -TERM gpg-agent
 }
 
@@ -146,6 +146,14 @@ _java() {
   curl -s "https://get.sdkman.io" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
   sdk install java 21.0.2-tem
+}
+
+_scala() {
+  curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > /tmp/cs
+  chmod +x /tmp/cs
+  /tmp/cs setup
+  /tmp/cs setup --env --apps=bloop,scalafix,coursier,sbt,metals
+  rm -f /tmp/cs
 }
 
 _brew_bundle() {
@@ -177,6 +185,7 @@ main() {
     _linux
   fi
   _java
+  _scala
   # _rust
 }
 
