@@ -30,8 +30,10 @@ xcode_dl() {
 
   xip -x ~/Downloads/Xcode_${VERSION}
 }
+
 addToPATH $HOMEBREW_PREFIX/opt/libpq/bin
 addToPATH $HOMEBREW_PREFIX/opt/mysql-client/bin
+addToPATH "$HOME/Library/Application Support/Coursier/bin"
 
 libs=(
   mysql-client
