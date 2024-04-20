@@ -18,7 +18,8 @@ _install_pkg() {
   pkgs=(
     alacritty
     htop
-    zsh grim wf-recorder slurp wlr-randr sway dex-autostart waybar rofi-wayland wev fcitx5 fcitx5-gtk fcitx5-qt fcitx5-unikey wlsunset pavucontrol blueman mako kvantum swappy network-manager-applet eog nautilus SwayNotificationCenter git-lfs -y dnscrypt-proxy podman-compose lm_sensors pam_mount tmux neovim cronie cronie-anacron telnet make cmake kernel-tools gcc gcc-g++ openssl openssl-devel
+    lm_sensors
+    zsh grim wf-recorder slurp wev fcitx5-unikey wlsunset blueman swappy eog nautilus SwayNotificationCenter git-lfs dnscrypt-proxy podman-compose pam_mount tmux vim cronie cronie-anacron telnet kernel-tools openssl
   )
   sudo rpm-ostree install ${pkgs[@]} -y
   sudo rpm-ostree override remove firefox firefox-langpacks -y

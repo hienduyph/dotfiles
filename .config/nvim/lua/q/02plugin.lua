@@ -103,25 +103,17 @@ local plugins = {
 	{
 		"nvim-tree/nvim-tree.lua",
 		config = function()
-			local gwidth = vim.api.nvim_list_uis()[1].width
-			local gheight = vim.api.nvim_list_uis()[1].height
-			local width = 60
-			local height = math.floor(gheight * 0.8)
 			require("nvim-tree").setup({
 				git = { enable = false },
 				update_focused_file = { enable = true },
 				view = {
-					width = 40,
+					width = { min = 40, max = 60 },
 					float = {
-						enable = true,
+						enable = false,
 						quit_on_focus_loss = true,
 						open_win_config = {
 							relative = "editor",
 							border = "rounded",
-							width = width,
-							height = height,
-							row = (gheight - height) * 0.4,
-							col = (gwidth - width) * 0.5,
 						},
 					},
 				},
