@@ -1,1 +1,1 @@
-import = ["/Users/hienduyph/.alacritty.common.toml", "/Users/hienduyph/.alacritty.sys.toml"]
+import = ["~/.alacritty.common.toml", "~/.alacritty.sys.toml"]

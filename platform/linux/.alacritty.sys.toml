@@ -1,10 +1,6 @@
 [font]
 size = 9
 
-[font.normal]
-family = "JetBrainsMono NF"
-style = "Light"
-
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "N"
