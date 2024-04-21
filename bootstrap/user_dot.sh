@@ -74,11 +74,11 @@ _dots() {
     ln -sf $APP_ROOT/$f $HOME/$f
   done
 
-  locals=(
+  copies=(
     .alacritty.toml
     .gitconfig
   )
-  for f in "${locals[@]}"; do
+  for f in "${copies[@]}"; do
     cp $APP_ROOT/$f $HOME
   done
 
