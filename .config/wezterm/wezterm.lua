@@ -5,7 +5,7 @@ local q = require("q.common")
 local raw_os_name = io.popen("uname -s", "r"):read("*l"):lower()
 
 local out = {
-	font = wezterm.font("JetBrainsMono NF", { weight = "Regular" }),
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
 	font_size = 10,
 	tab_max_width = 16,
 	use_fancy_tab_bar = false,
