@@ -16,7 +16,17 @@ sudo dnf copr enable atim/starship -y
 sudo dnf copr enable atim/lazygit -y
 
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+
+# sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+
+cat <<EOF | sudo tee /etc/yum.repos.d/hashicorp.repo
+[hashicorp]
+name=Hashicorp Stable - \$basearch
+baseurl=https://rpm.releases.hashicorp.com/fedora/39/\$basearch/stable
+enabled=1
+gpgcheck=1
+gpgkey=https://rpm.releases.hashicorp.com/gpg
+EOF
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 

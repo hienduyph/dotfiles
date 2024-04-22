@@ -49,3 +49,4 @@ optipng
 openssl-devel
 openssl
 https://github.com/twpayne/chezmoi/releases/download/v2.47.4/chezmoi-2.47.4-x86_64.rpm
+pinentry
