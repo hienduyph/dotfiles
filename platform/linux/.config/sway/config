@@ -1,6 +1,15 @@
 set $mod Mod4
 
-xwayland disable
+exec_always {
+  gsettings set org.gnome.desktop.interface font-name "Liberation Sans 10"
+  gsettings set org.gnome.desktop.interface document-font-name "Liberation Sans 10"
+  gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font Light 10'
+  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-light'
+  gsettings set org.gnome.desktop.interface icon-theme 'WhiteSur-dark'
+  gsettings set org.gnome.desktop.wm.preferences button-layout :
+}
+
+# xwayland disable
 
 # is used in the bar {} block below.
 font JetBrainsMono Nerd Font 10
@@ -16,8 +25,6 @@ exec --no-startup-id dex-autostart --autostart --environment sway
 # start a terminal : wezterm or alacritty
 bindsym $mod+Return exec alacritty
 
-# Notification Daemon
-exec --no-startup-id  swaync
 # Toggle control center
 bindsym $mod+Shift+n exec --no-startup-id swaync-client -t -sw
 
@@ -194,13 +201,6 @@ exec --no-startup-id nm-applet --indicator
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id wlsunset -t 4500 -S 07:00 -s 18:00
 exec --no-startup-id sworkstyle -d -l info &> /tmp/sworkstyle.log
-# exec --no-startup-id mako
+exec --no-startup-id  swaync
 
-exec_always {
-  gsettings set org.gnome.desktop.interface font-name "Liberation Sans 10"
-  gsettings set org.gnome.desktop.interface document-font-name "Liberation Sans 10"
-  gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font Light 10'
-  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-light'
-  gsettings set org.gnome.desktop.interface icon-theme='WhiteSur-dark'
-  gsettings set org.gnome.desktop.wm.preferences button-layout :
-}
+
