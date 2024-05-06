@@ -28,7 +28,6 @@ gpgcheck=1
 gpgkey=https://rpm.releases.hashicorp.com/gpg
 EOF
 
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -37,6 +36,17 @@ baseurl=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/
 enabled=1
 gpgcheck=1
 gpgkey=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/repodata/repomd.xml.key
+EOF
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+cat <<EOF | sudo tee  /etc/yum.repos.d/vscode.repo
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
 sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
