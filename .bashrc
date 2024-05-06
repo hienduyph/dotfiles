@@ -22,7 +22,9 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-alias tb="SHELL=/bin/zsh toolbox enter"
+alias tb="SHELL=/bin/zsh toolbox enter q"
+source $HOME/dotfiles/shell/vars.sh
+source $HOME/dotfiles/shell/core.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
