@@ -80,13 +80,9 @@ local on_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
 
-	local function buf_set_option(...)
-		vim.api.nvim_buf_set_option(bufnr, ...)
-	end
-
 	local opts = { noremap = true, silent = true }
 
-	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+	vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
 	-- Set some keybinds conditional on server capabilities
 	if client.server_capabilities.document_formatting then
@@ -95,7 +91,7 @@ local on_attach = function(client, bufnr)
 		buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 	end
 	if client.server_capabilities.inlayHintProvider then
-		vim.lsp.inlay_hint(bufnr, true)
+		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	end
 
 	if client.server_capabilities.documentSymbolProvider then
@@ -190,7 +186,7 @@ local function get_python_path(workspace)
 	if vim.env.VIRTUAL_ENV then
 		return nvim_lsp.util.path.join(vim.env.VIRTUAL_ENV, "bin", "python")
 	end
-	return exepath("python3") or exepath("python") or "python"
+	return vim.fn.exepath("python3") or vim.fn.exepath("python") or "python"
 end
 
 nvim_lsp.pyright.setup({

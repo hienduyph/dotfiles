@@ -57,6 +57,10 @@ _configs() {
 
   mkdir -p $HOME/.config/lazygit
   ln -sf $HOME/dotfiles/.config/lazygit/config.yml  $HOME/.config/lazygit
+
+  mkdir -p $HOME/apps
+  git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git $HOME/apps/ble.sh
+  make -C $HOME/apps/ble.sh
 }
 
 _dots() {
@@ -69,6 +73,7 @@ _dots() {
     .ideavimrc
     .tmux.common.conf
     .alacritty.common.toml
+    .bashrc
   )
   for f in "${dots[@]}"; do
     ln -sf $APP_ROOT/$f $HOME/$f
