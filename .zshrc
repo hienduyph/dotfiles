@@ -5,27 +5,6 @@ fi
 bindkey -v
 
 export HISTFILE=$HOME/.zsh_history
-source $HOME/dotfiles/shell/vars.sh
-
-if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
-  source $HOME/dotfiles/shell/system/wayland.sh
-elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
-  source $HOME/dotfiles/shell/system/x11.sh
-fi
-
-if [[ "$PLATFORM" == "linux" ]]; then
-  source $HOME/dotfiles/shell/system/linux_common.sh
-elif [[ "$PLATFORM" == "darwin" ]]; then
-  source $HOME/dotfiles/shell/system/mac.sh
-fi
-
-source $HOME/dotfiles/shell/system/brew.sh
-source $HOME/dotfiles/shell/alias.sh
-source $HOME/dotfiles/shell/core.sh
-source $HOME/dotfiles/shell/func.sh
-source $HOME/dotfiles/shell/zsh/common.zsh
-source $HOME/.profile
-
 ZNAPDIR=$HOME/.znap/git
 
 # Download Znap, if it's not there yet.
@@ -78,8 +57,6 @@ export MCFLY_LIGHT=TRUE
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_FUZZY=2
 
-command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
-command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
 
 # direnv support venv
 setopt PROMPT_SUBST
@@ -92,4 +69,29 @@ bindkey '^n' autosuggest-accept
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+source $HOME/dotfiles/shell/vars.sh
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+  source $HOME/dotfiles/shell/system/wayland.sh
+elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+  source $HOME/dotfiles/shell/system/x11.sh
+fi
+
+if [[ "$PLATFORM" == "linux" ]]; then
+  source $HOME/dotfiles/shell/system/linux_common.sh
+elif [[ "$PLATFORM" == "darwin" ]]; then
+  source $HOME/dotfiles/shell/system/mac.sh
+fi
+
+source $HOME/dotfiles/shell/system/brew.sh
+source $HOME/dotfiles/shell/alias.sh
+source $HOME/dotfiles/shell/core.sh
+source $HOME/dotfiles/shell/func.sh
+source $HOME/dotfiles/shell/zsh/common.zsh
+source $HOME/.profile
+
+command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
+command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
+
 source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
+
