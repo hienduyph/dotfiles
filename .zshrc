@@ -4,7 +4,8 @@ fi
 
 bindkey -v
 
-export HISTFILE=$HOME/.zsh_history
+export HISTFILE=${HISTFILE:-$HOME/.zsh_history}
+
 ZNAPDIR=$HOME/.znap/git
 
 # Download Znap, if it's not there yet.
