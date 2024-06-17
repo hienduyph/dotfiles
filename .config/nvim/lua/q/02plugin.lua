@@ -411,6 +411,9 @@ local plugins = {
 			require("nnn").setup()
 		end,
 	},
+	{
+		"sindrets/diffview.nvim",
+	},
 }
 
 local guard = {
