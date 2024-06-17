@@ -12,6 +12,7 @@ _theme() {
 
 _repo() {
   sudo curl -Lo /etc/yum.repos.d/SwayNotificationCenter.repo https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-${VERSION_ID}/erikreider-SwayNotificationCenter-fedora-${VERSION_ID}.repo
+  sudo curl -Lo /etc/yum.repos.d/starship.repo https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${VERSION_ID}/atim-starship-fedora-${VERSION_ID}.repo
 }
 
 _install_pkg() {
@@ -19,7 +20,16 @@ _install_pkg() {
     alacritty
     htop
     lm_sensors
-    zsh grim wf-recorder slurp wev fcitx5-unikey wlsunset blueman swappy eog nautilus SwayNotificationCenter git-lfs dnscrypt-proxy podman-compose pam_mount tmux vim cronie cronie-anacron telnet kernel-tools openssl
+    zsh
+    lsd
+    bat
+    fd-find
+    starship
+    neovim
+    tmux
+    telnet
+    git-lfs
+    grim wf-recorder slurp wev fcitx5-unikey wlsunset blueman swappy eog nautilus SwayNotificationCenter dnscrypt-proxy podman-compose pam_mount cronie cronie-anacron kernel-tools openssl
   )
   sudo rpm-ostree install ${pkgs[@]} -y
   sudo rpm-ostree override remove firefox firefox-langpacks -y
