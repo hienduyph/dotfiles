@@ -29,3 +29,4 @@ fetch_git_ignore() {
 }
 
 alias pipr="python -m pip install -r requirements.txt"
+alias tb="SHELL=/bin/zsh toolbox enter q"

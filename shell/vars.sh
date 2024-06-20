@@ -48,3 +48,4 @@ fi
 
 export GIT_EDITOR=nvim
 export KUBE_EDITOR=nvim
+export HOMEBREW_NO_AUTO_UPDATE=1

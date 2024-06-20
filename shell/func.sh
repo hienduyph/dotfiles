@@ -150,3 +150,7 @@ optimize_png_dir() {
     optipng "${img}"
   done
 }
+
+_brew_install() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
