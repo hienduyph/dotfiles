@@ -40,7 +40,7 @@ background = "0xffffff"
 foreground = "0x586069"
 
 [cursor]
-style = "Block"
+style = { shape = "Block", blinking = "On" }
 unfocused_hollow = true
 
 [env]
