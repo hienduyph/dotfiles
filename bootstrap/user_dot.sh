@@ -154,9 +154,7 @@ _java() {
 }
 
 _scala() {
-  curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > /tmp/cs
   chmod +x /tmp/cs
-  /tmp/cs setup
   /tmp/cs setup --env --apps=bloop,scalafix,coursier,sbt,metals
   rm -f /tmp/cs
 }
@@ -184,9 +182,10 @@ main() {
   # _ranger
 
   if [[ ${PLATFORM} == "darwin" ]]; then
-    # _brew
+    curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > /tmp/cs
     _mac
   elif [[ ${PLATFORM} == "linux" ]]; then
+    curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > /tmp/cs
     _linux
   fi
   _java
