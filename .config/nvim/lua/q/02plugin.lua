@@ -414,6 +414,15 @@ local plugins = {
 	{
 		"sindrets/diffview.nvim",
 	},
+	{
+		"ellisonleao/glow.nvim",
+		config = function()
+			require("glow").setup({
+				glow_path = "glow",
+				style = "light",
+			})
+		end,
+	},
 }
 
 local guard = {
