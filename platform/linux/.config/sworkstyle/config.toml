@@ -83,3 +83,5 @@ fallback = ''
 "/.*CADS.*/" = "󱘮"
 "sublime_text"=""
 "org.gnome.clocks"=""
+"/.*Virtual Machine.*/"=""
+"/.*win.*/"=""
