@@ -16,6 +16,7 @@ _CUS_PATH=(
 	"$HOME/.krew/bin"
 	"${PYCLI_HOME}/bin"
 	$ANDROID_HOME/cmdline-tools/latest/bin
+	$HOME/.dotnet/tools
 )
 
 _before_path=$(

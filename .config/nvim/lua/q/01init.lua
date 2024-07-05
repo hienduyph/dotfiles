@@ -108,7 +108,7 @@ autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*.k
 autocmd({ "BufNewFile", "BufRead", "FileReadPre", "FileType" }, { pattern = "*.go", callback = use_tabs })
 autocmd(
 	{ "BufNewFile", "BufRead", "FileReadPre", "FileType" },
-	{ pattern = { "*.py", "*.rs", "*.kt" }, callback = use_spaces_four }
+	{ pattern = { "*.py", "*.rs", "*.kt", "*.cs" }, callback = use_spaces_four }
 )
 autocmd({ "BufReadPre", "BufRead", "FileReadPre", "FileType" }, {
 	pattern = {

@@ -423,6 +423,10 @@ local plugins = {
 			})
 		end,
 	},
+	-- dotnet
+	{
+		"Hoffs/omnisharp-extended-lsp.nvim",
+	},
 }
 
 local guard = {
@@ -462,6 +466,8 @@ local guard = {
 			cmd = "jq",
 			stdin = true,
 		})
+		ft("cs"):fmt("lsp")
+
 		require("guard").setup({
 			fmt_on_save = false, -- only enable for some filetype
 			lsp_as_default_formatter = true,
