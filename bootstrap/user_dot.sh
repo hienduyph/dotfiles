@@ -18,7 +18,6 @@ _configs() {
     ranger
     nvim
     starship.toml
-    despell
     lapce-stable
     k9s
     lsd
@@ -100,6 +99,9 @@ _dots() {
       ln -sf $fullpath $HOME/$f
     fi
   done
+
+  # tmux
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 _git() {

@@ -324,7 +324,7 @@ local plugins = {
 		},
 	},
 
-	{ "simrat39/rust-tools.nvim", config = true },
+	{ "mrcjkb/rustaceanvim", version = "^4" },
 	{ "kylechui/nvim-surround", config = true },
 	"gpanders/editorconfig.nvim",
 	{
