@@ -83,7 +83,7 @@ format = "via [🏎💨 $version](bold cyan) "
 disabled = false
 
 [java]
-symbol = "🌟 "
+symbol = " "
 disabled = false
 
 [directory]
