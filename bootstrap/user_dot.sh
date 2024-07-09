@@ -192,7 +192,7 @@ main() {
   fi
   _java
   _scala
-  # _rust
+  _rust
 }
 
 main
