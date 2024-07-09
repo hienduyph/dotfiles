@@ -53,7 +53,7 @@ metals_config.settings = {
 }
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 metals_config.on_attach = function(client, bufnr)
-	-- vim.lsp.inlay_hint(bufnr, true)
+	vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 end
 
 -- Autocmd that will actually be in charging of starting the whole thing
