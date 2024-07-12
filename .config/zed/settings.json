@@ -1,0 +1,14 @@
+// Folder-specific settings
+//
+// For a full list of overridable settings, and general information on folder-specific settings,
+// see the documentation: https://zed.dev/docs/configuring-zed#folder-specific-settings
+{
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_size": 14,
+  "vim_mode": true,
+  "projects_online_by_default": true,
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "blinking": "off"
+  }
+}
