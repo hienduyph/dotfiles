@@ -138,6 +138,24 @@ nvim_lsp.jsonls.setup({
 		},
 	},
 })
+
+local yamlserver = require("mason-registry").get_package("yaml-language-server"):get_install_path()
+	.. "/node_modules/yaml-language-server/bin/yaml-language-server"
+
+nvim_lsp.helm_ls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = flags,
+	settings = {
+		["helm-ls"] = {
+			yamlls = {
+				enabled = true,
+				path = yamlserver,
+			},
+		},
+	},
+})
+
 nvim_lsp.yamlls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -263,8 +281,7 @@ require("lspconfig").omnisharp.setup({
 })
 
 vim.g.rustaceanvim = function()
-	local mason_registry = require("mason-registry")
-	local codelldb = mason_registry.get_package("codelldb") -- note that this will error if you provide a non-existent package name
+	local codelldb = require("mason-registry").get_package("codelldb") -- note that this will error if you provide a non-existent package name
 	codelldb:get_install_path() -- returns a string like "/home/user/.local/share/nvim/mason/packages/codelldb"
 	local extension_path = codelldb:get_install_path() .. "/extension/"
 	local codelldb_path = extension_path .. "adapter/codelldb"

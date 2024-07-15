@@ -145,3 +145,9 @@ autocmd({ "BufWritePost" }, {
 		require("lint").try_lint()
 	end,
 })
+
+vim.filetype.add({
+	pattern = {
+		[".*/templates/.*%.yaml"] = "helm",
+	},
+})
