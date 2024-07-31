@@ -1,5 +1,10 @@
 [core]
   pager = delta
+  preloadIndex = true
+  fsmonitor = true
+  untrackedCache = true
+[feature]
+  manyFiles = true
 
 [interactive]
   diffFilter = delta --color-only
