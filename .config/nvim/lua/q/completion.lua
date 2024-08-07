@@ -226,10 +226,22 @@ nvim_lsp.clangd.setup({
 })
 
 require("java").setup()
+
 require("lspconfig").jdtls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = flags,
+
+	settings = {
+		java = {
+			saveActions = {
+				organizeImports = false,
+			},
+			autobuild = {
+				enabled = false,
+			},
+		},
+	},
 })
 
 -- lua with nvim
