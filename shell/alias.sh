@@ -30,4 +30,4 @@ fetch_git_ignore() {
 }
 
 alias pipr="python -m pip install -r requirements.txt"
-alias tb="toolbox run -c q tmux -S /tmp/box-tmux new-session -A -s $(hostname -s)_box"
+alias tb="toolbox run -c q tmux -S ${XDG_RUNTIME_DIR}/box-tmux new-session -A -s $(hostname -s)_box"
