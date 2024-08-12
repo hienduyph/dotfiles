@@ -50,10 +50,6 @@ _configs() {
     fi
   done
 
-  # k9s
-  mkdir -p $HOME/.config/k9s/
-  ln -sf $HOME/dotfiles/.config/k9s/skin.yml  $HOME/.config/k9s/
-
   mkdir -p $HOME/.config/lazygit
   ln -sf $HOME/dotfiles/.config/lazygit/config.yml  $HOME/.config/lazygit
 
@@ -182,7 +178,6 @@ main() {
   _configs $PLATFORM
   _git
   # _ranger
-
   if [[ ${PLATFORM} == "darwin" ]]; then
     curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > /tmp/cs
     _mac
@@ -192,6 +187,9 @@ main() {
   fi
   _java
   _scala
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    _brew_bundle Brewfile
+
   _rust
 }
 
