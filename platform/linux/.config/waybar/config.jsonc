@@ -33,7 +33,7 @@
     "cpu",
     // "memory",
     // "battery",
-    // "temperature",
+    "temperature",
     // "custom/nvme-temper",
     // "custom/gpu-temper",
     // "custom/gpu-power",
@@ -153,7 +153,7 @@
     "on-click": "pavucontrol"
   },
   "temperature": {
-    "critical-threshold": 90,
+    "critical-threshold": 80,
     "interval": 2,
     "format": "{icon} {temperatureC}°",
     "format-icons": [
