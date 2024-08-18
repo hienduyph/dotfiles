@@ -24,10 +24,10 @@ _install_pkg() {
     tmux
     telnet
     git-lfs
-    wf-recorder fcitx5-unikey swappy SwayNotificationCenter
+    wf-recorder fcitx5-unikey swappy SwayNotificationCenter dex-autostart
     dnscrypt-proxy podman-compose pam_mount kernel-tools openssl
     cronie cronie-anacron
-    # slurp grim wev wlsunset blueman nautilus  eog 
+    # slurp grim wev wlsunset blueman eog 
   )
   sudo rpm-ostree install ${pkgs[@]}
   sudo rpm-ostree override remove firefox firefox-langpacks

@@ -13,6 +13,7 @@ lsd
 bat
 fd-find
 jq
+yq
 fzf
 git
 git-lfs

@@ -59,6 +59,7 @@ fallback = ''
 "libreoffice-startcenter"="󰏆"
 "pdfarrange"=""
 "file manager" = ""
+"thunar" = ""
 "org.gnome.Nautilus" = ""
 "github" = ""
 "rust" = ""

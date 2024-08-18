@@ -21,3 +21,5 @@ icons:
   mvn: ""
   sbt: ""
   cargo: ""
+  docker: ""
+  podman: ""

@@ -22,7 +22,6 @@
   "modules-center": [
     "custom/wf-recorder",
     "sway/mode",
-    "custom/weather"
   ],
   "modules-right": [
     // informational
@@ -277,36 +276,6 @@
     "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
     "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
     "signal": 9
-  },
-  "custom/weather": {
-    "icon-size": 42,
-    "format": "{icon} {}",
-    "tooltip": true,
-    "interval": 3600,
-    // accepts -c/--city <city> -t/--temperature <C/F> -d/--distance <km/miles>
-    "exec": "/usr/share/sway/scripts/weather.py -c Ho_Chi_Minh -t C -d km",
-    "return-type": "json",
-    "format-icons": {
-      "Unknown": "",
-      "Cloudy": "摒",
-      "Fog": "",
-      "HeavyRain": "",
-      "HeavyShowers": "",
-      "HeavySnow": "",
-      "HeavySnowShowers": "ﰕ",
-      "LightRain": "",
-      "LightShowers": "",
-      "LightSleet": "",
-      "LightSleetShowers": "",
-      "LightSnow": "",
-      "LightSnowShowers": "ﭽ",
-      "PartlyCloudy": "",
-      "Sunny": "",
-      "ThunderyHeavyRain": "ﭼ",
-      "ThunderyShowers": "",
-      "ThunderySnowShowers": "",
-      "VeryCloudy": ""
-    }
   },
   "custom/zeit": {
     "return-type": "json",
