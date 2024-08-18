@@ -94,5 +94,5 @@ source $HOME/.profile
 command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
 command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
 
-source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
+# source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
 

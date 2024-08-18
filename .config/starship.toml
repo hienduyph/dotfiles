@@ -6,7 +6,7 @@ $directory\
 $git_branch\
 $git_commit\
 $git_state\
-$env_var\
+$git_status\
 $hg_branch\
 $shlvl\
 $kubernetes\
@@ -52,6 +52,7 @@ $status\
 $character"""
 
 # $git_status
+# $env_var\
 
 add_newline = false
 command_timeout = 5000
@@ -112,15 +113,17 @@ disabled = false
 zsh_indicator = "_"
 style = "cyan bold"
 
+# https://github.com/starship/starship/issues/4305
+# scalar register
 [git_status]
 ignore_submodules = true
-disabled = true
+disabled = false
 conflicted = '🏳'
 ahead = '🏎💨'
 behind = '😰'
 diverged = '😵'
 up_to_date = '✓'
-untracked = '🤷'
+untracked = "" # '🤷'
 stashed = '📦'
 modified = '📝'
 staged = '[++\($count\)](green)'
