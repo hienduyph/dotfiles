@@ -29,5 +29,6 @@ source $HOME/dotfiles/shell/core.sh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-source $HOME/apps/ble.sh/out/ble.sh
+# source $HOME/apps/ble.sh/out/ble.sh
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source "/usr/share/fzf/shell/key-bindings.bash"
+. "$HOME/.cargo/env"

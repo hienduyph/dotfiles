@@ -9,16 +9,14 @@ fp() {
 
 fp remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-cp -r /usr/share/icons ~/.icons
-
-fp override --filesystem=/home/$USER/.icons/:ro \
-  --env=QT_WAYLAND_DECORATION=material \
-  --env=GTK_THEME=Adwaita-dark \
-  --filesystem=/usr/share/themes/ \
-  --socket=wayland\
-  --nosocket=x11 \
-  --nosocket=fallback-x11\
-  --device=dri
+# fp override --filesystem=/home/$USER/.icons/:ro \
+#   --env=QT_WAYLAND_DECORATION=material \
+#   --env=GTK_THEME=Adwaita-dark \
+#   --filesystem=/usr/share/themes/ \
+#   --socket=wayland\
+#   --nosocket=x11 \
+#   --nosocket=fallback-x11\
+#   --device=dri
 
 # fp override --env=MOZ_DISABLE_RDD_SANDBOX=1 org.mozilla.firefox
 # fp override --user --filesystem=~/.local/share/applications:create --filesystem=~/.local/share/icons:create com.google.Chrome
@@ -29,3 +27,4 @@ while IFS= read -r line; do
 done < $APP_ROOT/apps.txt
 }
 
+_all

@@ -59,7 +59,7 @@ command_timeout = 5000
 
 [kubernetes]
 
-format = '[ ⛵$context](green) '
+format = '[ 󱃾 $context](green) '
 disabled = false
 
 [kubernetes.context_aliases]
@@ -74,13 +74,13 @@ error_symbol = "[\\$](bold red)"
 
 [time]
 disabled = false
-format = '🕙[ $time ]($style)'
+format = ' [ $time ]($style)'
 time_format = "%T"
 style = "green"
 
 
 [golang]
-format = "via [🏎💨 $version](bold cyan) "
+format = "via [ $version](bold cyan) "
 disabled = false
 
 [java]
@@ -108,7 +108,7 @@ only_with_files = false
 disabled = false
 
 [shell]
-bash_indicator = ""
+bash_indicator = ""
 disabled = false
 zsh_indicator = "_"
 style = "cyan bold"
@@ -118,17 +118,11 @@ style = "cyan bold"
 [git_status]
 ignore_submodules = true
 disabled = false
-conflicted = '🏳'
-ahead = '🏎💨'
 behind = '😰'
 diverged = '😵'
 up_to_date = '✓'
-untracked = "" # '🤷'
-stashed = '📦'
-modified = '📝'
+untracked = ""
 staged = '[++\($count\)](green)'
-renamed = '👅'
-deleted = '🗑'
 style	= 'bold purple'
 
 [rust]
