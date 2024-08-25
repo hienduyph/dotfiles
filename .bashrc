@@ -1,7 +1,10 @@
 # .bashrc
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+  . /etc/bashrc
+fi
+if [ -f $HOME/.profile ]; then
+  . $HOME/.profile
 fi
 
 # User specific environment
@@ -15,16 +18,14 @@ export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
+  for rc in ~/.bashrc.d/*; do
+    if [ -f "$rc" ]; then
+      . "$rc"
+    fi
+  done
 fi
 unset rc
 alias tb="SHELL=/bin/zsh toolbox enter q"
-source $HOME/dotfiles/shell/vars.sh
-source $HOME/dotfiles/shell/core.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
