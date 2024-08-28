@@ -9,6 +9,9 @@ icons:
   cmatrix: "🤯" # add new entries that aren't included
   python: ""
   python3: ""
+  python3.11: ""
+  python3.12: ""
+  uv: ""
   bash: ""
   git: ""
   ssh: ""
