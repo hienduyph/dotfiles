@@ -44,4 +44,4 @@ _cat_cmd() {
 
 
 alias pipr="python -m pip install -r requirements.txt"
-alias tb="toolbox run -c q tmux -S ${XDG_RUNTIME_DIR}/box-tmux new-session -A -s $(hostname -s)_box"
+alias tb="distrobox enter q -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box"
