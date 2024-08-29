@@ -26,3 +26,7 @@ u() {
 
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 addToPATH "$HOME/.local/share/coursier/bin"
+
+ZSH_VERSION=$(zsh --version | awk '{print $2}')
+export FPATH=${FPATH}:/usr/share/zsh/${ZSH_VERSION}/functions
+
