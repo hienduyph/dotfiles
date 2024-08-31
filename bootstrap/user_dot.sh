@@ -17,6 +17,7 @@ _configs() {
     mpv
     ranger
     nvim
+    tmux
     starship.toml
     lapce-stable
     k9s
