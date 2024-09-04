@@ -1,18 +1,14 @@
 zsh
 tmux
-dnscrypt-proxy
 jq
 neovim
 htop
-cronie
-cronie-anacron
 curl
 ripgrep
 telnet
 lsd
 bat
 fd-find
-jq
 yq
 fzf
 git
@@ -22,11 +18,8 @@ git-delta
 direnv
 starship
 zoxide
-https://github.com/twpayne/chezmoi/releases/download/v2.47.4/chezmoi-2.47.4-x86_64.rpm
+https://github.com/twpayne/chezmoi/releases/download/v2.52.1/chezmoi-2.52.1-x86_64.rpm
 pinentry
-
-helm
-gh
 
 make
 cmake
@@ -38,15 +31,11 @@ nodejs
 python3
 python3-pip
 python3-devel
-python3-virtualenv
 
 openssl-devel
 openssl
-optipng
-kernel-tools
 mariadb-connector-c
 mariadb-connector-c-devel
 libpq-devel
 snappy-devel
 sqlite-devel
-

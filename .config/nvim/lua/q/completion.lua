@@ -91,7 +91,7 @@ local on_attach = function(client, bufnr)
 		buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 	end
 	if client.server_capabilities.inlayHintProvider then
-		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+		-- vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	end
 
 	if client.server_capabilities.documentSymbolProvider then

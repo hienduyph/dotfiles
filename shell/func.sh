@@ -154,3 +154,9 @@ optimize_png_dir() {
 _brew_install() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
+
+_code_server() {
+  CODE_VERSION="$(curl -s "https://api.github.com/repos/coder/code-server/releases" | jq -r 'first | .tag_name')"
+  CODE_VERSION="${CODE_VERSION#v}"
+  sudo dnf install -y https://github.com/coder/code-server/releases/download/v${CODE_VERSION}/code-server-${CODE_VERSION}-amd64.rpm
+}

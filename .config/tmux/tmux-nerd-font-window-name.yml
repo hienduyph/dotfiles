@@ -25,4 +25,7 @@ icons:
   sbt: ""
   cargo: ""
   docker: ""
+  docker-compose: ""
   podman: ""
+  podman-remote: ""
+  podman-compose: ""
