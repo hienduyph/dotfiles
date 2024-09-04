@@ -174,6 +174,23 @@ _brew() {
 
 }
 
+_user_py_cli() {
+  mkdir -p $HOME/.local/bin/
+  python3 -m venv $HOME/.virtualenvs/cli
+  $HOME/.virtualenvs/cli/bin/pip install -U uv mycli pgcli ansible podman-compose s3cmd pip
+  bins=(
+    uv
+    mycli
+    pgcli
+    ansible-playbook
+    podman-compose
+    s3cmd
+  )
+  for b in ${bins[@]}; do
+    ln -sf $HOME/.virtualenvs/cli/bin/$b $HOME/.local/bin/
+  done
+}
+
 main() {
   _dots $PLATFORM
   _configs $PLATFORM
@@ -186,6 +203,7 @@ main() {
     curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > /tmp/cs
     _linux
   fi
+  _user_py_cli
   _java
   _scala
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
