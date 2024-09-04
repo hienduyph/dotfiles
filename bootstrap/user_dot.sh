@@ -138,7 +138,7 @@ _mac() {
 
 _linux() {
   mkdir -m 0700 ~/.gnupg
-  echo "pinentry-program /usr/bin/pinentry" | tee ~/.gnupg/gpg-agent.conf
+  echo "pinentry-mode loopback" | tee  ~/.gnupg/gpg.conf
   pkill -TERM gpg-agent
 }
 
