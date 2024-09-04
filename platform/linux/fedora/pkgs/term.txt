@@ -19,7 +19,6 @@ direnv
 starship
 zoxide
 https://github.com/twpayne/chezmoi/releases/download/v2.52.1/chezmoi-2.52.1-x86_64.rpm
-pinentry
 
 make
 cmake
