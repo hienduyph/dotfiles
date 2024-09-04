@@ -1,0 +1,5 @@
+flatpak
+mscore-fonts-all
+liberation-fonts
+google-roboto-mono-fonts
+google-roboto-fonts

@@ -1,11 +1,9 @@
+cronie
+cronie-anacron
 dnscrypt-proxy
 podman
 podman-compose
 alacritty
 lm_sensors
 pam_mount
-mscore-fonts-all
-mpv
-liberation-fonts
-google-roboto-mono-fonts
-google-roboto-fonts
+kernel-tools
