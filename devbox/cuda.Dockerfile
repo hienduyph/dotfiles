@@ -4,4 +4,4 @@ RUN sudo dnf config-manager --add-repo https://developer.download.nvidia.com/com
   && sudo dnf module disable nvidia-driver -y \
   && sudo dnf --setopt=install_weak_deps=False -y install cuda-12-4
 
-RUN dnf install -y https://github.com/coder/code-server/releases/download/v4.92.2/code-server-4.92.2-amd64.rpm
+RUN dnf --setopt=install_weak_deps=False install -y https://github.com/coder/code-server/releases/download/v4.92.2/code-server-4.92.2-amd64.rpm hostname localectl

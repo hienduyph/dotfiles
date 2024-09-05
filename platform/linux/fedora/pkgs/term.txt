@@ -38,3 +38,6 @@ mariadb-connector-c-devel
 libpq-devel
 snappy-devel
 sqlite-devel
+
+hostname
+localectl

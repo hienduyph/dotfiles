@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-set -x
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null)
+if [[ $SCRIPT_DIR == "" ]]; then
+  APP_ROOT=${HOME}/dotfiles
+else
+  APP_ROOT="$(dirname "$SCRIPT_DIR")"
+fi
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-APP_ROOT="$(dirname "$SCRIPT_DIR")"
-
-source $APP_ROOT/scripts/dotfiles.sh
 source $APP_ROOT/shell/func.sh
 source $APP_ROOT/shell/vars.sh
 
@@ -147,9 +148,11 @@ _rust() {
 }
 
 _java() {
-  curl -s "https://get.sdkman.io" | bash
+  curl -s "https://get.sdkman.io?rcupdate=false" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
-  sdk install java 21.0.2-tem
+  sdk install java 21.0.4-tem
+  sdk install maven
+  sdk install gradle
 }
 
 _scala() {
@@ -206,10 +209,13 @@ main() {
   _user_py_cli
   _java
   _scala
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    _brew_bundle Brewfile
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   _brew_bundle Brewfile
 
   _rust
 }
 
-main
+
+if [[ $_ == $0 ]]; then
+  main
+fi
