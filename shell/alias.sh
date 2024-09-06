@@ -22,6 +22,7 @@ alias yt-lossless="yt-dlp --extract-audio --audio-format best"
 
 alias tm="tmux new-session -A -s $(hostname -s)"
 alias q="tmux new-session -A -s Lala"
+alias cmd="distrobox enter q --"
 
 fetch_git_ignore() {
   langs=$1
