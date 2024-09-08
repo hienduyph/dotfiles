@@ -1,10 +1,10 @@
+org.gtk.Gtk3theme.Adwaita-dark
+com.google.Chrome
+com.vivaldi.Vivaldi
 com.github.tchx84.Flatseal
-md.obsidian.Obsidian
 
+md.obsidian.Obsidian
 com.visualstudio.code
-org.mozilla.firefox
 org.telegram.desktop
 org.keepassxc.KeePassXC
 net.cozic.joplin_desktop
-org.gtk.Gtk3theme.Adwaita-dark
-com.google.Chrome

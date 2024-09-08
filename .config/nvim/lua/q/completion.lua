@@ -112,7 +112,7 @@ function M.angularls()
 end
 
 function M.node()
-	M.setup_ls("tsserver")
+	M.setup_ls("ts_ls")
 	M.setup_ls("eslint")
 end
 
