@@ -40,4 +40,4 @@ snappy-devel
 sqlite-devel
 
 hostname
-localectl
+glibc-langpack-it
