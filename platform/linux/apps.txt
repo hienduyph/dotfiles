@@ -8,3 +8,5 @@ com.visualstudio.code
 org.telegram.desktop
 org.keepassxc.KeePassXC
 net.cozic.joplin_desktop
+
+org.gnome.Evince
