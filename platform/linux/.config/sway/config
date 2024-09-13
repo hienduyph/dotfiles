@@ -9,7 +9,7 @@ exec_always {
   gsettings set org.gnome.desktop.wm.preferences button-layout :
 }
 
-# xwayland disable
+xwayland disable
 
 # is used in the bar {} block below.
 font JetBrainsMono Nerd Font 10
@@ -23,7 +23,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec --no-startup-id dex --autostart --environment sway
 
 # start a terminal : wezterm or alacritty
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # Toggle control center
 bindsym $mod+Shift+n exec --no-startup-id swaync-client -t -sw

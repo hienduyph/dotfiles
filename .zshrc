@@ -20,6 +20,7 @@ znap source ohmyzsh/ohmyzsh lib/git.zsh
 znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source zsh-users/zsh-completions
+znap source jeffreytse/zsh-vi-mode
 
 
 # start our codes
@@ -62,10 +63,6 @@ export MCFLY_FUZZY=2
 # direnv support venv
 setopt PROMPT_SUBST
 
-set -o vi
-
-bindkey '^n' autosuggest-accept
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -95,3 +92,6 @@ command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
 
 # source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
 
+export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+export ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+export ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE

@@ -23,9 +23,12 @@ u() {
     brew update && brew upgrade && brew cleanup
   fi
 }
+zvm_after_init_commands+=(
+  '[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh'
+  '[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh'
+  'bindkey '^n' autosuggest-accept'
+)
 
-[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 addToPATH "$HOME/.local/share/coursier/bin"
 
 ZSH_VERSION=$(zsh --version | awk '{print $2}')

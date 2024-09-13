@@ -6,6 +6,9 @@ fi
 if [ -f $HOME/.profile ]; then
   . $HOME/.profile
 fi
+if [ -f $HOME/.bash_profile ]; then
+  . $HOME/.bash_profile 
+fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
@@ -25,7 +28,7 @@ if [ -d ~/.bashrc.d ]; then
   done
 fi
 unset rc
-alias tb="SHELL=/bin/zsh toolbox enter q"
+source $HOME/dotfiles/shell/alias.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

@@ -194,7 +194,7 @@
     "spacing": 5
   },
   "custom/menu": {
-    "format": "", // 
+    "format": "", // 
     "on-click": "swaymsg exec \\$menu",
     "tooltip": false
   },

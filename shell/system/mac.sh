@@ -54,4 +54,8 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${C_PKG_CONFIG_PATH}"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:$HOMEBREW_PREFIX/lib:${C_LD}"
 export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH}:$HOMEBREW_PREFIX/opt/zlib/lib"
 export LIBRARY_PATH=${LD_LIBRARY_PATH}:${LIBRARY_PATH}
-[ -f $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh ] && source $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh
+
+zvm_after_init_commands+=(
+  '[ -f $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh ] && source $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh'
+  'bindkey '^n' autosuggest-accept'
+)
