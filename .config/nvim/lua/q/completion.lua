@@ -127,6 +127,19 @@ end
 
 M.node()
 
+nvim_lsp.phpactor.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = flags,
+	settings = {
+		phpactor = {
+			language_server_php_cs_fixer = {
+				enabled = true,
+			},
+		},
+	},
+})
+
 nvim_lsp.jsonls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

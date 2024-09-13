@@ -420,6 +420,33 @@ local plugins = {
 	{
 		"Hoffs/omnisharp-extended-lsp.nvim",
 	},
+
+	-- php
+	{
+		"adalessa/laravel.nvim",
+		cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+		keys = {
+			{ "<leader>la", ":Laravel artisan<cr>" },
+			{ "<leader>lr", ":Laravel routes<cr>" },
+			{ "<leader>lm", ":Laravel related<cr>" },
+		},
+		event = { "VeryLazy" },
+		opts = {
+			features = {
+				null_ls = {
+					enable = false,
+				},
+				route_info = {
+					enable = true, --- to enable the laravel.nvim virtual text
+					position = "right", --- where to show the info (available options 'right', 'top')
+					middlewares = true, --- wheather to show the middlewares section in the info
+					method = true, --- wheather to show the method section in the info
+					uri = true, --- wheather to show the uri section in the info
+				},
+			},
+		},
+		config = true,
+	},
 }
 
 local guard = {
@@ -460,6 +487,7 @@ local guard = {
 			stdin = true,
 		})
 		ft("cs"):fmt("lsp")
+		ft("php"):fmt("lsp")
 
 		require("guard").setup({
 			fmt_on_save = false, -- only enable for some filetype
@@ -525,7 +553,7 @@ local telescope = {
 			local tele = require("telescope")
 			tele.setup({
 				defaults = {
-					file_ignore_patterns = { "^.git/" },
+					file_ignore_patterns = { "^.git/", "^vendor/" },
 					selection_strategy = "reset",
 					sorting_strategy = "ascending",
 					layout_strategy = "horizontal",
