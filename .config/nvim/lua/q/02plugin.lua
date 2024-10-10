@@ -453,7 +453,7 @@ local guard = {
 	"nvimdev/guard.nvim",
 	config = function()
 		local ft = require("guard.filetype")
-		ft("python"):fmt("ruff") -- :lint("ruff")
+		ft("python"):fmt("ruff"):lint("ruff")
 		ft("lua"):fmt("stylua")
 		ft("proto,c,cpp"):fmt("clang-format")
 		ft("markdown,html,css"):fmt("prettier")
@@ -489,10 +489,10 @@ local guard = {
 		ft("cs"):fmt("lsp")
 		ft("php"):fmt("lsp")
 
-		require("guard").setup({
+		vim.g.guard_config = {
 			fmt_on_save = false, -- only enable for some filetype
 			lsp_as_default_formatter = true,
-		})
+		}
 	end,
 	dependencies = { "nvimdev/guard-collection" },
 }
