@@ -195,7 +195,7 @@ local function get_python_path(workspace)
 	return vim.fn.exepath("python3") or vim.fn.exepath("python") or "python"
 end
 
-nvim_lsp.basedpyright.setup({
+nvim_lsp.pyright.setup({
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)

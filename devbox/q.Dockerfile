@@ -1,4 +1,4 @@
-FROM docker.io/fedora:40
+FROM quay.io/fedora/fedora:41
 
 COPY ./platform/linux/fedora/ /tmp/f
 
