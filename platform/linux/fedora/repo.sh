@@ -13,9 +13,9 @@ _install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-
 
 sudo dnf copr enable atim/starship -y
 
-sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf-3 config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf-3 config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]

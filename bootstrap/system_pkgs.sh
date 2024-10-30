@@ -22,3 +22,7 @@ _gocryptfs() {
   curl -fsSL https://github.com/rfjakob/gocryptfs/releases/download/${VERSION}/gocryptfs_${VERSION}_linux-static_amd64.tar.gz | tar xz -C $HOME/.local/bin
   sudo cp $HOME/.local/bin/gocryptfs /usr/local/bin
 }
+
+_fedora_cpp() {
+  sudo dnf install clang-tools-extra -y
+}
