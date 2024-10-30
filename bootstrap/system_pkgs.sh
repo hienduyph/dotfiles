@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-_box_ui_pkg() {
-  sudo dnf install -y libwayland-cursor wayland-devel libxkbcommon freetype
+_box_wayland() {
+  sudo dnf install -y libwayland-cursor wayland-devel libxkbcommon freetype fontconfig
 }
 
 
