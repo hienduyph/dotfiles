@@ -71,3 +71,5 @@ which
 whois
 words
 zip
+bind-utils
+
