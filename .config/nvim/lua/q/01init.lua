@@ -1,6 +1,8 @@
 local opt = vim.opt
 local g = vim.g
 
+vim.o.completeopt = "menuone,noselect"
+
 vim.o.exrc = true
 
 vim.diagnostic.config({
