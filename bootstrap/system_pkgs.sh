@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 _box_wayland() {
-  sudo dnf install -y libwayland-cursor wayland-devel libxkbcommon freetype fontconfig
+  sudo dnf install -y libwayland-cursor wayland-devel libxkbcommon freetype fontconfig wl-clipboard
 }
 
 
@@ -24,5 +24,5 @@ _gocryptfs() {
 }
 
 _fedora_cpp() {
-  sudo dnf install clang-tools-extra -y
+  sudo dnf install clang-tools-extra nodejs-npm -y
 }
