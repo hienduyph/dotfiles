@@ -1,6 +1,5 @@
 return {
 	{ "nvim-tree/nvim-web-devicons", config = true },
-
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
@@ -258,22 +257,5 @@ return {
 				go = { "golangcilint" },
 			}
 		end,
-	},
-	-- specific language
-	{
-		"scalameta/nvim-metals",
-		ft = "scala",
-	},
-	-- go
-	{
-		"olexsmir/gopher.nvim",
-		ft = "go",
-		opts = {},
-	},
-
-	{ "mrcjkb/rustaceanvim", version = "^4", ft = "rust" },
-	-- dotnet
-	{
-		"Hoffs/omnisharp-extended-lsp.nvim",
 	},
 }
