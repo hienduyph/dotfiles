@@ -28,7 +28,7 @@ vim.api.nvim_create_user_command("Lint", "lua require('lint').try_lint()", { nar
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = {
 		"*.go",
-		"*.md",
+		-- "*.md",
 		"*.lua",
 		"*.rs",
 		"*.css",

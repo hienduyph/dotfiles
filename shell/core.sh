@@ -1,4 +1,4 @@
-PREPEND=(
+_PREPEND=(
 	"$HOME/.local/bin"
 	"$HOME/.cargo/bin"
 	"$GOPATH/bin"
@@ -21,7 +21,7 @@ _CUS_PATH=(
 
 _before_path=$(
 	IFS=:
-	echo "${PREPEND[*]}"
+	echo "${_PREPEND[*]}"
 )
 _after_path=$(
 	IFS=:

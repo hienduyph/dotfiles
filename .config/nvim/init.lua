@@ -21,6 +21,5 @@ else
 	require("q.02plugin")
 	require("q.04cmd")
 	require("q.05keymap")
-	require("q.completion")
-	require("q.ide")
+	require("q.cmp")
 end

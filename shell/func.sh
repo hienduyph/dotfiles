@@ -1,3 +1,8 @@
+# dot_() {
+#   F=$1
+#   F=${F:-.env}
+#   export $(cat $F | xargs)
+# }
 
 fkill() {
   ps aux | grep  $1 | awk {'print $2'} | xargs kill -9

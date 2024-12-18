@@ -82,6 +82,7 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
   source $HOME/dotfiles/shell/system/mac.sh
 fi
 
+source $HOME/dotfiles/shell/core.sh
 source $HOME/dotfiles/shell/system/brew.sh
 source $HOME/dotfiles/shell/alias.sh
 source $HOME/dotfiles/shell/zsh/common.zsh

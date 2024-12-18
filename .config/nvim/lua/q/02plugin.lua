@@ -24,10 +24,6 @@ local opts = {
 }
 
 local plugins = {
-	-- core libs
-	"nvim-lua/plenary.nvim",
-	"MunifTanjim/nui.nvim",
-	"nvim-neotest/nvim-nio",
 	{ "nvim-tree/nvim-web-devicons", config = true },
 
 	{
@@ -92,6 +88,16 @@ local plugins = {
 					additional_vim_regex_highlighting = false,
 				},
 			})
+
+			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+			parser_config.gotmpl = {
+				install_info = {
+					url = "https://github.com/ngalaiko/tree-sitter-go-template",
+					files = { "src/parser.c" },
+				},
+				filetype = "gotmpl",
+				used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml" },
+			}
 		end,
 	},
 
@@ -229,142 +235,12 @@ local plugins = {
 
 	{
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({
-				check_ts = true,
-				ts_config = {
-					lua = { "string" }, -- it will not add a pair on that treesitter node
-					javascript = { "template_string" },
-					java = false, -- don"t check treesitter on java
-				},
-			})
-		end,
-	},
-
-	{
-		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-nvim-lua",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{
-				"williamboman/mason.nvim",
-				opts = {
-					registries = {
-						"github:nvim-java/mason-registry",
-						"github:mason-org/mason-registry",
-					},
-				},
-			},
-			"williamboman/mason-lspconfig.nvim",
-
-			"SmiteshP/nvim-navic",
-		},
-	},
-	{
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"leoluz/nvim-dap-go",
-			"mfussenegger/nvim-dap-python",
-			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",
-		},
-	},
-	-- code linter
-	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			require("lint").linters_by_ft = {
-				go = { "golangcilint" },
-			}
-		end,
+		config = true,
 	},
 
-	-- specific language
-	{
-		"scalameta/nvim-metals",
-	},
-	-- go
-	{
-		"olexsmir/gopher.nvim",
-		ft = "go",
-		opts = {},
-	},
-
-	-- java
-	{
-		"nvim-java/nvim-java",
-		dependencies = {
-			"nvim-java/lua-async-await",
-			"nvim-java/nvim-java-core",
-			"nvim-java/nvim-java-test",
-			"nvim-java/nvim-java-dap",
-			"nvim-java/nvim-java-refactor",
-		},
-	},
-
-	{ "b0o/schemastore.nvim" },
-
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
-	},
-
-	{ "mrcjkb/rustaceanvim", version = "^4" },
 	{ "kylechui/nvim-surround", config = true },
-	"gpanders/editorconfig.nvim",
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {},
-	},
-	{
-		"folke/trouble.nvim",
-		config = function()
-			require("trouble").setup({})
-		end,
-		branch = "dev", -- IMPORTANT!
-		keys = {
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"<leader>xX",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
-			},
-			{
-				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
-				desc = "Symbols (Trouble)",
-			},
-			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
-			},
-			{
-				"<leader>xL",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Location List (Trouble)",
-			},
-			{
-				"<leader>xQ",
-				"<cmd>Trouble qflist toggle<cr>",
-				desc = "Quickfix List (Trouble)",
-			},
-		},
-	},
+	{ "gpanders/editorconfig.nvim" },
 	{
 		"RRethy/vim-illuminate",
 		config = function()
@@ -399,52 +275,58 @@ local plugins = {
 			})
 		end,
 	},
+
 	{
-		"luukvbaal/nnn.nvim",
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+			"L3MON4D3/LuaSnip",
+			"rafamadriz/friendly-snippets",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			"b0o/schemastore.nvim",
+			{
+				"williamboman/mason.nvim",
+				opts = {
+					registries = {
+						"github:nvim-java/mason-registry",
+						"github:mason-org/mason-registry",
+					},
+				},
+			},
+			"williamboman/mason-lspconfig.nvim",
+		},
+	},
+
+	{
+		"mfussenegger/nvim-lint",
 		config = function()
-			require("nnn").setup()
+			require("lint").linters_by_ft = {
+				go = { "golangcilint" },
+			}
 		end,
 	},
+	-- specific language
 	{
-		"sindrets/diffview.nvim",
+		"scalameta/nvim-metals",
+		ft = "scala",
 	},
+	-- go
 	{
-		"ellisonleao/glow.nvim",
-		config = function()
-			require("glow").setup({
-				glow_path = "glow",
-				style = "light",
-			})
-		end,
+		"olexsmir/gopher.nvim",
+		ft = "go",
+		opts = {},
 	},
+
+	{ "mrcjkb/rustaceanvim", version = "^4", ft = "rust" },
 	-- dotnet
 	{
 		"Hoffs/omnisharp-extended-lsp.nvim",
-	},
-
-	-- php
-	{
-		"adalessa/laravel.nvim",
-		cmd = { "Laravel" },
-		dependencies = {
-			"kevinhwang91/promise-async",
-		},
-		event = { "VeryLazy" },
-		opts = {
-			features = {
-				null_ls = {
-					enable = false,
-				},
-				route_info = {
-					enable = true, --- to enable the laravel.nvim virtual text
-					position = "right", --- where to show the info (available options 'right', 'top')
-					middlewares = true, --- wheather to show the middlewares section in the info
-					method = true, --- wheather to show the method section in the info
-					uri = true, --- wheather to show the uri section in the info
-				},
-			},
-		},
-		config = true,
 	},
 }
 
@@ -494,36 +376,6 @@ local guard = {
 		}
 	end,
 	dependencies = { "nvimdev/guard-collection" },
-}
-
-local conform = {
-	"stevearc/conform.nvim",
-	config = function()
-		require("conform").setup({
-			format_after_save = {
-				lsp_fallback = true,
-			},
-
-			formatters_by_ft = {
-				lua = { "stylua" },
-				-- Conform will run multiple formatters sequentially
-				python = { "isort", "black" },
-				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				markdown = { { "prettierd", "prettier" } },
-				html = { { "prettierd", "prettier" } },
-				css = { { "prettierd", "prettier" } },
-				yaml = { { "prettierd", "prettier" } },
-				json = { "jq" },
-				proto = { "clang_format" },
-				c = { "clang_format" },
-				cpp = { "clang_format" },
-				rust = { "rustfmt" },
-				sh = { "shfmt" },
-			},
-		})
-	end,
 }
 
 local fzf = {
@@ -582,6 +434,9 @@ local telescope = {
 			})
 			tele.load_extension("fzf")
 
+			vim.keymap.set("n", "<C-f>", function()
+				require("telescope.builtin").find_files({ hidden = true })
+			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<C-p>", function()
 				require("telescope.builtin").find_files({ hidden = true })
 			end, { noremap = true, silent = true })
@@ -603,8 +458,33 @@ local telescope = {
 		end,
 		dependencies = {
 			"nvim-telescope/telescope-fzf-native.nvim",
+			"nvim-lua/plenary.nvim",
 		},
 	},
+}
+local php = {
+	"adalessa/laravel.nvim",
+	cmd = { "Laravel" },
+	ft = "php",
+	dependencies = {
+		"kevinhwang91/promise-async",
+	},
+	event = { "VeryLazy" },
+	opts = {
+		features = {
+			null_ls = {
+				enable = false,
+			},
+			route_info = {
+				enable = true, --- to enable the laravel.nvim virtual text
+				position = "right", --- where to show the info (available options 'right', 'top')
+				middlewares = true, --- wheather to show the middlewares section in the info
+				method = true, --- wheather to show the method section in the info
+				uri = true, --- wheather to show the uri section in the info
+			},
+		},
+	},
+	config = true,
 }
 
 table.insert(plugins, telescope)

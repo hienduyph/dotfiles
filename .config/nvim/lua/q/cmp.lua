@@ -6,7 +6,6 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "jdtls" },
 })
 
-local navic = require("nvim-navic")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -20,12 +19,11 @@ cmp.setup({
 	mapping = {
 		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<CR>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		}),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
 		-- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion#auto-import
 		["<Tab>"] = function(fallback)
 			if cmp.visible() then
@@ -95,7 +93,6 @@ local on_attach = function(client, bufnr)
 	end
 
 	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
 	end
 end
 
@@ -238,24 +235,24 @@ nvim_lsp.clangd.setup({
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 })
 
-require("java").setup()
-
-require("lspconfig").jdtls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	flags = flags,
-
-	settings = {
-		java = {
-			saveActions = {
-				organizeImports = false,
-			},
-			autobuild = {
-				enabled = false,
-			},
-		},
-	},
-})
+-- require("java").setup()
+--
+-- require("lspconfig").jdtls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	flags = flags,
+--
+-- 	settings = {
+-- 		java = {
+-- 			saveActions = {
+-- 				organizeImports = false,
+-- 			},
+-- 			autobuild = {
+-- 				enabled = false,
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 -- lua with nvim
 require("lspconfig").lua_ls.setup({
