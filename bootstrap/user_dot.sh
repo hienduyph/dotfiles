@@ -14,7 +14,6 @@ _configs() {
   mkdir -p $HOME/.config/
   PLATFORM=$1
   pkgs=(
-    htop
     mpv
     ranger
     nvim
@@ -28,6 +27,14 @@ _configs() {
     echo "Settings up ${pk}"
     rm -rf $HOME/.config/${pk}
     ln -sf $APP_ROOT/.config/${pk} $HOME/.config/${pk}
+  done
+
+  copies=(
+    htop
+  )
+  for pk in "${copies[@]}"; do
+    rm -rf $HOME/.config/${pk}
+    cp $APP_ROOT/.config/${pk} $HOME/.config/${pk}
   done
 
   specifics=(

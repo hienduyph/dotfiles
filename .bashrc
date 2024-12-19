@@ -35,3 +35,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # source $HOME/apps/ble.sh/out/ble.sh
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source "/usr/share/fzf/shell/key-bindings.bash"
+export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/keyring/ssh
+export WEZTERM_FONT_SIZE=12
+alias pod="ssh devpod"
+eval "$(starship init bash)"
+

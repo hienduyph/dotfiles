@@ -6,7 +6,7 @@ local raw_os_name = io.popen("uname -s", "r"):read("*l"):lower()
 
 local out = {
 	font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light" }),
-	font_size = 10,
+	font_size = 11,
 	tab_max_width = 16,
 	use_fancy_tab_bar = false,
 	exit_behavior = "Close",
@@ -26,6 +26,7 @@ local out = {
 	-- color_scheme = "Github (base16)",
 	-- color_scheme = "Github (Gogh)",
 	bold_brightens_ansi_colors = true,
+  default_prog = { '/usr/bin/zsh', '-l' },
 }
 out.font_rules = {
 	{
