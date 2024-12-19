@@ -1,9 +1,3 @@
-# dot_() {
-#   F=$1
-#   F=${F:-.env}
-#   export $(cat $F | xargs)
-# }
-
 fkill() {
   ps aux | grep  $1 | awk {'print $2'} | xargs kill -9
 }
@@ -41,97 +35,8 @@ fedora_maintenance() {
   _fedora_upgrade
 }
 
-
 get_docker_ip() {
   echo "$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' $1)"
-}
-
-
-LINUX_ICON_DIR=$HOME/.local/share/icons/hicolor/256x256/apps
-
-_obsidianmd() {
-  VERSION=$(gh_latest_release obsidianmd/obsidian-releases)
-  VERSION=${VERSION#v}
-  DST=$APP_HOME/Obsidian.AppImage
-  mkdir -p $LINUX_ICON_DIR
-  cp $HOME/dotfiles/images/obsidian.png $LINUX_ICON_DIR/
-  uri="https://github.com/obsidianmd/obsidian-releases/releases/download/v${VERSION}/Obsidian-${VERSION}.AppImage"
-  echo "Install obsidianmd version ${VERSION} to $DST, uri: ${uri}"
-  curl -Lo $DST  $uri
-  chmod +x $DST
-  tee $HOME/.local/share/applications/obsidian.desktop << EOF
-[Desktop Entry]
-Name=Obsidian
-Exec=$DST --ozone-platform=wayland @@u %u @@
-Terminal=false
-Type=Application
-Icon=obsidian
-StartupWMClass=obsidian
-Comment=Obsidian
-MimeType=x-scheme-handler/obsidian;
-Categories=Office;
-EOF
-
-  tee $HOME/.local/share/applications/obsidian-x11.desktop << EOF
-[Desktop Entry]
-Name=Obsidian X11
-Exec=$DST --ozone-platform=x11 @@u %u @@
-Terminal=false
-Type=Application
-Icon=obsidian
-StartupWMClass=obsidian
-Comment=Obsidian
-MimeType=x-scheme-handler/obsidian;
-Categories=Office;
-EOF
-}
-
-
-_cryptomator() {
-  VERSION=$(gh_latest_release cryptomator/cryptomator)
-  VERSION=${VERSION#v}
-  DST=$HOME/Applications/Cryptomator.AppImage
-  echo "Install cryptomator version ${VERSION} to $DST"
-  curl -Lo $DST "https://github.com/cryptomator/cryptomator/releases/download/${VERSION}/cryptomator-${VERSION}-x86_64.AppImage"
-  chmod +x $DST
-  mkdir -p $LINUX_ICON_DIR
-  curl -Lo $LINUX_ICON_DIR/cryptomator.svg "https://cryptomator.org/img/logo.svg"
-  tee $HOME/.local/share/applications/cryptomator.desktop << EOF
-[Desktop Entry]
-Name=Cryptomator
-Exec=$DST @@u %u @@
-Terminal=false
-Type=Application
-Icon=cryptomator
-StartupWMClass=cryptomator
-Comment=Cryptomator Encryption
-EOF
-}
-
-
-_lapce() {
-  VERSION=$(gh_stable_release lapce/lapce)
-  VERSION=${VERSION#v}
-  DST=$APP_HOME
-  echo "Install Lapce Editor ${VERSION} to $DST"
-  curl -fsSL "https://github.com/lapce/lapce/releases/download/v${VERSION}/Lapce-linux.tar.gz" | tar xz -C $DST --strip-components=1
-
-  mkdir -p $LINUX_ICON_DIR
-  curl -Lo $LINUX_ICON_DIR/lapce.png "https://raw.githubusercontent.com/lapce/lapce/master/extra/images/logo.png"
-  tee $HOME/.local/share/applications/lapce.desktop << EOF
-[Desktop Entry]
-Name=Lapce
-Exec=$DST/lapce %U
-Terminal=false
-Type=Application
-Icon=lapce
-StartupWMClass=obsidian
-Comment=Text Editor
-MimeType=text/plain;application/x-zerosize;
-Keywords=write;notepad;
-DBusActivatable=true
-Categories=Utility;TextEditor;
-EOF
 }
 
 optimize_png_dir() {

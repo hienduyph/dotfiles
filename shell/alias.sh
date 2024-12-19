@@ -28,21 +28,5 @@ fetch_git_ignore() {
   langs=$1
   curl https://www.toptal.com/developers/gitignore/api/linux,macos,${langs} >> .gitignore
 }
-_ls_cmd() {
-  if command -v lsd >/dev/null 2>&1; then
-    lsd $@
-  else
-    /usr/bin/ls $@
-  fi
-}
-_cat_cmd() {
-  if command -v bat >/dev/null 2>&1; then
-    bat $@
-  else
-    /usr/bin/cat $@
-  fi
-}
-
-
 alias pipr="python -m pip install -r requirements.txt"
 alias tb="distrobox enter q -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box"

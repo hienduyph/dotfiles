@@ -18,15 +18,8 @@ Type=Application
 EOF
 }
 
-_tele() {
-  VERSION=$1
-  mkdir -p $HOME/Applications
-  curl -fsSL "https://github.com/telegramdesktop/tdesktop/releases/download/v${VERSION}/tsetup.${VERSION}.tar.xz" | tar xJ -C $HOME/Applications
-}
-
 _apps() {
   _dropbox
-  _tele 4.6.3
   cp $APP_ROOT/.local/share/applications/* $HOME/.local/share/applications/
   ln -sf $HOME/.local/share/applications/dropbox.desktop  $HOME/.config/autostart/
 }
