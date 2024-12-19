@@ -63,6 +63,8 @@ return {
 			servers = {
 				lua_ls = {},
 				gopls = {},
+				ts_ls = {},
+				pyright = {},
 			},
 		},
 		config = function(_, opts)
