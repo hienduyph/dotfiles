@@ -34,6 +34,7 @@ return {
 			},
 			sources = {
 				default = { "lsp", "path", "luasnip", "buffer" },
+				cmdline = {},
 			},
 
 			-- experimental signature help support

@@ -17,7 +17,7 @@ git-delta
 direnv
 starship
 zoxide
-https://github.com/twpayne/chezmoi/releases/download/v2.53.1/chezmoi-2.53.1-x86_64.rpm
+https://github.com/twpayne/chezmoi/releases/download/v2.56.0/chezmoi-2.56.0-x86_64.rpm
 
 make
 cmake
@@ -73,3 +73,4 @@ words
 zip
 bind-utils
 patch
+tree-sitter-cli
