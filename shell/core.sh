@@ -40,6 +40,8 @@ py_core_setup() {
 }
 export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export GIT_PAGER=delta
+
 
 if [[ -d $PROFILE_EXTRA_DIRS ]]; then
 	for filename in $PROFILE_EXTRA_DIRS/*.sh; do

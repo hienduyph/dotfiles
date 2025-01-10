@@ -1,18 +1,18 @@
 # .bashrc
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
+	. /etc/bashrc
 fi
 if [ -f $HOME/.profile ]; then
-  . $HOME/.profile
+	. $HOME/.profile
 fi
 if [ -f $HOME/.bash_profile ]; then
-  . $HOME/.bash_profile 
+	. $HOME/.bash_profile
 fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -21,22 +21,30 @@ export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-  for rc in ~/.bashrc.d/*; do
-    if [ -f "$rc" ]; then
-      . "$rc"
-    fi
-  done
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
 fi
 unset rc
-source $HOME/dotfiles/shell/alias.sh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-# source $HOME/apps/ble.sh/out/ble.sh
+shopt -s histappend
+export HISTSIZE=1000000
+export HISTFILESIZE=10000000
+
+cmd() {
+	args=(
+		--
+		zsh
+	)
+	if [[ ! $# -eq 0 ]]; then
+		args+=(-lc)
+		distrobox enter ${BOX_NAME} ${args[@]} "$*"
+	else
+		distrobox enter ${BOX_NAME} ${args[@]}
+	fi
+}
+
+alias be="distrobox enter"
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source "/usr/share/fzf/shell/key-bindings.bash"
-export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/keyring/ssh
-export WEZTERM_FONT_SIZE=12
-alias pod="ssh devpod"
-eval "$(starship init bash)"
-

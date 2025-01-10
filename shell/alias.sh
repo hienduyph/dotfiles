@@ -22,11 +22,25 @@ alias yt-lossless="yt-dlp --extract-audio --audio-format best"
 
 alias tm="tmux new-session -A -s $(hostname -s)"
 alias q="tmux new-session -A -s Lala"
-alias cmd="distrobox enter q --"
+
+export BOX_NAME=q
+
+cmd() {
+	args=(
+		--
+		zsh
+	)
+	if [[ ! $# -eq 0 ]]; then
+		args+=(-lc)
+		distrobox enter ${BOX_NAME} ${args[@]} "$*"
+	else
+		distrobox enter ${BOX_NAME} ${args[@]}
+	fi
+}
 
 fetch_git_ignore() {
-  langs=$1
-  curl https://www.toptal.com/developers/gitignore/api/linux,macos,${langs} >> .gitignore
+	langs=$1
+	curl https://www.toptal.com/developers/gitignore/api/linux,macos,${langs} >>.gitignore
 }
 alias pipr="python -m pip install -r requirements.txt"
-alias tb="distrobox enter q -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box"
+alias tb="distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box"

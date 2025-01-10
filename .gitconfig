@@ -1,5 +1,4 @@
 [core]
-  pager = delta
   preloadIndex = true
   fsmonitor = true
   untrackedCache = true
