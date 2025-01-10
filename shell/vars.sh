@@ -1,7 +1,8 @@
-export EDITOR=nvim
-export VISUAL=nvim
-export SYSTEMD_EDITOR=nvim
-export KUBE_EDITOR=nvim
+export EDITOR=vi
+export VISUAL=${EDITOR}
+export SYSTEMD_EDITOR=${EDITOR}
+export KUBE_EDITOR=${EDITOR}
+export GIT_EDITOR=${EDITOR}
 export LANG="en_US.UTF-8"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -32,8 +33,6 @@ addToPATH() {
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 export BAT_THEME=GitHub
-# export HOMEBREW_INSTALL_FROM_API=1
-
 
 if [[ "$PLATFORM" == "linux" ]]; then
   export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
@@ -46,6 +45,4 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
   export HOMEBREW_PREFIX=/opt/homebrew
 fi
 
-export GIT_EDITOR=nvim
-export KUBE_EDITOR=nvim
 export HOMEBREW_NO_AUTO_UPDATE=1

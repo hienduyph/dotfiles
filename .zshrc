@@ -68,7 +68,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [[ -s "$HOME/.zprofile" ]] && source "$HOME/.zprofile"
 
-source $HOME/dotfiles/shell/vars.sh
+source $HOME/.profile
+source $HOME/dotfiles/shell/system/brew.sh
+source $HOME/dotfiles/shell/zsh/common.zsh
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
   source $HOME/dotfiles/shell/system/wayland.sh
@@ -82,11 +84,6 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
   source $HOME/dotfiles/shell/system/mac.sh
 fi
 
-source $HOME/dotfiles/shell/core.sh
-source $HOME/dotfiles/shell/system/brew.sh
-source $HOME/dotfiles/shell/alias.sh
-source $HOME/dotfiles/shell/zsh/common.zsh
-source $HOME/.profile
 
 command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
 command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"

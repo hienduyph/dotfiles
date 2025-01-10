@@ -32,3 +32,19 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 
 # znap already set completion for us.
 # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
+
+alias less="bat"
+alias ls="lsd"
+alias cat="bat"
+alias fm="yazi"
+alias k="kubectl"
+alias cm="chezmoi"
+alias vim="nvim"
+alias vi="nvim"
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export GIT_PAGER=delta
+
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow -E .git -E node_modules -E vendor -E .direnv -E .mypy_cache -E __pycache__ -E target -E .pytest_cache -E .next -E vendor"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d"
