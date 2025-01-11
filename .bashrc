@@ -33,18 +33,6 @@ shopt -s histappend
 export HISTSIZE=1000000
 export HISTFILESIZE=10000000
 
-cmd() {
-	args=(
-		--
-		zsh
-	)
-	if [[ ! $# -eq 0 ]]; then
-		args+=(-lc)
-		distrobox enter ${BOX_NAME} ${args[@]} "$*"
-	else
-		distrobox enter ${BOX_NAME} ${args[@]}
-	fi
-}
 
 alias be="distrobox enter"
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source "/usr/share/fzf/shell/key-bindings.bash"
