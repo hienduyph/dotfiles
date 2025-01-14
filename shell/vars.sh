@@ -14,6 +14,7 @@ export GOPATH="$HOME/.go"
 export BASHMAN_DIR=$HOME/.config/bashman
 export ANDROID_HOME=$HOME/Android/Sdk
 export APP_HOME=/opt/apps
+export BOX_NAME=q
 
 
 prependToPATH() {

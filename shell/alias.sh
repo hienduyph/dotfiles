@@ -11,8 +11,6 @@ alias yt-lossless="yt-dlp --extract-audio --audio-format best"
 
 alias tm="tmux new-session -A -s $(hostname -s)"
 
-export BOX_NAME=q
-
 box() {
 	args=(
 		--
