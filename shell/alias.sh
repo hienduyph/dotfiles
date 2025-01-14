@@ -26,9 +26,12 @@ box() {
 	fi
 }
 
+qsh() {
+  distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box
+}
+
 fetch_git_ignore() {
 	langs=$1
 	curl https://www.toptal.com/developers/gitignore/api/linux,macos,${langs} >>.gitignore
 }
 alias pipr="python -m pip install -r requirements.txt"
-alias qsh="distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box"
