@@ -7,37 +7,6 @@ duration = 0
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[[colors.indexed_colors]]
-color = "0xd18616"
-index = 16
-
-[[colors.indexed_colors]]
-color = "0xcd3131"
-index = 17
-
-[colors.bright]
-black = "0x666666"
-blue = "0x0451a5"
-cyan = "0x0598bc"
-green = "0x14ce14"
-magenta = "0xbc05bc"
-red = "0xcd3131"
-white = "0x586069"
-yellow = "0xb5ba00"
-
-[colors.normal]
-black = "0x697179"
-blue = "0x0451a5"
-cyan = "0x0598bc"
-green = "0x14ce14"
-magenta = "0xbc05bc"
-red = "0xd03d3d"
-white = "0x586069"
-yellow = "0x6e7101"
-
-[colors.primary]
-background = "0xffffff"
-foreground = "0x586069"
 
 [cursor]
 style = { shape = "Block", blinking = "On" }

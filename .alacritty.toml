@@ -1,2 +1,2 @@
 [general]
-import = ["~/.alacritty.common.toml", "~/.alacritty.sys.toml"]
+import = ["~/.alacritty.common.toml", "~/.alacritty.sys.toml", "~/.config/alacritty/theme.toml"]
