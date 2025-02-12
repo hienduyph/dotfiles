@@ -1,27 +1,39 @@
 return {
 	{
+		"L3MON4D3/LuaSnip",
+		lazy = true,
+		version = "v2.*",
+		dependencies = {
+			{
+				"rafamadriz/friendly-snippets",
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+					require("luasnip.loaders.from_vscode").lazy_load({
+						paths = { vim.fn.stdpath("config") .. "/snippets" },
+					})
+				end,
+			},
+		},
+		opts = {
+			history = true,
+			delete_check_events = "TextChanged",
+		},
+	},
+	{
 		"saghen/blink.cmp",
 		lazy = false,
-		-- optional: provides snippets for the snippet source
 		dependencies = {
-			"rafamadriz/friendly-snippets",
-			{ "L3MON4D3/LuaSnip", version = "v2.*" },
 			"mason.nvim",
 			{ "williamboman/mason-lspconfig.nvim", config = function() end },
 		},
-		version = "v0.*",
+		version = "*",
 		opts = {
-			-- 'default' for mappings similar to built-in completion
-			-- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-			-- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-			-- see the "default configuration" section below for full documentation on how to define
-			-- your own keymap.
 			keymap = { preset = "enter" },
 			snippets = {
 				preset = "luasnip",
 			},
 			sources = {
-				default = { "lsp", "path", "buffer" },
+				default = { "lsp", "path", "snippets", "buffer" },
 				cmdline = {},
 			},
 			-- experimental signature help support
@@ -46,13 +58,15 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "saghen/blink.cmp" },
+		dependencies = { "saghen/blink.cmp", "b0o/schemastore.nvim" },
 		opts = {
 			servers = {
 				lua_ls = {},
 				gopls = {},
 				ts_ls = {},
 				pyright = {},
+				jdtls = {},
+				helm_ls = {},
 			},
 		},
 		config = function(_, opts)
@@ -63,6 +77,21 @@ return {
 				config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 				lspconfig[server].setup(config)
 			end
+
+			lspconfig.yamlls.setup({
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
+				settings = {
+					yaml = {
+						schemas = require("schemastore").yaml.schemas(),
+						format = { enable = true },
+					},
+					redhat = {
+						telemetry = {
+							enabled = false,
+						},
+					},
+				},
+			})
 		end,
 	},
 }

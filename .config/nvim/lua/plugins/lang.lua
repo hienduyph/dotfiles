@@ -19,4 +19,5 @@ return {
 	{
 		"Hoffs/omnisharp-extended-lsp.nvim",
 	},
+	{ "nvim-java/nvim-java" },
 }

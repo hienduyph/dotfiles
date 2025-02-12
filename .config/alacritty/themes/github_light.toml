@@ -30,3 +30,5 @@ yellow = "0x6e7101"
 background = "0xffffff"
 foreground = "0x586069"
 
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
