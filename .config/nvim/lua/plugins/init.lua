@@ -188,8 +188,13 @@ return {
 			-- create the highlight groups in the highlight setup hook, so they are reset
 			-- every time the colorscheme changes
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-				vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#dedede" })
-				vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#cfcccc" })
+				if os.getenv("DARK_MODE") == "on" then
+					vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#dedede" })
+					vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#cfcccc" })
+				else
+					vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#dedede" })
+					vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#cfcccc" })
+				end
 			end)
 
 			require("ibl").setup({

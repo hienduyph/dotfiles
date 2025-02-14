@@ -33,3 +33,7 @@ color = '#d18616'
 [[colors.indexed_colors]]
 index = 17
 color = '#f97583'
+
+[env]
+DARK_MODE = 'on'
+

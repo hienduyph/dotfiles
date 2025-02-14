@@ -1,34 +1,40 @@
-[[colors.indexed_colors]]
-color = "0xd18616"
-index = 16
+# github Alacritty Colors
 
-[[colors.indexed_colors]]
-color = "0xcd3131"
-index = 17
-
-[colors.bright]
-black = "0x666666"
-blue = "0x0451a5"
-cyan = "0x0598bc"
-green = "0x14ce14"
-magenta = "0xbc05bc"
-red = "0xcd3131"
-white = "0x586069"
-yellow = "0xb5ba00"
-
-[colors.normal]
-black = "0x697179"
-blue = "0x0451a5"
-cyan = "0x0598bc"
-green = "0x14ce14"
-magenta = "0xbc05bc"
-red = "0xd03d3d"
-white = "0x586069"
-yellow = "0x6e7101"
-
+# Default colors
 [colors.primary]
-background = "0xffffff"
-foreground = "0x586069"
+background = '#ffffff'
+foreground = '#24292f'
+
+# Normal colors
+[colors.normal]
+black   = '#24292e'
+red     = '#d73a49'
+green   = '#28a745'
+yellow  = '#dbab09'
+blue    = '#0366d6'
+magenta = '#5a32a3'
+cyan    = '#0598bc'
+white   = '#6a737d'
+
+# Bright colors
+[colors.bright]
+black   = '#959da5'
+red     = '#cb2431'
+green   = '#22863a'
+yellow  = '#b08800'
+blue    = '#005cc5'
+magenta = '#5a32a3'
+cyan    = '#3192aa'
+white   = '#d1d5da'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#d18616'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#cb2431'
 
 [env]
-WINIT_X11_SCALE_FACTOR = "1.0"
+DARK_MODE = 'off'
+
