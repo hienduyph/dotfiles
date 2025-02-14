@@ -34,7 +34,7 @@ addToPATH() {
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
 if [[ $DARK_MODE == "on" ]]; then
-  # no thing
+  export BAT_THEME=gruvbox-dark
 else
   export BAT_THEME=GitHub
 fi
