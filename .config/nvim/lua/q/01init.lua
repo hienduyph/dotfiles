@@ -50,12 +50,11 @@ opt.clipboard = "unnamedplus"
 opt.laststatus = 2
 
 opt.backspace = "indent,eol,start"
-opt.background = "light"
+opt.background = os.getenv("DARK_MODE") == "on" and "dark" or "light"
 
 opt.signcolumn = "yes"
 opt.synmaxcol = 250
 opt.cursorline = true
-opt.termguicolors = true
 
 -- fold setup
 opt.foldmethod = "expr"

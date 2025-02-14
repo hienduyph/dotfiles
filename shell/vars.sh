@@ -33,7 +33,11 @@ addToPATH() {
 
 export PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 export PROFILE_EXTRA_DIRS=$HOME/.profile_src
-export BAT_THEME=GitHub
+if [[ $DARK_MODE == "on" ]]; then
+  # no thing
+else
+  export BAT_THEME=GitHub
+fi
 
 if [[ "$PLATFORM" == "linux" ]]; then
   export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew

@@ -130,9 +130,10 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
+			local theme = os.getenv("DARK_MODE") == "on" and "gruvbox_dark" or "gruvbox"
 			require("lualine").setup({
 				options = {
-					theme = "gruvbox",
+					theme = theme,
 					always_show_bufferline = true,
 				},
 				extensions = { "quickfix", "nvim-tree", "fzf" },
@@ -189,8 +190,8 @@ return {
 			-- every time the colorscheme changes
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 				if os.getenv("DARK_MODE") == "on" then
-					vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#dedede" })
-					vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#cfcccc" })
+					vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#383838" })
+					vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#515151" })
 				else
 					vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#dedede" })
 					vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#cfcccc" })
