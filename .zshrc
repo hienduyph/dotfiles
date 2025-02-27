@@ -31,9 +31,6 @@ znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
 znap source zdharma-continuum/fast-syntax-highlighting
 
-# set color for fzftab
-zstyle ':fzf-tab:*' default-color $'\033[30m'
-zstyle ':fzf-tab:*' fzf-flags --color=light
 
 if [[ $ZSH_PROFILNG == "yes" ]]; then
   zprof

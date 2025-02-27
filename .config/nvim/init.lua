@@ -22,7 +22,7 @@ else
 	require("q.04cmd")
 	require("q.05keymap")
 	if os.getenv("DARK_MODE") == "on" then
-		vim.cmd([[colorscheme tokyonight-night]])
+		vim.cmd([[colorscheme tokyonight-moon]])
 	else
 		vim.cmd([[colorscheme Mini16]])
 	end
