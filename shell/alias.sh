@@ -24,9 +24,6 @@ box() {
 	fi
 }
 
-qsh() {
-  distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box
-}
 
 fetch_git_ignore() {
 	langs=$1

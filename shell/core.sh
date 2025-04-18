@@ -28,12 +28,6 @@ py_core_setup() {
 export MANROFFOPT="-c"
 
 
-if [[ -d $PROFILE_EXTRA_DIRS ]]; then
-	for filename in $PROFILE_EXTRA_DIRS/*.sh; do
-		source ${filename}
-	done
-fi
-
 # https://github.com/alacritty/alacritty/issues/5999#issuecomment-2053664635
 theme() {
   ln -sf $HOME/.config/alacritty/themes/$1.toml $HOME/.config/alacritty/theme.toml

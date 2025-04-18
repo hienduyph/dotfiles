@@ -34,3 +34,7 @@ addToPATH "$HOME/.local/share/coursier/bin"
 ZSH_VERSION=$(zsh --version | awk '{print $2}')
 export FPATH=${FPATH}:/usr/share/zsh/${ZSH_VERSION}/functions
 
+
+qsh() {
+  distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box
+}

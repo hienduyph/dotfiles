@@ -1,24 +1,24 @@
 # ft=ruby
 
-cask_args appdir: "~/Applications"
+# cask_args appdir: "~/Applications"
 tap "homebrew/bundle"
-tap "bensadeh/despell"
-tap "hashicorp/tap"
-tap "macos-fuse-t/homebrew-cask"
+# tap "bensadeh/despell"
+# tap "hashicorp/tap"
+# tap "macos-fuse-t/homebrew-cask"
 
 # these cask should be install from official distribution
 # cask "google-chrome"
 # cask "dropbox"
 # cask "telegram"
 brew "dnscrypt-proxy"
-brew "mas"
-cask "cloudflare-warp"
+# brew "mas"
+# cask "cloudflare-warp"
 cask "alacritty"
-cask "firefox"
+# cask "firefox"
 cask "keepassxc"
 cask "obsidian"
-cask "cryptomator"
+# cask "cryptomator"
 # mas "Blackmagic Disk Speed Test", id: 425264550
 cask 'stats'
-cask "openkey"
+# cask "openkey"
 cask 'joplin'

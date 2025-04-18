@@ -39,3 +39,7 @@ zvm_after_init_commands+=(
   '[ -f $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh ] && source $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh'
   'bindkey '^n' autosuggest-accept'
 )
+
+qsh() {
+  tmux new-session -A -s $(hostname -s)
+}
