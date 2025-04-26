@@ -67,6 +67,7 @@ map("n", "<leader>t", "<cmd>NvimTreeFocus<CR>")
 vim.keymap.set("n", "<leader>fb", "<cmd>NnnExplorer<CR>")
 
 -- lsp stuff
+map("n", "<leader>gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>")
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 map("x", "<leader>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>")

@@ -226,7 +226,7 @@ return {
 		config = function()
 			require("illuminate").configure({
 				providers = {
-					"lsp",
+					-- "lsp",
 					"treesitter",
 					"regex",
 				},
