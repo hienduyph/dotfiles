@@ -7,8 +7,12 @@ _PREPEND=(
 	"${NPM_CONFIG_PREFIX}/bin"
 	"/usr/local/sbin"
 )
+
+export PYCLI_HOME=$HOME/.virtualenvs/cli
+
 _CUS_PATH=(
 	"$HOME/.local/google-cloud-sdk/bin"
+	"${PYCLI_HOME}/bin"
 )
 
 _before_path=$(
@@ -34,3 +38,4 @@ theme() {
 }
 alias dark="theme github_dark"
 alias light="theme github_light"
+alias pycli="${PYCLI_HOME}/bin/python"
