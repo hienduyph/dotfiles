@@ -155,6 +155,10 @@ disabled = true
 [python]
 symbol =	' '
 
+
+[package]
+symbol =	' '
+
 [env_var.1]
 variable="GSD_REMOTE"
 format="[$env_value ](#dddddd bold)"

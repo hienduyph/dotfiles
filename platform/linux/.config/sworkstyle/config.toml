@@ -92,3 +92,5 @@ fallback = ''
 "libreoffice-impress"="󱎐"
 "signal"="󰟭"
 "/.*Signal.*/"="󰟭"
+"/.*zed.*/"=""
+"/.*Zed.*/"=""
