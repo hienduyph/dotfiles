@@ -36,5 +36,5 @@ export FPATH=${FPATH}:/usr/share/zsh/${ZSH_VERSION}/functions
 
 
 qsh() {
-  distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s $(hostname -s)-box
+  distrobox enter ${BOX_NAME} -- tmux -S ${XDG_RUNTIME_DIR}/tmux new-session -A -s ${USER}@$(hostname -s)-box
 }
