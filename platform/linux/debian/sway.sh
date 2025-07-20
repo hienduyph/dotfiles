@@ -6,12 +6,16 @@ sudo apt remove pulseaudio-module-bluetooth -y
 sudo apt update
 sudo apt dist-ugprade -y
 sudo apt install sddm dnsmasq --no-install-recommends libpam-mount libfuse2 bat jq libpam-mount-bin -y
-sudo apt install -y xdg-desktop-portal xdg-desktop-portal-wlr libglib2.0-bin fcitx5 fcitx5-unikey thunar
+sudo apt install -y xdg-desktop-portal xdg-desktop-portal-wlr libglib2.0-bin fcitx5 fcitx5-unikey thunar xdg-desktop-portal-gtk
 sudo apt install -y grim wf-recorder slurp wlr-randr sway dex waybar wev swayidle swaylock sway-notification-center wlsunset pavucontrol blueman network-manager-gnome libspa-0.2-bluetooth
 sudo apt install -y podman crun slirp4netns netavark distrobox
 
 sudo systemctl enable --now sddm
 sudo systemctl set-default graphical.target
+
+# set default browser
+xdg-mime default com.google.Chrome.desktop x-scheme-handler/https x-scheme-handler/http
+xdg-settings set default-web-browser com.google.Chrome.desktop
 
 _install_gh() {
   curl -foL /tmp/gh.deb $1

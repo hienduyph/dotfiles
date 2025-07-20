@@ -90,7 +90,10 @@ fallback = ''
 "/.*Virtual Machine.*/"=""
 "/.*win.*/"=""
 "libreoffice-impress"="󱎐"
-"signal"="󰟭"
-"/.*Signal.*/"="󰟭"
+"WhatsApp"=""
+"/.*WhatsApp.*/"=""
 "/.*zed.*/"=""
 "/.*Zed.*/"=""
+"/.*Goose.*/"="󰚩"
+"/.*Claude.*/"="󰣇"
+
