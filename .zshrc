@@ -21,7 +21,7 @@ znap source ohmyzsh/ohmyzsh plugins/git
 znap source ohmyzsh/ohmyzsh plugins/colorize
 znap source zsh-users/zsh-completions
 znap source jeffreytse/zsh-vi-mode
-
+znap source romkatv/powerlevel10k
 
 # start our codes
 source $HOME/dotfiles/shell/zsh/completion.zsh
@@ -81,11 +81,11 @@ elif [[ "$PLATFORM" == "darwin" ]]; then
   source $HOME/dotfiles/shell/system/mac.sh
 fi
 
-
-command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
+# command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
 command -v zoxide > /dev/null 2>&1 && eval "$(zoxide init zsh --cmd z)"
 
 # source $HOME/dotfiles/shell/zsh/gitstatusd.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 export ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK

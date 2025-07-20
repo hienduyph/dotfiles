@@ -34,6 +34,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.smartindent = false
 opt.termguicolors = true
+opt.splitright = true
 
 opt.cursorline = true
 opt.lazyredraw = true
