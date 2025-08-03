@@ -5,8 +5,11 @@ local q = require("q.common")
 local raw_os_name = io.popen("uname -s", "r"):read("*l"):lower()
 
 local out = {
-  hide_tab_bar_if_only_one_tab=true,
-	font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light" }),
+	hide_tab_bar_if_only_one_tab = true,
+	font = wezterm.font_with_fallback({
+		{ family = "JetBrainsMono Nerd Font", weight = "Light" },
+		{ family = "Symbola", weight = "Regular" },
+	}),
 	font_size = 11,
 	tab_max_width = 16,
 	use_fancy_tab_bar = false,
@@ -27,17 +30,7 @@ local out = {
 	-- color_scheme = "Github (base16)",
 	-- color_scheme = "Github (Gogh)",
 	bold_brightens_ansi_colors = true,
-  -- default_prog = { '/usr/bin/zsh', '-l' },
-}
-out.font_rules = {
-	{
-		intensity = "Normal",
-		italic = false,
-		font = wezterm.font({
-			family = "JetBrainsMono Nerd Font",
-			weight = "Regular",
-		}),
-	},
+	-- default_prog = { '/usr/bin/zsh', '-l' },
 }
 
 if string.find(raw_os_name, "linux") ~= nil then
