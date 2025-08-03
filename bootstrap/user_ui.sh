@@ -30,8 +30,9 @@ _fonts() {
     curl -sLO "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Light/JetBrainsMonoNerdFontMono-Light.ttf"
     curl -sLO "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/ExtraLight/JetBrainsMonoNerdFont-ExtraLight.ttf"
     curl -sLO "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/ExtraLight/JetBrainsMonoNerdFontMono-ExtraLight.ttf"
-    curl -sLO "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/RobotoMonoNerdFontMono-Regular.ttf"
-    curl -sfLo /tmp/font.zip 'https://github.com/googlefonts/roboto/releases/download/v2.138/roboto-android.zip'
+    curl -sLO "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/RobotoMono/Regular/RobotoMonoNerdFont-Regular.ttf"
+    curl -sLO "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/Noto/Sans-Mono/NotoSansMNerdFont-Regular.ttf"
+    curl -sfLo /tmp/font.zip 'https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip'
     unzip -d ${FONT_DIR} /tmp/font.zip
     rm -f /tmp/font.zip
     fc-cache -fv

@@ -27,3 +27,11 @@ _install_gh https://github.com/lsd-rs/lsd/releases/download/v1.1.5/lsd_1.1.5_amd
 
 # https://software.opensuse.org/download/package?package=swappy&project=home%3ASunderland93%3Atileos-dev
 # https://software.opensuse.org//download.html?project=home%3ASunderland93%3Atileos-dev&package=rofi-wayland
+#
+desktop_container() {
+  echo "deb http://deb.debian.org/debian bookworm contrib non-free non-free-firmware" | tee /etc/apt/sources.list.d/contrib.list
+  curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+  echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+  sudo apt update
+  sudo apt install google-chrome-stable pavucontrol ttf-mscorefonts-installer fonts-noto -y
+}

@@ -36,3 +36,7 @@ export HISTFILESIZE=10000000
 
 alias be="distrobox enter"
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source "/usr/share/fzf/shell/key-bindings.bash"
+
+if [[ -n $DISTROBOX_ENTER_PATH ]]; then
+    export BROWSER=/usr/bin/google-chrome-stable
+fi

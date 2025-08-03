@@ -34,8 +34,8 @@
     // "battery",
     "temperature",
     // "custom/nvme-temper",
-    // "custom/gpu-temper",
-    // "custom/gpu-power",
+    "custom/gpu-temper",
+    "custom/gpu-power",
     // "custom/nvidia",
     // "custom/nvidia-mem",
     // connecting
@@ -170,13 +170,18 @@
     "interval": 2
   },
   "custom/gpu-temper": {
-    "exec": "sensors amdgpu-pci-2600 | awk '/edge:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+?' | xargs printf '%.0f'",
+    "exec": "sensors amdgpu-pci-0100 | awk '/edge:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+?' | xargs printf '%.0f'",
     "format": " 󰢮 {}° ",
     "interval": 2
   },
   "custom/gpu-power": {
     "exec": "sensors amdgpu-pci-0100 | awk '/PPT:/ {print $2}' | grep -Eo '[0-9]+([.][0-9])+W?' | xargs printf '%.0f'",
     "format": " 󰢮 {}W ",
+    "interval": 2
+  },
+  "custom/gpu-usage": {
+    "exec": "rocm-smi --showuse --json | jq -r '.card0.\"GPU use (%)\"' | xargs printf '%.0f'",
+    "format": " 󰢮 {}% ",
     "interval": 2
   },
   "custom/nvidia": {

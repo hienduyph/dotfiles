@@ -5,6 +5,7 @@ local q = require("q.common")
 local raw_os_name = io.popen("uname -s", "r"):read("*l"):lower()
 
 local out = {
+  hide_tab_bar_if_only_one_tab=true,
 	font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light" }),
 	font_size = 11,
 	tab_max_width = 16,
@@ -26,7 +27,7 @@ local out = {
 	-- color_scheme = "Github (base16)",
 	-- color_scheme = "Github (Gogh)",
 	bold_brightens_ansi_colors = true,
-  default_prog = { '/usr/bin/zsh', '-l' },
+  -- default_prog = { '/usr/bin/zsh', '-l' },
 }
 out.font_rules = {
 	{
@@ -40,10 +41,10 @@ out.font_rules = {
 }
 
 if string.find(raw_os_name, "linux") ~= nil then
-	out["keys"] = q.linux_keys
+	-- out["keys"] = q.linux_keys
 	out["window_decorations"] = "TITLE"
 else
-	out["keys"] = q.mac_keys
+	-- out["keys"] = q.mac_keys
 	out["font_size"] = 14
 	out["native_macos_fullscreen_mode"] = true
 	out["window_decorations"] = "TITLE | RESIZE"
