@@ -38,7 +38,7 @@ if string.find(raw_os_name, "linux") ~= nil then
 	out["window_decorations"] = "TITLE"
 else
 	-- out["keys"] = q.mac_keys
-	out["font_size"] = 14
+	out["font_size"] = 12
 	out["native_macos_fullscreen_mode"] = true
 	out["window_decorations"] = "TITLE | RESIZE"
 	out["front_end"] = "OpenGL"

@@ -1,4 +1,4 @@
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+#export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
 if [[ -f ${HOMEBREW_PREFIX}/bin/brew ]]; then
   export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"

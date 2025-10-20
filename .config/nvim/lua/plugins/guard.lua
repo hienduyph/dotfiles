@@ -19,12 +19,12 @@ return {
 			fname = true,
 		})
 		-- ft("go"):lint("golangci_lint")
-		ft("typescript,javascript,typescriptreact"):fmt({
-			cmd = "prettier-eslint",
-			args = { "--stdin", "--stdin-filepath" },
-			fname = true,
-			stdin = true,
-		})
+		--- ft("typescript,javascript,typescriptreact"):fmt({
+		--- 	cmd = "prettier-eslint",
+		--- 	args = { "--stdin", "--stdin-filepath" },
+		--- 	fname = true,
+		--- 	stdin = true,
+		--- })
 
 		ft("rust"):fmt("rustfmt")
 		ft("sh"):fmt({
