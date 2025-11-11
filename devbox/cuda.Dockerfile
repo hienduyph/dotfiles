@@ -1,4 +1,4 @@
-FROM ghcr.io/hienduyph/devbox:f42-1.0.0
+FROM ghcr.io/hienduyph/devbox:f43-1.0.0
 
 RUN sudo dnf-3 config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/fedora39/x86_64/cuda-fedora39.repo \
   && sudo dnf module disable nvidia-driver -y \

@@ -17,7 +17,7 @@ git-delta
 direnv
 starship
 zoxide
-https://github.com/twpayne/chezmoi/releases/download/v2.56.0/chezmoi-2.56.0-x86_64.rpm
+https://github.com/twpayne/chezmoi/releases/download/v2.67.0/chezmoi-2.67.0-x86_64.rpm
 
 make
 cmake
