@@ -14,14 +14,12 @@ _configs() {
   mkdir -p $HOME/.config/
   PLATFORM=$1
   pkgs=(
-    mpv
-    ranger
     nvim
     tmux
     starship.toml
-    lapce-stable
     k9s
     lsd
+    alacritty
   )
   for pk in "${pkgs[@]}"; do
     echo "Settings up ${pk}"
@@ -38,15 +36,11 @@ _configs() {
   done
 
   specifics=(
-    kitty
-    i3
-    i3status
     redshift
     mako
     sway
     waybar
     sworkstyle
-    fuzzel
     fcitx5
   )
 
@@ -77,7 +71,6 @@ _dots() {
     .ideavimrc
     .tmux.common.conf
     .alacritty.common.toml
-    .bashrc
   )
   for f in "${dots[@]}"; do
     ln -sf $APP_ROOT/$f $HOME/$f
@@ -157,7 +150,7 @@ _rust() {
 _java() {
   curl -s "https://get.sdkman.io?rcupdate=false" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
-  sdk install java 21.0.4-tem
+  sdk install java 25.0.1-tem
   sdk install maven
   sdk install gradle
 }
@@ -205,7 +198,7 @@ main() {
   _dots $PLATFORM
   _configs $PLATFORM
   _git
-  # _ranger
+  _rust
   if [[ ${PLATFORM} == "darwin" ]]; then
     curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > /tmp/cs
     _mac
@@ -215,11 +208,9 @@ main() {
   fi
   _user_py_cli
   _java
-  _scala
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    _brew_bundle Brewfile
 
-  _rust
 }
 
 
